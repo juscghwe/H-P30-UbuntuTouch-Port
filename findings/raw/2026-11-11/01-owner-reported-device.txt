@@ -1,0 +1,13 @@
+[Owner-reported Settings transcription; not direct ADB output.]
+Model: MAR-LX1A
+Build shown in Settings: 12.0.0.262(C431E3R2P2) GPU Turbo
+EMUI: 12.0.0
+Processor: Hisilicon Kirin 710
+RAM: 4 GB
+Internal storage: 128 GB
+Display: 2312x1080
+Mainline: 2023-03-01 Q
+Baseband, as typed: 21C20B396S000C000,21C2 0B396S000C000
+Kernel, as typed: 4.14.116 os@localhost#1
+Customization, as typed: VDF.DE 10.0.0.4(LT.F01)
+Battery later reported: 8%; owner delayed rollback while charging.

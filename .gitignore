@@ -1,0 +1,15 @@
+# Keep original/unreviewed captures and build artifacts out of commits.
+/local-only/
+/unreviewed/
+/build/
+/out/
+*.img
+*.bin
+*.ko
+*.zip
+*.tar
+*.tar.gz
+*.tar.xz
+*.gz
+.env
+.env.*

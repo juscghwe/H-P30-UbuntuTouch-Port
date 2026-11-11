@@ -1,0 +1,13 @@
+/proc/config.gz: 1 file pulled, 0 skipped. 4.5 MB/s (39507 bytes in 0.008s)
+--- Graphics ---
+
+EGL implementation : 1.4 Bifrost-"r18p0-01rel0"
+GLES: ARM, Mali-G51, OpenGL ES 3.2 v1.r18p0-01rel0.caae7eec9919d9090a8a7e777d44918f
+--- Input hardware ---
+      Path: <virtual>
+      Path: /dev/input/event3
+      Path: /dev/input/event2
+      Path: /dev/input/event5
+      Path: /dev/input/event1
+      Path: /dev/input/event4
+      Path: /dev/input/event0

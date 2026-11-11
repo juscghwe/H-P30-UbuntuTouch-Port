@@ -1,0 +1,12 @@
+ro.product.model = MAR-LX1A
+ro.product.device = HWMAR
+ro.board.platform = kirin710
+ro.build.display.id = MAR-L21A 10.0.0.275(C431E8R2P7)
+ro.build.version.release = 10
+ro.build.version.sdk = 29
+ro.build.version.emui = EmotionUI_12.0.0
+ro.product.cpu.abilist = arm64-v8a,armeabi-v7a,armeabi
+ro.treble.enabled = true
+ro.vndk.version = 29
+ro.vendor.build.fingerprint = kirin710/kirin710/kirin710:10/QP1A.190711.020/root202007281852:user/test-keys
+Linux localhost 4.14.116 #1 SMP PREEMPT Tue Feb 28 14:49:53 CST 2023 aarch64

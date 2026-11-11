@@ -1,0 +1,22 @@
+[Separate owner-reported observations; this is not one continuous terminal capture.]
+
+[ADB enumeration]
+List of devices attached
+[REDACTED_DEVICE_SERIAL]        device
+
+[After adb reboot bootloader]
+Owner reported phone screen: locked.
+Owner reported fastboot enumeration/status command initially stuck.
+
+[Later successful fastboot enumeration]
+> .\fastboot.exe devices
+[REDACTED_DEVICE_SERIAL]         fastboot
+
+[Bootloader query: .\fastboot.exe oem get-bootinfo]
+(bootloader)  locked
+OKAY [  0.003s]
+Finished. Total time: 0.008s
+
+[Owner's phone-screen report]
+PHONE Locked
+[No FRP status was reported; do not infer one.]

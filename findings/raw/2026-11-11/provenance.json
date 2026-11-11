@@ -1,0 +1,39 @@
+{
+  "session_date": "2026-11-11",
+  "user_timezone": "Europe/Berlin",
+  "acquisition": "Device owner executed Windows commands and supplied selected output and files for analysis; no direct USB capture by the analyst.",
+  "firmware_state": "Reported stock Android 10 / EMUI 12; no completed rollback reported.",
+  "normalization": [
+    "LF text line endings",
+    "Removed transport escaping and incidental chat wrapping where reconstructed from inline paste"
+  ],
+  "sources": {
+    "01-owner-reported-device.txt": "Owner Settings transcription and later charge report; explicitly labeled.",
+    "02-adb-properties.txt": "Owner inline paste of the selected property queries and uname.",
+    "03-usb-and-bootloader.txt": "Owner observations from separate messages; serial replaced; no continuous transcript claimed.",
+    "04-hisuite-rollback-offer.txt": "Selected visible screenshot text manually transcribed; no completion inferred.",
+    "05-first-hardware-probe.txt": "First uploaded pasted diagnostic text; line endings normalized; inspected for identifiers.",
+    "06-graphics-and-input-paths.txt": "Owner inline paste; pull result and filtered runtime excerpts.",
+    "07-input-device-names.txt": "Latest uploaded paste; retained inventory before first UI window record; remainder omitted.",
+    "08-stock-kernel.config": "Exact decompressed payload of owner-uploaded p30-stock-config.gz; generic build settings retained."
+  },
+  "kernel_configuration": {
+    "uploaded_gzip_size_bytes": 39507,
+    "uploaded_gzip_sha256": "6dd70a8ebb69f67ef9c17a3d6c6e5d023d25036be6c9a87f50602fe4ebcfc7da",
+    "decompressed_size_bytes": 178677,
+    "decompressed_sha256": "16623939098e19212e0f66b9117a45f3e8bf1f05d4ccb00138a1a372d11ccc5b",
+    "line_count": 6504
+  },
+  "redactions": [
+    "Device serials",
+    "Personal Windows prompt/path",
+    "Unrelated UI/window/activity/channel records"
+  ],
+  "untested_actions": [
+    "Completed rollback",
+    "Bootloader unlock",
+    "Custom kernel build",
+    "Custom flashing",
+    "Ubuntu Touch boot and hardware bring-up"
+  ]
+}

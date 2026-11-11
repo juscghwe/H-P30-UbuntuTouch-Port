@@ -1,0 +1,15 @@
+[Selected visible text transcribed from an owner-provided HiSuite screenshot. No OCR or screenshot binary is committed.]
+
+Zu anderer Version wechseln
+Entwickler | Früh. Versionen
+10.0.0.562(C431E15R2P7)(Offiziell), 3.18GB
+
+Visible warning excerpt:
+3. All user data will be deleted in the rollback. Use an SD card, computer, or Cloud storage to back up all important data before rolling back your phone, and make sure all backed up content is complete and effective.
+4. Make sure your phone has more than 50% battery remaining.
+5. If you encounter any issues during the update, please call the Huawei customer service hotline or visit a Huawei customer service centre for assistance.
+6. The system will restart after the rollback. This will take about 10 minutes. Following the update, your home screen will automatically display the EMUI 10 theme.
+
+Visible buttons: <Zurück | Wiederher.
+
+[This records an offer; no completed rollback is evidenced.]
