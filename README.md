@@ -4,8 +4,8 @@ Target: **Huawei P30 Lite MAR-LX1A / HWMAR, Kirin 710**. Initial goal: a usable 
 
 Start with [findings](findings/README.md). Evidence is separated into sanitized raw data and interpretation, including uncertainty and untested proposals.
 
-**Current status:** stock Android is accessible over ADB and fastboot; the bootloader is locked. An official HiSuite rollback to EMUI 10 has been offered, but completion and a subsequent EMUI 9.1 route have not been reported. As of 2026-11-12 the owner requests software-only research; no verified complete unlock sequence for the current .262 firmware has been established. No custom kernel has been built, flashed or boot-tested in this investigation.
+**Current status:** the bootloader is locked; no complete software-only persistent-unlock route is verified for the reported .262 firmware. No custom image has been flashed or boot-tested.
 
 This repository currently contains documentation and configuration evidence, not an installable port. The target is the **P30 Lite**, not the Kirin 980 P30/P30 Pro.
 
-The pinned research candidate passes [Kconfig validation](findings/interpretation/baseline-build.md) and compiled through object generation, but its full-LTO link exceeded available memory. An alternate linker experiment is in progress. Source completeness and device compatibility remain unverified.
+The pinned Enjoy 10 source and its documented Clang/GCC toolchain produced [candidate and stock-derived Halium kernel images](findings/interpretation/baseline-build.md) with LTO/CFI disabled. Four staged Halium modules pass offline development-signature verification. Full-LTO resource failures, missing Marie board data and unresolved source warnings prevent treating these builds as a device port. Binaries and signing keys are not distributed here.

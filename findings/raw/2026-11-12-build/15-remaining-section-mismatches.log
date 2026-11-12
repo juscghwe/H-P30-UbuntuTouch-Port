@@ -1,0 +1,195 @@
+Origin: executed modpost -m -a against the repaired Halium native vmlinux.o; verbose section diagnostics, no configuration change. No device test. Trailing whitespace and final blank lines normalized.
+WARNING: vmlinux: 'g_ast_tx_complete_stat' exported twice. Previous export was in vmlinux
+WARNING: EXPORT symbol "blk_req_get_order_nr" [vmlinux] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "blk_order_nr_reset" [vmlinux] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "blk_queue_query_order_enable" [vmlinux] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "mas_blk_panic_flush" [vmlinux] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "blk_queue_order_enable" [vmlinux] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "blk_dev_write_order_preserved" [vmlinux] version generation failed, symbol will not be versioned.
+WARNING: vmlinux.o(.text+0xa2e078): Section mismatch in reference from the function mm_ion_reserve_area() to the function .init.text:of_get_flat_dt_prop()
+The function mm_ion_reserve_area() references
+the function __init of_get_flat_dt_prop().
+This is often because mm_ion_reserve_area lacks a __init
+annotation or the annotation of of_get_flat_dt_prop is wrong.
+
+WARNING: vmlinux.o(.text+0xa2e0ac): Section mismatch in reference from the function mm_ion_reserve_area() to the function .init.text:of_get_flat_dt_prop()
+The function mm_ion_reserve_area() references
+the function __init of_get_flat_dt_prop().
+This is often because mm_ion_reserve_area lacks a __init
+annotation or the annotation of of_get_flat_dt_prop is wrong.
+
+WARNING: vmlinux.o(.text+0xa2f934): Section mismatch in reference from the function mm_sec_cma_reserve() to the function .init.text:of_get_flat_dt_prop()
+The function mm_sec_cma_reserve() references
+the function __init of_get_flat_dt_prop().
+This is often because mm_sec_cma_reserve lacks a __init
+annotation or the annotation of of_get_flat_dt_prop is wrong.
+
+WARNING: vmlinux.o(.text+0xa2f950): Section mismatch in reference from the function mm_sec_cma_reserve() to the function .init.text:of_get_flat_dt_prop()
+The function mm_sec_cma_reserve() references
+the function __init of_get_flat_dt_prop().
+This is often because mm_sec_cma_reserve lacks a __init
+annotation or the annotation of of_get_flat_dt_prop is wrong.
+
+WARNING: vmlinux.o(.text+0xa2f968): Section mismatch in reference from the function mm_sec_cma_reserve() to the function .init.text:of_get_flat_dt_prop()
+The function mm_sec_cma_reserve() references
+the function __init of_get_flat_dt_prop().
+This is often because mm_sec_cma_reserve lacks a __init
+annotation or the annotation of of_get_flat_dt_prop is wrong.
+
+WARNING: vmlinux.o(.text+0xa2fa04): Section mismatch in reference from the function mm_sec_cma_reserve() to the function .init.text:cma_init_reserved_mem()
+The function mm_sec_cma_reserve() references
+the function __init cma_init_reserved_mem().
+This is often because mm_sec_cma_reserve lacks a __init
+annotation or the annotation of cma_init_reserved_mem is wrong.
+
+WARNING: vmlinux.o(.text+0xa3084c): Section mismatch in reference from the function mm_sec_cma_set_up() to the function .init.text:of_get_flat_dt_prop()
+The function mm_sec_cma_set_up() references
+the function __init of_get_flat_dt_prop().
+This is often because mm_sec_cma_set_up lacks a __init
+annotation or the annotation of of_get_flat_dt_prop is wrong.
+
+WARNING: vmlinux.o(.text+0xa30868): Section mismatch in reference from the function mm_sec_cma_set_up() to the function .init.text:of_get_flat_dt_prop()
+The function mm_sec_cma_set_up() references
+the function __init of_get_flat_dt_prop().
+This is often because mm_sec_cma_set_up lacks a __init
+annotation or the annotation of of_get_flat_dt_prop is wrong.
+
+WARNING: vmlinux.o(.text+0xa308b4): Section mismatch in reference from the function mm_sec_cma_set_up() to the function .init.text:of_get_flat_dt_prop()
+The function mm_sec_cma_set_up() references
+the function __init of_get_flat_dt_prop().
+This is often because mm_sec_cma_set_up lacks a __init
+annotation or the annotation of of_get_flat_dt_prop is wrong.
+
+WARNING: vmlinux.o(.text+0xa308cc): Section mismatch in reference from the function mm_sec_cma_set_up() to the function .init.text:of_get_flat_dt_prop()
+The function mm_sec_cma_set_up() references
+the function __init of_get_flat_dt_prop().
+This is often because mm_sec_cma_set_up lacks a __init
+annotation or the annotation of of_get_flat_dt_prop is wrong.
+
+WARNING: vmlinux.o(.text+0xa30960): Section mismatch in reference from the function mm_sec_cma_set_up() to the function .init.text:cma_init_reserved_mem()
+The function mm_sec_cma_set_up() references
+the function __init cma_init_reserved_mem().
+This is often because mm_sec_cma_set_up lacks a __init
+annotation or the annotation of cma_init_reserved_mem is wrong.
+
+WARNING: vmlinux.o(.text+0xa33308): Section mismatch in reference from the function mm_camera_pool_set_up() to the function .init.text:of_get_flat_dt_prop()
+The function mm_camera_pool_set_up() references
+the function __init of_get_flat_dt_prop().
+This is often because mm_camera_pool_set_up lacks a __init
+annotation or the annotation of of_get_flat_dt_prop is wrong.
+
+WARNING: vmlinux.o(.text+0xa33320): Section mismatch in reference from the function mm_camera_pool_set_up() to the function .init.text:of_get_flat_dt_prop()
+The function mm_camera_pool_set_up() references
+the function __init of_get_flat_dt_prop().
+This is often because mm_camera_pool_set_up lacks a __init
+annotation or the annotation of of_get_flat_dt_prop is wrong.
+
+WARNING: vmlinux.o(.text+0xa33384): Section mismatch in reference from the function mm_camera_pool_set_up() to the function .init.text:cma_init_reserved_mem()
+The function mm_camera_pool_set_up() references
+the function __init cma_init_reserved_mem().
+This is often because mm_camera_pool_set_up lacks a __init
+annotation or the annotation of cma_init_reserved_mem is wrong.
+
+WARNING: vmlinux.o(.text+0xbb7fa4): Section mismatch in reference from the function get_device_platform() to the function .init.text:of_flat_dt_get_machine_name()
+The function get_device_platform() references
+the function __init of_flat_dt_get_machine_name().
+This is often because get_device_platform lacks a __init
+annotation or the annotation of of_flat_dt_get_machine_name is wrong.
+
+WARNING: vmlinux.o(.text+0xc0f65c): Section mismatch in reference from the function cma_set_flag() to the function .init.text:of_get_flat_dt_prop()
+The function cma_set_flag() references
+the function __init of_get_flat_dt_prop().
+This is often because cma_set_flag lacks a __init
+annotation or the annotation of of_get_flat_dt_prop is wrong.
+
+WARNING: vmlinux.o(.text+0xc2dd10): Section mismatch in reference from the function modem_mperf_reserve_area() to the function .init.text:of_get_flat_dt_prop()
+The function modem_mperf_reserve_area() references
+the function __init of_get_flat_dt_prop().
+This is often because modem_mperf_reserve_area lacks a __init
+annotation or the annotation of of_get_flat_dt_prop is wrong.
+
+WARNING: vmlinux.o(.text+0xc7c994): Section mismatch in reference from the function socp_reserve_area() to the function .init.text:of_get_flat_dt_prop()
+The function socp_reserve_area() references
+the function __init of_get_flat_dt_prop().
+This is often because socp_reserve_area lacks a __init
+annotation or the annotation of of_get_flat_dt_prop is wrong.
+
+WARNING: vmlinux.o(.text+0xc9b958): Section mismatch in reference from the function modem_cdma_bbpds_reserve_area() to the function .init.text:of_get_flat_dt_prop()
+The function modem_cdma_bbpds_reserve_area() references
+the function __init of_get_flat_dt_prop().
+This is often because modem_cdma_bbpds_reserve_area lacks a __init
+annotation or the annotation of of_get_flat_dt_prop is wrong.
+
+WARNING: vmlinux.o(.text+0xc9b9a0): Section mismatch in reference from the function modem_cdma_bbpds_reserve_area() to the function .init.text:of_get_flat_dt_prop()
+The function modem_cdma_bbpds_reserve_area() references
+the function __init of_get_flat_dt_prop().
+This is often because modem_cdma_bbpds_reserve_area lacks a __init
+annotation or the annotation of of_get_flat_dt_prop is wrong.
+
+WARNING: vmlinux.o(.text+0xf30a20): Section mismatch in reference from the function ddr_inspect_reserve_area() to the function .init.text:of_get_flat_dt_prop()
+The function ddr_inspect_reserve_area() references
+the function __init of_get_flat_dt_prop().
+This is often because ddr_inspect_reserve_area lacks a __init
+annotation or the annotation of of_get_flat_dt_prop is wrong.
+
+WARNING: vmlinux.o(.text+0xf30a54): Section mismatch in reference from the function ddr_inspect_reserve_area() to the function .init.text:of_get_flat_dt_prop()
+The function ddr_inspect_reserve_area() references
+the function __init of_get_flat_dt_prop().
+This is often because ddr_inspect_reserve_area lacks a __init
+annotation or the annotation of of_get_flat_dt_prop is wrong.
+
+WARNING: vmlinux.o(.data+0x3cf8a8): Section mismatch in reference from the variable pmic_dcxo_cali_driver to the function .init.text:pmic_dcxo_cali_probe()
+The variable pmic_dcxo_cali_driver references
+the function __init pmic_dcxo_cali_probe()
+If the reference is valid then annotate the
+variable with __init* or __refdata (see linux/init.h) or name the variable:
+*_template, *_timer, *_sht, *_ops, *_probe, *_probe_one, *_console
+
+WARNING: vmlinux.o(.data+0x464898): Section mismatch in reference from the variable g_hisee_driver to the function .init.text:hisee_probe()
+The variable g_hisee_driver references
+the function __init hisee_probe()
+If the reference is valid then annotate the
+variable with __init* or __refdata (see linux/init.h) or name the variable:
+*_template, *_timer, *_sht, *_ops, *_probe, *_probe_one, *_console
+
+WARNING: vmlinux.o(.data+0x47ee70): Section mismatch in reference from the variable socp_mem_driver to the function .init.text:socp_memalloc_probe()
+The variable socp_mem_driver references
+the function __init socp_memalloc_probe()
+If the reference is valid then annotate the
+variable with __init* or __refdata (see linux/init.h) or name the variable:
+*_template, *_timer, *_sht, *_ops, *_probe, *_probe_one, *_console
+
+WARNING: vmlinux.o(.data+0x4823b0): Section mismatch in reference from the variable his_modem_drv to the function .init.text:his_modem_probe()
+The variable his_modem_drv references
+the function __init his_modem_probe()
+If the reference is valid then annotate the
+variable with __init* or __refdata (see linux/init.h) or name the variable:
+*_template, *_timer, *_sht, *_ops, *_probe, *_probe_one, *_console
+
+WARNING: vmlinux.o(.data+0x485448): Section mismatch in reference from the variable his_boot_drv to the function .init.text:his_boot_probe()
+The variable his_boot_drv references
+the function __init his_boot_probe()
+If the reference is valid then annotate the
+variable with __init* or __refdata (see linux/init.h) or name the variable:
+*_template, *_timer, *_sht, *_ops, *_probe, *_probe_one, *_console
+
+WARNING: vmlinux.o(.data+0x485880): Section mismatch in reference from the variable balong_power_drv to the function .init.text:bsp_power_probe()
+The variable balong_power_drv references
+the function __init bsp_power_probe()
+If the reference is valid then annotate the
+variable with __init* or __refdata (see linux/init.h) or name the variable:
+*_template, *_timer, *_sht, *_ops, *_probe, *_probe_one, *_console
+
+WARNING: vmlinux.o(.data+0x485eb8): Section mismatch in reference from the variable balong_modem_pm_info_drv to the function .init.text:pm_info_probe()
+The variable balong_modem_pm_info_drv references
+the function __init pm_info_probe()
+If the reference is valid then annotate the
+variable with __init* or __refdata (see linux/init.h) or name the variable:
+*_template, *_timer, *_sht, *_ops, *_probe, *_probe_one, *_console
+
+WARNING: vmlinux.o(.data+0x498d20): Section mismatch in reference from the variable hisi_timekeeper_driver to the function .init.text:hisi_timekeeper_probe()
+The variable hisi_timekeeper_driver references
+the function __init hisi_timekeeper_probe()
+If the reference is valid then annotate the
+variable with __init* or __refdata (see linux/init.h) or name the variable:
+*_template, *_timer, *_sht, *_ops, *_probe, *_probe_one, *_console

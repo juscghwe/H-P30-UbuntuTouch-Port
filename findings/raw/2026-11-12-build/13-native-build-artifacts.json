@@ -1,0 +1,277 @@
+{
+  "date": "2026-11-12",
+  "origin": "Executed offline Image.gz/modules builds and artifact inspection; no device tests",
+  "toolchain_manifest": "01-source-and-config-validation.json",
+  "builds": {
+    "candidate_native_initial": {
+      "origin": "Executed offline artifact inspection; no phone boot or hardware validation",
+      "source_commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+      "kernel_release": "4.14.116+",
+      "config_sha256": "0e6d48059f71e2ac8a1fb188ea126c7fc5dc8044816635de15b849e347f901f4",
+      "embedded_config_exact_match": true,
+      "gzip_crc_and_payload_verified": true,
+      "vmlinux_machine": "AArch64",
+      "arm64_header": {
+        "text_offset": 524288,
+        "image_size": 55025664,
+        "flags": 10
+      },
+      "artifacts": [
+        {
+          "path": "arch/arm64/boot/Image.gz",
+          "bytes": 14768039,
+          "sha256": "c2f5d0c504033c7802034427936f2b4d9142b18300c9cb8617f40940beb45ed4"
+        },
+        {
+          "path": "arch/arm64/boot/Image",
+          "bytes": 42305548,
+          "sha256": "509427033a2bcf1ad0a56e12b5ebbe59e8bf33dabae1ac4cd5c252803a67572c"
+        },
+        {
+          "path": "vmlinux",
+          "bytes": 391579416,
+          "sha256": "6ae7bfb762626e5fa6103c03f24702af0b90c16019719f2d9ffcacd3a07f4eef"
+        }
+      ],
+      "modules": [
+        {
+          "path": "crypto/crypto_engine.ko",
+          "bytes": 231752,
+          "sha256": "3cf3521089e00a7d5aaa10a8394c4bb66e620c1875b37d21444ff5a63431cf0a",
+          "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64",
+          "signature_trailer_present": false
+        },
+        {
+          "path": "drivers/crypto/virtio/virtio_crypto.ko",
+          "bytes": 608512,
+          "sha256": "c0941f2423698318d16d67ac707521270399cdc028e2cdc4504f198909c03dc8",
+          "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64",
+          "signature_trailer_present": false
+        },
+        {
+          "path": "drivers/hisi/hisi_dummy_ko/hisi_dummy_ko.ko",
+          "bytes": 60584,
+          "sha256": "57675e09f0b16d3eea86360aa32f8a502f726518b0c4737d2835e91136b5e620",
+          "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64",
+          "signature_trailer_present": false
+        }
+      ],
+      "make_exit": 0,
+      "LTO": false,
+      "CFI": false,
+      "effective_source_tree": "2d661ac5023d56fd2e8b60f9803042158fc65757",
+      "source_patches": []
+    },
+    "candidate_native_repaired": {
+      "origin": "Executed offline artifact inspection; no phone boot or hardware validation",
+      "source_commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+      "kernel_release": "4.14.116+",
+      "build_number": 2,
+      "config_sha256": "0e6d48059f71e2ac8a1fb188ea126c7fc5dc8044816635de15b849e347f901f4",
+      "embedded_config_exact_match": true,
+      "gzip_crc_and_payload_verified": true,
+      "vmlinux_machine": "AArch64",
+      "arm64_header": {
+        "text_offset": 524288,
+        "image_size": 55025664,
+        "flags": 10
+      },
+      "artifacts": [
+        {
+          "path": "arch/arm64/boot/Image.gz",
+          "bytes": 14767667,
+          "sha256": "d095e8a2a54f847cd03aac0829efa563f5d6b4b7bdf18026d0f93a18e49600c8"
+        },
+        {
+          "path": "arch/arm64/boot/Image",
+          "bytes": 42305548,
+          "sha256": "5099241e1888cd2f24003e4768974b1e77b3c53c8536ee8794e6e545829d4a52"
+        },
+        {
+          "path": "vmlinux",
+          "bytes": 391581104,
+          "sha256": "91cb23d31e370c654997b5c4ac07ed976fda4e080cd503af74aa6eedffebfe38"
+        }
+      ],
+      "modules": [
+        {
+          "path": "crypto/crypto_engine.ko",
+          "bytes": 231752,
+          "sha256": "3cf3521089e00a7d5aaa10a8394c4bb66e620c1875b37d21444ff5a63431cf0a",
+          "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64",
+          "signature_trailer_present": false
+        },
+        {
+          "path": "drivers/crypto/virtio/virtio_crypto.ko",
+          "bytes": 608512,
+          "sha256": "c0941f2423698318d16d67ac707521270399cdc028e2cdc4504f198909c03dc8",
+          "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64",
+          "signature_trailer_present": false
+        },
+        {
+          "path": "drivers/hisi/hisi_dummy_ko/hisi_dummy_ko.ko",
+          "bytes": 60584,
+          "sha256": "57675e09f0b16d3eea86360aa32f8a502f726518b0c4737d2835e91136b5e620",
+          "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64",
+          "signature_trailer_present": false
+        }
+      ],
+      "make_exit": 0,
+      "LTO": false,
+      "CFI": false,
+      "effective_source_tree": "a95d76968a24fe4baf34a7ee90bf2cf3aa399ea6",
+      "source_patches": [
+        "0002-block-fix-elevator-exit-recursion.patch",
+        "0003-build-fix-dummy-hkrr-target.patch"
+      ]
+    },
+    "halium_native_initial": {
+      "origin": "Executed offline artifact inspection; no phone boot or hardware validation",
+      "source_commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+      "kernel_release": "4.14.116+",
+      "config_sha256": "b7707e0d2dcf5a7a82264f39d6ec18880000ed559a5b605ccaeb62a4f7878155",
+      "embedded_config_exact_match": true,
+      "gzip_crc_and_payload_verified": true,
+      "vmlinux_machine": "AArch64",
+      "arm64_header": {
+        "text_offset": 524288,
+        "image_size": 55525376,
+        "flags": 10
+      },
+      "artifacts": [
+        {
+          "path": "arch/arm64/boot/Image.gz",
+          "bytes": 15133775,
+          "sha256": "673aa0cf3cafdb536f277999f0ed69a66259aa6abfac442a6340f766448d1706"
+        },
+        {
+          "path": "arch/arm64/boot/Image",
+          "bytes": 42801164,
+          "sha256": "13ebdc2bbc89b8cfcb1099fcf57eb2c4a2b702fca02c2e34fe35ce08cd64e1b6"
+        },
+        {
+          "path": "vmlinux",
+          "bytes": 52189144,
+          "sha256": "9e44ea990e0490ad8241dfa7c8ee67b319b39275cc888a20f50c25eccfeda1d9"
+        }
+      ],
+      "modules": [
+        {
+          "path": "crypto/crypto_engine.ko",
+          "bytes": 16264,
+          "sha256": "1d45ad4538f0d9814965cb37364127745cdb6a615dc3ad073172de47e1bf9d96",
+          "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64",
+          "signature_trailer_present": false
+        },
+        {
+          "path": "drivers/crypto/virtio/virtio_crypto.ko",
+          "bytes": 34728,
+          "sha256": "71007c7e2b417880b274e2f88ed54c75d6e60d909d773934dcc1aa6d4426fcde",
+          "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64",
+          "signature_trailer_present": false
+        },
+        {
+          "path": "drivers/hisi/hisi_dummy_ko/hisi_dummy_ko.ko",
+          "bytes": 4064,
+          "sha256": "b86bb140c09566f16b06d98c13fd67ce4a3ac037a8f04510d6297cb1b82b9eed",
+          "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64",
+          "signature_trailer_present": false
+        },
+        {
+          "path": "net/bridge/br_netfilter.ko",
+          "bytes": 35808,
+          "sha256": "535f77e2cc3c5f3d9708aa006b2b842aba8cc274555f0febd5827f5be5349fed",
+          "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64",
+          "signature_trailer_present": false
+        }
+      ],
+      "make_exit": 0,
+      "LTO": false,
+      "CFI": false,
+      "effective_source_tree": "3c5fd7bf0c8e8da2e10d8ebc605ad73f59cc4cb9",
+      "source_patches": [
+        "AppArmor socket mediation commits from 07-build-and-port-probes.json"
+      ]
+    },
+    "halium_native_repaired": {
+      "origin": "Executed offline artifact inspection; no phone boot or hardware validation",
+      "source_commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+      "kernel_release": "4.14.116+",
+      "build_number": 3,
+      "config_sha256": "b7707e0d2dcf5a7a82264f39d6ec18880000ed559a5b605ccaeb62a4f7878155",
+      "embedded_config_exact_match": true,
+      "gzip_crc_and_payload_verified": true,
+      "vmlinux_machine": "AArch64",
+      "arm64_header": {
+        "text_offset": 524288,
+        "image_size": 55525376,
+        "flags": 10
+      },
+      "artifacts": [
+        {
+          "path": "arch/arm64/boot/Image.gz",
+          "bytes": 15133725,
+          "sha256": "453b89b5433359da17245285e3b71d4895af36b38909223cc0f3ae4151f1d397"
+        },
+        {
+          "path": "arch/arm64/boot/Image",
+          "bytes": 42801164,
+          "sha256": "0fc58f26367ecdb38f9788e30b66bb608b7f2abee0e2fa3ea7c1b3c8cec789bb"
+        },
+        {
+          "path": "vmlinux",
+          "bytes": 52189112,
+          "sha256": "e803e4f2f12fd36c8cd2670805206d7f967e2e0c0d4d9c22116dfce5c13e93a4"
+        }
+      ],
+      "modules": [
+        {
+          "path": "crypto/crypto_engine.ko",
+          "bytes": 16264,
+          "sha256": "1d45ad4538f0d9814965cb37364127745cdb6a615dc3ad073172de47e1bf9d96",
+          "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64",
+          "signature_trailer_present": false
+        },
+        {
+          "path": "drivers/crypto/virtio/virtio_crypto.ko",
+          "bytes": 34728,
+          "sha256": "71007c7e2b417880b274e2f88ed54c75d6e60d909d773934dcc1aa6d4426fcde",
+          "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64",
+          "signature_trailer_present": false
+        },
+        {
+          "path": "drivers/hisi/hisi_dummy_ko/hisi_dummy_ko.ko",
+          "bytes": 4064,
+          "sha256": "b86bb140c09566f16b06d98c13fd67ce4a3ac037a8f04510d6297cb1b82b9eed",
+          "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64",
+          "signature_trailer_present": false
+        },
+        {
+          "path": "net/bridge/br_netfilter.ko",
+          "bytes": 35808,
+          "sha256": "535f77e2cc3c5f3d9708aa006b2b842aba8cc274555f0febd5827f5be5349fed",
+          "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64",
+          "signature_trailer_present": false
+        }
+      ],
+      "make_exit": 0,
+      "LTO": false,
+      "CFI": false,
+      "effective_source_tree": "03d44b0fd2c5a297187d373c1df9aa50da712426",
+      "source_patches": [
+        "AppArmor socket mediation commits from 07-build-and-port-probes.json",
+        "0002-block-fix-elevator-exit-recursion.patch",
+        "0003-build-fix-dummy-hkrr-target.patch",
+        "0004-fix-display-and-clock-init-lifetimes.patch"
+      ]
+    }
+  },
+  "verification_commands": [
+    "gzip -t OUTPUT/arch/arm64/boot/Image.gz",
+    "cmp OUTPUT/arch/arm64/boot/Image <(gzip -dc OUTPUT/arch/arm64/boot/Image.gz)",
+    "bash SOURCE/scripts/extract-ikconfig OUTPUT/arch/arm64/boot/Image.gz > CONFIG_COPY; cmp OUTPUT/.config CONFIG_COPY",
+    "readelf -h OUTPUT/vmlinux",
+    "readelf -p .modinfo OUTPUT/PATH_TO_MODULE.ko",
+    "sha256sum OUTPUT/arch/arm64/boot/Image.gz OUTPUT/arch/arm64/boot/Image OUTPUT/vmlinux"
+  ]
+}

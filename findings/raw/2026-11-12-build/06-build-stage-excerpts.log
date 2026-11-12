@@ -93,3 +93,25 @@ Origin: selected executed build-log lines, not device output. Paths generalized.
   AR      security/apparmor/apparmor.o
   AR      security/apparmor/built-in.o
 BUILD_EXIT=0
+
+--- Gold full-LTO O0, plugin options ordered after loading plugin ---
+Origin: selected executed link-log lines; paths generalized.
+  AR      init/built-in.o
+  AR      built-in.o
+  LTO     vmlinux.o
+<source>/scripts/link-vmlinux.sh: line 101: 12672 Segmentation fault      ${LD} ${LDFLAGS} -r -o ${1} $(modversions) ${objects}
+make[1]: *** [<source>/Makefile:1213: vmlinux] Error 139
+make[1]: Leaving directory '<output>'
+make: *** [Makefile:156: sub-make] Error 2
+make: Leaving directory '<source>'
+
+--- Gold full-LTO O1, DEBUG_INFO=n and LTO/CFI retained ---
+Origin: selected executed link-log lines; paths generalized.
+  AR      init/built-in.o
+  AR      built-in.o
+  LTO     vmlinux.o
+<source>/scripts/link-vmlinux.sh: line 101: 12373 Killed                  ${LD} ${LDFLAGS} -r -o ${1} $(modversions) ${objects}
+make[1]: Leaving directory '<output>'
+make[1]: *** [<source>/Makefile:1213: vmlinux] Error 137
+make: Leaving directory '<source>'
+make: *** [Makefile:156: sub-make] Error 2

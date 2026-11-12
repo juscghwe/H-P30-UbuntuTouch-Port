@@ -2,7 +2,7 @@
 
 ## Current boundary
 
-The bootloader is locked. There is no tested custom boot image, selected complete kernel source revision, validated build toolchain or confirmed full downgrade/unlock sequence. Hardware inventory can proceed from stock Android while charging; do not interrupt an update/rollback if one is already in progress.
+The bootloader is locked. The documented source/toolchain pair produces offline research images, including a stock-derived Halium configuration, but there is no device-validated kernel, boot package or software-only persistent-unlock sequence. Hardware inventory remains owner-operated from stock Android.
 
 ## Unlock feasibility
 
@@ -16,7 +16,7 @@ The bootloader is locked. There is no tested custom boot image, selected complet
 
 ## Source and peripheral identification
 
-- Inspect the pinned [4.14.116 source candidates](kernel-source-candidates.md), prioritizing the Enjoy 10 tree's much closer configuration. Verify Kconfig parsing, source coverage, board data and baseline compilation before selecting it. No complete usable build base is confirmed yet.
+- Preserve the pinned [4.14.116 baseline build](baseline-build.md), configuration fragments and demonstrated repairs. Native compilation passes; full-LTO/CFI resource behavior, source gaps, generated assembly and remaining warnings need resolution before selecting a device build base.
 - Preserve the Synaptics TCM path indicated by the `MARI69110` runtime identifier and matching firmware filename (E09). Identify exact silicon/panel only where it helps device-tree and driver matching; the family is already sufficiently narrowed to inspect the relevant driver.
 - Determine the active Hi110x connectivity variant, firmware files and initialization services. Compare the related Mate 20 Lite research without assuming identical hardware/partitions.
 - Preserve the matching vendor HAL/service configuration needed for graphics, connectivity, permissions and firmware loading. Review any additional captures for personal information before commit.
@@ -26,7 +26,8 @@ The bootloader is locked. There is no tested custom boot image, selected complet
 | Milestone | Evidence needed | Current status |
 | --- | --- | --- |
 | Choose source/toolchain | Sources contain required board/drivers and can reproduce a compatible kernel | Closer candidate and documented toolchain identified; not validated |
-| Build adapted kernel/image | Reproducible build and verified device-specific image layout | Not done |
+| Compile research kernels | Complete AArch64 image/modules, exact config and artifact verification | Candidate and stock-derived Halium native images passed; LTO/CFI disabled |
+| Build adapted boot image | Actual Marie board data and verified device-specific image layout | Blocked on stock DT/image metadata; no boot package |
 | Boot/debug access | Kernel boot and working USB debug shell on actual phone | Not done |
 | Ubuntu Touch/Halium starts | Mounts, services, container and root filesystem function | Not done |
 | GUI/touch | Accelerated Lomiri display and working touchscreen | Not done |
@@ -35,3 +36,5 @@ The bootloader is locked. There is no tested custom boot image, selected complet
 | Later optional hardware | Audio/Bluetooth/cameras/cellular as needed | Deferred |
 
 A Wi-Fi-only goal avoids initial telephony/VoLTE work but does not eliminate graphics, power, device permissions or connectivity integration. SIM functionality should be a separately evaluated later milestone.
+
+Next concrete input: run the [three small read-only check groups](peripheral-integration.md#small-read-only-collection-set) to resolve DT access, Hi110x initialization status, image partition names and the touch firmware hash. Inspect legitimately obtained matching stock images with the read-only header tool before creating any device-specific packaging recipe. No partition constants from another handset are accepted.

@@ -2,7 +2,7 @@
 # Build-only recipe for the pinned research candidate. Does not package or flash.
 set -euo pipefail
 if [ "$#" -lt 5 ]; then
-    echo "Usage: $0 SOURCE OUTPUT CLANG_DIR GCC_DIR configure|build|stock-config|merge-config [INPUTS...]" >&2
+    echo "Usage: $0 SOURCE OUTPUT CLANG_DIR GCC_DIR configure|build|stock-config|merge-config|modules-install [INPUTS...]" >&2
     exit 2
 fi
 src=$(realpath "$1")
@@ -29,6 +29,29 @@ case "${LTO_LINKER:-gold}" in
         make_args+=("GCC_TOOLCHAIN=$gcc_dir" "LD=$clang_dir/bin/ld.lld --lto-O1") ;;
     *) echo "Unsupported LTO_LINKER" >&2; exit 2 ;;
 esac
+if [ -n "${GOLD_LTO_OPT:-}" ]; then
+    case "$GOLD_LTO_OPT" in 0|1|2|3) ;; *) exit 2 ;; esac
+    test "${LTO_LINKER:-gold}" = gold
+    test "$action" = build
+    grep -qx 'CONFIG_LTO_CLANG=y' "$out/.config"
+    # Gold requires its plugin to be loaded before parsing plugin options.
+    # Append the option only to commands that actually load LLVMgold.
+    wrapper="$out/gold-lto-wrapper"
+    {
+        printf '#!/bin/bash\nset -euo pipefail\nopt=%s\n' "$GOLD_LTO_OPT"
+        cat <<'SH'
+for arg in "$@"; do
+    case "$arg" in
+        -plugin|--plugin|-plugin=*|--plugin=*)
+            exec aarch64-linux-android-ld.gold "$@" "-plugin-opt=O$opt" ;;
+    esac
+done
+exec aarch64-linux-android-ld.gold "$@"
+SH
+    } > "$wrapper"
+    chmod 755 "$wrapper"
+    make_args+=("LDGOLD=$wrapper")
+fi
 case "$action" in
     configure) make "${make_args[@]}" merge_kirin710_defconfig ;;
     stock-config)
@@ -99,5 +122,12 @@ print(json.dumps(report, indent=2))
 PY
         ;;
     build) make "${make_args[@]}" -j"${JOBS:-2}" Image.gz modules ;;
+    modules-install)
+        test "$#" -eq 6
+        mkdir -p "$6"
+        staging=$(realpath "$6")
+        test "$staging" != /
+        test "$staging" != "$src"
+        make "${make_args[@]}" "INSTALL_MOD_PATH=$staging" modules_install ;;
     *) echo "Unknown action: $action" >&2; exit 2 ;;
 esac

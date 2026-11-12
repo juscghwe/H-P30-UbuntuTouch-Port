@@ -26,5 +26,5 @@
       "proposed_sha256": "33a4c841626c4e3d97b84bdeb85bd5117335e3b62b82c7ff3bb194c85066d223"
     }
   ],
-  "verification": "Standard git apply --check with whitespace errors enabled passes for both current source checkouts. Running builds are unchanged; patched compilation and final link remain pending."
+  "verification": "Patch preflight passed; both native configurations rebuilt successfully with the repair. System.map now defines and exports __elevator_exit; the recursive wrapper export and compiler diagnostic are absent. No runtime test."
 }

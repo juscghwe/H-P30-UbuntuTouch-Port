@@ -1,0 +1,22 @@
+--- a/drivers/clk/hisi/clk-kirin-common.c
++++ b/drivers/clk/hisi/clk-kirin-common.c
+@@ -1798,7 +1798,7 @@
+ 	{},
+ };
+ 
+-void __iomem __init *hs_clk_base(u32 ctrl)
++void __iomem *hs_clk_base(u32 ctrl)
+ {
+ 	struct device_node *np = NULL;
+ 	void __iomem *ret = NULL;
+--- a/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c
++++ b/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c
+@@ -3964,7 +3964,7 @@
+  * function:panel driver probe
+  * @pdev:platform device
+  */
+-static int __init lcdkit_probe(struct platform_device* pdev)
++static int lcdkit_probe(struct platform_device* pdev)
+ {
+ 	struct hisi_panel_info* pinfo = NULL;
+ 	struct device_node* np = NULL;

@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-12",
+  "origin": "Source inspection, native object diagnostics and incremental rebuilds",
+  "source_commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+  "lifetime_patch": "../../../patches/0004-fix-display-and-clock-init-lifetimes.patch",
+  "files": [
+    {
+      "path": "drivers/clk/hisi/clk-kirin-common.c",
+      "before_sha256": "f87d8933c2119c6491c98d41ec86a059fc78b78bc36de1a4793e8c78a49d3dee",
+      "after_sha256": "49a4e5d41ba74252cccb83bd39f13d0bdea882c5adbc88c80520281d06f0ceeb",
+      "crlf_lines_before": 0,
+      "crlf_lines_after": 0
+    },
+    {
+      "path": "drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c",
+      "before_sha256": "93a3b2542ab7bd3ab29579fdfa9efa7f14e6ef01f4b6e5e2bda77696b3fb76e4",
+      "after_sha256": "2ac9bcf57b4456ae6ddb094e3aff20331db8bda811c15d5f3778642949972f15",
+      "crlf_lines_before": 4256,
+      "crlf_lines_after": 4256
+    }
+  ],
+  "observations": [
+    "lcdkit_probe is retained as platform_driver.probe after platform_driver_register; it explicitly returns -EPROBE_DEFER. Discarding its __init code is unsafe for later retry.",
+    "hisi_pll_unlock_probe is a persistent platform-driver callback and calls hs_clk_base, whose code was marked __init.",
+    "Removing the two __init annotations retains code without suppressing modpost checks. The complete Halium native rebuild passed and section mismatches fell from 32 to 30."
+  ],
+  "remaining_warning_summary": {
+    "section_mismatches": 30,
+    "duplicate_export": "g_ast_tx_complete_stat",
+    "unversioned_exports": [
+      "blk_req_get_order_nr",
+      "blk_order_nr_reset",
+      "blk_queue_query_order_enable",
+      "mas_blk_panic_flush",
+      "blk_queue_order_enable",
+      "blk_dev_write_order_preserved"
+    ]
+  },
+  "shipped_assembly": [
+    {
+      "path": "block/mas_blk_core.S",
+      "sha256": "ba03d168673413af037300128d14969e22bce308679b5f09fc7d966475220469",
+      "corresponding_c_file_present": false,
+      "weak_crc_symbols": [
+        "__crc_blk_dev_write_order_preserved",
+        "__crc_blk_req_get_order_nr",
+        "__crc_blk_queue_order_enable",
+        "__crc_blk_queue_query_order_enable",
+        "__crc_blk_order_nr_reset"
+      ]
+    },
+    {
+      "path": "block/mas_blk_flush.S",
+      "sha256": "0ee990beafea602b2a37323809571f61cfb745de32580c6de2a9fea2e1bde316",
+      "corresponding_c_file_present": false,
+      "weak_crc_symbols": [
+        "__crc_mas_blk_panic_flush"
+      ]
+    }
+  ],
+  "assembly_interpretation": "The six failed CRCs correspond to weak CRC declarations in shipped assembly with absent same-name C files. This does not establish ABI/layout compatibility of the pre-generated assembly with changed configurations. No CRC is invented and the assembly is unchanged.",
+  "duplicate_export_object_confirmation": {
+    "method": "AArch64 nm -A on all three compiled platform oam_log.o files; exact __ksymtab_g_ast_tx_complete_stat matches",
+    "objects": [
+      "drivers/connectivity/hisi/platform/oam/oam_log.o",
+      "drivers/connectivity/hi11xx/hi1102a/platform/oam/oam_log.o"
+    ],
+    "not_matched": "drivers/connectivity/hi11xx/hi1105/platform/oam/oam_log.o",
+    "scope": "Compiled candidate objects only; no active-phone-chip inference"
+  }
+}

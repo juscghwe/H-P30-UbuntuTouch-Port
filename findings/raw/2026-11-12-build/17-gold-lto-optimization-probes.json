@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-12",
+  "origin": "Executed toolchain/link probes, not device testing",
+  "source_commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+  "effective_source_tree": "a95d76968a24fe4baf34a7ee90bf2cf3aa399ea6",
+  "config_sha256": "bc051537dd518ed0ff0159f7c07d6a79370fa6a5d4878eb24b8dc166de10b5dd",
+  "configuration": "Candidate with DEBUG_INFO=n; LTO/CFI retained",
+  "tiny_gold_O0_CFI_probe": {
+    "exit": 0,
+    "AArch64_relocatable": true,
+    "__cfi_check_symbol_present": true
+  },
+  "option_plumbing": "Gold requires the plugin to be loaded before plugin options are parsed. Early global/prepended-option attempts failed before LTO. The recipe wrapper now appends -plugin-opt=OLEVEL only when the invocation loads a plugin.",
+  "kernel_gold_O0": {
+    "make_exit": 2,
+    "linker_signal_exit": 139,
+    "last_stage": "LTO vmlinux.o",
+    "no_additional_cgroup_OOM_kill": true,
+    "actual_running_link_option_verified": true,
+    "complete_image": false
+  },
+  "kernel_gold_O1": {
+    "make_exit": 2,
+    "linker_exit": 137,
+    "last_stage": "LTO vmlinux.o",
+    "complete_image": false,
+    "cause": "Fourth OOM kill recorded by enclosing cgroup",
+    "actual_running_link_option_verified": true,
+    "sampled_linker_rss_kib": 7344972
+  },
+  "recipe": "GOLD_LTO_OPT=LEVEL JOBS=1 bash scripts/kernel-baseline.sh SOURCE OUTPUT CLANG_DIR GCC_DIR build"
+}

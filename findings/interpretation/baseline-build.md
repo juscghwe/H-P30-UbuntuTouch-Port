@@ -4,7 +4,7 @@ Source: Enjoy 10 / HarmonyOS 2 kernel at `c1e2747d8e839bedaa71a6436d24a51285d985
 
 ## Provenance and compiler
 
-The pinned source archive reconstructs upstream tree `2d661ac5023d56fd2e8b60f9803042158fc65757` and the exact pinned commit object. Source files are unchanged. Its README names a 2021-09-23 software release, while the stock kernel reports a 2023-02-28 build; the shared version number does not establish an identical patch set. The README's Clang `r353983c` is Android Clang 9.0.3, build 5484270. Its Android-10 release prebuilt and the Android GCC 4.9 tools were downloaded at pinned commits from AOSP; archive hashes are recorded with the inputs.
+The pinned source archive reconstructs upstream tree `2d661ac5023d56fd2e8b60f9803042158fc65757` and the exact pinned commit object. Archive verification precedes the separately recorded build repairs below. Its README names a 2021-09-23 software release, while the stock kernel reports a 2023-02-28 build; the shared version number does not establish an identical patch set. The README's Clang `r353983c` is Android Clang 9.0.3, build 5484270. Its Android-10 release prebuilt and the Android GCC 4.9 tools were downloaded at pinned commits from AOSP; archive hashes are recorded with the inputs.
 
 AOSP's compiler wrappers expect a `python` executable, absent in the build container. The recipe selects the unchanged native `clang.real`/`clang++.real` executables explicitly. The GCC 4.9 native binary reports `4.9.x 20150123`; its assembler/linker tools supply the cross-toolchain. No compiler fallback to GCC 12 is used for the baseline kernel.
 
@@ -42,13 +42,36 @@ The pinned comparison kernel also lacks definitions for all 65 symbols missing f
 
 The alternate LLD experiment uses the documented Clang prebuilt's linker with `--lto-O1`, retaining the candidate LTO/CFI config. An AArch64 bitcode link probe passed. Kernel preparation then rejected LLD through a GNU-gold-specific version check, despite Kconfig documenting both linkers. [The two-line build patch](../../patches/0001-build-allow-lld-for-lto.patch) exempts detected LLD from that gold parser while retaining the Clang check. Its kernel link also exhausted memory and was killed at `LTO vmlinux.o`; no image resulted.
 
-Disabling only `DEBUG_INFO` with the original gold toolchain reduced sampled link memory substantially but still ended in an OOM kill. LTO and CFI remained enabled in that attempt. A further build-only resource configuration disables LTO and its dependent CFI; candidate and stock-derived Halium outputs remain distinct. Both are now compiling native AArch64 objects with one job each. The Halium configuration retains forced signatures and module versioning, uses a local development key, and includes the AppArmor patches and namespace fragment. No complete image from these attempts is claimed yet.
+Disabling only `DEBUG_INFO` with the original gold toolchain reduced sampled link memory substantially but still ended in an OOM kill. LTO and CFI remained enabled in that attempt. A further build-only resource configuration disables LTO and its dependent CFI; candidate and stock-derived Halium outputs remain distinct. Both native builds completed, including modules. The Halium configuration retains forced signatures and module versioning, uses a local development key, and includes the AppArmor patches and namespace fragment. The repaired builds and artifact checks are recorded below.
+
+[Lower-optimization full-LTO experiments](../raw/2026-11-12-build/17-gold-lto-optimization-probes.json) also failed: Gold/LLVMgold at O0 crashed with signal 139 without an additional OOM event; O1 was killed with status 137 and the fourth recorded OOM kill. Actual linker options were checked while running. The recipe exposes `GOLD_LTO_OPT=0..3` for reproducing these experiments and places plugin options after the plugin load, as Gold requires. No full-LTO/CFI kernel image is claimed.
 
 ## Block-layer defect found during native compilation
 
 Clang reports infinite recursion in `block/blk.h:249`. The `elevator_exit()` wrapper calls itself after freeing scheduler requests, while `__elevator_exit()` is both declared and defined as the actual teardown helper. `block/elevator.c` also exports the wrapper name rather than the helper. Scheduler-switching paths invoke this wrapper; a successful compile would not establish a safe implementation.
 
-[The two-line repair](../../patches/0002-block-fix-elevator-exit-recursion.patch) changes the call and export to `__elevator_exit`. [Source hashes and diagnostic provenance](../raw/2026-11-12-build/09-block-teardown-defect.json) record the original bytes. It passes patch preflight against both source checkouts. The active builds remain unchanged; applying the fix and rebuilding is a separate validation step.
+[The two-line repair](../../patches/0002-block-fix-elevator-exit-recursion.patch) changes the call and export to `__elevator_exit`. [Source hashes and diagnostic provenance](../raw/2026-11-12-build/09-block-teardown-defect.json) record the original bytes. It passes patch preflight against both source checkouts. Both native builds then passed incremental rebuilds with this fix. Their symbol maps define and export `__elevator_exit`; the recursive export and diagnostic are absent.
+
+## Complete native builds and remaining defects
+
+[Artifact measurements](../raw/2026-11-12-build/13-native-build-artifacts.json) retain initial and repaired results, exact effective source trees, configuration hashes, module vermagic and file hashes. Both repaired images pass gzip CRC/payload checks, identify as AArch64 and contain an embedded configuration exactly matching the corresponding output `.config`.
+
+| Build-only configuration | Repaired `Image.gz` bytes | Modules | Scope |
+| --- | ---: | ---: | --- |
+| Candidate defconfig + non-LTO/CFI fragment | 14,767,667 | 3 | Debug information retained; block teardown and sidecar repairs |
+| Stock-derived Halium + local signing + non-LTO/CFI + no debug information | 15,133,725 | 4 | AppArmor, block teardown, sidecar and display/clock lifetime repairs |
+
+The non-HKRR sidecar rule wrote its dummy input into a different path from its declared target, producing `cat: hkrr.img: No such file or directory` despite make exiting 0. [The one-line target repair](../../patches/0003-build-fix-dummy-hkrr-target.patch) makes the rule write `$@`; the diagnostic disappears. The real kernel image was independently verified rather than inferred from make's exit status.
+
+Verbose modpost inspection exposed two relevant lifetime defects. `lcdkit_probe()` explicitly returns `-EPROBE_DEFER` and remains installed in a registered platform driver, but its code was marked `__init`. The persistent PLL probe also calls `hs_clk_base()`, marked `__init`. [The two-line lifetime repair](../../patches/0004-fix-display-and-clock-init-lifetimes.patch) retains those functions and preserves the LCD source's CRLF bytes. The complete Halium rebuild passes; section mismatches decrease from 32 to 30. This is static lifetime correction plus compilation, without display or clock runtime validation.
+
+Remaining warnings are substantive follow-up work:
+
+- [Thirty section mismatches](../raw/2026-11-12-build/15-remaining-section-mismatches.log) include early reserved-memory callbacks and additional registered drivers. Classify their call lifetimes before changing annotations.
+- `g_ast_tx_complete_stat` is exported by both compiled legacy Hi1102 and Hi1102A objects. Do not choose a Wi-Fi variant from this collision or from configuration alone.
+- Six exports lack generated CRCs. [Source inspection](../raw/2026-11-12-build/16-source-warning-analysis.json) associates them with weak CRC declarations in shipped assembly whose corresponding C files are absent. The assembly and CRCs are unchanged. Its structure-layout assumptions remain unvalidated for a changed configuration.
+
+Four Halium modules were staged under an explicit external `INSTALL_MOD_PATH`. [Offline verification](../raw/2026-11-12-build/14-module-signature-validation.json) confirms SHA-512 CMS signatures against the newly generated development certificate. Payload tampering, truncation and a different certificate are rejected by [the verifier](../../scripts/verify-module-signature.py). Modern depmod warns about absent `modules.builtin.modinfo`, which this 4.14 tree does not generate; installation still exits 0. No module was loaded, and no Huawei-module compatibility is established.
 
 ## Reproduction
 
@@ -63,7 +86,7 @@ python3 scripts/verify-findings.py
 
 For the LLD experiment, apply the linked build patch to a separate source checkout and set `LTO_LINKER=lld` for the recipe. [development-signing.config](../../configs/development-signing.config) records the standalone signing probe; keys stay in the external build output. [candidate-nolto.config](../../configs/candidate-nolto.config) is the separately labelled resource diagnostic, which changes kernel hardening.
 
-For the stock-derived Halium resource probe, first apply the AppArmor patches to a separate source checkout with `scripts/apply-apparmor.sh`. Use an empty output directory:
+For the repaired stock-derived Halium resource probe, first apply the AppArmor patches to a separate source checkout with `scripts/apply-apparmor.sh`, followed by patches 0002, 0003 and 0004. Patch 0004 preserves CRLF context; use `git -c core.whitespace=cr-at-eol apply --check --whitespace=error-all PATCH` for its preflight. Use an empty output directory:
 
 ```bash
 bash scripts/kernel-baseline.sh SOURCE OUTPUT CLANG_DIR GCC_DIR stock-config findings/raw/2026-11-11/08-stock-kernel.config
@@ -72,5 +95,17 @@ JOBS=1 bash scripts/kernel-baseline.sh SOURCE OUTPUT CLANG_DIR GCC_DIR build
 ```
 
 `merge-config` preserves its input as `pre-fragment.config`, runs the vendor merge helper with failure propagation from a writable directory, normalizes with the recipe's tool flags and verifies the requested values. Only the two explicitly disabled CFI children may disappear under non-LTO dependencies. Its report contains hashes and fragment basenames. [An executed reproduction](../raw/2026-11-12-build/11-fragment-reproduction.json) produced the active Halium probe's exact config SHA-256, `b7707e0d2dcf5a7a82264f39d6ec18880000ed559a5b605ccaeb62a4f7878155`.
+
+After building, inspect the image and stage modules into a separate directory. Keep the generated private key outside this repository:
+
+```bash
+gzip -t OUTPUT/arch/arm64/boot/Image.gz
+bash SOURCE/scripts/extract-ikconfig OUTPUT/arch/arm64/boot/Image.gz > CONFIG_COPY
+cmp OUTPUT/.config CONFIG_COPY
+bash scripts/kernel-baseline.sh SOURCE OUTPUT CLANG_DIR GCC_DIR modules-install ABSOLUTE_STAGING_DIRECTORY
+python3 scripts/verify-module-signature.py STAGED_MODULE.ko OUTPUT/certs/signing_key.x509
+```
+
+The install action retains the recipe's toolchain flags. Signature verification needs OpenSSL 3 and the public `.x509` certificate, never the combined key file. Build numbers are recorded for repaired artifacts; reproducing config bytes does not by itself promise identical binary hashes.
 
 No boot-image packaging, flashing, custom boot, display, touchscreen or Wi-Fi result is claimed.

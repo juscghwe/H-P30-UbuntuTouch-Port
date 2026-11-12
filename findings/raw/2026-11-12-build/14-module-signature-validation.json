@@ -1,0 +1,63 @@
+{
+  "origin": "Offline inspection of staged build modules; no loading or stock-module compatibility test",
+  "modules": [
+    {
+      "module_sha256": "daff507eee1508347b73074580d7c1a4a8bf1e3205539012e84bac3f141b95eb",
+      "certificate_file_sha256": "b80b7e3d417b0c513f648295893688cd739ba740920907413d6c143e2ae74a35",
+      "unsigned_payload_bytes": 16264,
+      "signature_bytes": 681,
+      "signature_verified_against_supplied_certificate": true,
+      "scope": "Offline CMS signature and explicit certificate trust; no module loading, kernel-policy or ABI test",
+      "path": "lib/modules/4.14.116+/kernel/crypto/crypto_engine.ko",
+      "sig_hashalgo": "sha512",
+      "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64"
+    },
+    {
+      "module_sha256": "7b0c232232cb08fce86ad2db6d6ae56b45b98e747e561460b3758d0b514aef33",
+      "certificate_file_sha256": "b80b7e3d417b0c513f648295893688cd739ba740920907413d6c143e2ae74a35",
+      "unsigned_payload_bytes": 34728,
+      "signature_bytes": 681,
+      "signature_verified_against_supplied_certificate": true,
+      "scope": "Offline CMS signature and explicit certificate trust; no module loading, kernel-policy or ABI test",
+      "path": "lib/modules/4.14.116+/kernel/drivers/crypto/virtio/virtio_crypto.ko",
+      "sig_hashalgo": "sha512",
+      "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64"
+    },
+    {
+      "module_sha256": "98114b83fe6957ef9858fb1576873cc00dd788234cfb0c34dc92da43396c0efa",
+      "certificate_file_sha256": "b80b7e3d417b0c513f648295893688cd739ba740920907413d6c143e2ae74a35",
+      "unsigned_payload_bytes": 4064,
+      "signature_bytes": 681,
+      "signature_verified_against_supplied_certificate": true,
+      "scope": "Offline CMS signature and explicit certificate trust; no module loading, kernel-policy or ABI test",
+      "path": "lib/modules/4.14.116+/kernel/drivers/hisi/hisi_dummy_ko/hisi_dummy_ko.ko",
+      "sig_hashalgo": "sha512",
+      "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64"
+    },
+    {
+      "module_sha256": "4b38bf738ba896cf86455b81bc7e7692f620fa6cbd47518b96764dc0d30a597c",
+      "certificate_file_sha256": "b80b7e3d417b0c513f648295893688cd739ba740920907413d6c143e2ae74a35",
+      "unsigned_payload_bytes": 35808,
+      "signature_bytes": 681,
+      "signature_verified_against_supplied_certificate": true,
+      "scope": "Offline CMS signature and explicit certificate trust; no module loading, kernel-policy or ABI test",
+      "path": "lib/modules/4.14.116+/kernel/net/bridge/br_netfilter.ko",
+      "sig_hashalgo": "sha512",
+      "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64"
+    }
+  ],
+  "all_signatures_verified": true,
+  "all_sha512": true,
+  "modules_install_exit": 0,
+  "depmod_warning": "Modern depmod could not open modules.builtin.modinfo, which this 4.14 build does not provide; staging and signature verification still completed.",
+  "verifier_fixture_checks": {
+    "generated_signed_ELF": "accepted",
+    "payload_tamper": "rejected",
+    "truncated_trailer": "rejected",
+    "wrong_public_certificate": "rejected"
+  },
+  "public_modules_install_recipe": {
+    "exit": 0,
+    "four_staged_module_bytes_match_previous_verified_staging": true
+  }
+}

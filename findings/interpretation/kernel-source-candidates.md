@@ -1,6 +1,6 @@
 # Kernel-source comparison
 
-Initial static inspection on 2026-11-12. Comparisons use the stock 4.14.116 configuration, not a claim that either tree is the exact Huawei release for MAR-LX1A. Subsequent [executed validation](baseline-build.md) confirms Kconfig parsing and records the baseline compilation attempt.
+Initial static inspection on 2026-11-12. Comparisons use the stock 4.14.116 configuration, not a claim that either tree is the exact Huawei release for MAR-LX1A. Subsequent [executed validation](baseline-build.md) confirms Kconfig parsing and complete native kernel/module builds.
 
 ## Candidates
 
@@ -21,10 +21,10 @@ The Enjoy 10 tree is the stronger **candidate for further inspection**. It is a 
 
 ## Gaps before choosing a build base
 
-1. Inspect source coverage for the 35 stock-only config entries. They include charging, audio, touchscreen and security settings; some missing entries may result from disabled parent options rather than missing code. The 13 changed shared entries include battery identification/temperature, charger options and module signing. Do not apply the candidate defconfig unchanged.
-2. Locate the actual Marie board data. The inspected `arch/arm64/boot/dts/hisilicon` directory contained reference-board files, not an identified P30 Lite board description. This limited directory inspection does not prove board data is absent elsewhere. Stock DTB/DTBO and image packaging still need investigation.
+1. The 35 stock-only entries split into 17 defined symbols and 18 missing definitions. Full stock normalization exposes 65 missing definitions, also absent from the comparison tree. Review the [complete coverage and build results](baseline-build.md), especially power, audio and security gaps; do not apply the candidate defconfig unchanged.
+2. Locate actual Marie board data. Whole-tree preferred-source text inspection found no identified Marie/HWMAR/MARI69110 board description. The comparison tree's selected-marker search under `arch/` and `drivers/` also found none. [Stock DTB/DTBO and image metadata](peripheral-integration.md#board-data-and-image-packaging) remain necessary.
 3. Kconfig parsing now passes without source changes. The literal `-source` lines are Huawei's supported optional-include extension; see [the executed validation](baseline-build.md). No parser correction is required.
-4. Validate the documented toolchain and a baseline build before Halium changes. The Enjoy 10 README names Clang `r353983c` plus GCC `aarch64-linux-android-4.9`; the older candidate names Clang `r346389c`. These are upstream instructions, not tested host setup or a reproducible build result.
+4. Clang `r353983c` plus GCC `aarch64-linux-android-4.9` now pass complete native candidate and Halium-probe builds. Full-LTO/CFI linking remains unresolved within the measured resource limit. This validates an offline research build, not MAR-LX1A compatibility. The older candidate's Clang `r346389c` has not been build-tested.
 5. Resolve module compatibility deliberately. Stock enables forced signatures and versioning; an independently built kernel cannot simply be assumed to accept existing Huawei modules. No Huawei signing key is available.
 
 ## Existing port recipes

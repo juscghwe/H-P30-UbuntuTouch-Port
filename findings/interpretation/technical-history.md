@@ -21,3 +21,9 @@
 - Static configuration comparison identifies the pinned Enjoy 10 4.14.116 source as closer than the older Kirin710 candidate. Only selected source files and two defconfigs were retrieved for that comparison; no complete source checkout or compile was performed.
 - The empty Wi-Fi property search suppressed errors and cannot identify the chip or prove the property absent.
 - HiSuite-Proxy issue #94 records P30 Lite Android-9 downgrade failures. Its later success report concerns a P20 Pro, not a P30 Lite.
+
+## Executed source/build validation: 2026-11-12
+
+- The complete pinned Enjoy 10 tree was reconstructed and hash-verified, then built with its documented Clang r353983c and Android GCC 4.9 tools. Candidate and stock-derived Kconfig parsing pass; Huawei's `-source` syntax needs no repair.
+- Native candidate and Halium-probe images/modules compile with LTO/CFI disabled after full-LTO memory failures. Embedded configs and image integrity pass; four staged Halium modules pass development-certificate signature verification. No binary is offered as flash-ready.
+- Small block teardown, dummy sidecar and display/clock lifetime repairs pass incremental builds. Thirty section mismatches, duplicate Wi-Fi exports, unversioned assembly exports and missing stock/Marie source data remain documented. See [build evidence and limits](baseline-build.md).

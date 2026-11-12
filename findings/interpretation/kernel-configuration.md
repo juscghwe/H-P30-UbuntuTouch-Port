@@ -26,12 +26,12 @@ Stock disables `NAMESPACES`, `SYSVIPC`, `FHANDLE` and `VT`. The current UBports 
 
 `MODULE_SIG_FORCE=y`, `MODVERSIONS=y`, `MODULE_SIG_ALL=y`, and the generic signing-key filename `huawei_signing_key.pem` are present. The key itself was not provided and is not in this repository. The filename is an ordinary build setting, not a private key.
 
-An unchanged stock module is not guaranteed to load into a rebuilt kernel even if the release string is identical. Signature policy, symbol versions, configuration and vendor ABI all matter. Prefer building matching modules from the matching source, or deliberately building the needed driver in after validating its initialization requirements. These are future engineering choices; neither approach has been tested.
+An unchanged stock module is not guaranteed to load into a rebuilt kernel even if the release string is identical. Signature policy, symbol versions, configuration and vendor ABI all matter. Four modules now [compile and pass offline signature verification](baseline-build.md) with a new local development certificate; none was loaded. The candidate builds Hi110x objects in through vendor Makefile controls despite literal `m` entries. Neither result establishes compatibility with the phone's stock modules or active Wi-Fi hardware.
 
 ## Source and toolchain selection
 
 Kernel version equality alone does not establish source compatibility. Validate the board device trees, Huawei drivers, build scripts, config symbols, generated headers, and external modules against the captured configuration. The first milestone is a reproducible compatible kernel build; then add minimal porting changes incrementally.
 
-No known-good source revision or compiler has been selected. Do not substitute a generic mainline kernel or a P30/P30 Pro Kirin 980 tree. After a downgrade, recapture the running configuration and align source/vendor components with the firmware actually retained.
+The documented source/toolchain pair now produces offline research images, but no device-validated pair has been selected. Do not substitute a generic mainline kernel or a P30/P30 Pro Kirin 980 tree. After any firmware change, recapture the running configuration and align source/vendor components with the firmware actually retained.
 
 Reference: [UBports building the kernel](https://docs.ubports.com/en/latest/porting/build_and_boot/standalone_kernel_build.html).

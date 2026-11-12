@@ -75,7 +75,7 @@
       "debug_info": true,
       "LTO": false,
       "CFI": false,
-      "stage": "Native AArch64 object compilation running"
+      "stage": "Initial full Image.gz/modules build completed, exit 0; separate repaired artifact record in 13-native-build-artifacts.json"
     },
     "stock_derived_halium": {
       "source_commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
@@ -109,7 +109,7 @@
         "CONFIG_CFI_CLANG_SHADOW"
       ],
       "hardening_change": "Offline resource diagnostic: LTO and CFI disabled; forced module signatures and versioning remain enabled. No device validation.",
-      "stage": "Full Image.gz/modules build running, one compile job"
+      "stage": "Initial full Image.gz/modules build completed, exit 0; separate repaired artifact record in 13-native-build-artifacts.json"
     }
   }
 }
