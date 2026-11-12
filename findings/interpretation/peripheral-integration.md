@@ -30,6 +30,14 @@ The Marie recovery reference uses a dummy kernel and separately configured recov
 
 Legitimate next inputs are a readable runtime FDT/DT subtree, or original kernel/DTB/DTBO/ramdisk images from a matching official Huawei update package already obtained for this handset. A live FDT may contain bootloader edits and does not replace the original DTB/DTBO inventory. Preserve original files and hashes privately, inspect selected board properties, and determine the split kernel/ramdisk and DT packaging from actual headers and partition metadata. Do not publish raw DT data without reviewing serial/MAC properties. No firmware or block-device image has been acquired from this phone during source validation.
 
+[inspect-image.py](../../scripts/inspect-image.py) provides a read-only first pass over a regular image file. It reports SHA-256, numeric Android boot v0–v2 fields and component bounds/hashes, Android DT-table v0 entries, or FDT v17-compatible header bounds. It omits boot command lines, image names and DT properties. Unknown formats remain unknown; it does not infer a Huawei-specific layout, validate AVB signatures, extract data or generate flashable images.
+
+```bash
+python3 scripts/inspect-image.py ORIGINAL_IMAGE > reviewed-header.json
+```
+
+The implementation follows the AOSP [boot-header](https://source.android.com/docs/core/architecture/bootloader/boot-image-header) and [DT-table](https://source.android.com/docs/core/architecture/dto/partitions) specifications. Ten generated-fixture checks cover legacy headers, DT bounds, malformed/truncated inputs, unchanged input hashes and omission of embedded names/command lines. [Results](../raw/2026-11-12-build/08-image-inspector-validation.json) are host-tool validation, not inspection of an actual Huawei stock image.
+
 ## Small read-only collection set
 
 Run from the Windows Platform-Tools directory with Android booted. These commands do not reboot, write sysfs, request root, read block contents or change firmware. Preserve errors; review paths and output before sharing.

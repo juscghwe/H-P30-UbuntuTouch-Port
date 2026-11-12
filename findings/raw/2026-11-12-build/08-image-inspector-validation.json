@@ -1,0 +1,66 @@
+{
+  "origin": "Generated host-side format fixtures, not phone images",
+  "cases": [
+    {
+      "test": "boot-v0.img",
+      "passed": true,
+      "input_sha256": "128d7f72e9ac7cb6c68bf825327643b318614a55f6265ba4560ca9f60ad51f91",
+      "exit": 0
+    },
+    {
+      "test": "boot-v1.img",
+      "passed": true,
+      "input_sha256": "2b257302e8d109bdc7c8b5bc2d2626960390f631367f0aa2ebc1532ad2ec7959",
+      "exit": 0
+    },
+    {
+      "test": "boot-v2.img",
+      "passed": true,
+      "input_sha256": "fcb90120ad59f16b3b12d9bb9083df10d99918817d24b92e9b7afbbea99eef56",
+      "exit": 0
+    },
+    {
+      "test": "fdt.dtb",
+      "passed": true,
+      "input_sha256": "e6ae4388a46e546fffa9be376f253b43af1a3f7293c0933d57ad2b21ddc20e37",
+      "exit": 0
+    },
+    {
+      "test": "dt-table.img",
+      "passed": true,
+      "input_sha256": "897405470d3d32ade6e54707f3465d78a8da57012edbee207ae7835e9ddfb852",
+      "exit": 0
+    },
+    {
+      "test": "overlapping-dt.img",
+      "passed": true,
+      "input_sha256": "4c479ddd9f368102fdc34bd6683864dd83cb93e5ada0f9cafb34c12ae9e79426",
+      "exit": 1
+    },
+    {
+      "test": "oversized-kernel.img",
+      "passed": true,
+      "input_sha256": "ef38694c72ef5fb8be4c251fbd003c38a5b56d6b34f5438ec45b8d765ea2bb29",
+      "exit": 1
+    },
+    {
+      "test": "invalid-page.img",
+      "passed": true,
+      "input_sha256": "5f308bf2f2cffcd033c75e6e640d2a6fc66055660a7da1628edef7a2a777c94c",
+      "exit": 1
+    },
+    {
+      "test": "truncated-header.img",
+      "passed": true,
+      "input_sha256": "5034158a54e6dc62285885af4f3d8fc293988ceb8dcaea3dd2821392c9a9ee44",
+      "exit": 1
+    },
+    {
+      "test": "unrecognized.img",
+      "passed": true,
+      "input_sha256": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+      "exit": 0
+    }
+  ],
+  "scope": "Checks legacy Android layouts, DT table bounds, FDT header, rejection paths, input immutability and omission of command lines/names. No actual Huawei image has been inspected."
+}

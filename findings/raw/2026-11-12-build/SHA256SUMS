@@ -5,3 +5,4 @@ bbfa5d9d43d8bf3201a9c665ceb30cbb1ae8ee92776ca1e6aa4c94223c3e90e5  03-stock-norma
 e2d88ca20662a2721be6899078b77069969d4d804e94c9bdcf0cfbf505105d9e  05-peripheral-source-trace.json
 238cf2781ee664eddad33cbc2877a215fcec58210f2a1a92362d9c60c3d023d0  06-build-stage-excerpts.log
 21d4d40d6d3e5e7f2f52019ef6070b91e9fb86dcbd18c2d439c786e22890b880  07-build-and-port-probes.json
+56fa4ee973ceae1f12148ee13ed2861e27b9dd3937a2180cdb5785de88a8149e  08-image-inspector-validation.json
