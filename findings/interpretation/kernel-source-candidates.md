@@ -1,6 +1,6 @@
 # Kernel-source comparison
 
-Read-only inspection on 2026-11-12. No kernel or Kconfig build has been run. Comparisons use the owner's stock 4.14.116 configuration, not a claim that either tree is the exact Huawei release for MAR-LX1A.
+Initial static inspection on 2026-11-12. Comparisons use the stock 4.14.116 configuration, not a claim that either tree is the exact Huawei release for MAR-LX1A. Subsequent [executed validation](baseline-build.md) confirms Kconfig parsing and records the baseline compilation attempt.
 
 ## Candidates
 
@@ -23,7 +23,7 @@ The Enjoy 10 tree is the stronger **candidate for further inspection**. It is a 
 
 1. Inspect source coverage for the 35 stock-only config entries. They include charging, audio, touchscreen and security settings; some missing entries may result from disabled parent options rather than missing code. The 13 changed shared entries include battery identification/temperature, charger options and module signing. Do not apply the candidate defconfig unchanged.
 2. Locate the actual Marie board data. The inspected `arch/arm64/boot/dts/hisilicon` directory contained reference-board files, not an identified P30 Lite board description. This limited directory inspection does not prove board data is absent elsewhere. Stock DTB/DTBO and image packaging still need investigation.
-3. Run Kconfig parsing before a full compile. Both inspected trees contain literal `-source` lines in `drivers/connectivity/hi11xx/Kconfig`; these are an apparent source issue requiring validation. No parser failure has been demonstrated and no correction has been made.
+3. Kconfig parsing now passes without source changes. The literal `-source` lines are Huawei's supported optional-include extension; see [the executed validation](baseline-build.md). No parser correction is required.
 4. Validate the documented toolchain and a baseline build before Halium changes. The Enjoy 10 README names Clang `r353983c` plus GCC `aarch64-linux-android-4.9`; the older candidate names Clang `r346389c`. These are upstream instructions, not tested host setup or a reproducible build result.
 5. Resolve module compatibility deliberately. Stock enables forced signatures and versioning; an independently built kernel cannot simply be assumed to accept existing Huawei modules. No Huawei signing key is available.
 

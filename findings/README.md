@@ -37,6 +37,7 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 - [Device and hardware assessment](interpretation/device-and-hardware.md)
 - [Kernel configuration assessment](interpretation/kernel-configuration.md)
 - [Kernel source candidates and remaining validation](interpretation/kernel-source-candidates.md)
+- [Executed Kconfig validation and baseline build](interpretation/baseline-build.md)
 - [Technical checkpoints and corrections](interpretation/technical-history.md)
 - [Collection commands and limitations](interpretation/collection-methods.md)
 - [Unlock and porting plan](interpretation/next-steps.md)

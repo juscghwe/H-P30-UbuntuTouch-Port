@@ -1,0 +1,4 @@
+b61fa8a0d7d21a654296454383699ce6c0b7ba207ccd64a6cec778ef6e54d428  01-source-and-config-validation.json
+957eb3cf72e76d03b177b1ac096ede03669c516b224aa3f2e7b66672283e9ff0  02-stock-defconfig-coverage.json
+bbfa5d9d43d8bf3201a9c665ceb30cbb1ae8ee92776ca1e6aa4c94223c3e90e5  03-stock-normalization.json
+0fe8f4d31287ad28aba7273a8828cadcb72389bf4f3611a3430f54c025fb780a  04-kconfig.log

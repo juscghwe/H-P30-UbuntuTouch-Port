@@ -1,0 +1,23 @@
+Origin: executed candidate configuration command; paths generalized. Exit status: 0.
+make: Entering directory '<source>'
+make[1]: Entering directory '<output>'
+  HOSTCC  scripts/basic/fixdep
+  GEN     <output>/Makefile
+  HOSTCC  scripts/kconfig/conf.o
+  SHIPPED scripts/kconfig/zconf.tab.c
+  SHIPPED scripts/kconfig/zconf.lex.c
+  HOSTCC  scripts/kconfig/zconf.tab.o
+  HOSTLD  scripts/kconfig/conf
+drivers/huawei_platform/blpwm/Kconfig:1:warning: ignoring unsupported character '
+'
+drivers/huawei_platform/blpwm/Kconfig:2:warning: ignoring unsupported character '
+'
+drivers/huawei_platform/blpwm/Kconfig:3:warning: ignoring unsupported character '
+'
+drivers/huawei_platform/blpwm/Kconfig:4:warning: ignoring unsupported character '
+'
+#
+# configuration written to .config
+#
+make[1]: Leaving directory '<output>'
+make: Leaving directory '<source>'

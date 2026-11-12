@@ -7,3 +7,5 @@ Start with [findings](findings/README.md). Evidence is separated into sanitized 
 **Current status:** stock Android is accessible over ADB and fastboot; the bootloader is locked. An official HiSuite rollback to EMUI 10 has been offered, but completion and a subsequent EMUI 9.1 route have not been reported. As of 2026-11-12 the owner requests software-only research; no verified complete unlock sequence for the current .262 firmware has been established. No custom kernel has been built, flashed or boot-tested in this investigation.
 
 This repository currently contains documentation and configuration evidence, not an installable port. The target is the **P30 Lite**, not the Kirin 980 P30/P30 Pro.
+
+The pinned research candidate now passes [Kconfig validation](findings/interpretation/baseline-build.md). Baseline compilation with the documented legacy toolchain is in progress; source completeness and device compatibility remain unverified.

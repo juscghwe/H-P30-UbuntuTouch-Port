@@ -1,0 +1,428 @@
+{
+  "origin": "Generated static comparison, not phone output",
+  "source_commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+  "method": "Literal explicit values; absent symbols are not disabled values. Definition search does not evaluate dependencies or prove active hardware.",
+  "stock_sha256": "16623939098e19212e0f66b9117a45f3e8bf1f05d4ccb00138a1a372d11ccc5b",
+  "candidate_sha256": "70445162fbb2b1acc50c820fd901c41ef65993d44503c0f74c73862e06b5acd6",
+  "stock_symbols": 5312,
+  "candidate_symbols": 5278,
+  "common_symbols": 5277,
+  "equal_common_symbols": 5264,
+  "differences": [
+    {
+      "symbol": "CONFIG_CRYPTO_RSA",
+      "stock": "y",
+      "candidate": "n",
+      "definitions": [
+        {
+          "path": "crypto/Kconfig",
+          "line": 115
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_HIFI_VIR_DAI",
+      "stock": "y",
+      "candidate": "n",
+      "definitions": [
+        {
+          "path": "drivers/huawei_platform/audio/hifi_vir_dai/Kconfig",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_HUAWEI_BATTERY_TEMP",
+      "stock": "y",
+      "candidate": "n",
+      "definitions": [
+        {
+          "path": "drivers/hwpower/cc_battery/battery_temp/Kconfig",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_HUAWEI_BATTERY_TYPE_IDENTIFY",
+      "stock": "y",
+      "candidate": "n",
+      "definitions": [
+        {
+          "path": "drivers/hwpower/cc_battery/battery_type_identify/Kconfig",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_HUAWEI_TP_KIT_COLOR_INFO",
+      "stock": "y",
+      "candidate": "n",
+      "definitions": [
+        {
+          "path": "drivers/devkit/tpkit/Kconfig",
+          "line": 55
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_HW_BOOSTER",
+      "stock": "y",
+      "candidate": "n",
+      "definitions": [
+        {
+          "path": "drivers/hwnet/booster/Kconfig",
+          "line": 1
+        },
+        {
+          "path": "include/hwnet/booster/Kconfig",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_MODULE_SIG",
+      "stock": "y",
+      "candidate": "n",
+      "definitions": [
+        {
+          "path": "init/Kconfig",
+          "line": 2097
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_ONEWIRE_PHY_PL061_GPIO",
+      "stock": "y",
+      "candidate": "n",
+      "definitions": [
+        {
+          "path": "drivers/huawei_platform/power/battery/battery_ct/onewire/Kconfig",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_ONEWIRE_PHY_PL061_GPIO_V2",
+      "stock": "y",
+      "candidate": "n",
+      "definitions": [
+        {
+          "path": "drivers/huawei_platform/power/battery/battery_ct/onewire/Kconfig",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_SC8545",
+      "stock": "y",
+      "candidate": "n",
+      "definitions": [
+        {
+          "path": "drivers/hwpower/cc_hardware_ic/switch_capacitor/Kconfig",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_SM5450",
+      "stock": "y",
+      "candidate": "n",
+      "definitions": [
+        {
+          "path": "drivers/hwpower/cc_hardware_ic/switch_capacitor/Kconfig",
+          "line": 58
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_SYSTEM_DATA_VERIFICATION",
+      "stock": "y",
+      "candidate": "n",
+      "definitions": [
+        {
+          "path": "init/Kconfig",
+          "line": 1970
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_SYSTEM_TRUSTED_KEYRING",
+      "stock": "y",
+      "candidate": "n",
+      "definitions": [
+        {
+          "path": "certs/Kconfig",
+          "line": 18
+        }
+      ]
+    }
+  ],
+  "stock_only": [
+    {
+      "symbol": "CONFIG_D2D_PROTOCOL",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_DM_ANDROID_VERITY",
+      "stock": "n",
+      "definitions": [
+        {
+          "path": "drivers/md/Kconfig",
+          "line": 575
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_DPU_ULTR_LOW_CLK_RATE",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HIMAX_ZF_TS_KIT_64",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HISI_CAMERA_SGM3785",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HL7139",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HMDFS_LOW_LATENCY",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HMDFS_XATTR_NOSECURITY_SUPPORT",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HUAWEI_MULTI_BATT_TEMP",
+      "stock": "n",
+      "definitions": [
+        {
+          "path": "drivers/hwpower/cc_battery/battery_temp/Kconfig",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_HUAWEI_MULTI_BTB_TEMP",
+      "stock": "y",
+      "definitions": [
+        {
+          "path": "drivers/hwpower/cc_battery/battery_temp/Kconfig",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_HWEVEXT_CODEC_INTERFACE",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HWEVEXT_CODEC_MODULE",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HWEVEXT_CODEC_V1",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HWEVEXT_EXTERN_ADC",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HWEVEXT_I2C_OPS",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HWEVEXT_MBHC",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_KSWAPD_DEBUG",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_MODULE_SIG_ALL",
+      "stock": "y",
+      "definitions": [
+        {
+          "path": "init/Kconfig",
+          "line": 2122
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_MODULE_SIG_FORCE",
+      "stock": "y",
+      "definitions": [
+        {
+          "path": "init/Kconfig",
+          "line": 2115
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_MODULE_SIG_HASH",
+      "stock": "\"sha512\"",
+      "definitions": [
+        {
+          "path": "init/Kconfig",
+          "line": 2165
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_MODULE_SIG_KEY",
+      "stock": "\"huawei_signing_key.pem\"",
+      "definitions": [
+        {
+          "path": "certs/Kconfig",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_MODULE_SIG_SHA1",
+      "stock": "n",
+      "definitions": [
+        {
+          "path": "init/Kconfig",
+          "line": 2143
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_MODULE_SIG_SHA224",
+      "stock": "n",
+      "definitions": [
+        {
+          "path": "init/Kconfig",
+          "line": 2147
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_MODULE_SIG_SHA256",
+      "stock": "n",
+      "definitions": [
+        {
+          "path": "init/Kconfig",
+          "line": 2151
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_MODULE_SIG_SHA384",
+      "stock": "n",
+      "definitions": [
+        {
+          "path": "init/Kconfig",
+          "line": 2155
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_MODULE_SIG_SHA512",
+      "stock": "y",
+      "definitions": [
+        {
+          "path": "init/Kconfig",
+          "line": 2159
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_OMNIVISION_TCM_TS_KIT",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_PKCS7_TEST_KEY",
+      "stock": "n",
+      "definitions": [
+        {
+          "path": "crypto/asymmetric_keys/Kconfig",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_PM_PEAK",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_SECONDARY_TRUSTED_KEYRING",
+      "stock": "n",
+      "definitions": [
+        {
+          "path": "certs/Kconfig",
+          "line": 60
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_SECURITY_INFO",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_SIGNED_PE_FILE_VERIFICATION",
+      "stock": "n",
+      "definitions": [
+        {
+          "path": "crypto/asymmetric_keys/Kconfig",
+          "line": 57
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_SYSTEM_EXTRA_CERTIFICATE",
+      "stock": "n",
+      "definitions": [
+        {
+          "path": "certs/Kconfig",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_SYSTEM_TRUSTED_KEYS",
+      "stock": "\"\"",
+      "definitions": [
+        {
+          "path": "certs/Kconfig",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_TOPN_MEMINFO_DUMP",
+      "stock": "y",
+      "definitions": []
+    }
+  ],
+  "candidate_only": [
+    {
+      "symbol": "CONFIG_HUAWEI_MEMINFO_DUMP",
+      "candidate": "y"
+    }
+  ]
+}

@@ -1,0 +1,355 @@
+{
+  "origin": "Generated static comparison, not phone output",
+  "source_commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+  "method": "Literal explicit values; absent symbols are not disabled values. Definition search does not evaluate dependencies or prove active hardware.",
+  "stock_sha256": "16623939098e19212e0f66b9117a45f3e8bf1f05d4ccb00138a1a372d11ccc5b",
+  "candidate_sha256": "e831123f47cdc75239a90ac239c7dc36d923ba6261e8cf1b3bb09d349bd4a553",
+  "stock_symbols": 5312,
+  "candidate_symbols": 5247,
+  "common_symbols": 5246,
+  "equal_common_symbols": 5246,
+  "differences": [],
+  "stock_only": [
+    {
+      "symbol": "CONFIG_ARPP",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_COMMON_FREQDUMP_PLATFORM",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_COMMON_LOADMONITOR_PLATFORM",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_CORESIGHT",
+      "stock": "n",
+      "definitions": [
+        {
+          "path": "drivers/hwtracing/coresight/Kconfig",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "symbol": "CONFIG_D2D_PROTOCOL",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_DPM_PLATFORM_EARTH",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_DPM_PLATFORM_JUPITER",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_DPM_PLATFORM_LUNA",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_DPM_PLATFORM_MARS",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_DPM_PLATFORM_MERCURY",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_DPM_PLATFORM_PLUTO",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_DPM_PLATFORM_SATURN",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_DPM_PLATFORM_URANUS",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_DPM_PLATFORM_VENUS",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_DPU_ULTR_LOW_CLK_RATE",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_ENABLE_MIDEA_MONITOR",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_FREQDUMP_PLATFORM",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_FREQDUMP_PLATFORM_VENUS",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_GATOR",
+      "stock": "m",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HIMAX_ZF_TS_KIT_64",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HISI_CAMERA_SGM3785",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HISI_DDRC_KERNEL_CODE_PROTECTION",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HISI_LPM3_DEBUG",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HISI_PERF_STAT",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HISI_PERF_STAT64",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HISI_TCPC",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HISI_TCPC_DEBUG",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HISI_TCPC_HI6526",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HISI_USB_TYPEC",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HISI_USB_TYPEC_DBG",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HISI_WATCHPOINT_CB",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HL7139",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HMDFS_LOW_LATENCY",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HMDFS_XATTR_NOSECURITY_SUPPORT",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HUAWEI_EIMA",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HUAWEI_EIMA_ACCESS_CONTROL",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HUAWEI_ENG_EIMA",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HUAWEI_ROOT_SCAN_DUMMY_API",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HWEVEXT_CODEC_INTERFACE",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HWEVEXT_CODEC_MODULE",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HWEVEXT_CODEC_V1",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HWEVEXT_EXTERN_ADC",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HWEVEXT_I2C_OPS",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HWEVEXT_MBHC",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_HW_ROOT_SCAN_RODATA_MEASUREMENT_API",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_KSWAPD_DEBUG",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_NPU_DEVDRV",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_NPU_PM",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_OMNIVISION_TCM_TS_KIT",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_PLATFORM_TELE_MNTN",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_PM_PEAK",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_SECURITY_INFO",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_SND_SOC_ASP_CODEC_V1",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_TCPC_VSAFE0V_DETECT_SUPPORT",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_TEE_ANTIROOT_CLIENT",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_TEE_ANTIROOT_CLIENT_ENG_DEBUG",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_TEE_KERNEL_MEASUREMENT_API",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_TOPN_MEMINFO_DUMP",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_TYPEC_CAP_CUSTOM_SRC_SUPPORT",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_TYPEC_CAP_DBGACC_SNK_SUPPORT",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_USB_PD_ALT_MODE_DFP_SUPPORT",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_USB_PD_ALT_MODE_SUPPORT",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_USB_PD_CUSTOM_DBGACC_SUPPORT",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_USB_PD_REV30",
+      "stock": "n",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_USB_PD_UVDM_SUPPORT",
+      "stock": "y",
+      "definitions": []
+    },
+    {
+      "symbol": "CONFIG_USB_POWER_DELIVERY_SUPPORT",
+      "stock": "y",
+      "definitions": []
+    }
+  ],
+  "candidate_only": [
+    {
+      "symbol": "CONFIG_HUAWEI_MEMINFO_DUMP",
+      "candidate": "n"
+    }
+  ]
+}

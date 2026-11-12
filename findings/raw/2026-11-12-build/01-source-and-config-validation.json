@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-12",
+  "origin": "Source archive verification and executed host-side Kconfig tests; no phone access or boot test",
+  "source": {
+    "url": "https://github.com/yuioto/android_kernel_huawei_art-al00x",
+    "commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+    "tree": "2d661ac5023d56fd2e8b60f9803042158fc65757",
+    "archive_url": "https://codeload.github.com/yuioto/android_kernel_huawei_art-al00x/tar.gz/c1e2747d8e839bedaa71a6436d24a51285d98509",
+    "archive_sha256": "bbfb21b73cdfdd3f2049d454ffe8be4346c50203fa39fc18e341c40b0c199622",
+    "verification": "Archive PAX commit pin, complete reconstructed Git tree, and recovered upstream commit object match GitHub Git metadata. This is reconstruction from the archive, not a successful Git clone or a retained prior checkout.",
+    "defconfig_sha256": "70445162fbb2b1acc50c820fd901c41ef65993d44503c0f74c73862e06b5acd6"
+  },
+  "toolchains": [
+    {
+      "name": "clang",
+      "upstream": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86",
+      "commit": "3f889f9c9d42bae85728fa89ba5f92a01704fd83",
+      "subdirectory": "clang-r353983c",
+      "archive_url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/3f889f9c9d42bae85728fa89ba5f92a01704fd83/clang-r353983c.tar.gz",
+      "archive_sha256": "3f896db454daec83cc87f3e2788e72bf9cc2ecf2b0805b14c31e6b3105d5391b",
+      "version": "Android clang 9.0.3 (5484270 based on r353983c)"
+    },
+    {
+      "name": "gcc",
+      "upstream": "https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9",
+      "commit": "84fb09fafc92a3d9b4d160f049d46c3c784cc941",
+      "subdirectory": "",
+      "archive_url": "https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/+archive/84fb09fafc92a3d9b4d160f049d46c3c784cc941.tar.gz",
+      "archive_sha256": "7626c796ff1d3c7941ac73f8d28998f5001f1656ad2d0a533685534500c63df7",
+      "version": "GCC 4.9.x 20150123 (prerelease); GNU gold 1.12 / binutils 2.27.0.20170315"
+    }
+  ],
+  "host_build_tools": {
+    "container_base": "Debian 12",
+    "make": "4.3",
+    "native_gcc": "12.2.0",
+    "bison": "3.8.2",
+    "flex": "2.6.4",
+    "openssl": "3.0.22",
+    "build_jobs": 2,
+    "memory_limit_gib": 6
+  },
+  "configurations": {
+    "candidate_pristine": {
+      "input": "arch/arm64/configs/merge_kirin710_defconfig",
+      "command": "scripts/kernel-baseline.sh SOURCE OUTPUT CLANG_DIR GCC_DIR configure",
+      "exit": 0,
+      "output_sha256": "f8b10ba6e50d0a6b7dbc33f8cd43d6f7ee36833ca89ef08e75c1eb78d617ccf3"
+    },
+    "stock_derived": {
+      "input_sha256": "16623939098e19212e0f66b9117a45f3e8bf1f05d4ccb00138a1a372d11ccc5b",
+      "command": "scripts/kernel-baseline.sh SOURCE STOCK_OUTPUT CLANG_DIR GCC_DIR stock-config STOCK_CONFIG",
+      "exit": 0,
+      "output_sha256": "e831123f47cdc75239a90ac239c7dc36d923ba6261e8cf1b3bb09d349bd4a553",
+      "note": "Normalized result is a derived configuration; original evidence is unchanged. No stock-derived compile result yet."
+    }
+  },
+  "baseline_build": "Started with candidate configuration and documented toolchain; result pending. Object compilation is not a complete kernel build."
+}
