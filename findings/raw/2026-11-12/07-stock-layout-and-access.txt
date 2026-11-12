@@ -52,3 +52,13 @@ lrwxrwxrwx 1 root root 21 2026-11-12 17:48 /dev/block/bootdevice/by-name/kernel 
 lrwxrwxrwx 1 root root 21 2026-11-12 17:48 /dev/block/bootdevice/by-name/ramdisk -> /dev/block/mmcblk0p21
 lrwxrwxrwx 1 root root 21 2026-11-12 17:48 /dev/block/bootdevice/by-name/recovery_ramdisk -> /dev/block/mmcblk0p50
 e6ad1811b63fdc422985a74b0e8cf8e8421a43cfe1fff4c91b2c586d7e351d1f  /vendor/firmware/ts/marie_synaptics_tcm_MARI69110.img
+
+--- Underlying block-node permissions and touch firmware metadata ---
+Command:
+.\adb.exe shell 'ls -l /dev/block/mmcblk0p21 /dev/block/mmcblk0p48 /dev/block/mmcblk0p52 /dev/block/mmcblk0p53 /vendor/firmware/ts/marie_synaptics_tcm_MARI69110.img'
+Output:
+brw------- 1 root root 179,  21 2026-11-12 17:48 /dev/block/mmcblk0p21
+brw------- 1 root root 179,  48 2026-11-12 17:48 /dev/block/mmcblk0p48
+brw------- 1 root root 179,  52 2026-11-12 17:48 /dev/block/mmcblk0p52
+brw------- 1 root root 179,  53 2026-11-12 17:48 /dev/block/mmcblk0p53
+-rw-r--r-- 1 root root   116817 2018-08-07 18:01 /vendor/firmware/ts/marie_synaptics_tcm_MARI69110.img

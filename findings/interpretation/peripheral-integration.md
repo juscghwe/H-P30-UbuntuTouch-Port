@@ -10,7 +10,7 @@ The firmware prefix is assembled from the product and chip names. The zeroflash 
 
 The pinned Iceows Marie recovery tree includes the same filename. Its blob is 116,817 bytes with SHA-256 `6a6290b715a49c88bde3bd17160d225bc18f649ad12f60f3b0cb3ac2b745d01c`. This is an **external artifact hash**, not a stock-phone measurement or permission to redistribute firmware. A phone-side hash can establish equality without uploading the binary. The recovery's touch HAL/service recipe is a reference, not proof those services are necessary for basic Linux input from this driver.
 
-The [subsequent stock-phone hash (E10)](../raw/2026-11-12/07-stock-layout-and-access.txt) is `e6ad1811b63fdc422985a74b0e8cf8e8421a43cfe1fff4c91b2c586d7e351d1f`. It differs from the recovery artifact despite the identical filename. Preserve the matching stock firmware; the reference blob is not a byte-identical substitute. The hash difference alone does not explain the firmware revision, compatibility or controller silicon.
+The [subsequent stock-phone hash (E10)](../raw/2026-11-12/07-stock-layout-and-access.txt) is `e6ad1811b63fdc422985a74b0e8cf8e8421a43cfe1fff4c91b2c586d7e351d1f`. It differs from the recovery artifact despite the identical filename and measured size of 116,817 bytes. The stock file has mode `0644`; the displayed 2018-08-07 timestamp is not used to infer its firmware release. Preserve the matching stock firmware; the reference blob is not a byte-identical substitute. The hash difference alone does not explain the firmware revision, compatibility or controller silicon.
 
 ## Wi-Fi linkage and initialization
 
@@ -44,7 +44,7 @@ E10 now supplies an actual named-partition map. Both `/dev/block/by-name` and `/
 | `erecovery_kernel` | `/dev/block/mmcblk0p45` |
 | `erecovery_ramdisk` | `/dev/block/mmcblk0p46` |
 
-These are owner-observed symlink targets, not proposed flashing commands. Separate names are confirmed; contents, image formats, sizes, offsets, read permissions on the underlying block nodes and a complete partition inventory remain unknown. In particular, `dts`/`dto` names alone do not prove standard DTB/DTBO encoding. Filesystem timestamps are not used to date firmware or infer an acquisition time.
+These are owner-observed symlink targets, not proposed flashing commands. The four primary underlying nodes (`p21`, `p48`, `p52`, `p53`) have mode `0600`, owner/group `root:root`, so an ordinary non-root ADB shell cannot read their contents. Symlink mode `0777` does not grant access through these restrictions. Image contents, formats, sizes, offsets and a complete partition inventory remain unknown. In particular, `dts`/`dto` names alone do not prove standard DTB/DTBO encoding. Filesystem timestamps are not used to date firmware or infer an acquisition time.
 
 Legitimate next inputs are a readable runtime FDT/DT subtree, or original kernel/DTB/DTBO/ramdisk images from a matching official Huawei update package already obtained for this handset. A live FDT may contain bootloader edits and does not replace the original DTB/DTBO inventory. Preserve original files and hashes privately, inspect selected board properties, and determine the split kernel/ramdisk and DT packaging from actual headers and partition metadata. Do not publish raw DT data without reviewing serial/MAC properties. No firmware or block-device image has been acquired from this phone during source validation.
 
