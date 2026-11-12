@@ -16,8 +16,8 @@ The bootloader is locked. There is no tested custom boot image, selected complet
 
 ## Source and peripheral identification
 
-- Match E08 against complete Huawei/community kernel sources, including vendor driver directories, board device trees and build dependencies. Search by board/kernel/driver details, not model marketing name alone.
-- Determine the exact active touch controller and panel through the device tree, readable vendor identification attributes, or matching stock firmware. `huawei,ts_kit` is currently the observed input interface.
+- Inspect the pinned [4.14.116 source candidates](kernel-source-candidates.md), prioritizing the Enjoy 10 tree's much closer configuration. Verify Kconfig parsing, source coverage, board data and baseline compilation before selecting it. No complete usable build base is confirmed yet.
+- Preserve the Synaptics TCM path indicated by the `MARI69110` runtime identifier and matching firmware filename (E09). Identify exact silicon/panel only where it helps device-tree and driver matching; the family is already sufficiently narrowed to inspect the relevant driver.
 - Determine the active Hi110x connectivity variant, firmware files and initialization services. Compare the related Mate 20 Lite research without assuming identical hardware/partitions.
 - Preserve the matching vendor HAL/service configuration needed for graphics, connectivity, permissions and firmware loading. Review any additional captures for personal information before commit.
 
@@ -25,7 +25,7 @@ The bootloader is locked. There is no tested custom boot image, selected complet
 
 | Milestone | Evidence needed | Current status |
 | --- | --- | --- |
-| Choose source/toolchain | Sources contain required board/drivers and can reproduce a compatible kernel | Not done |
+| Choose source/toolchain | Sources contain required board/drivers and can reproduce a compatible kernel | Closer candidate and documented toolchain identified; not validated |
 | Build adapted kernel/image | Reproducible build and verified device-specific image layout | Not done |
 | Boot/debug access | Kernel boot and working USB debug shell on actual phone | Not done |
 | Ubuntu Touch/Halium starts | Mounts, services, container and root filesystem function | Not done |

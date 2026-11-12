@@ -14,3 +14,10 @@
 - HCU documents Android 9 for persistent unlock. Same-model reports include transient service-tool success followed by locked normal fastboot.
 - The closer C431 modification report uses physical test points and is outside the software-only scope.
 - No complete software-only chain for 12.0.0.262(C431E3R2P2) is verified. No downgrade, unlock or custom boot is demonstrated. See [unlock assessment](unlock-feasibility.md).
+
+## Source and touch assessment: 2026-11-12
+
+- `MARI69110` and the matching `marie_synaptics_tcm_MARI69110.img` filename indicate Synaptics TCM; exact silicon and panel supplier remain unknown.
+- Static configuration comparison identifies the pinned Enjoy 10 4.14.116 source as closer than the older Kirin710 candidate. Only selected source files and two defconfigs were retrieved for that comparison; no complete source checkout or compile was performed.
+- The empty Wi-Fi property search suppressed errors and cannot identify the chip or prove the property absent.
+- HiSuite-Proxy issue #94 records P30 Lite Android-9 downgrade failures. Its later success report concerns a P20 Pro, not a P30 Lite.

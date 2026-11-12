@@ -24,16 +24,20 @@ E05 lists only `hisi_dummy_ko` in `/proc/modules`. This does not explain where t
 
 The related Mate 20 Lite Droidian project reports Hi1102 Wi-Fi working with vendor firmware and platform initialization. Treat that as research to compare, not a tested recipe for this phone. See [references](references.md).
 
-## Touchscreen: active wrapper identified
+E09's lookup for `hi110x,subchip_type` below `/proc/device-tree` returned no output with errors suppressed. It does not distinguish an absent property from inaccessible device-tree data and does not confirm a Hi1102 fallback. The candidate driver reading this property is documented in [source inspection](kernel-source-candidates.md).
+
+## Touchscreen: Synaptics TCM family indicated
 
 E07 reports a physical input named **`huawei,ts_kit`**, with bus identifier 0x001c and zero vendor/product identifiers. This establishes the exposed Huawei touch-kit input interface, not the underlying controller vendor/model.
 
-E08 enables several touchscreen families. The presence of THP options does not establish that THP is the active path; the observed input name is ts_kit. We still need the active device-tree selection and/or readable touchscreen identification attributes. No exact panel supplier or panel model has been identified.
+E09 reads `MARI69110` from `/sys/touchscreen/touch_chip_info` and lists `marie_synaptics_tcm_MARI69110.img` from the requested firmware directories; the other three requested directories do not exist. The matching project identifier and filename strongly indicate the **Synaptics TCM family**. The source candidate contains this driver and a chip-info path that can expose a project ID instead of the manufacturer string. See [source inspection](kernel-source-candidates.md).
+
+E08 enables several touchscreen families; those options alone are not active-hardware evidence. The exact controller silicon, panel supplier and panel model remain unidentified. No touch operation outside stock Android has been tested.
 
 E07 also lists fingerprint, power/volume keys and a headset-jack input. Their existence is not a test of those features under Ubuntu Touch.
 
 ## Confidence and current boundary
 
-Confirmed: stock Android runtime identity, renderer, kernel configuration, USB access, bootloader lock, input wrapper and a rollback offer.
+Confirmed: stock Android runtime identity, renderer, kernel configuration, USB access, bootloader lock, input wrapper, touchscreen project ID/firmware filename and a rollback offer.
 
-Unverified: exact Wi-Fi chip, exact touch controller/panel, matching complete build sources, final vendor base after unlocking, successful custom boot, graphics compatibility, Wi-Fi operation under Ubuntu Touch and suspend/reconnect behavior.
+Unverified: exact Wi-Fi chip, exact touch controller/panel, matching complete build sources, final vendor base after unlocking, successful custom boot, graphics compatibility, Wi-Fi operation under Ubuntu Touch and suspend/reconnect behavior. A closer 4.14.116 source candidate has been pinned, but not compiled.

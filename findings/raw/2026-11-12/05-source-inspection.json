@@ -1,0 +1,359 @@
+{
+  "research_date": "2026-11-12",
+  "origin": "Agent read-only inspection of upstream source; not phone output or a compilation result",
+  "source": {
+    "repository": "https://github.com/yuioto/android_kernel_huawei_art-al00x",
+    "commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+    "upstream_description": "4.14.116 kernel source for Huawei Enjoy 10 on HarmonyOS 2.0.0"
+  },
+  "files": [
+    {
+      "path": "README_Kernel.txt",
+      "url": "https://github.com/yuioto/android_kernel_huawei_art-al00x/blob/c1e2747d8e839bedaa71a6436d24a51285d98509/README_Kernel.txt",
+      "selected_lines": [
+        {
+          "line": 6,
+          "text": "- aarch64-linux-android-4.9"
+        },
+        {
+          "line": 7,
+          "text": "- clang-r353983c(git clone https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86)"
+        },
+        {
+          "line": 11,
+          "text": "Ex)   export PATH :=${PATH}:$(android platform directory you download)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin"
+        },
+        {
+          "line": 15,
+          "text": "put the clang-r353983c in the $(kernel directory)/../../prebuilts/clang/host/linux-x86 path"
+        },
+        {
+          "line": 18,
+          "text": "$ make ARCH=arm64 O=../out merge_kirin710_defconfig"
+        },
+        {
+          "line": 19,
+          "text": "$ make ARCH=arm64 O=../out -j8"
+        },
+        {
+          "line": 26,
+          "text": "$ make ARCH=arm64 distclean"
+        }
+      ]
+    },
+    {
+      "path": "README_Version.txt",
+      "url": "https://github.com/yuioto/android_kernel_huawei_art-al00x/blob/c1e2747d8e839bedaa71a6436d24a51285d98509/README_Version.txt",
+      "selected_lines": [
+        {
+          "line": 9,
+          "text": "This kernel package is released for the phone software version 2021-09-23"
+        }
+      ]
+    },
+    {
+      "path": "drivers/gpu/arm/Kbuild",
+      "url": "https://github.com/yuioto/android_kernel_huawei_art-al00x/blob/c1e2747d8e839bedaa71a6436d24a51285d98509/drivers/gpu/arm/Kbuild",
+      "selected_lines": [
+        {
+          "line": 24,
+          "text": "#obj-$(CONFIG_MALI_SIGURD) += bifrost-r7p0-00cet0/"
+        },
+        {
+          "line": 25,
+          "text": "#obj-$(CONFIG_MALI_SIGURD) += bifrost-r8p0-01rel0/"
+        },
+        {
+          "line": 26,
+          "text": "#obj-$(CONFIG_MALI_SIGURD) += bifrost-r10p0-00cet3/"
+        },
+        {
+          "line": 27,
+          "text": "#obj-$(CONFIG_MALI_SIGURD) += bifrost-r14p0-00cet0/"
+        },
+        {
+          "line": 28,
+          "text": "#obj-$(CONFIG_MALI_SIGURD) += bifrost-r16p0-00cet5/"
+        },
+        {
+          "line": 29,
+          "text": "obj-$(CONFIG_MALI_SIGURD) += bifrost-r18p0-01rel0/"
+        }
+      ]
+    },
+    {
+      "path": "drivers/connectivity/hi11xx/Kconfig",
+      "url": "https://github.com/yuioto/android_kernel_huawei_art-al00x/blob/c1e2747d8e839bedaa71a6436d24a51285d98509/drivers/connectivity/hi11xx/Kconfig",
+      "selected_lines": [
+        {
+          "line": 4,
+          "text": "-source \"drivers/connectivity/hi11xx/hi1103/Kconfig\""
+        },
+        {
+          "line": 5,
+          "text": "-source \"drivers/connectivity/hi11xx/hi1103/platform/Kconfig\""
+        },
+        {
+          "line": 6,
+          "text": "-source \"drivers/connectivity/hi11xx/hi1103/wifi/Kconfig\""
+        },
+        {
+          "line": 7,
+          "text": "-source \"drivers/connectivity/hi11xx/hi1105/Kconfig\""
+        },
+        {
+          "line": 8,
+          "text": "-source \"drivers/connectivity/hi11xx/hi1105/platform/Kconfig\""
+        },
+        {
+          "line": 9,
+          "text": "-source \"drivers/connectivity/hi11xx/hi1105/wifi/Kconfig\""
+        },
+        {
+          "line": 10,
+          "text": "source \"drivers/connectivity/hi11xx/hi1102a/Kconfig\""
+        },
+        {
+          "line": 11,
+          "text": "source \"drivers/connectivity/hi11xx/hi1102a/platform/Kconfig\""
+        },
+        {
+          "line": 12,
+          "text": "source \"drivers/connectivity/hi11xx/hi1102a/wifi/Kconfig\""
+        }
+      ]
+    },
+    {
+      "path": "drivers/devkit/tpkit/panel/synaptics_tcm/synaptics_tcm_core.c",
+      "url": "https://github.com/yuioto/android_kernel_huawei_art-al00x/blob/c1e2747d8e839bedaa71a6436d24a51285d98509/drivers/devkit/tpkit/panel/synaptics_tcm/synaptics_tcm_core.c",
+      "selected_lines": [
+        {
+          "line": 479,
+          "text": "\tif(!tcm_hcd->syna_tcm_chip_data->ts_platform_data->hide_plain_id)  {"
+        },
+        {
+          "line": 482,
+          "text": "\t\tmemcpy(info->ic_vendor, SYNAPTICS_CHIP_INFO, len);"
+        },
+        {
+          "line": 486,
+          "text": "\t\tmemcpy(info->ic_vendor, buf_proj_id, len);"
+        },
+        {
+          "line": 489,
+          "text": "\tstrncpy(info->mod_vendor, buf_proj_id, CHIP_INFO_LENGTH - 1);"
+        }
+      ]
+    },
+    {
+      "path": "drivers/devkit/tpkit/huawei_ts_kit_fsnode.c",
+      "url": "https://github.com/yuioto/android_kernel_huawei_art-al00x/blob/c1e2747d8e839bedaa71a6436d24a51285d98509/drivers/devkit/tpkit/huawei_ts_kit_fsnode.c",
+      "selected_lines": [
+        {
+          "line": 153,
+          "text": "\t\t\tCHIP_INFO_LENGTH, \"%s\\n\", info->mod_vendor);"
+        },
+        {
+          "line": 155,
+          "text": "\t} else if (g_ts_kit_platform_data.hide_plain_id) {"
+        },
+        {
+          "line": 157,
+          "text": "\t\t\tinfo->ic_vendor);"
+        },
+        {
+          "line": 161,
+          "text": "\t\t\t\"%s-%s-%s\\n\", info->ic_vendor, info->mod_vendor,"
+        },
+        {
+          "line": 2388,
+          "text": "static DEVICE_ATTR(touch_chip_info, 0644,"
+        }
+      ]
+    },
+    {
+      "path": "drivers/connectivity/hisi/platform/board/board.c",
+      "url": "https://github.com/yuioto/android_kernel_huawei_art-al00x/blob/c1e2747d8e839bedaa71a6436d24a51285d98509/drivers/connectivity/hisi/platform/board/board.c",
+      "selected_lines": [
+        {
+          "line": 34,
+          "text": "    {.index = BOARD_VERSION_HI1102, .name = BOARD_VERSION_NAME_HI1102},"
+        },
+        {
+          "line": 405,
+          "text": "        case  BOARD_VERSION_HI1102:"
+        },
+        {
+          "line": 421,
+          "text": "        case  BOARD_VERSION_HI1102:"
+        },
+        {
+          "line": 437,
+          "text": "        case BOARD_VERSION_HI1102:"
+        },
+        {
+          "line": 454,
+          "text": "        case  BOARD_VERSION_HI1102:"
+        },
+        {
+          "line": 796,
+          "text": "        case BOARD_VERSION_HI1102:"
+        },
+        {
+          "line": 828,
+          "text": "        case BOARD_VERSION_HI1102:"
+        },
+        {
+          "line": 849,
+          "text": "int32 find_device_board_version(void)"
+        },
+        {
+          "line": 854,
+          "text": "    ret = get_board_custmize(DTS_NODE_HI110X, DTS_PROP_SUBCHIP_TYPE_VERSION, &device_version);"
+        },
+        {
+          "line": 868,
+          "text": "    ret = find_device_board_version();"
+        },
+        {
+          "line": 873,
+          "text": "        g_device_subchip_type  = BOARD_VERSION_HI1102;"
+        }
+      ]
+    },
+    {
+      "path": "drivers/connectivity/hisi/platform/board/board.h",
+      "url": "https://github.com/yuioto/android_kernel_huawei_art-al00x/blob/c1e2747d8e839bedaa71a6436d24a51285d98509/drivers/connectivity/hisi/platform/board/board.h",
+      "selected_lines": [
+        {
+          "line": 42,
+          "text": "#define DTS_NODE_HI110X                     \"hisilicon,hi1102\""
+        },
+        {
+          "line": 71,
+          "text": "#define DTS_PROP_SUBCHIP_TYPE_VERSION       \"hi110x,subchip_type\""
+        }
+      ]
+    }
+  ],
+  "related_ubuntu_touch_tree": {
+    "repository": "https://github.com/kirin710-oss/ubports_huawei_kirin710",
+    "commit": "aff092039160e7b1a54aa2f9f892a693398cec6c",
+    "path": "deviceinfo",
+    "selected_values": {
+      "deviceinfo_name": "Nova 3I",
+      "deviceinfo_kernel_source": "https://github.com/kirin710-oss/kernel_huawei_kirin710-4.9.y.git",
+      "deviceinfo_kernel_source_branch": "halium",
+      "deviceinfo_kernel_defconfig": "merge_kirin710_defconfig",
+      "cmdline_partition_selection": "datapart=/dev/mmcblk0p70"
+    }
+  },
+  "related_droidian_tree": {
+    "repository": "https://github.com/jglasovic/droidian-kirin710",
+    "commit": "3306469f46f8286379492236b4e99ea750a3ca93",
+    "path": "device-config.sh",
+    "url": "https://github.com/jglasovic/droidian-kirin710/blob/3306469f46f8286379492236b4e99ea750a3ca93/device-config.sh",
+    "selected_lines": [
+      {
+        "line": 198,
+        "text": "# \u2500\u2500 Headless: disable battery charging \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500"
+      },
+      {
+        "line": 199,
+        "text": "if has_flag headless; then"
+      },
+      {
+        "line": 200,
+        "text": "    next_step \"Disable battery charging (external PSU)...\""
+      },
+      {
+        "line": 201,
+        "text": "    install_service disable-charger.service"
+      },
+      {
+        "line": 202,
+        "text": "    enable_service  disable-charger.service"
+      },
+      {
+        "line": 203,
+        "text": "fi"
+      },
+      {
+        "line": 204,
+        "text": ""
+      },
+      {
+        "line": 205,
+        "text": "# \u2500\u2500 Headless: zram swap \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500"
+      },
+      {
+        "line": 206,
+        "text": "if has_flag headless; then"
+      },
+      {
+        "line": 207,
+        "text": "    next_step \"zram swap (1GB, lz4)...\""
+      },
+      {
+        "line": 208,
+        "text": "    install_service zram-swap.service"
+      },
+      {
+        "line": 209,
+        "text": "    enable_service  zram-swap.service"
+      },
+      {
+        "line": 210,
+        "text": "fi"
+      },
+      {
+        "line": 211,
+        "text": ""
+      },
+      {
+        "line": 212,
+        "text": "# \u2500\u2500 Headless: mask Android/UI services \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500"
+      },
+      {
+        "line": 213,
+        "text": "if has_flag headless; then"
+      },
+      {
+        "line": 214,
+        "text": "    next_step \"Masking unnecessary services (headless server)...\""
+      },
+      {
+        "line": 215,
+        "text": "    for svc in \\"
+      },
+      {
+        "line": 216,
+        "text": "        lxc@android.service lxc.service lxc-monitord.service lxc-net.service \\"
+      },
+      {
+        "line": 217,
+        "text": "        bluebinder.service bluetooth.service ModemManager.service ofono.service \\"
+      },
+      {
+        "line": 218,
+        "text": "        droidian-fpd.service sensorfwd.service iio-sensor-proxy.service nfcd.service \\"
+      },
+      {
+        "line": 219,
+        "text": "        phosh.service accounts-daemon.service cups.service cups.path \\"
+      },
+      {
+        "line": 220,
+        "text": "        avahi-daemon.service strongswan-starter.service openvpn.service vnstat.service \\"
+      },
+      {
+        "line": 221,
+        "text": "        droidian-boot-wlan.service droidian-boot-wlan.path droidian-ipa-enable.service \\"
+      },
+      {
+        "line": 222,
+        "text": "        droidian-lmk-disable.service droidian-wcnss-enable.service \\"
+      }
+    ]
+  }
+}

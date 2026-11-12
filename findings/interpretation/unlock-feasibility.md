@@ -46,6 +46,14 @@ The [other toolkit](https://github.com/FrgfA4ftfzTdfyyyr5f6tESD3/huawei_kirin_to
 
 ## Current recommendation and next evidence needed
 
+### Additional same-model downgrade failure
+
+[HiSuite-Proxy issue #94](https://github.com/ProfessorJTJ/HISuite-Proxy/issues/94) reports MAR-L21A C431 moving from 10.0.0.470 to 10.0.0.167 but failing to install both 9.0.1.120 and 9.1.0.399. No later P30 Lite success is recorded in the inspected comments. [Selected excerpts](../raw/2026-11-12/06-downgrade-report.json) retain the important correction: another participant's eventual official-HiSuite downgrade success was on a **P20 Pro CLT-AL00**, not this model. That participant's earlier fuse/underlying-data explanation was speculation and was subsequently questioned by their own result; it does not establish the P30 Lite's anti-rollback mechanism or an exact firmware threshold.
+
+This strengthens the reason to verify the entire chain: an accepted Android-10 downgrade does not demonstrate an accepted Android-9 downgrade. It neither proves the current phone cannot be downgraded nor supplies a procedure for doing so.
+
+### Remaining requirements
+
 Keep the current stock firmware while investigating. The screenshot proves an official offer of 10.0.0.562(C431E15R2P7), not that this version permits software TP or a subsequent Android-9 downgrade. Matching package names in old posts are insufficient to authorize a modern downgrade.
 
 A credible software-only candidate must establish all of the following for MAR-LX1A C431 and the actual firmware chain:

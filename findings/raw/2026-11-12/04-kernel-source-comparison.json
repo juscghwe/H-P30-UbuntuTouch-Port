@@ -1,0 +1,4021 @@
+{
+  "research_date": "2026-11-12",
+  "origin": "Agent-derived static configuration comparison; not runtime output or a build result",
+  "method": "Parse explicit CONFIG_NAME=value assignments and # CONFIG_NAME is not set entries. Normalize only explicit not-set entries to n. Reject duplicates; compare names and literal values; ignore comments/order. Do not equate absent symbols with n. This does not evaluate Kconfig dependencies.",
+  "stock": {
+    "path": "../2026-11-11/08-stock-kernel.config",
+    "sha256": "16623939098e19212e0f66b9117a45f3e8bf1f05d4ccb00138a1a372d11ccc5b"
+  },
+  "comparisons": [
+    {
+      "stock_symbols": 5312,
+      "candidate_symbols": 5278,
+      "common_symbols": 5277,
+      "equal_common_symbols": 5264,
+      "different_common_symbols": 13,
+      "stock_only_symbols": 35,
+      "candidate_only_symbols": 1,
+      "differences": [
+        {
+          "symbol": "CONFIG_CRYPTO_RSA",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HIFI_VIR_DAI",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_BATTERY_TEMP",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_BATTERY_TYPE_IDENTIFY",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_TP_KIT_COLOR_INFO",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_BOOSTER",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_ONEWIRE_PHY_PL061_GPIO",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_ONEWIRE_PHY_PL061_GPIO_V2",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SC8545",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SM5450",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SYSTEM_DATA_VERIFICATION",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SYSTEM_TRUSTED_KEYRING",
+          "stock": "y",
+          "candidate": "n"
+        }
+      ],
+      "stock_only": [
+        {
+          "symbol": "CONFIG_D2D_PROTOCOL",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DM_ANDROID_VERITY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DPU_ULTR_LOW_CLK_RATE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HIMAX_ZF_TS_KIT_64",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_CAMERA_SGM3785",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HL7139",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HMDFS_LOW_LATENCY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HMDFS_XATTR_NOSECURITY_SUPPORT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_MULTI_BATT_TEMP",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_MULTI_BTB_TEMP",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HWEVEXT_CODEC_INTERFACE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HWEVEXT_CODEC_MODULE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HWEVEXT_CODEC_V1",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HWEVEXT_EXTERN_ADC",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HWEVEXT_I2C_OPS",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HWEVEXT_MBHC",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_KSWAPD_DEBUG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG_ALL",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG_FORCE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG_HASH",
+          "stock": "\"sha512\""
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG_KEY",
+          "stock": "\"huawei_signing_key.pem\""
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG_SHA1",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG_SHA224",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG_SHA256",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG_SHA384",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG_SHA512",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_OMNIVISION_TCM_TS_KIT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_PKCS7_TEST_KEY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PM_PEAK",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SECONDARY_TRUSTED_KEYRING",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SECURITY_INFO",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SIGNED_PE_FILE_VERIFICATION",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SYSTEM_EXTRA_CERTIFICATE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SYSTEM_TRUSTED_KEYS",
+          "stock": "\"\""
+        },
+        {
+          "symbol": "CONFIG_TOPN_MEMINFO_DUMP",
+          "stock": "y"
+        }
+      ],
+      "candidate_only": [
+        {
+          "symbol": "CONFIG_HUAWEI_MEMINFO_DUMP",
+          "candidate": "y"
+        }
+      ],
+      "repository": "https://github.com/yuioto/android_kernel_huawei_art-al00x",
+      "commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+      "path": "arch/arm64/configs/merge_kirin710_defconfig",
+      "git_blob_sha": "0fb96a3963d02d1d4b134e6bcca054e16b9a3143",
+      "sha256": "70445162fbb2b1acc50c820fd901c41ef65993d44503c0f74c73862e06b5acd6",
+      "bytes": 177684,
+      "url": "https://github.com/yuioto/android_kernel_huawei_art-al00x/blob/c1e2747d8e839bedaa71a6436d24a51285d98509/arch/arm64/configs/merge_kirin710_defconfig"
+    },
+    {
+      "stock_symbols": 5312,
+      "candidate_symbols": 4989,
+      "common_symbols": 4704,
+      "equal_common_symbols": 4667,
+      "different_common_symbols": 37,
+      "stock_only_symbols": 608,
+      "candidate_only_symbols": 285,
+      "differences": [
+        {
+          "symbol": "CONFIG_ANA_HS_EXTERN_OPS",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_BCMGPS4774",
+          "stock": "n",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_BQ25970",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_CONNECTIVITY_HI1105",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_CRYPTO_RSA",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_GPIO_PCA953X",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HIFI_VIR_DAI",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISEE_SUPPORT_INSE_ENCRYPT",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_FREQ_STATS_COUNTING_IDLE",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_PARTITION_KEYWEST",
+          "stock": "n",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_PMIC_DCXO",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_TCPC",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_USB_TYPEC",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_ANA_HS_KIT_AUDIO",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_BATTERY_INFORMATION",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_BATTERY_TEMP",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_BATTERY_TYPE_IDENTIFY",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_CAMERA_USE_IMX286HYBIRD",
+          "stock": "n",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_CAMERA_USE_OV20880",
+          "stock": "n",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_CAMERA_USE_OV8865",
+          "stock": "n",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_THP_ILITEK",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_TP_KIT_COLOR_INFO",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_BOOSTER",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_ILITEK_TDDI_TS_KIT",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_MEM_INSPECT",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_PINCTRL_SEC",
+          "stock": "n",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_POGO_PIN",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SCHED_HISI_TASK_MIN_UTIL",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_STREAM_PARSER",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SWITCHCAP",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SWITCH_FSA9685",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SYSTEM_DATA_VERIFICATION",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SYSTEM_TRUSTED_KEYRING",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_TLS",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_USB_ANALOG_HS_MOS_SWITCH",
+          "stock": "y",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_USB_AUDIO_POWER_V600",
+          "stock": "y",
+          "candidate": "n"
+        }
+      ],
+      "stock_only": [
+        {
+          "symbol": "CONFIG_2MIC_LP_WAKEUP",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_32BIT_COMPAT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_64BIT_CCSIDR",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_AB_PARTITION_TABLE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ACCURATE_DELAY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ANA_HS",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_ANA_HS_CORE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_ANDROID_BINDERFS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ANDROID_HIDL",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_APP_ACCELERATOR",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ARCH_ENABLE_MEMORY_HOTPLUG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ARCH_ENABLE_MEMORY_HOTREMOVE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ARCH_HISI_CLK_EXTREME",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ARM64_LZ4",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ARM64_STRICT_BREAK_BEFORE_MAKE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_ARMPC_FINGERPRINT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ARMPC_WIFI_DEVICE_HI110X",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ARPP",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ASYNCHRONOUS_PLAY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ATF_KERNEL_BL2_LOG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ATF_KERNEL_BL31_LOG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_AUDIO_DEBUG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_AUTH_ENHANCE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_AW32280",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_BATTERY_DATA",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_BATTERY_ISCD",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_BATT_EIS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_BATT_SOH",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_BATT_SOH_CHARGER",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_BATT_SOH_HI6531",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_BATT_SOH_PMIC",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_BCI_BATTERY",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_BIG_SESSION",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_BOOT_DETECTOR",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_BOOT_DETECTOR_DBG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_BOOT_DETECTOR_HISI",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_BOOT_DETECTOR_HONGHU",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_BOOT_DETECTOR_MTK",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_BOOT_DETECTOR_MTK_4G",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_BOOT_DETECTOR_QCOM",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_BOOT_RECOVERY",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_BPF_JIT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_BQ25713_CHARGER",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_BQ27Z561_FUEL_GAUGE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_BQ40Z50_FUEL_GAUGE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_BSP_SYSCOUNTER",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_BT_HCI_DRIVER_HI1135",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_BURB_IP_PLATFORM",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_BUS_MONITOR",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_BUS_MONITOR_TEST",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CAMERA_AW3642",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_CAMERA_AW3642_FRONT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CERTIFICATION_IC_A1007",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CERTIFICATION_IC_DS28E16",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CERTIFICATION_IC_DS28EL15",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CERTIFICATION_IC_RICHTEK",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CFI_CHECK_CACHE_NUM",
+          "stock": "512"
+        },
+        {
+          "symbol": "CONFIG_CHARGER_SYS_WDG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CHARGER_WDG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CHARGE_ADC_MONITOR",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CHARGE_TIME",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CHAR_IP_PLATFORM",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CHIPONE_TS_KIT_3_0",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CHIP_USB_CONFIGFS",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_CHIP_USB_DEBUG_MODULE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CHIP_USB_HELPER",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_CHIP_USB_LOG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CHIP_USB_MISC_CTRL",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CHIP_USB_NEW_FRAME",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CHIP_USB_REG_CFG",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_CLIENT_AUTH",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_CMDLIST_ENABLE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CMFUP_DEVFREQ",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CODEC_DSP_MISC",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_COMMON_FREQDUMP_PLATFORM",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_COMMON_LOADMONITOR_PLATFORM",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_COMPACTION_SPECIFIED",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CONNECTIVITY_HI1131K",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CONTEXTHUB_BLE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CONTEXTHUB_BOOT_STAT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CONTEXTHUB_IGS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CONTEXTHUB_IGS_20",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CONTEXTHUB_IGS_DBG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CONTEXTHUB_IGS_TOF",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CONTEXTHUB_LOG_PATH_VAR",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CONTEXTHUB_SH_NOCZERO",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CONTEXTHUB_UDI",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_COUL_DRV",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_COUL_PMIC6X21V500",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_COUL_PMIC6X21V600",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_COUL_PMIC6X21V700",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_COUL_PMIC6X21V800",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_COUL_PMIC6X21V900",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_COUL_PMIC6X55V100",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_COUL_PMIC6X55V200",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_COUL_PMIC6X55V300",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_COUL_PMIC6X55V500",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_COUL_POLAR",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_COUL_TEST",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_CPUSET_TASKS_CROWDED_WORKAROUND",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CPU_AFF_NR",
+          "stock": "0"
+        },
+        {
+          "symbol": "CONFIG_CPU_FREQ_GOV_SCHEDUTIL_OPT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_CPU_ISOLATION_OPT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_CRYPTO_LZ4K",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_D2D_PROTOCOL",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DA_COMBINE_V3_CODEC",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_DDR_DEVFREQ_DFX",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DDR_FREQ_BACKUP",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DEBUG_CFI_HARDEN",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DEBUG_CFI_HARDEN_KO",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DEBUG_HKIP_EARLY_RODATA_PROTECTION",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DEBUG_HKIP_PRMEM",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DETECT_HUAWEI_MMAP_SEM",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_DETECT_HUAWEI_MMAP_SEM_DBG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DEVFREQ",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_DEVFREQ_DEVBW",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_DEVFREQ_DMSS_LATENCY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DEVICE_ATTRS",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_DEV_IVP",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_DIRECT_SWAPPINESS",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_DISABLE_DMSS_INT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DKMD_ENABLE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DM_ANDROID_VERITY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DPM_HWMON",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DPM_PLATFORM_EARTH",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DPM_PLATFORM_JUPITER",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DPM_PLATFORM_LUNA",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DPM_PLATFORM_MARS",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_DPM_PLATFORM_MERCURY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DPM_PLATFORM_PLUTO",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DPM_PLATFORM_SATURN",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DPM_PLATFORM_URANUS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DPM_PLATFORM_VENUS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DPU_FB_AP_AOD",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DPU_ULTR_LOW_CLK_RATE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DP_HDCP",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DRG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_DRM_ADAPT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_DSP_VAD_WAKEUP",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_DYNAMIC_ION",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_ED_TASK",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_ED_TASK_RESET_AT_UPMIGRATION",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_EFFECT_HIACE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_EFFECT_TERMINAL_API",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ENABLE_MIDEA_MONITOR",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_EXT_INPUTHUB",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_FACTORY_SVFD",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_FILE_BASED_ENCRYPTO",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_FREE_SWAPCACHE_AGGRESSIVELY",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_FREQDUMP_PLATFORM",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_FREQDUMP_PLATFORM_VENUS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_FREQ_LIMIT_COUNTER",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_FUEL_GAUGE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_GENERAL_SEE_PINCODE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_GOODIX_GTX8_BRL_TS_KIT_3_0",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_GPIO_HI6502",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_GPIO_HIV500",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_GPIO_PCA953X_HISI",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_GPIO_PCA953X_IRQ",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_GPUFREQ",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_GPUTOP_FREQ",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_GPU_AI_FENCE_INFO",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_GPU_FHSS",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_GPU_RT_DEVFREQ",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_GPU_THROTTLE_DEVFREQ",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HHEE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HHEE_USING_IPI",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HI110X_SOFT_AP_LIMIT_CPU_FREQ",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HID_NINTENDO",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HIEPS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HIFI_IPC_EXTEND_MAILBOX",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HIFI_RESET_CDEV",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HIFI_SUPPORT_VIBRATOR",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HIMAX_TS_KIT_3_0",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HIMAX_ZF_TS_KIT_64",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HISEE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HISEE_DISABLE_KEY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISEE_MNTN",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HISEE_MNTN_RESET_IRQ_SEPARATE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISEE_MNTN_TEST",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISEE_NVMFORMAT_TEST",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISEE_SUPPORT_CASDKEY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI1103_EEPROM",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_AP_READY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_BB_SHUTDOWN_REASON",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_BOOTMEM_OPTIMIZE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_BUFFERED_READAHEAD",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_CAMERA_HISTAR_ISPV300",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_CAMERA_HISTAR_ISPV310",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_CAMERA_SGM3785",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_CLK_BUCK13_DVS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_CLK_WAIT_DONE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_CPUIDLE_SKIP_ALL_CORE_DOWN",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_DDR_CEPHEUS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_DDR_DRACO",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_DDR_LACERTA",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_DDR_SUBREASON",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_DDR_TRIONES",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_DPP_CMDLIST",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_DPU_DISP",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_EARLY_PANIC",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_EFFECT_HIHDR",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_EXT_NTC",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_EXT_VIBRATOR",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_FB_ALSC",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_FB_AOD",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_FB_MEDIACOMMON",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_FB_V345",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_FB_V346",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_FB_V360",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_FB_V700",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_FREQ_IO_LIMIT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_HI6562_PMIC_MIPI",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_HMFS_MTIME",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_I2C_MASTER",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_IOMMU_DMA",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_ION_CACHE_FLUSH_THRESHOLD",
+          "stock": "8"
+        },
+        {
+          "symbol": "CONFIG_HISI_MCLK_SUPPORT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_MDFX",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_MEM_PERF_SCENE_AWARE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_MNTN_GT_WATCH_SUPPORT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_MNTN_PC",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_PARTITION_AQUARIUS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_PARTITION_SAGITTARIUS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_PARTITION_SCORPIO",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_PLL_LOCK_RETRY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_PLL_UNLOCK_DETECT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_PLL_VOTE_SEC",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_PMIC_AP_DCXO",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_PMIC_PMU_I2C",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_PROCESS_RECLAIM_ACCESS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_REGULATOR",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_SHOWACPU_FLUSH_CACHE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_SPI_MASTER",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_TCPC_DEBUG",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_TCPC_HI6526",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_USB_STORAGE_QUIRK",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_USB_TYPEC_DBG",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_VBAT_DROP_PRT_CHAR",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_VLTMM",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_WORKAROUND_MONITOR",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISP_DEBUG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISP_RDR",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HISP_REMOTEPROC",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HISP_SMMU_BYPASS_DEBUG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HISTAR_ISP",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HI_V500_WATCHDOG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HKADC_DEBUG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HKADC_MODEM",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HKIP_CFI_HARDEN",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HKIP_EARLY_RODATA_PROTECTION",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HKIP_MODULE_ALLOC",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HKIP_PRMEM",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HKIP_PRMEM_BYPASS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HKIP_PRMEM_HARDENED_USERCOPY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HKIP_PROTECT_BPF",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HKIP_PROTECT_BPF_CAP",
+          "stock": "2"
+        },
+        {
+          "symbol": "CONFIG_HKIP_PROTECT_CRED",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HKIP_PROTECT_POWEROFF_CMD",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HKIP_SELINUX_POLDB_SIZE_MB",
+          "stock": "8"
+        },
+        {
+          "symbol": "CONFIG_HKIP_SELINUX_PROT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HKIP_XOM_CODE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HL7139",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HMDFS_1_0",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HMDFS_ANDROID",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HMDFS_CRYPTO",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HMDFS_FS",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HMDFS_FS_DEBUG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HMDFS_LOW_LATENCY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HMDFS_XATTR_NOSECURITY_SUPPORT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HMFS_FS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HOTPLUG_EMULATION",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HSDTTRACE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_ADSP_MISC",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_ARMPC_PCIE_MISC",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_ARMPC_PLATFORM",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_ARMPC_SENSORS_INPUT_INFO",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_ARMPC_USB_HUB",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_BATTCT_SLE95250",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_BATTERY_CORE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_BATTERY_FAULT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_BATTERY_MODEL",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_BATTERY_UI_CAPACTIY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_BLPWM",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_BTB_CHECK",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_COUL",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_DSM_IOMT_UFS_HOST",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_ECHUB",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_FFC_CONTROL",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_HALL_INTERFACE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_HMFS_DSM",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_MIXED_BATT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_MULTI_BATT_TEMP",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_MULTI_BTB_TEMP",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_POWER_EMBEDDED_ISOLATION",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_POWER_SUPPLY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_ROTARY_CROWN",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_SCHED_VIP",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_SPEAKER_CHARGER",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_TCP_QUICK_START",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_TEMP_CONTROL",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_THP_ST",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_TRACK_SOCKET",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_TRACK_SOCKET_DEBUG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_VBUS_MONITOR",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_WATCH_CHARGER",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HWDPS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HWDPS_ENG_DEBUG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HWEVEXT_CODEC_INTERFACE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HWEVEXT_CODEC_MODULE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HWEVEXT_CODEC_V1",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HWEVEXT_EXTERN_ADC",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HWEVEXT_I2C_OPS",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HWEVEXT_MBHC",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HWSDP",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HW_FREEZEDETECTOR",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_FUTEX_PI",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_RECLAIM_ACCT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_RTG_MULTI_FRAME",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HW_RTG_SCHED_RT_THREAD_LIMIT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HW_STEADY_SPEED_STATS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_TASK_MEM_STAT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_TCPC_CLASS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_VIP_KWORKER",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_VOTE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HW_VOTE_GPU_FREQ",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HW_WAUDIO_MODULE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_WIFI_EXT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_WIFI_TEMP",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_XRECLAIMER",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_HYPERHOLD",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ILITEK_TS_KIT_3_0",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_INVERT_HS_CORE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ION_HISI_SUPPORT_HEAP_MERGE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_IPA_THERMAL",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_ITS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_IVP_IVPV320",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_IVP_RDR_SUPPORT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_JPU_SUPPORT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_KARMA_PMU",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_KERNEL_CLIENT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_KEYBOARD_HISI_GPIO_FUNC_KEY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_KEYBOARD_HISI_GPIO_VOLUME_KEY",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_KEY_MASK",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_KSWAPD_DEBUG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_KZEROD",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_L3CACHE_LP_DEBUG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_L3CACHE_PARTITION_CTRL",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_L3CACHE_SHARE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_LCD_KIT_QCOM",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_LEX_IP_PLATFORM",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_LOWPM_STATS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_LPCPU_CCI_EXTRA",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_LPCPU_CCI_EXTRA_PMU",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_LPCPU_CPUFREQ_LOWTEMP",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_LPCPU_FREQ_LINK",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_LPCPU_HITIMER",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_LPCPU_HW_VOTE_CPU_FREQ",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_LPCPU_IDLE_SLEEP",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_LPCPU_L2_DYNAMIC_RETENTION",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_LPCPU_LPNV_SWITCH",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_LPCPU_MAX_POWER",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_LPCPU_MULTIDRV_CPUIDLE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_LPCPU_PMU_DUMP",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_LPM_HKADC",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_LPM_MEDIA_REGULATOR",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_LP_ENABLE_GET_VAL",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_LZ4_SPEEDUP",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MALI_NATT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MALI_ODIN",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MALI_ODIN_LEX",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MALI_ODIN_LEX_BASE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MAS_BKOPS",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_MAS_BLK",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_MAS_BLK_BW_OPTIMIZE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MAS_BLK_DEBUG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MAS_DEBUG_FS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MAS_IO_CLASSIFY_FG",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_MAS_IO_CLASSIFY_SCHED_TUNE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MAS_MQ_USING_CP",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MAS_ORDER_PRESERVE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MAS_STORAGE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_MAS_UNISTORE_PRESERVE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MCU_TS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MEMORY_AFFINITY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MIGRATION_NOTIFY",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_MMC_MQ_CQ_HCI",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_MMC_SDHCI_HISI_SCORPIO",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MMC_SDHCI_MUX_SDSIM",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MNTN_CHECKMISC",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG_ALL",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG_FORCE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG_HASH",
+          "stock": "\"sha512\""
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG_KEY",
+          "stock": "\"huawei_signing_key.pem\""
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG_SHA1",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG_SHA224",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG_SHA256",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG_SHA384",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MODULE_SIG_SHA512",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_MSPC",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_MULTI_MARGIN",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_NAMSTO",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_NPU_PM",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_OMNIVISION_TCM_TS_KIT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_ONEWIRE_PHY_PL061_GPIO",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_ONEWIRE_PHY_PL061_GPIO_V2",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_ONSYS_AVS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_OPT_COMPILER",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_OVERLAY_FS_CREDS_OVERRIDE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_OVERWRITE_FAULT_AROUND_BYTES",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_PARTITION_PATH_BY_LABEL",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PARTITION_TABLE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_PARTITION_TABLE_PISCES",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PARTITION_TABLE_VIRGO",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PCIE_DEVICE_LEGACY_INT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PCIE_KPORT_APR",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PCIE_KPORT_BURB",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PCIE_KPORT_DBI_SPLT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PCIE_KPORT_FEB",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PCIE_KPORT_JUN",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PCIE_KPORT_MAR",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PCIE_KPORT_MAY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PCIE_KPORT_NOC_DBG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PCIE_KPORT_PC",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PCIE_KPORT_PHY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PCIE_KPORT_PHY_XW",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PCIE_KPORT_SEP",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PERFHUB",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_PERF_CTRL",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_PHY_HISI_USB2_T5",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PHY_HISI_USB2_ULPI",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PINCTRL_HI6502",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PKCS7_TEST_KEY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PLATFORM_SLIMBUS",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_PLATFORM_TELE_MNTN",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PM_CPU_PDC_FEATURE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PM_LPCTRL",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PM_PEAK",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_POS_OPTOCOUPLER",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_PRMEM_MAX_MEMORY",
+          "stock": "8"
+        },
+        {
+          "symbol": "CONFIG_PRODUCT_ARMPC",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PRODUCT_CDC",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_PROTOCOL_IC_SC200X",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_QOS_BLKIO",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_RCH_CLD",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_RDR_MEM",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_REFAULT_IO_VMSCAN",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_RPMB_AGENT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_RPMB_DMD_REPORT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_RPMB_KEY_ENABLE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_RPMB_MMC",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_RPMB_REQ_LOCK_DISABLE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_RPMB_SET_MULTI_KEY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_RPMB_STORAGE_INTERFACE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_RPMB_UFS",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_RT9426_FUEL_GAUGE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_RT9759",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_RT_ACTIVE_LB",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_RT_CAS",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_RT_OPT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SC8545",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SCHARGER",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SCHED_CALC_CUM_WINDOW_DEMAND",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SCHED_CGROUP_RTG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SCHED_CHECK_IRQLOAD",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SCHED_DEBUG_TRACE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SCHED_DEPRECATED",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SCHED_DOWNMIGRATE_LOWER_LOAD",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SCHED_HISI_UTIL_CLAMP",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SCHED_MIGRATE_SPREAD_LOAD",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SCHED_PRED_LOAD",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SCHED_RTG",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SCHED_RUNNING_AVG",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SCHED_RUNNING_TASK_ROTATION",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SCHED_STAT_YIELD",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SCHED_TOP_TASK",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SCHED_TOP_TASK_SKIP_HISPEED_LOGIC",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SCHED_USE_WALT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SCHED_WALT_WINDOW_SIZE_TUNABLE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SCSI_UFS_AQUARIUS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SCSI_UFS_INTR_HUB",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SCSI_UFS_LUN_PROTECT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SCSI_UFS_SCORPIO",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SCSI_UFS_SGR",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SCSI_UFS_SYNCCACHE_RECORD",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SCSI_UFS_UNISTORE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SCSI_UFS_VIRGO",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SECONDARY_TRUSTED_KEYRING",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SECURITY_INFO",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SELINUX_ADAPT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SERIAL_UART_V500",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SHELL_TEMP_DEBUG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SIGNED_PE_FILE_VERIFICATION",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SM5450",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SMARTGC_MEMSCENE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SMART_AR",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SMART_FLP",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SMART_FLP_BATCHING",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SMART_FLP_CELLFENCE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SMART_FLP_DIAG",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SMART_FLP_GEOFENCE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SMART_FLP_WIFIFENCE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SMART_SOFTTIMER",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SMX_PROCESS",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SND_ANALOG_LESS_MACHINE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_DA_COMBINE_MACHINE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SND_DA_SEPARATE_MACHINE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_ASP_CODEC",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_ASP_CODEC_CODECLESS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_ASP_CODEC_V1",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_AU_PA",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_CODEC_DA_SEPARATE_V2",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_CODEC_DA_SEPARATE_V3",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_CODEC_DA_SEPARATE_V5",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_CODEC_DA_SEPARATE_V6B",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_CODEC_DA_SEPARATE_V6L",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_DA_COMBINE_V3",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_DA_COMBINE_V5",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_DA_SEPARATE_MBHC",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_ES7210",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_ES7243E",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_PCM_CODECS",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_SLIMBUS_DAI",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_THIRD_CODEC",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SOCDSP_CMA_SIZE_7M",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SOFTIRQ_OPT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SR",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SR_DEBUG",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SR_DEBUG_SLEEP",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SR_NEW_ARCH",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SR_OLD_ARCH",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SR_PM_DEBUG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SR_SYNC",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SR_TICK",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_STAGING_EXFAT_DEBUG_MSG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_STAGING_EXFAT_DEFAULT_CODEPAGE",
+          "stock": "437"
+        },
+        {
+          "symbol": "CONFIG_STAGING_EXFAT_DEFAULT_IOCHARSET",
+          "stock": "\"utf8\""
+        },
+        {
+          "symbol": "CONFIG_STAGING_EXFAT_DELAYED_SYNC",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_STAGING_EXFAT_DISCARD",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_STAGING_EXFAT_FS",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_STAGING_EXFAT_KERNEL_DEBUG",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_STATIC_ION",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_STORAGE_ROW_SKIP_PART",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_STREAM_DETECT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SUBPMU",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_SUPPORT_SIM1_HPD_KEY_RESTART",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SYSTEM_EXTRA_CERTIFICATE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_SYSTEM_TRUSTED_KEYS",
+          "stock": "\"\""
+        },
+        {
+          "symbol": "CONFIG_TASK_RAVG_SUM",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_TA_AFFINITY",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_TA_AFFINITY_CPU_NUMS",
+          "stock": "8"
+        },
+        {
+          "symbol": "CONFIG_TCPC_VSAFE0V_DETECT_SUPPORT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_TEECD_AUTH",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_TEE_AUDIT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_TEE_LOG_ACHIVE_PATH",
+          "stock": "\"/data/log/tee/last_teemsg\""
+        },
+        {
+          "symbol": "CONFIG_TEE_LOG_EXCEPTION",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_THEED",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_THERMAL_AMBIENT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_THERMAL_CONTEXTHUB",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_THERMAL_HOTPLUG",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_THERMAL_NPU_HOTPLUG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_THERMAL_PERIPHERAL",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_THERMAL_PERIPHERAL_HIGHRESTEMP",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_THERMAL_SHELL",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_THERMAL_SPM",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_THERMAL_TRIP",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_THERMAL_TSENSOR",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_TOPN_MEMINFO_DUMP",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_TYPEC_CAP_CUSTOM_SRC_SUPPORT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_TYPEC_CAP_DBGACC_SNK_SUPPORT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_UEFI_HHEE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_USB_384K_AUDIO_ADAPTER_SUPPORT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_USB_AUTOSUSPEND_DELAY_QUIRK",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_USB_CONFIGFS_F_SOURCESINK_EXT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_USB_CONFIGFS_MODEM_ACM",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_USB_DOCK_HEADSET_QUIRK",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_USB_DWC3_AUG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_USB_DWC3_CHIP",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_USB_FUNC_ADD_SS_DESC",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_USB_F_MODEM_ACM",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_USB_HICAR_SUPPORT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_USB_HIUSBC",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_USB_MIRRORLINK_SUPPORT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_USB_PD_ALT_MODE_DFP_SUPPORT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_USB_PD_ALT_MODE_SUPPORT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_USB_PD_CUSTOM_DBGACC_SUPPORT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_USB_PD_REV30",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_USB_PD_UVDM_SUPPORT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_USB_PM_NO_RESET_RESUM",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_USB_POWER_DELIVERY_SUPPORT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_USB_PROXY_HCD_HIBERNATE",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_USB_SKIP_RESUME",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_USB_WAIT_FOR_CONNECTED_ACCURATELY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_VCODEC_PLATFORM_HIVCODECV200",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_VCODEC_PLATFORM_HIVCODECV520",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_VDEC_TVP_SUPPORT",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_VENDOR_RPMB",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_VENDOR_XHCI_EVENT_DEBUG",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_VIDEO_IDLE",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_VM_COPY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_VOICE_PROXY_FUSION",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_VR_DISPLAY",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ZINITIX_TS_KIT",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ZODIAC_MMC",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_ZODIAC_MMC_MANUAL_BKOPS",
+          "stock": "y"
+        },
+        {
+          "symbol": "CONFIG_ZONE_MEDIA",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ZSMALLOC_HANDLE_CHECK",
+          "stock": "n"
+        },
+        {
+          "symbol": "CONFIG_ZS_MALLOC_EXT",
+          "stock": "n"
+        }
+      ],
+      "candidate_only": [
+        {
+          "symbol": "CONFIG_ACM_DEBUG",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_ARCH_HISI_MAXFREQ",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_ATMEL_TS",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_BCMGPS4752",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_BQ2419X_CHARGER",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_BQ2429X_CHARGER",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_CONTEXTHUB_SWING",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_CONTEXTHUB_SWING_DBG",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_DEBUG_HISI_EARLY_RODATA_PROTECTION",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_DEVFREQ_GOV_MALI_ONDEMAND",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_DOME_KEY",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_DUAL_LOADSWITCH_FPF2283",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_DUAL_LOADSWITCH_RT9748",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_EXFAT_DEBUG_MSG",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_EXFAT_DEFAULT_CODEPAGE",
+          "candidate": "437"
+        },
+        {
+          "symbol": "CONFIG_EXFAT_DEFAULT_IOCHARSET",
+          "candidate": "\"utf8\""
+        },
+        {
+          "symbol": "CONFIG_EXFAT_DELAYED_SYNC",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_EXFAT_DISCARD",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_EXFAT_FS",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_EXFAT_KERNEL_DEBUG",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HI6402_CODEC",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HI6402_HIFI_MISC",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HI6402_MBHC_ANC",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HI6403_CODEC",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISEE_SUPPORT_AUTH_UPGRADE",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISILICON_PLATFORM_HSDTTRACE",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISILICON_PLATFORM_SLIMBUS",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISILICON_PLATFORM_TELE_MNTN",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_6423_PMIC_PMU_SPMI",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_ACCURATE_DELAY",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_ARPP",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_ASW",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_AUDIO_DEBUG",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_BATTERY_DATA",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_BCI_BATTERY",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_BIG_MAXFREQ_HOTPLUG",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_BKOPS",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_BLK",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_BLK_DEBUG",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_BLOCK_FREQUENCE_CONTROL",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_BUS_MONITOR",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_BUS_MONITOR_TEST",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_CAMERA_AW3642",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_CAMERA_AW3642_FRONT",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_CCI_EXTRA",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_CCI_EXTRA_PMU",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_CGROUP_RTG",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_CHARGER",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_CHARGER_SYS_WDG",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_CHARGE_TIME",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_COMMON_FREQDUMP_PLATFORM",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_COMMON_LOADMONITOR_PLATFORM",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_COUL",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_COUL_HI6421V500",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_COUL_HI6421V600",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_COUL_HI6421V700",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_COUL_HI6421V800",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_COUL_HI6421V900",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_COUL_HI6555V100",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_COUL_HI6555V200",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_COUL_HI6555V300",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_COUL_HI6555V500",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_COUL_POLAR",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_COUL_TEST",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_CPUFREQ_LOWTEMP",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_CPU_FREQ_GOV_SCHEDUTIL",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_CPU_ISOLATION",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_DEVFREQ",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_DEVFREQ_DEVBW",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_DIRECT_SWAPPINESS",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_DPM_HWMON",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_DPM_PLATFORM_EARTH",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_DPM_PLATFORM_JUPITER",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_DPM_PLATFORM_MARS",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_DPM_PLATFORM_MERCURY",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_DPM_PLATFORM_PLUTO",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_DPM_PLATFORM_SATURN",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_DPM_PLATFORM_URANUS",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_DPM_PLATFORM_VENUS",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_DRG",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_EARLY_RODATA_PROTECTION",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_ED_TASK",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_ED_TASK_RESET_AT_UPMIGRATION",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_ENABLE_GET_VAL",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_ENABLE_MIDEA_MONITOR",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_FACTORY_SVFD",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_FB_AOD_V320",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_FLP",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_FREQDUMP_PLATFORM",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_FREQDUMP_PLATFORM_VENUS",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_FREQ_LINK",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_GEOFENCE_TRAJECTORY_FEATURE",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_GETSPINLOCK_TEST",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_GPIO_KEY_SUPPORT_SMART_KEY",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_GPUFREQ",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_GPU_AI_FENCE_INFO",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_GPU_FHSS",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_HARDEN_BRANCH_PREDICTOR",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_HHEE",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_HHEE_TOKEN",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_HIEPS",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_HISEE",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_HISEE_MNTN",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_HISEE_MNTN_RESET_IRQ_SEPARATE",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_HISEE_MNTN_TEST",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_HISEE_NVMFORMAT_TEST",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_HISEE_SHUTDOWN_SWIPE",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_HISEE_SUPPORT_CASDKEY",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_HISTAR_ISP",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_HKADC",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_HKADC_DEBUG",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_HKADC_MODEM",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_HOTPLUG_EMULATION",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_HW_VOTE",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_HW_VOTE_CPU_FREQ",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_HW_VOTE_GPU_FREQ",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_IDLE_SLEEP",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_IO_CLASSIFY_FG",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_IO_CLASSIFY_SCHED_TUNE",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_IPA_THERMAL",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_IP_CORE",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_IP_PMIC",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_ISP_DEBUG",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_ISP_RDR",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_ISP_SMMU_BYPASS_DEBUG",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_ITS",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_IVP",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_JPU_SUPPORT",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_KARMA_PMU",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_KERNEL_BL2_LOG",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_KERNEL_BL31_LOG",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_L2_DYNAMIC_RETENTION",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_L3CACHE_LP_DEBUG",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_L3CACHE_SHARE",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_LPNV_SWITCH",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_MIGRATION_NOTIFY",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_MMC",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_MMC_MANUAL_BKOPS",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_MNTN_CHECKMISC",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_MODULE_ALLOC",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_MQ_USING_CP",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_MULTIDRV_CPUIDLE",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_MULTI_MARGIN",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_NPU_PM",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_PARTITION",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_PARTITION_PISCES",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_PERFHUB",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_PERF_CTRL",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_PMALLOC",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_PMIC",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_PMU_DUMP",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_PM_LPCTRL",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_REMOTEPROC",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_RPMB",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_RPMB_KEY_SET_DISABLE",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_RPMB_MMC",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_RPMB_UFS",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_RTG",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_RT_ACTIVE_LB",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_RT_CAS",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_RT_OPT",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_SELINUX_EBITMAP_RO",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_SELINUX_PROT",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_SHELL_TEMP_DEBUG",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_SMX_PROCESS",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_SOH",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_SOH_CHARGER",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_SOH_HI6531",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_SOH_PMIC",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_SPI1_SMC",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_SPI_SMC",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_SR",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_SR_DEBUG",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_SR_DEBUG_SLEEP",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_SR_SYNC",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_SR_TICK",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_STORAGE",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_STORAGE_UFS_PARTITION",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_SUBPMU",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_SUB_PMIC_MNTN_SPMI",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_SYSCOUNTER",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_TASK_RAVG_SUM",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_THERMAL_AMBIENT",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_THERMAL_CONTEXTHUB",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_THERMAL_HOTPLUG",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_THERMAL_NPU_HOTPLUG",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_THERMAL_PERIPHERAL",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_THERMAL_PERIPHERAL_HIGHRESTEMP",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_THERMAL_SHELL",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_THERMAL_SPM",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_THERMAL_TRIP",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_THERMAL_TSENSOR",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_USB_AUTOSUSPEND_DELAY_QUIRK",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_USB_CONFIGFS",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_USB_FUNC_ADD_SS_DESC",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_USB_HELPER",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_USB_MISC_CTRL",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_USB_NEW_FRAME",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HISI_USB_PM_NO_RESET_RESUM",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_USB_REG_CFG",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISI_USB_SKIP_RESUME",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HISPFD",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_BFM",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_DOCK_HEADSET_QUIRK",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_DTV_MMTUNER",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_LCD_PANEL",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_MEMINFO_DUMP",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_POWER_MESG_INTERFACE",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_QOS_BLKIO",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HUAWEI_UID_IO_STATS",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HWAA",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HWAA_ENG_DEBUG",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_BFMR_HISI",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_HW_BFMR_MTK",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_BFMR_QCOM",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_COMMSTAT",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_CROSSLAYER_OPT",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_NOVATEK_TS",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_QTAGUID_PID",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_RL_TOUCH_KEY",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_HW_TOUCH_KEY",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_INA231_FOR_CHARGE",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_IVP_IVPV100",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_KIRIN_PCIE_APR",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_KIRIN_PCIE_FEB",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_KIRIN_PCIE_MAR",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_KIRIN_PCIE_MAY",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_KIRIN_PCIE_SEP",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_MMC_HISI_TRACE",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_OPA2333P_FOR_CHARGE",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_ORLANDO_2MIC_LP_WAKEUP",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_PHY_PLAT_MAY_USB2",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_REGULATOR_HI6250",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_REGULATOR_IP_DEBUG",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SCHED_HISI_CALC_CUM_WINDOW_DEMAND",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SCHED_HISI_CHECK_IRQLOAD",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SCHED_HISI_DEBUG_TRACE",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SCHED_HISI_DEPRECATED",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_SCHED_HISI_DOWNMIGRATE_LOWER_LOAD",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SCHED_HISI_MIGRATE_SPREAD_LOAD",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_SCHED_HISI_PRED_LOAD",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SCHED_HISI_TOP_TASK",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_SCHED_HISI_TOP_TASK_SKIP_HISPEED_LOGIC",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SCHED_HISI_USE_WALT",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_SCHED_HISI_VIP",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SCHED_HISI_WALT_WINDOW_SIZE_TUNABLE",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SECS_POWER_CTRL",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SECURE_EXTENSION",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_SND_HI3630_HI6401",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_HI3630_HI6402",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_HI3650_HI6402",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_HI3650_HI6403",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_HI3660_HI6402",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_HI3660_HI6403",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_SND_HI3XXX_ASP_CODEC",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_HI3XXX_HI6405",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_HI6210_HISSC",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_HI6250_HI6402",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_HI6250_HI6555C",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_ASP_CODEC_990",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_CODEC_HI6555C",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_CODEC_HI6555V2",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_CODEC_HI6555V3",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_CODEC_HI6555V5",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_HI6402",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_HI6403",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_HI6405",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_HI6XXX_MBHC",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_HISI_PA",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_PCM_HI3630",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_PCM_HI3650",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_PCM_HI3660",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_SND_SOC_PCM_HI6210",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_ST_TS",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_SWITCH_USB_CLS",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_TEE_CPU_MIGRATION",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_TEE_TUI_ION",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_TEE_TUI_ION_ADD",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_USB_CONFIGFS_BALONG_ACM",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_USB_DWC3_HISI",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_USE_BOOTFAIL_RECOVERY_SOLUTION",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_VCODEC_PLATFORM_KIRIN970",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_VOLUME_KEY_MASK",
+          "candidate": "y"
+        },
+        {
+          "symbol": "CONFIG_WACOM_TS_KIT",
+          "candidate": "n"
+        },
+        {
+          "symbol": "CONFIG_WIRELESS_ALIGNMENT_DETECT",
+          "candidate": "n"
+        }
+      ],
+      "repository": "https://github.com/Kirin710/android_kernel_huawei_kirin710",
+      "commit": "4be3dcf8bcaa9f7c824d88e7045a8e4e1756c6df",
+      "path": "arch/arm64/configs/merge_kirin710_defconfig",
+      "git_blob_sha": "022107f65bdb070cb7f646d0b76073a5d45f52db",
+      "sha256": "0416f2cef8b925f944539fece0c97fe2647ef965b2c2ad4aac18b58201929b0f",
+      "bytes": 168287,
+      "url": "https://github.com/Kirin710/android_kernel_huawei_kirin710/blob/4be3dcf8bcaa9f7c824d88e7045a8e4e1756c6df/arch/arm64/configs/merge_kirin710_defconfig"
+    }
+  ]
+}

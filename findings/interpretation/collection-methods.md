@@ -73,3 +73,15 @@ For future collection, restrict capture to the device inventory before UI/window
 ## HiSuite offer inspection
 
 With Android running, authorize HiSuite/HDB, choose System update / Systemaktualisierung, then Switch to other version / Zu anderer Version wechseln. Reading the offered version does not perform a rollback. E04 is a transcription of the offer only. Actual rollback erases data and requires the supported model/region/firmware sequence and sufficient charge; the screenshot states more than 50%.
+
+## Targeted peripheral follow-up: 2026-11-12
+
+E09 preserves the three commands and separate owner replies. The first reads Huawei touch-kit's identification attribute, the second filters firmware filenames for the returned identifier, and the third searches for a property read by the candidate Wi-Fi driver. All three are read-only. The device-tree search suppresses errors, so its empty output cannot establish that the property or hardware is absent.
+
+The firmware-listing command received errors only for the other three directories, plus the matching filename. The listing is not a firmware dump and no binary was pulled. Personal PowerShell prompt text was omitted from the final reply.
+
+## Source configuration comparison
+
+[The comparison record](../raw/2026-11-12/04-kernel-source-comparison.json) identifies the stock config and two pinned upstream defconfigs with SHA-256 hashes and Git blob IDs. Parse explicit assignments and explicit `# CONFIG_NAME is not set` entries, mapping only the latter to `n`. Reject duplicate symbols, compare literal values by name, and keep one-sided symbols separate. Do not infer disabled values for absent entries or evaluate dependencies from this text comparison alone.
+
+Both upstream config blob hashes and all counts were independently recomputed before commit. Source files were inspected remotely and the two defconfigs saved locally outside the repository; no complete kernel archive was unpacked, no source tree was built and no port installer was executed.

@@ -1,0 +1,59 @@
+{
+  "research_date": "2026-11-12",
+  "origin": "Agent source inspection; no owner phone operation",
+  "issue": "https://github.com/ProfessorJTJ/HISuite-Proxy/issues/94",
+  "title": "Huawei P30 lite - MAR-L21A: Downgrade attempt failed (10.0 -> 9.0)",
+  "selected_report_fields": {
+    "model": "MAR-L21A",
+    "base": "MAR-LGRP2-OVS 10.0.0.470",
+    "customization": "C431"
+  },
+  "comments": [
+    {
+      "url": "https://github.com/ProfessorJTJ/HISuite-Proxy/issues/94#issuecomment-907838178",
+      "kind": "Firsthand public issue comment; excerpt only",
+      "quotes": [
+        "I was able to successfully downgrade to 10.0.0.167, but it I am still not able to downgrade to 9.0.1.120."
+      ]
+    },
+    {
+      "url": "https://github.com/ProfessorJTJ/HISuite-Proxy/issues/94#issuecomment-907852658",
+      "kind": "Firsthand public issue comment; excerpt only",
+      "quotes": [
+        "I tried to downgrade to the most recent 9.x version which seems to be 9.1.0.399.",
+        "This downgrade also fails."
+      ]
+    },
+    {
+      "url": "https://github.com/ProfessorJTJ/HISuite-Proxy/issues/94#issuecomment-908355995",
+      "kind": "Firsthand public issue comment; excerpt only",
+      "quotes": [
+        "Take my CLT-AL00 as an example. If I upgrade to 10.0.0.156 or higher, I cannot downgrade to 9.1 anymore."
+      ]
+    },
+    {
+      "url": "https://github.com/ProfessorJTJ/HISuite-Proxy/issues/94#issuecomment-908807473",
+      "kind": "Firsthand public issue comment; excerpt only",
+      "quotes": [
+        "downgrade my CTL-AL00 to 9.1.336 **without HISuite-Proxy**.",
+        "just overturned all my known news."
+      ]
+    },
+    {
+      "url": "https://github.com/ProfessorJTJ/HISuite-Proxy/issues/94#issuecomment-908986518",
+      "kind": "Firsthand public issue comment; excerpt only",
+      "quotes": [
+        "well, maybe it's related to the device model. I only have P20pro (CLT-AL00).",
+        "sorry for the trouble caused by the previous information, I am also confused now."
+      ]
+    },
+    {
+      "url": "https://github.com/ProfessorJTJ/HISuite-Proxy/issues/94#issuecomment-911568627",
+      "kind": "Firsthand public issue comment; excerpt only",
+      "quotes": [
+        "I currently don't have access to the P30 lite that I was trying to downgrade, but I might be able to test things out with another device."
+      ]
+    }
+  ],
+  "selection": "Technical excerpts only. Cross-model claims and later correction retained together. No screenshots, full logs or account metadata copied."
+}

@@ -1,0 +1,26 @@
+Origin: owner-pasted read-only PowerShell/ADB output, 2026-11-12.
+Sanitation: personal PowerShell prompt and Windows path omitted. LF normalized.
+Commands and separate replies are delimited below; no combined capture implied.
+
+--- Touchscreen identification ---
+Command:
+.\adb.exe shell cat /sys/touchscreen/touch_chip_info
+Output:
+* daemon not running; starting now at tcp:5037
+* daemon started successfully
+MARI69110
+
+--- Matching firmware filename ---
+Command:
+.\adb.exe shell ls /vendor/firmware/ts /vendor/etc/firmware/ts /odm/firmware/ts /system/etc/firmware/ts 2>&1 | Select-String -Pattern 'MARI69110|No such file|Permission denied|^/.*:$'
+Output:
+ls: /vendor/etc/firmware/ts: No such file or directory
+ls: /odm/firmware/ts: No such file or directory
+ls: /system/etc/firmware/ts: No such file or directory
+marie_synaptics_tcm_MARI69110.img
+
+--- Wi-Fi device-tree property lookup ---
+Command:
+.\adb.exe shell 'find /proc/device-tree -name hi110x,subchip_type 2>/dev/null'
+Output:
+[No output; editorial marker, not literal shell output.]
