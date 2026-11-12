@@ -13,13 +13,16 @@ The two inspected owner-side SystemUpdate logs contain no HTTP/URL text. Their
 empty URL search is not evidence of a regex failure or unavailable firmware.
 Client version 14.0.0.380_OVE is reported by the owner. Its official installer
 matches Huawei's published SHA-256; static inspection finds OpenSSL 3 imports
-and a decompression export. The installer was unpacked as data, never executed.
+and a decompression export. Its 32-bit `HiSuite.exe` manifest requests
+`requireAdministrator`; ordinary-user Frida attachment failed before agent
+readiness. The observer therefore needs matching administrator access. The
+downloaded installer was unpacked as data, never executed in the research environment.
 See the [source observations](../raw/2026-11-12/08-hisuite-static-inspection.json).
 
 An [experimental URL observer](../../scripts/hisuite-capture/README.md) uses those
 incoming-buffer interfaces without modifying certificate validation. The filter
-and synthetic callbacks pass offline tests; **Windows attachment and actual
-package capture are untested**. Python and the older HiSuite client are not
+and synthetic callbacks pass offline tests; **successful Windows attachment and
+actual package capture remain unverified**. Python and the older HiSuite client are not
 required. It must be stopped rather than advancing to Update/Restore/Rollback
 if viewing version offers produces no URL.
 

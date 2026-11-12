@@ -23,14 +23,28 @@
         "name": "httpcomponent.dll",
         "machine": "IMAGE_FILE_MACHINE_I386",
         "sha256": "302e710b21fcdabb7835b5cb12693f4eb1bd40a68f29df98e474ccb0e87f2ab3",
-        "selected_imports": ["libcrypto-3.dll", "libssl-3.dll", "zlib.dll"],
+        "selected_imports": [
+          "libcrypto-3.dll",
+          "libssl-3.dll",
+          "zlib.dll"
+        ],
         "selected_export": "?UnGzip@AppBaseHttpClient@NetWork@@AAEHPBDHPAPADAAH@Z"
       },
       {
         "name": "libssl-3.dll",
         "machine": "IMAGE_FILE_MACHINE_I386",
         "sha256": "9a910d485e7bafd46f512543c234350fb61568f418a444c493151a328f277b24",
-        "selected_exports": ["SSL_read", "SSL_read_ex"]
+        "selected_exports": [
+          "SSL_read",
+          "SSL_read_ex"
+        ]
+      },
+      {
+        "name": "HiSuite.exe",
+        "machine": "IMAGE_FILE_MACHINE_I386",
+        "sha256": "4549da99080922facf3349b78179dee975c1d5d259fe4ea41a533da46697d304",
+        "embedded_manifest_requested_execution_level": "requireAdministrator",
+        "manifest_ui_access": false
       }
     ]
   },
@@ -41,7 +55,11 @@
     "archive_sha256": "620592e92893538820650ff5001265133033bf57641e5fe30860aeacfc7e0249",
     "installer_bytes": 38027648,
     "installer_sha256": "fb7bcfd3220faebf7527e7686af1381a0994e8f399516ce95ada70f0d2818351",
-    "selected_imports_in_httpcomponent": ["libeay32.dll", "ssleay32.dll", "zlibwapi.dll"],
+    "selected_imports_in_httpcomponent": [
+      "libeay32.dll",
+      "ssleay32.dll",
+      "zlibwapi.dll"
+    ],
     "executed": false,
     "signature_limit": "Huawei Authenticode certificate observed; full Authenticode verification not performed"
   },
@@ -55,6 +73,12 @@
   "limits": [
     "Static imports/exports do not prove that a given updater workflow invokes them.",
     "No firmware URL, update manifest, firmware archive or stock image was obtained.",
-    "The observer has offline fixture tests only; no running Windows HiSuite capture is demonstrated."
-  ]
+    "The observer has offline fixture tests; ordinary-user attachment failed before agent readiness. No successful Windows attachment or firmware capture is demonstrated."
+  ],
+  "owner_attachment_observations": {
+    "by_name": "Process not found",
+    "by_pid": "Unable to access process",
+    "agent_readiness_confirmed": false,
+    "elevated_retry_result": "Not yet supplied"
+  }
 }

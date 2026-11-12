@@ -2,6 +2,8 @@
 setlocal
 cd /d "%~dp0"
 if not exist capture.js goto missing
+powershell.exe -NoProfile -NonInteractive -Command "if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)) { exit 1 }"
+if errorlevel 1 goto elevation
 if not exist tools mkdir tools
 if errorlevel 1 goto failed
 echo Downloading official portable tools; no installation or certificate changes.
@@ -27,8 +29,12 @@ echo Open HiSuite 14 normally, connect the phone and wait for its home screen.
 echo Only view available versions. Do not start Update, Restore or Rollback.
 echo The observer removes its hooks after five minutes. Close HiSuite to finish.
 pause
-tools\frida.exe --name HiSuite.exe --script capture.js
+powershell.exe -NoProfile -Command "$targets = @(Get-Process -Name HiSuite -ErrorAction SilentlyContinue); if ($targets.Count -ne 1) { Write-Error 'Expected exactly one running HiSuite process.'; exit 1 }; & '.\tools\frida.exe' --pid ($targets[0].Id) --script '.\capture.js'; exit $LASTEXITCODE"
 exit /b %errorlevel%
+:elevation
+echo HiSuite 14 requires administrator privileges; its observer needs matching access.
+echo Open PowerShell with Run as administrator and run this helper from there.
+exit /b 1
 :missing
 echo Missing capture.js beside run.cmd. Download both files into the same folder.
 exit /b 1

@@ -3,11 +3,15 @@
 Purpose: obtain an official firmware package URL for **offline inspection** when
 HiSuite's existing logs contain no URL. Requires Windows 10/11 with `curl.exe`,
 Windows PowerShell, and an already installed HiSuite 14.0.0.380_OVE. Python is
-unnecessary. Run as the same ordinary Windows user as HiSuite.
+unnecessary. HiSuite 14's executable manifest requests `requireAdministrator`;
+run the helper from PowerShell opened with **Run as administrator**, using the
+same Windows account as HiSuite. The launcher checks this before downloading.
 
 ## Status and limits
 
-**Not yet tested against a running Windows HiSuite session.** Offline tests cover
+**No successful Windows attachment yet.** Owner attempts from ordinary PowerShell
+returned `Process not found` by name and `Unable to access process` by PID, before
+any agent readiness was confirmed. Offline tests cover
 the URL filter and synthetic hook callbacks, not Frida injection, the actual
 updater response, or successful firmware acquisition. An offer may not disclose
 a download URL until a later workflow step; do not initiate an update to obtain it.
@@ -28,7 +32,7 @@ URL forms may be missed. Empty output establishes no firmware availability claim
 ## Run
 
 1. Save `capture.js` and `run.cmd` in a new folder outside any public checkout.
-2. Run `run.cmd`. It downloads hash-pinned official portable 7-Zip and Frida
+2. From an administrator PowerShell window, run `run.cmd`. It downloads hash-pinned official portable 7-Zip and Frida
    tools into that folder, verifies them before execution, and pauses.
 3. Open the existing HiSuite normally, connect the phone and reach its home
    screen. Resume the helper by pressing a key in its window.
@@ -38,9 +42,9 @@ URL forms may be missed. Empty output establishes no firmware availability claim
    after five minutes (`STOPPED`). Close HiSuite to end the attachment, or close
    it sooner to stop. The helper does not preserve itself after process exit.
 
-If attachment is denied, no hooks appear, or security software blocks the tool,
-stop and report the short error. Do not elevate, disable protection or change
-certificate settings as a workaround. Native CLI errors may contain private
+If attachment is still denied from that administrator window, no hooks appear,
+or security software blocks the tool, stop and report the short error. Do not
+disable protection or change certificate settings. Native CLI errors may contain private
 paths or crash reports; do not publish a full console dump.
 
 No client installer, root certificate, service, phone command, flash or recovery
