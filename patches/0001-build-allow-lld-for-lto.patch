@@ -1,0 +1,12 @@
+diff --git a/Makefile b/Makefile
+index 8f1bee1..5705ae1 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1325,2 +1325,3 @@ ifdef CONFIG_LTO_CLANG
+   endif
++  ifeq ($(findstring LLD,$(shell $(LD) --version)),)
+   ifneq ($(call gold-ifversion, -ge, 112000000, y), y)
+@@ -1328,2 +1329,3 @@ ifdef CONFIG_LTO_CLANG
+   endif
++  endif
+ endif

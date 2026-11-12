@@ -27,9 +27,18 @@ The earlier literal comparison remains reproducible: 5,264 equal shared symbols,
 | Touch | Synaptics TCM exists; stock-only Himax-64 and Omnivision TCM options have no definitions | Missing alternative families do not contradict the observed Synaptics identifier |
 | Module signing | Stock-only signing children exist behind `MODULE_SIG`, disabled in candidate | Existing stock modules are not assumed compatible |
 
-More significantly, normalizing the **complete stock config** removes 66 explicit entries and adds one, with all 5,246 retained shared values unchanged. Of those removed entries, 65 have no Kconfig definition in this tree. Several were already present in the candidate's literal defconfig, so the earlier 35-entry difference did not reveal them. Lost stock-enabled entries include Huawei TCPC/USB-PD support, root/TEE measurement interfaces, DPM and Gator. One removed entry, `CORESIGHT=n`, has a definition but is omitted under its dependencies. [The normalization record](../raw/2026-11-12-build/03-stock-normalization.json) is the complete list; absence from generated config must not be silently treated as preserved functionality.
+More significantly, normalizing the **complete stock config** removes 66 explicit entries and adds one, with all 5,246 retained shared values unchanged. Of those removed entries, 65 have no Kconfig definition in this tree. Several were already present in the candidate's literal defconfig, so the earlier 35-entry difference did not reveal them. Lost stock-enabled entries include Huawei-specific TCPC/HI6526 and USB-PD controls, root/TEE measurement interfaces, DPM and Gator. Other Type-C/PD implementations, including Richtek RT1711H, remain configured; this does not identify the active controller. One removed entry, `CORESIGHT=n`, has a definition but is omitted under its dependencies. [The normalization record](../raw/2026-11-12-build/03-stock-normalization.json) is the complete list; absence from generated config must not be silently treated as preserved functionality.
 
-The stock input remains byte-for-byte identical to E08. Candidate-pristine, stock-derived and future Halium outputs use separate directories. No signing key or proprietary binary is committed. `certs/Makefile` additionally contains a Huawei-specific Android output-directory assumption when `MODULE_SIG_KEY="huawei_signing_key.pem"`; the stock-derived signing path needs separate validation.
+The stock input remains byte-for-byte identical to E08. Candidate-pristine, stock-derived and Halium-probe outputs use separate directories. No signing key or proprietary binary is committed.
+
+## Executed build results
+
+- **Pristine candidate:** object compilation reached `LTO vmlinux.o`. The GNU-gold/LLVMgold linker was killed with status 137; make exited 2. The enclosing 8 GiB cgroup recorded an OOM kill. No `Image.gz` or complete module build resulted. The container requested a 6 GiB limit, but the observed enclosing limit was 8 GiB; requested limits are not presented as measured enforcement.
+- **Unchanged stock-derived signing:** `certs/` failed because its Huawei-key branch expects `extract-cert` inside an Android product output directory. A diagnostic path-only correction reached the next missing dependency, `vendor/huawei/chipset_common/build/signkernel/signing_key_v11.x509`. That diagnostic patch is not selected for the build recipe.
+- **Development signing:** changing only the key filename to `certs/signing_key.pem` allowed the unchanged source's certificate stage to pass. The key was generated locally outside this repository. Forced signatures, automatic signing, SHA-512 and module versioning remained enabled. This is a new trust root, not stock-module compatibility.
+- **Stock-enabled driver probes:** battery temperature, battery-type identification, PL061 onewire, HiFi virtual DAI, SC8545 and SM5450 directory builds all passed. These are object/archive checks, not working-device tests or a complete stock-derived kernel.
+
+The alternate LLD experiment uses the documented Clang prebuilt's linker with `--lto-O1`, retaining the candidate LTO/CFI config. An AArch64 bitcode link probe passed. Kernel preparation then rejected LLD through a GNU-gold-specific version check, despite Kconfig documenting both linkers. [The two-line build patch](../../patches/0001-build-allow-lld-for-lto.patch) exempts detected LLD from that gold parser while retaining the Clang check. Its kernel link also exhausted memory and was killed at `LTO vmlinux.o`; no image resulted. A fresh candidate-derived build with only debug-info generation disabled is now being tested with the original toolchain and LTO/CFI retained. A separate non-LTO/CFI diagnostic output is paused; it is not a completed build.
 
 ## Reproduction
 
@@ -42,4 +51,6 @@ python3 scripts/compare-configs.py STOCK_CONFIG SOURCE/arch/arm64/configs/merge_
 python3 scripts/verify-findings.py
 ```
 
-The candidate baseline is compiling with two jobs and a 6 GiB memory limit. A complete `Image.gz`/module result is pending. No boot-image packaging, flashing, custom boot, display, touchscreen or Wi-Fi result is claimed.
+For the LLD experiment, apply the linked build patch to a separate source checkout and set `LTO_LINKER=lld` for the recipe. [development-signing.config](../../configs/development-signing.config) records the standalone signing probe; keys stay in the external build output. [candidate-nolto.config](../../configs/candidate-nolto.config) is the separately labelled resource diagnostic, which changes kernel hardening.
+
+No boot-image packaging, flashing, custom boot, display, touchscreen or Wi-Fi result is claimed.

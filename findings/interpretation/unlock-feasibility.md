@@ -52,6 +52,10 @@ The [other toolkit](https://github.com/FrgfA4ftfzTdfyyyr5f6tESD3/huawei_kirin_to
 
 This strengthens the reason to verify the entire chain: an accepted Android-10 downgrade does not demonstrate an accepted Android-9 downgrade. It neither proves the current phone cannot be downgraded nor supplies a procedure for doing so.
 
+### Exact-build service claims remain insufficient
+
+An additional [Octoplus service-report thread](https://forum.gsmhosting.com/vbb/f1053/p30-ele-l09-unlock-first-octoplus-2900885/index27.html) contains MAR-LX1A / C431 `.262` direct-unlock reports. The recorded operation starts from Huawei USB COM service mode and does not demonstrate software-only entry, a persistent normal-fastboot unlock after reboot, or a custom-image boot. The vendor [lists direct unlock and bootloader lock/unlock as separate operations](https://octopusbox.com/eng/news/details/854). A service-mode FB-unlocked field or an operation named “unlock” does not close the persistent-bootloader evidence gap. No tool or package was downloaded or run from these reports; personal identifiers and full service logs are excluded.
+
 ### Remaining requirements
 
 Keep the current stock firmware while investigating. The screenshot proves an official offer of 10.0.0.562(C431E15R2P7), not that this version permits software TP or a subsequent Android-9 downgrade. Matching package names in old posts are insufficient to authorize a modern downgrade.

@@ -1,0 +1,377 @@
+{
+  "date": "2026-11-12",
+  "origin": "Static source observations and candidate build archive inspection; no new device evidence",
+  "source": "https://github.com/yuioto/android_kernel_huawei_art-al00x",
+  "commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+  "observations": [
+    {
+      "path": "drivers/connectivity/Makefile",
+      "git_blob": "d1b251585599902722c83cec950ddc1b55485120",
+      "sha256": "9e1183618235d79e702b722fb161dd1867d9c55b9e082f6a7054d73974d5cf69",
+      "note": "CONNECTIVITY_HI1102 descends into hisi; HI11XX into hi11xx.",
+      "selected_lines": [
+        {
+          "line": 1,
+          "text": "obj-$(CONFIG_CONNECTIVITY_HI1102) += hisi/"
+        },
+        {
+          "line": 2,
+          "text": "obj-$(CONFIG_CONNECTIVITY_HI11XX) += hi11xx/"
+        }
+      ]
+    },
+    {
+      "path": "drivers/connectivity/hisi/Makefile",
+      "git_blob": "82fe39e210997a0b1ad541a83a5b6a4f9284a9c0",
+      "sha256": "6a909b90983b4550e9c38c013b88005e1713834f5331ea017c38cdf7c7bae0f3",
+      "note": "Platform and wifi subdirectories are unconditional obj-y.",
+      "selected_lines": [
+        {
+          "line": 1,
+          "text": "obj-y += platform/"
+        },
+        {
+          "line": 2,
+          "text": "obj-y += wifi/"
+        }
+      ]
+    },
+    {
+      "path": "drivers/connectivity/hisi/platform/Makefile",
+      "git_blob": "07594dad3f97d367990f07e8eb363d6afc0300bc",
+      "sha256": "8e1cc893170ba19c49eeee7b96efb79b784dd9d27d514f2ab5ab8a261379e08b",
+      "note": "Built-in/module linkage uses an independent vendor Make variable, default no.",
+      "selected_lines": [
+        {
+          "line": 10,
+          "text": "CONFIG_HI110X_KERNEL_MODULES_BUILD_SUPPORT ?= no"
+        },
+        {
+          "line": 97,
+          "text": "ifeq ($(CONFIG_HI110X_KERNEL_MODULES_BUILD_SUPPORT), yes)"
+        },
+        {
+          "line": 100,
+          "text": "obj-y += plat.o"
+        }
+      ]
+    },
+    {
+      "path": "drivers/connectivity/hisi/wifi/Makefile",
+      "git_blob": "e8f691124aca0988720190ec9017135a6dbff56c",
+      "sha256": "b60700c0b459061fe5fa93eb4463febfcdefc66f574eb94ab7610860a3287131",
+      "note": "Wi-Fi linkage defaults to obj-y despite HI1102_WIFI=m in defconfig.",
+      "selected_lines": [
+        {
+          "line": 10,
+          "text": "CONFIG_HI110X_KERNEL_MODULES_BUILD_SUPPORT ?= no"
+        },
+        {
+          "line": 53,
+          "text": "ifeq ($(CONFIG_HI110X_KERNEL_MODULES_BUILD_SUPPORT), yes)"
+        },
+        {
+          "line": 56,
+          "text": "obj-y += wifi.o"
+        }
+      ]
+    },
+    {
+      "path": "drivers/connectivity/hisi/platform/hi1102_comm_defconfig",
+      "git_blob": "1df4b86af2096fa19ce8e108791258e43a63f9bc",
+      "sha256": "7d5a057ca9b068f1ba40fe98b42625af616e4cc6305fe10ea2ed66a098276291",
+      "note": "Build flags select builtin sysfs initialization support.",
+      "selected_lines": [
+        {
+          "line": 34,
+          "text": "ifeq ($(CONFIG_HI110X_KERNEL_MODULES_BUILD_SUPPORT), yes)"
+        },
+        {
+          "line": 36,
+          "text": "COPTS +=-DCONFIG_HI110X_KERNEL_MODULES_BUILD_SUPPORT"
+        },
+        {
+          "line": 112,
+          "text": "COPTS +=-D_PRE_CONFIG_CONN_HISI_SYSFS_SUPPORT"
+        }
+      ]
+    },
+    {
+      "path": "drivers/connectivity/hisi/platform/oal/oal_kernel_file.c",
+      "git_blob": "11f57230a36483a1ba121ec9615eddeaafc2ae44",
+      "sha256": "4dcd48ced021d1f5f1f86e673df73a0c9777cefec049472a737ff09b676486eb",
+      "note": "The source creates /sys/hisys and a boot child.",
+      "selected_lines": [
+        {
+          "line": 117,
+          "text": "    g_conn_syfs_root_object = kobject_create_and_add(\"hisys\", OAL_PTR_NULL);"
+        },
+        {
+          "line": 129,
+          "text": "    g_conn_syfs_root_boot_object = kobject_create_and_add(\"boot\", root_boot_object);"
+        }
+      ]
+    },
+    {
+      "path": "drivers/connectivity/hisi/platform/main/plat_main.c",
+      "git_blob": "6a031fb6fa1728284dac5f0940dcf9fe51e5ea93",
+      "sha256": "72ba7269c0e72c7c01b5e4b450c9480f7816d41083f2cb45042d3f737e9f03d4",
+      "note": "plat status is read-only on show; its store handler can initialize hardware.",
+      "selected_lines": [
+        {
+          "line": 285,
+          "text": "OAL_STATIC ssize_t plat_sysfs_set_init(struct kobject *dev, struct kobj_attribute *attr, const char *buf, size_t count)"
+        },
+        {
+          "line": 319,
+          "text": "OAL_STATIC ssize_t plat_sysfs_get_init(struct kobject *dev, struct kobj_attribute *attr, char *buf)"
+        },
+        {
+          "line": 345,
+          "text": "    __ATTR(plat, S_IRUGO | S_IWUSR, plat_sysfs_get_init, plat_sysfs_set_init);"
+        },
+        {
+          "line": 400,
+          "text": "oal_module_init(plat_sysfs_init);"
+        }
+      ]
+    },
+    {
+      "path": "drivers/connectivity/hisi/wifi/main/main.c",
+      "git_blob": "237deb37b9254e17d2a704e2f9805f1e884dcadd",
+      "sha256": "dd510fe8256457e4a2704be1405f78022ae0cb238ec4c16b17a2d2588ff35135",
+      "note": "wifi status show reports running/uninit/failure; store handler can initialize hardware.",
+      "selected_lines": [
+        {
+          "line": 688,
+          "text": "oal_int32 g_wifi_init_flag = 0;"
+        },
+        {
+          "line": 725,
+          "text": "OAL_STATIC ssize_t  wifi_sysfs_get_init(struct kobject *dev, struct kobj_attribute *attr, char*buf)"
+        },
+        {
+          "line": 751,
+          "text": "    __ATTR(wifi, S_IRUGO | S_IWUSR, wifi_sysfs_get_init, wifi_sysfs_set_init);"
+        }
+      ]
+    },
+    {
+      "path": "drivers/connectivity/hisi/platform/board/board.h",
+      "git_blob": "14e535310056d94ee7d44a9fb81dbfc7fe1a0d88",
+      "sha256": "048ad17e34e0e58426ba6ec341adc80e5fe058618b6067026ade9e4430aab13f",
+      "note": "Board selection reads hi110x,subchip_type from a compatible hisilicon,hi1102 node.",
+      "selected_lines": [
+        {
+          "line": 42,
+          "text": "#define DTS_NODE_HI110X                     \"hisilicon,hi1102\""
+        },
+        {
+          "line": 71,
+          "text": "#define DTS_PROP_SUBCHIP_TYPE_VERSION       \"hi110x,subchip_type\""
+        }
+      ]
+    },
+    {
+      "path": "drivers/connectivity/hisi/common/customize/hisi_ini.c",
+      "git_blob": "b88730ece92711a286119704f367ad1f18488c76",
+      "sha256": "57b68d391cd47e18d428b1320ed4efaadcfd211b0b4155aded8f91fde0d7d515",
+      "note": "INI filename comes from device tree; per-device customization may be separate.",
+      "selected_lines": [
+        {
+          "line": 32,
+          "text": "#define PROC_NAME_INI_FILE_NAME    \"ini_file_name\""
+        },
+        {
+          "line": 769,
+          "text": "    int8 auc_dts_ini_path[INI_FILE_PATH_LEN]  = {0};"
+        },
+        {
+          "line": 773,
+          "text": "    ret = get_ini_file_name_from_dts(PROC_NAME_INI_FILE_NAME, auc_dts_ini_path, sizeof(auc_dts_ini_path));"
+        },
+        {
+          "line": 782,
+          "text": "    snprintf(g_ini_file_name, sizeof(g_ini_file_name)-1, \"%s\", auc_dts_ini_path);"
+        }
+      ]
+    },
+    {
+      "path": "drivers/connectivity/hisi/platform/pm/plat_firmware.c",
+      "git_blob": "b3ba378e268126a7047d3924c096ecde98f44968",
+      "sha256": "7a7c4ce407580b16a286e2a4ece75d279bed1427b0a5a03004fa8e100e5665af",
+      "note": "Hi1102 firmware configuration paths are under /vendor/firmware.",
+      "selected_lines": [
+        {
+          "line": 23,
+          "text": "#define BFGX_AND_WIFI_CFG_PATH        \"/vendor/firmware/bfgx_and_wifi_cfg\""
+        },
+        {
+          "line": 24,
+          "text": "#define WIFI_CFG_PATH                 \"/vendor/firmware/wifi_cfg\""
+        },
+        {
+          "line": 25,
+          "text": "#define BFGX_CFG_PATH                 \"/vendor/firmware/bfgx_cfg\""
+        }
+      ]
+    },
+    {
+      "path": "drivers/devkit/tpkit/huawei_ts_kit_core.c",
+      "git_blob": "e8a0e68e0234c65eaa5c6d265018494202c60b92",
+      "sha256": "4aba2df6e9cb9fd44b30e14d8d56e5a66fb4a989c942fd2033a8969f79830817",
+      "note": "Touch kit reads DT bus type/id, GPIOs and product name.",
+      "selected_lines": [
+        {
+          "line": 2740,
+          "text": "\tdata->node = of_find_compatible_node(NULL, NULL, TS_DEV_NAME);"
+        },
+        {
+          "line": 2747,
+          "text": "\trc = of_property_read_string(data->node, \"bus_type\", &bus_type);"
+        },
+        {
+          "line": 2770,
+          "text": ""
+        },
+        {
+          "line": 2809,
+          "text": "\tdata->reset_gpio = of_get_named_gpio(data->node, \"reset_gpio\", 0);"
+        },
+        {
+          "line": 2814,
+          "text": "\tdata->irq_gpio = of_get_named_gpio(data->node, \"irq_gpio\", 0);"
+        },
+        {
+          "line": 3063,
+          "text": "\t\trc = of_property_read_string(data->node, \"product\","
+        }
+      ]
+    },
+    {
+      "path": "drivers/devkit/tpkit/panel/synaptics_tcm/synaptics_tcm_core.c",
+      "git_blob": "d06d0ebe722c84bc3b8b3d8b18ae789916f90bcf",
+      "sha256": "2e333f7957beca69d1df476d92af298228f535531c0627d72bd8c8a3b060fe77",
+      "note": "TCM finds the Huawei root and compatible child, selects SPI operations, parses board properties and forms firmware prefix.",
+      "selected_lines": [
+        {
+          "line": 2653,
+          "text": "static int syna_tcm_get_fw_prefix(void)"
+        },
+        {
+          "line": 2667,
+          "text": "\tstrncat(fwname, &joint_chr, sizeof(char));"
+        },
+        {
+          "line": 2884,
+          "text": "\tretval = of_property_read_u32(np, \"x_max\", &bdata->x_max);"
+        },
+        {
+          "line": 2918,
+          "text": "\tretval = of_property_read_u32(np, \"irq_config\",&chip_data->irq_config);"
+        },
+        {
+          "line": 2928,
+          "text": "\tretval = of_property_read_string(np, \"default_project_id\", &bdata->default_project_id);"
+        },
+        {
+          "line": 3979,
+          "text": "\troot = of_find_compatible_node(NULL, NULL, \"huawei,ts_kit\");"
+        },
+        {
+          "line": 3988,
+          "text": "\t\t\tTS_LOG_INFO(\"found is true\\n\");"
+        },
+        {
+          "line": 4022,
+          "text": "\ttcm_hcd->bdata = bdata;"
+        },
+        {
+          "line": 4061,
+          "text": "late_initcall(syna_tcm_module_init);"
+        }
+      ]
+    },
+    {
+      "path": "drivers/devkit/tpkit/panel/synaptics_tcm/synaptics_tcm_zeroflash.c",
+      "git_blob": "7be83291925e1050d98f81658b280052fb67075c",
+      "sha256": "6aaba7108f826210607c63efb7ca11e30fcd8f15c95aa33f1ab2a4abdbf74f06",
+      "note": "Firmware request is ts/<prefix><project>.img.",
+      "selected_lines": [
+        {
+          "line": 470,
+          "text": "int zeroflash_get_fw_image(char *file_name)"
+        },
+        {
+          "line": 484,
+          "text": "\tsnprintf(fw_name, (MAX_STR_LEN * 4), \"ts/%s%s.img\", file_name,"
+        },
+        {
+          "line": 488,
+          "text": "\tretval = request_firmware(&zeroflash_hcd->fw_entry,"
+        }
+      ]
+    },
+    {
+      "path": "drivers/base/firmware_class.c",
+      "git_blob": "25b52e9b145dbfb01e16354662874c2ad1f6315c",
+      "sha256": "7c6cf46086f25c45b127f336fd8a4a6b9d359897195c43fe5ffe9c3d076074e4",
+      "note": "Host kernel firmware search includes /lib/firmware, /odm/etc/firmware and /system/vendor/firmware.",
+      "selected_lines": [
+        {
+          "line": 370,
+          "text": "static char fw_path_para[256];"
+        },
+        {
+          "line": 371,
+          "text": "static const char * const fw_path[] = {"
+        },
+        {
+          "line": 376,
+          "text": "\t\"/lib/firmware\","
+        },
+        {
+          "line": 378,
+          "text": "\t\"/odm/etc/firmware\","
+        },
+        {
+          "line": 379,
+          "text": "\t\"/system/vendor/firmware\","
+        }
+      ]
+    },
+    {
+      "path": "drivers/huawei_platform/usb/pd/richtek/Kconfig",
+      "git_blob": "206d36175eb85ab971ff52ac70e74076a3989d6d",
+      "sha256": "c2f2dc00b574da4c9a72ed91c212cd3a01ec5b0c9d45c78afb276e3b16a28b71",
+      "note": "Other Type-C/PD implementations remain present; missing Huawei-specific controls do not mean all Type-C code is absent.",
+      "selected_lines": [
+        {
+          "line": 1,
+          "text": "config TCPC_CLASS"
+        },
+        {
+          "line": 9,
+          "text": "config USB_POWER_DELIVERY"
+        },
+        {
+          "line": 17,
+          "text": ""
+        },
+        {
+          "line": 27,
+          "text": ""
+        }
+      ]
+    }
+  ],
+  "external_touch_firmware": {
+    "repository": "https://github.com/Iceows/shrp_android_device_huawei_marie",
+    "commit": "a0f7d9227d6c15d80ed4227b2aaf8cfc6d36c4bc",
+    "path": "recovery/root/vendor/firmware/ts/marie_synaptics_tcm_MARI69110.img",
+    "size_bytes": 116817,
+    "sha256": "6a6290b715a49c88bde3bd17160d225bc18f649ad12f60f3b0cb3ac2b745d01c",
+    "note": "External recovery repository blob, not a hash measured on this phone. Binary is not copied into the project."
+  },
+  "candidate_linkage_observation": "Candidate build generated hisi/platform/built-in.o and hisi/wifi/built-in.o archives containing platform and Wi-Fi objects. Does not establish stock build linkage or active hardware."
+}

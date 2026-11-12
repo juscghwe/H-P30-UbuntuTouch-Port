@@ -22,6 +22,13 @@ make_args=(-C "$src" "O=$out" ARCH=arm64 CROSS_COMPILE=aarch64-linux-android-
     CLANG_TRIPLE=aarch64-linux-gnu- "CLANG_PREBUILTS_PATH=$clang_dir/"
     "CC=$clang_dir/bin/clang.real" "HOSTCC=$clang_dir/bin/clang.real"
     "HOSTCXX=$clang_dir/bin/clang++.real")
+case "${LTO_LINKER:-gold}" in
+    gold) ;;
+    lld)
+        # Requires patches/0001-build-allow-lld-for-lto.patch in SOURCE.
+        make_args+=("GCC_TOOLCHAIN=$gcc_dir" "LD=$clang_dir/bin/ld.lld --lto-O1") ;;
+    *) echo "Unsupported LTO_LINKER" >&2; exit 2 ;;
+esac
 case "$action" in
     configure) make "${make_args[@]}" merge_kirin710_defconfig ;;
     stock-config)

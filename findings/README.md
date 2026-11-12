@@ -38,6 +38,8 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 - [Kernel configuration assessment](interpretation/kernel-configuration.md)
 - [Kernel source candidates and remaining validation](interpretation/kernel-source-candidates.md)
 - [Executed Kconfig validation and baseline build](interpretation/baseline-build.md)
+- [Peripheral source trace, board data and read-only checks](interpretation/peripheral-integration.md)
+- [Provisional Halium approach and configuration probe](interpretation/halium-approach.md)
 - [Technical checkpoints and corrections](interpretation/technical-history.md)
 - [Collection commands and limitations](interpretation/collection-methods.md)
 - [Unlock and porting plan](interpretation/next-steps.md)

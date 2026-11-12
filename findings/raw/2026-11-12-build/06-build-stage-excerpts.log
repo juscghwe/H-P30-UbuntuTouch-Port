@@ -1,0 +1,95 @@
+--- Pristine full-LTO attempt ---
+Origin: selected executed build-log lines, not device output. Paths generalized.
+  LTO     vmlinux.o
+<source>/scripts/link-vmlinux.sh: line 101: 72335 Killed                  ${LD} ${LDFLAGS} -r -o ${1} $(modversions) ${objects}
+make[1]: *** [<source>/Makefile:1213: vmlinux] Error 137
+make: *** [Makefile:156: sub-make] Error 2
+BUILD_EXIT=2
+
+--- Stock-derived certs, unchanged source ---
+Origin: selected executed build-log lines, not device output. Paths generalized.
+make[2]: *** No rule to make target '<source>/../../out/target/product//obj/KERNEL_OBJ/scripts/extract-cert', needed by 'certs/x509_certificate_list'.  Stop.
+BUILD_EXIT=2
+
+--- Stock-derived certs, diagnostic extractor-path correction ---
+Origin: selected executed build-log lines, not device output. Paths generalized.
+  EXTRACT_CERTS
+cp -fp <source>/../../vendor/huawei/chipset_common/build/signkernel/signing_key_v11.x509 certs/signing_key.x509
+cp: cannot stat '<source>/../../vendor/huawei/chipset_common/build/signkernel/signing_key_v11.x509': No such file or directory
+BUILD_EXIT=2
+
+--- Development signing, unchanged source ---
+Origin: selected executed build-log lines, not device output. Paths generalized.
+  HOSTLD  scripts/dtc/dtc
+  HOSTLD  scripts/genksyms/genksyms
+  HOSTLD  scripts/mod/modpost
+  EXTRACT_CERTS
+### Key pair generated.
+  EXTRACT_CERTS   certs/signing_key.pem
+  AS      certs/system_certificates.o
+  AR      certs/built-in.o
+BUILD_EXIT=0
+
+--- Stock-enabled driver directory probes ---
+Origin: selected executed build-log lines, not device output. Paths generalized.
+  CC      drivers/hwpower/cc_battery/battery_temp/battery_temp.o
+  CC      drivers/hwpower/cc_battery/battery_temp/multi_btb_temp.o
+  AR      drivers/hwpower/cc_battery/battery_temp/built-in.o
+  CC      drivers/hwpower/cc_battery/battery_type_identify/battery_type_identify.o
+  AR      drivers/hwpower/cc_battery/battery_type_identify/built-in.o
+  CC      drivers/huawei_platform/audio/hifi_vir_dai/hifi_vir_dai.o
+  AR      drivers/huawei_platform/audio/hifi_vir_dai/built-in.o
+  CC      drivers/huawei_platform/power/battery/battery_ct/onewire/onewire_phy_pl061_gpio.o
+  CC      drivers/huawei_platform/power/battery/battery_ct/onewire/onewire_common.o
+  CC      drivers/huawei_platform/power/battery/battery_ct/onewire/onewire_phy_pl061_gpio_v2.o
+  AR      drivers/huawei_platform/power/battery/battery_ct/onewire/built-in.o
+  CC      drivers/hwpower/cc_hardware_ic/switch_capacitor/sc8545/sc8545.o
+  CC      drivers/hwpower/cc_hardware_ic/switch_capacitor/sc8545/sc8545_i2c.o
+  CC      drivers/hwpower/cc_hardware_ic/switch_capacitor/sc8545/sc8545_protocol.o
+  AR      drivers/hwpower/cc_hardware_ic/switch_capacitor/sc8545/built-in.o
+  CC      drivers/hwpower/cc_hardware_ic/switch_capacitor/sm5450/sm5450.o
+  CC      drivers/hwpower/cc_hardware_ic/switch_capacitor/sm5450/sm5450_i2c.o
+  CC      drivers/hwpower/cc_hardware_ic/switch_capacitor/sm5450/sm5450_protocol.o
+  AR      drivers/hwpower/cc_hardware_ic/switch_capacitor/sm5450/built-in.o
+BUILD_EXIT=0
+
+--- Discarded merge invocation from read-only directory ---
+Origin: selected executed build-log lines, not device output. Paths generalized.
+mktemp: failed to create file via template './.tmp.config.XXXXXXXXXX': Permission denied
+<source>/scripts/kconfig/merge_config.sh: line 106: $TMP_FILE: ambiguous redirect
+<source>/scripts/kconfig/merge_config.sh: line 131: $TMP_FILE: ambiguous redirect
+cp: cannot stat '': No such file or directory
+
+--- Valid configuration exposes PID-controller collision ---
+Origin: selected executed build-log lines, not device output. Paths generalized.
+<source>/include/linux/cgroup_subsys.h:65:1: error: redefinition of enumerator 'pids_cgrp_id'
+<source>/include/linux/cgroup_subsys.h:17:1: note: previous definition is here
+BUILD_EXIT=2
+
+--- AppArmor code after selecting standard PID controller ---
+Origin: selected executed build-log lines, not device output. Paths generalized.
+  CC      security/apparmor/apparmorfs.o
+  CC      security/apparmor/audit.o
+  CC      security/apparmor/capability.o
+  CC      security/apparmor/context.o
+  CC      security/apparmor/ipc.o
+  CC      security/apparmor/lib.o
+  CC      security/apparmor/match.o
+  CC      security/apparmor/path.o
+  CC      security/apparmor/domain.o
+  CC      security/apparmor/policy.o
+  CC      security/apparmor/policy_unpack.o
+  CC      security/apparmor/procattr.o
+  CC      security/apparmor/lsm.o
+  CC      security/apparmor/resource.o
+  CC      security/apparmor/secid.o
+  CC      security/apparmor/file.o
+  CC      security/apparmor/policy_ns.o
+  CC      security/apparmor/label.o
+  CC      security/apparmor/mount.o
+  CC      security/apparmor/net.o
+  CC      security/apparmor/af_unix.o
+  CC      security/apparmor/crypto.o
+  AR      security/apparmor/apparmor.o
+  AR      security/apparmor/built-in.o
+BUILD_EXIT=0

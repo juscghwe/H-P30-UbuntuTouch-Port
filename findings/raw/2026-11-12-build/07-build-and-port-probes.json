@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-12",
+  "origin": "Executed compile/configuration probes and canonical upstream-patch preflight; no device tests",
+  "source_commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+  "development_signing": {
+    "source_changes": false,
+    "configuration_sha256": "4f74320683d2e6eef94c86fed797012598d42e9ebd1b70e7f1a84acec9d10517",
+    "certificate_target_exit": 0,
+    "driver_probe_exit": 0,
+    "policy": "MODULE_SIG_FORCE=y, MODULE_SIG_ALL=y, MODULE_SIG_SHA512=y, MODVERSIONS=y retained; local development key replaces Huawei trust identity. Key is outside project."
+  },
+  "apparmor": {
+    "official_guide": "https://docs.ubports.com/en/latest/porting/configure_test_fix/Apparmor.html",
+    "upstream": "https://github.com/kdrag0n/proton_zf6",
+    "patches": [
+      {
+        "commit": "559e4f447556e1ea0b24b035965023b6fba8f2f8",
+        "sha256": "00f1bf609436cef86dcf227f9b98c944accf82368ede62239cc62866d4e3d6ff"
+      },
+      {
+        "commit": "f076c3083d908253d32d26b49d64faaf4f80b442",
+        "sha256": "7bebc2494dc4ca578e71e333bedaad7e93f8f6096508f5b2bd603ec0bebc905b"
+      }
+    ],
+    "preflight": "Both canonical patches apply after excluding the unavailable security/apparmor/.gitignore hunk. API-derived hunks were independently compared with canonical patch results; all 49 subtree file hashes match.",
+    "configuration_sha256": "2e376e06e433b9fbb8e88211a0ea7a84a74df718014dcdf6f84d42bdb7fdc788",
+    "configuration_validation": "All requested fragment settings retained; CONFIG_CMA=y preserved.",
+    "configuration_resolution": "CGROUP_PIDS=y and HW_CGROUP_PIDS=n avoid duplicate pids_cgrp_id",
+    "target": "security/apparmor/",
+    "make_exit": 0,
+    "includes": [
+      "security/apparmor/net.o",
+      "security/apparmor/af_unix.o"
+    ],
+    "scope": "Object/archive compilation only; no complete Halium kernel or policy/runtime test"
+  },
+  "lld_experiment": {
+    "prebuilt": "Clang r353983c ld.lld",
+    "optimization": "--lto-O1",
+    "aarch64_bitcode_probe_exit": 0,
+    "unpatched_prepare_exit": 2,
+    "patch": "../../../patches/0001-build-allow-lld-for-lto.patch",
+    "configuration_sha256": "f8b10ba6e50d0a6b7dbc33f8cd43d6f7ee36833ca89ef08e75c1eb78d617ccf3",
+    "result": {
+      "make_exit": 2,
+      "linker_exit": 137,
+      "last_stage": "LTO vmlinux.o",
+      "complete_image": false,
+      "cause": "Linker killed; second OOM kill recorded by enclosing cgroup"
+    }
+  },
+  "unlock_recheck": {
+    "url": "https://forum.gsmhosting.com/vbb/f1053/p30-ele-l09-unlock-first-octoplus-2900885/index27.html",
+    "kind": "Search-indexed firsthand service report; selected technical interpretation only",
+    "model": "MAR-LX1A",
+    "reported_firmware": "MAR-L01A 12.0.0.262(C431E3R2P2)",
+    "observed_limit": "Direct-unlock log begins in Huawei USB COM service mode. No software-only entry, normal-reboot persistent bootloader state or custom-image boot demonstrated.",
+    "official_operation_distinction": "https://octopusbox.com/eng/news/details/854",
+    "selection": "No serials, IMEI, account information, screenshots or full logs copied."
+  }
+}

@@ -38,7 +38,8 @@
     "flex": "2.6.4",
     "openssl": "3.0.22",
     "build_jobs": 2,
-    "memory_limit_gib": 6
+    "requested_container_memory_gib": 6,
+    "observed_enclosing_cgroup_memory_bytes": 8589934592
   },
   "configurations": {
     "candidate_pristine": {
@@ -55,5 +56,14 @@
       "note": "Normalized result is a derived configuration; original evidence is unchanged. No stock-derived compile result yet."
     }
   },
-  "baseline_build": "Started with candidate configuration and documented toolchain; result pending. Object compilation is not a complete kernel build."
+  "baseline_build": {
+    "source_changes": false,
+    "configuration": "candidate_pristine",
+    "make_exit": 2,
+    "last_stage": "LTO vmlinux.o",
+    "linker_exit": 137,
+    "cause": "Linker killed; enclosing cgroup recorded an OOM kill",
+    "complete_image": false,
+    "complete_modules": false
+  }
 }

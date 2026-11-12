@@ -8,4 +8,4 @@ Start with [findings](findings/README.md). Evidence is separated into sanitized 
 
 This repository currently contains documentation and configuration evidence, not an installable port. The target is the **P30 Lite**, not the Kirin 980 P30/P30 Pro.
 
-The pinned research candidate now passes [Kconfig validation](findings/interpretation/baseline-build.md). Baseline compilation with the documented legacy toolchain is in progress; source completeness and device compatibility remain unverified.
+The pinned research candidate passes [Kconfig validation](findings/interpretation/baseline-build.md) and compiled through object generation, but its full-LTO link exceeded available memory. An alternate linker experiment is in progress. Source completeness and device compatibility remain unverified.
