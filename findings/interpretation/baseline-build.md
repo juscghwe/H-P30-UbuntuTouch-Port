@@ -31,6 +31,8 @@ More significantly, normalizing the **complete stock config** removes 66 explici
 
 The stock input remains byte-for-byte identical to E08. Candidate-pristine, stock-derived and Halium-probe outputs use separate directories. No signing key or proprietary binary is committed.
 
+The pinned comparison kernel also lacks definitions for all 65 symbols missing from the preferred tree. [The companion search](../raw/2026-11-12-build/10-companion-definition-coverage.json) covers every tracked `*Kconfig*` file. It found no selected Marie/HWMAR/touch-project markers under `arch/` or `drivers/`. This does not exclude differently named or binary board data, but the comparison tree supplies no demonstrated fix for these configuration gaps.
+
 ## Executed build results
 
 - **Pristine candidate:** object compilation reached `LTO vmlinux.o`. The GNU-gold/LLVMgold linker was killed with status 137; make exited 2. The enclosing 8 GiB cgroup recorded an OOM kill. No `Image.gz` or complete module build resulted. The container requested a 6 GiB limit, but the observed enclosing limit was 8 GiB; requested limits are not presented as measured enforcement.
@@ -60,5 +62,15 @@ python3 scripts/verify-findings.py
 ```
 
 For the LLD experiment, apply the linked build patch to a separate source checkout and set `LTO_LINKER=lld` for the recipe. [development-signing.config](../../configs/development-signing.config) records the standalone signing probe; keys stay in the external build output. [candidate-nolto.config](../../configs/candidate-nolto.config) is the separately labelled resource diagnostic, which changes kernel hardening.
+
+For the stock-derived Halium resource probe, first apply the AppArmor patches to a separate source checkout with `scripts/apply-apparmor.sh`. Use an empty output directory:
+
+```bash
+bash scripts/kernel-baseline.sh SOURCE OUTPUT CLANG_DIR GCC_DIR stock-config findings/raw/2026-11-11/08-stock-kernel.config
+bash scripts/kernel-baseline.sh SOURCE OUTPUT CLANG_DIR GCC_DIR merge-config configs/development-signing.config configs/halium10-probe.config configs/no-debug-info.config configs/candidate-nolto.config
+JOBS=1 bash scripts/kernel-baseline.sh SOURCE OUTPUT CLANG_DIR GCC_DIR build
+```
+
+`merge-config` preserves its input as `pre-fragment.config`, runs the vendor merge helper with failure propagation from a writable directory, normalizes with the recipe's tool flags and verifies the requested values. Only the two explicitly disabled CFI children may disappear under non-LTO dependencies. Its report contains hashes and fragment basenames. [An executed reproduction](../raw/2026-11-12-build/11-fragment-reproduction.json) produced the active Halium probe's exact config SHA-256, `b7707e0d2dcf5a7a82264f39d6ec18880000ed559a5b605ccaeb62a4f7878155`.
 
 No boot-image packaging, flashing, custom boot, display, touchscreen or Wi-Fi result is claimed.

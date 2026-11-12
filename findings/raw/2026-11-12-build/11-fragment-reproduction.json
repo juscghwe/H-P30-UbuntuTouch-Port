@@ -1,0 +1,37 @@
+{
+  "input_config_sha256": "e831123f47cdc75239a90ac239c7dc36d923ba6261e8cf1b3bb09d349bd4a553",
+  "fragments": [
+    {
+      "name": "development-signing.config",
+      "sha256": "2935a78a718747222f7c0bec88f39defd86f7f6294e13ad05d366f2710505625"
+    },
+    {
+      "name": "halium10-probe.config",
+      "sha256": "b38de3759d68eb2431f8d8e6ddd001882e21a8b8213e4136ee213f105d59115e"
+    },
+    {
+      "name": "no-debug-info.config",
+      "sha256": "3731ed0fafdda69a5aa0baedb89507c70aa9cea58d4f9accc5b515d191d3e8ab"
+    },
+    {
+      "name": "candidate-nolto.config",
+      "sha256": "b98bbcf09d6ea93037c234119a581231958358b8f20a40e9e5a194edac35e002"
+    }
+  ],
+  "config_sha256": "b7707e0d2dcf5a7a82264f39d6ec18880000ed559a5b605ccaeb62a4f7878155",
+  "dependency_omitted_requested_unset_symbols": [
+    "CONFIG_CFI_CLANG",
+    "CONFIG_CFI_CLANG_SHADOW"
+  ],
+  "requested_values_verified": true,
+  "origin": "Executed public merge-config recipe against stock-derived olddefconfig and four public fragments",
+  "source_commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+  "result": "Exit 0; final bytes match the active full stock-derived Halium native-build configuration",
+  "negative_check": {
+    "requested": "CONFIG_PORT_PROBE_NONEXISTENT=y",
+    "make_olddefconfig_exit": 0,
+    "recipe_exit": 1,
+    "diagnostic": "Fragment value not retained: CONFIG_PORT_PROBE_NONEXISTENT=y, actual=None",
+    "report_written": false
+  }
+}
