@@ -6,6 +6,8 @@ The bootloader is locked. There is no tested custom boot image, selected complet
 
 ## Unlock feasibility
 
+**2026-11-12 update:** the owner requests software-only research. No verified end-to-end procedure for the current .262 build has been found. Read [the unlock feasibility assessment](unlock-feasibility.md) before any downgrade or tool purchase. HCU's own manual confirms an Android-9 prerequisite for its documented unlock; this does not prove that our offered .562 rollback reaches that state.
+
 1. Retain the current sanitized firmware/configuration evidence before changing versions.
 2. Determine a model- and customization-compatible downgrade/unlock sequence. E04 proves only that HiSuite offers EMUI 10.0.0.562(C431E15R2P7). A subsequent offer for EMUI 9.1 remains unknown.
 3. The PotatoNV project's alternatives documentation lists Kirin-Tool for Kirin 710 and states EMUI 9.1-or-earlier support. PotatoNV itself excludes Kirin 710. The original Kirin-Tool website returned HTTP 403; exact MAR-LX1A firmware compatibility was not verified.

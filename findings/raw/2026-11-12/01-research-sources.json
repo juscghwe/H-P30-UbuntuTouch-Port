@@ -1,0 +1,147 @@
+{
+  "research_date": "2026-11-12",
+  "timezone": "Europe/Berlin",
+  "scope": "Read-only investigation of software-only persistent bootloader unlocking for MAR-LX1A C431, current Settings firmware 12.0.0.262(C431E3R2P2).",
+  "sources": [
+    {
+      "id": "R01",
+      "url": "https://hcu-client.com/huawei-bootloader-unlock-via-testpoint/",
+      "kind": "Tool vendor official instructions",
+      "access": "Full page read",
+      "quote": "The phone should be running Android 9 otherwise bootloader will remain locked until downgraded"
+    },
+    {
+      "id": "R02",
+      "url": "https://www.dc-unlocker.com/dcphoenix-enable-software-tp",
+      "kind": "Tool vendor official instructions",
+      "access": "Full page read",
+      "quotes": [
+        "Software testpoint service works for device with up to 10.0 Android, EMUI 10!",
+        "should never be considered a guaranteed way"
+      ]
+    },
+    {
+      "id": "R03",
+      "url": "https://hcu-client.com/supported-models.php",
+      "kind": "Tool vendor model table",
+      "access": "Full page/header and MAR-LX1A row read",
+      "selected_model": "P30 Lite / MAR-LX1A / HiSilicon KIRIN710",
+      "note": "Firmware caveats appear in table header; model presence alone is not exact-build validation."
+    },
+    {
+      "id": "R04",
+      "url": "https://forum.dc-unlocker.com/forum/modems-and-phones/huawei/199602-huawei-p30-lite-mar-lx1a-unsuccessful-bootloader-unlock-kirin710_p1_v2",
+      "kind": "Firsthand failure report and vendor-support response",
+      "published": "2025-02-03/04",
+      "access": "Search-indexed page text read; direct page fetch timed out",
+      "quote": "as soon as I disable testpoint and reboot into bootloader it's locked."
+    },
+    {
+      "id": "R05",
+      "url": "https://forum.dc-unlocker.com/forum/modems-and-phones/huawei/193989-enable-testpoint-p30-lite-emui-10-0-0-1",
+      "kind": "Firsthand report and vendor-support response",
+      "published": "2021-06-27/28",
+      "access": "Search-indexed page text read; direct fetches timed out",
+      "selected_technical_fields": [
+        "MAR-LX1A",
+        "10.0.0.197(C431E8R2P7)",
+        "Marie-L21A 10.0.0.275(C431E8R2P7)"
+      ],
+      "quotes": [
+        "You need to rollback android before unlocking bootloader for unlock to be permanent, 9.1/9.0",
+        "Did it and It works!"
+      ]
+    },
+    {
+      "id": "R06",
+      "url": "https://catwithcode.moe/Blog/2026.08.06_P30_Lite_Root/P30_Lite_Root.html",
+      "kind": "Firsthand same-model/same-customization modification report",
+      "access": "Full page read",
+      "selected_technical_fields": [
+        "MAR-LX1A",
+        "12.0.0.251(C431E3RP2P2)",
+        "9.1.0.399"
+      ],
+      "note": "Build string retained as written by author, including apparent formatting typo. No device identifiers or screenshots copied."
+    },
+    {
+      "id": "R07",
+      "url": "https://ministryofsolutions.com/huawei-p30-lite-bootloader-unlock-mar-lx1a-lx1m-lx2a-lx2b-lx3a-al00/",
+      "kind": "Service provider description",
+      "access": "Full page read",
+      "published": "2021-08-07; page states update 2022-10-25",
+      "selected_technical_fields": [
+        "MAR-LX1A",
+        "EMUI9.1"
+      ]
+    },
+    {
+      "id": "R08",
+      "url": "https://github.com/kethily-daniel/Kirin-Tool",
+      "kind": "Original tool repository and source reference",
+      "access": "README and selected source inspected; nothing executed or imported",
+      "tree_sha": "81f89f40b089b50ced5589fcfbd44768ef49f80d",
+      "inspected_paths": [
+        "README.md",
+        "Services/FirmwareUnlocker.cs",
+        "Services/USBUpdate/SoftwareTestpointService.cs",
+        "Services/FastbootClient.cs",
+        "MainWindow.xaml.cs"
+      ],
+      "note": "Public SoC support and source logic are not an observed unlock on MAR-LX1A firmware .262. Tree SHA identifies inspected listing, not a signed release or tested binary."
+    },
+    {
+      "id": "R09",
+      "url": "https://github.com/FrgfA4ftfzTdfyyyr5f6tESD3/huawei_kirin_toolkit",
+      "kind": "Unverified toolkit claim and source reference",
+      "access": "README and one protection module inspected; nothing executed or imported",
+      "tree_sha": "c43ea5c670f25580b2703a51d26cf06d8eaeff2b",
+      "inspected_paths": [
+        "README.md",
+        "hktool/kirin/kirin_710_protection.py"
+      ],
+      "note": "Broad EMUI support claims do not demonstrate persistent bootloader unlock on the target build."
+    },
+    {
+      "id": "R10",
+      "url": "https://xdaforums.com/t/p30-lite-with-los-20-21-and-magisk-it-s-working.4759065/",
+      "kind": "Procedure linked by firsthand report",
+      "access": "Not readable: web fetch HTTP 502; direct HTTP fetch HTTP 403"
+    },
+    {
+      "id": "R11",
+      "url": "https://xdaforums.com/t/p30-lite-with-los-20-21-and-magisk-it-s-working.4759065/post-90388880",
+      "kind": "Specific post linked by firsthand report",
+      "access": "Not readable: web fetch HTTP 502"
+    },
+    {
+      "id": "R12",
+      "url": "https://kirintool.cfd",
+      "kind": "Original tool website",
+      "access": "Not readable: HTTP 403"
+    },
+    {
+      "id": "R13",
+      "url": "https://github.com/ProfessorJTJ/HISuite-Proxy/wiki",
+      "kind": "Project wiki",
+      "access": "Home page read",
+      "note": "Repository archived 2023-08-26; not proof of a working downgrade for the current firmware."
+    },
+    {
+      "id": "R14",
+      "url": "https://www.dc-unlocker.com/dcphoenix-disable-software-testpoint",
+      "kind": "Tool vendor exit/recovery instructions",
+      "access": "Full page read",
+      "note": "Entering service mode is not the whole procedure; exit materials and restoration must be established."
+    },
+    {
+      "id": "R15",
+      "url": "https://forum.dc-unlocker.com/forum/modems-and-phones/huawei/194702-huawei-p30-lite-mar-lx1a-testpoint-problem",
+      "kind": "Same-model vendor support thread",
+      "access": "Search-indexed page text read; no full raw forum dump retained",
+      "published": "2021-10",
+      "note": "Device on Android 10; support describes downgrade before bootloader unlock. Personal identifiers from the public log omitted entirely."
+    }
+  ],
+  "privacy": "Only selected technical fields, limited excerpts and access metadata retained. Public forum device/account identifiers, full logs, source files and binaries not copied."
+}

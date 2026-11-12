@@ -23,3 +23,7 @@ Sources consulted on 2026-11-11. These are mutable upstream URLs, not pinned sou
 | [Mate 20 Lite Droidian project](https://github.com/jglasovic/droidian-kirin710) | Author reports boot, display, Wi-Fi/SSH and documents Huawei connectivity initialization | Different phone/OS; headless-oriented default setup; no P30 Lite or accelerated Lomiri verification |
 
 No image, firmware binary, third-party kernel source tree or unlock executable has been imported into this documentation repository.
+
+## 2026-11-12 research addendum
+
+See the [dated source catalog](../raw/2026-11-12/01-research-sources.json) for first-party HCU/DC Phoenix requirements, same-model support reports, the closer C431 modification account, original Kirin-Tool repository and explicitly recorded access failures. The [assessment](unlock-feasibility.md) supersedes any interpretation that a generic compatibility note alone justifies starting a rollback.

@@ -2,7 +2,7 @@
 
 ## Scope and status
 
-Session date: **2026-11-11**, Europe/Berlin. Evidence was supplied by the owner as command output and selected transcriptions. Exact acquisition times and the phone's clock have not been independently verified. Numeric file timestamps are not used to infer firmware state.
+Device evidence date: **2026-11-11**; unlock research update: **2026-11-12**, Europe/Berlin. Evidence was supplied by the owner as command output and selected transcriptions. Exact acquisition times and the phone's clock have not been independently verified. Numeric file timestamps are not used to infer firmware state.
 
 Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is deferred; charging, thermal behavior, sleep/wake and reconnect reliability are required milestones.
 
@@ -20,6 +20,13 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 | E08 | [Stock kernel configuration](raw/2026-11-11/08-stock-kernel.config) | Decompressed owner-uploaded `/proc/config.gz` |
 | — | [Capture provenance](raw/2026-11-11/provenance.json) | Acquisition, normalization and sanitation metadata |
 | — | [SHA-256 inventory](raw/2026-11-11/SHA256SUMS) | Integrity hashes of the committed evidence and provenance |
+
+## Unlock research update: 2026-11-12
+
+- [Source observations and limited excerpts](raw/2026-11-12/01-research-sources.json) — external primary sources, not new device measurements.
+- [Owner constraint: software-only](raw/2026-11-12/02-owner-constraint.txt).
+- [Research evidence checksums](raw/2026-11-12/SHA256SUMS).
+- [Unlock feasibility assessment](interpretation/unlock-feasibility.md) — vendor requirements, same-model reports, rejected shortcuts and remaining gaps.
 
 ## Interpretation and reproducibility
 

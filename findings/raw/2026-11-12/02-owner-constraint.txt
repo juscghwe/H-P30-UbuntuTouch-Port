@@ -1,0 +1,5 @@
+[Owner response to a research-scope question on 2026-11-12.]
+Question: The strongest same-model unlock report uses a motherboard test point, which requires opening the phone. Are you willing to open the back cover?
+Answer: Keep looking for a software-only method
+
+[No physical test-point or disassembly procedure has been approved or performed.]
