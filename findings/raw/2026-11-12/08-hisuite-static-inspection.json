@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-12",
+  "origin": "Generated static PE/archive inspection and selected owner-reported log diagnostics; no installer execution or PC/phone capture",
+  "owner_client_version": "14.0.0.380_OVE",
+  "owner_selected_logs": {
+    "SystemUpdate_20261111_00.log": 6813,
+    "SystemUpdate_20261112_00.log": 6801,
+    "literal_http_occurrences": 0,
+    "literal_url_occurrences": 0,
+    "owner_manual_review": "No download URL found; full logs were not imported"
+  },
+  "official_client": {
+    "page": "https://consumer.huawei.com/en/support/hisuite/",
+    "download": "https://consumer-tkb.huawei.com/weknow/servlet/download/public?contextNo=W00018218",
+    "filename": "HiSuite_14.0.0.380_OVE.exe",
+    "bytes": 65412392,
+    "sha256": "28f0786004358beab5dba1dca82a734d36bf6a95b5b13f148c5fbf662e0bf7cc",
+    "hash_matches_huawei_page": true,
+    "method": "HTTPS download with normal TLS validation; NSIS archive extraction using official 7-Zip 26.06; PE import/export table inspection",
+    "executed": false,
+    "components": [
+      {
+        "name": "httpcomponent.dll",
+        "machine": "IMAGE_FILE_MACHINE_I386",
+        "sha256": "302e710b21fcdabb7835b5cb12693f4eb1bd40a68f29df98e474ccb0e87f2ab3",
+        "selected_imports": ["libcrypto-3.dll", "libssl-3.dll", "zlib.dll"],
+        "selected_export": "?UnGzip@AppBaseHttpClient@NetWork@@AAEHPBDHPAPADAAH@Z"
+      },
+      {
+        "name": "libssl-3.dll",
+        "machine": "IMAGE_FILE_MACHINE_I386",
+        "sha256": "9a910d485e7bafd46f512543c234350fb61568f418a444c493151a328f277b24",
+        "selected_exports": ["SSL_read", "SSL_read_ex"]
+      }
+    ]
+  },
+  "older_official_client": {
+    "filename": "HiSuite_10.0.0.510_OVE.exe",
+    "archive_host": "consumer-tkbdownload.huawei.com",
+    "archive_bytes": 38007763,
+    "archive_sha256": "620592e92893538820650ff5001265133033bf57641e5fe30860aeacfc7e0249",
+    "installer_bytes": 38027648,
+    "installer_sha256": "fb7bcfd3220faebf7527e7686af1381a0994e8f399516ce95ada70f0d2818351",
+    "selected_imports_in_httpcomponent": ["libeay32.dll", "ssleay32.dll", "zlibwapi.dll"],
+    "executed": false,
+    "signature_limit": "Huawei Authenticode certificate observed; full Authenticode verification not performed"
+  },
+  "references": [
+    "https://consumer.huawei.com/de/support/phones/p30-lite/",
+    "https://consumer.huawei.com/en/support/update/",
+    "https://github.com/ProfessorJTJ/HISuite-Proxy/issues/17",
+    "https://learn.microsoft.com/en-us/windows/win32/winhttp/collect-traces",
+    "https://frida.re/docs/javascript-api/"
+  ],
+  "limits": [
+    "Static imports/exports do not prove that a given updater workflow invokes them.",
+    "No firmware URL, update manifest, firmware archive or stock image was obtained.",
+    "The observer has offline fixture tests only; no running Windows HiSuite capture is demonstrated."
+  ]
+}

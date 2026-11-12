@@ -38,3 +38,7 @@ The bootloader is locked. The documented source/toolchain pair produces offline 
 A Wi-Fi-only goal avoids initial telephony/VoLTE work but does not eliminate graphics, power, device permissions or connectivity integration. SIM functionality should be a separately evaluated later milestone.
 
 The [owner follow-up E10](../raw/2026-11-12/07-stock-layout-and-access.txt) supplies actual named image-partition targets and a stock touch-firmware hash, which differs from the recovery reference. DT traversal and connectivity status reads are denied; the `hisi` property does not identify the chip. The four underlying kernel/ramdisk/dts/dto block nodes are `root:root` mode `0600`, blocking ordinary ADB extraction. Preserve the readable stock touch firmware privately and look for matching original update materials already obtained through HiSuite or another legitimate Huawei distribution. Inspect original headers before creating a device-specific packaging recipe; no partition constants from another handset are accepted.
+
+The [firmware acquisition assessment](firmware-acquisition.md) records the log
+search limit and a bounded experimental HiSuite observer. No package capture
+has succeeded yet; do not start an update solely to generate a download URL.
