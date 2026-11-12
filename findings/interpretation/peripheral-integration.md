@@ -38,6 +38,8 @@ python3 scripts/inspect-image.py ORIGINAL_IMAGE > reviewed-header.json
 
 The implementation follows the AOSP [boot-header](https://source.android.com/docs/core/architecture/bootloader/boot-image-header) and [DT-table](https://source.android.com/docs/core/architecture/dto/partitions) specifications. Ten generated-fixture checks cover legacy headers, DT bounds, malformed/truncated inputs, unchanged input hashes and omission of embedded names/command lines. [Results](../raw/2026-11-12-build/08-image-inspector-validation.json) are host-tool validation, not inspection of an actual Huawei stock image.
 
+Reproduce the generated-fixture checks with `python3 scripts/check-image-inspector.py` on a host with `dtc`; it creates no files in the checkout.
+
 ## Small read-only collection set
 
 Run from the Windows Platform-Tools directory with Android booted. These commands do not reboot, write sysfs, request root, read block contents or change firmware. Preserve errors; review paths and output before sharing.

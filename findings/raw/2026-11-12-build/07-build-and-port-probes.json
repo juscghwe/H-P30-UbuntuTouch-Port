@@ -57,5 +57,59 @@
     "observed_limit": "Direct-unlock log begins in Huawei USB COM service mode. No software-only entry, normal-reboot persistent bootloader state or custom-image boot demonstrated.",
     "official_operation_distinction": "https://octopusbox.com/eng/news/details/854",
     "selection": "No serials, IMEI, account information, screenshots or full logs copied."
+  },
+  "candidate_nodebug_lto": {
+    "config_sha256": "bc051537dd518ed0ff0159f7c07d6a79370fa6a5d4878eb24b8dc166de10b5dd",
+    "input_config_sha256": "f8b10ba6e50d0a6b7dbc33f8cd43d6f7ee36833ca89ef08e75c1eb78d617ccf3",
+    "change": "DEBUG_INFO=y to n; four already-disabled child entries dependency-omitted; all other retained values unchanged",
+    "make_exit": 2,
+    "linker_exit": 137,
+    "last_stage": "LTO vmlinux.o",
+    "cause": "Third OOM kill recorded by enclosing cgroup",
+    "complete_image": false
+  },
+  "native_resource_probes": {
+    "candidate": {
+      "config_sha256": "0e6d48059f71e2ac8a1fb188ea126c7fc5dc8044816635de15b849e347f901f4",
+      "source_changes": false,
+      "debug_info": true,
+      "LTO": false,
+      "CFI": false,
+      "stage": "Native AArch64 object compilation running"
+    },
+    "stock_derived_halium": {
+      "source_commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+      "effective_source_tree": "3c5fd7bf0c8e8da2e10d8ebc605ad73f59cc4cb9",
+      "source_patches": [
+        "559e4f447556e1ea0b24b035965023b6fba8f2f8",
+        "f076c3083d908253d32d26b49d64faaf4f80b442"
+      ],
+      "input_stock_sha256": "16623939098e19212e0f66b9117a45f3e8bf1f05d4ccb00138a1a372d11ccc5b",
+      "fragments": [
+        {
+          "path": "configs/development-signing.config",
+          "sha256": "2935a78a718747222f7c0bec88f39defd86f7f6294e13ad05d366f2710505625"
+        },
+        {
+          "path": "configs/halium10-probe.config",
+          "sha256": "b38de3759d68eb2431f8d8e6ddd001882e21a8b8213e4136ee213f105d59115e"
+        },
+        {
+          "path": "configs/no-debug-info.config",
+          "sha256": "3731ed0fafdda69a5aa0baedb89507c70aa9cea58d4f9accc5b515d191d3e8ab"
+        },
+        {
+          "path": "configs/candidate-nolto.config",
+          "sha256": "b98bbcf09d6ea93037c234119a581231958358b8f20a40e9e5a194edac35e002"
+        }
+      ],
+      "config_sha256": "b7707e0d2dcf5a7a82264f39d6ec18880000ed559a5b605ccaeb62a4f7878155",
+      "dependency_omitted_requested_unset_symbols": [
+        "CONFIG_CFI_CLANG",
+        "CONFIG_CFI_CLANG_SHADOW"
+      ],
+      "hardening_change": "Offline resource diagnostic: LTO and CFI disabled; forced module signatures and versioning remain enabled. No device validation.",
+      "stage": "Full Image.gz/modules build running, one compile job"
+    }
   }
 }

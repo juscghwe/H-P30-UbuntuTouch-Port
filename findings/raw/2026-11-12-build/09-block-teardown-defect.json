@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-12",
+  "origin": "Native AArch64 compiler diagnostic plus static source inspection; no phone runtime test",
+  "source_commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+  "diagnostic": {
+    "path": "block/blk.h",
+    "line": 249,
+    "message": "all paths through this function will call itself [-Winfinite-recursion]"
+  },
+  "observations": [
+    "The inline elevator_exit wrapper frees mq requests then recursively calls itself.",
+    "__elevator_exit is declared in the header and defined in block/elevator.c.",
+    "The export still names elevator_exit rather than the defined helper.",
+    "I/O scheduler switching calls this wrapper; a compile alone would not establish safe runtime behavior."
+  ],
+  "proposed_patch": "../../../patches/0002-block-fix-elevator-exit-recursion.patch",
+  "files": [
+    {
+      "path": "block/blk.h",
+      "before_sha256": "2bced79eaa1ceb915133bd657582cfc7449ef83d80d3632061394f1db5e20f8c",
+      "proposed_sha256": "e3c073d6579d3fb59b1dff8cc8447743cd80473d9bc8e090fba66558878a51aa"
+    },
+    {
+      "path": "block/elevator.c",
+      "before_sha256": "e0c35aab74f9682c11d973feeba18c96ba48c7f94fd33de1bcabd5e935a9c9d5",
+      "proposed_sha256": "33a4c841626c4e3d97b84bdeb85bd5117335e3b62b82c7ff3bb194c85066d223"
+    }
+  ],
+  "verification": "Standard git apply --check with whitespace errors enabled passes for both current source checkouts. Running builds are unchanged; patched compilation and final link remain pending."
+}

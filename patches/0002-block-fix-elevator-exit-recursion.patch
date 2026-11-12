@@ -1,0 +1,24 @@
+diff --git a/block/blk.h b/block/blk.h
+--- a/block/blk.h
++++ b/block/blk.h
+@@ -248,7 +248,7 @@
+ 		struct elevator_queue *e)
+ {
+ 	blk_mq_sched_free_requests(q);
+-	elevator_exit(q, e);
++	__elevator_exit(q, e);
+ }
+ 
+ struct hd_struct *__disk_get_part(struct gendisk *disk, int partno);
+diff --git a/block/elevator.c b/block/elevator.c
+--- a/block/elevator.c
++++ b/block/elevator.c
+@@ -273,7 +273,7 @@
+ 
+ 	kobject_put(&e->kobj);
+ }
+-EXPORT_SYMBOL(elevator_exit);
++EXPORT_SYMBOL(__elevator_exit);
+ 
+ static inline void __elv_rqhash_del(struct request *rq)
+ {

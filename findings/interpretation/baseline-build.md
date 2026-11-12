@@ -4,7 +4,7 @@ Source: Enjoy 10 / HarmonyOS 2 kernel at `c1e2747d8e839bedaa71a6436d24a51285d985
 
 ## Provenance and compiler
 
-The pinned source archive reconstructs upstream tree `2d661ac5023d56fd2e8b60f9803042158fc65757` and the exact pinned commit object. Source files are unchanged. The README's Clang `r353983c` is Android Clang 9.0.3, build 5484270. Its Android-10 release prebuilt and the Android GCC 4.9 tools were downloaded at pinned commits from AOSP; archive hashes are recorded with the inputs.
+The pinned source archive reconstructs upstream tree `2d661ac5023d56fd2e8b60f9803042158fc65757` and the exact pinned commit object. Source files are unchanged. Its README names a 2021-09-23 software release, while the stock kernel reports a 2023-02-28 build; the shared version number does not establish an identical patch set. The README's Clang `r353983c` is Android Clang 9.0.3, build 5484270. Its Android-10 release prebuilt and the Android GCC 4.9 tools were downloaded at pinned commits from AOSP; archive hashes are recorded with the inputs.
 
 AOSP's compiler wrappers expect a `python` executable, absent in the build container. The recipe selects the unchanged native `clang.real`/`clang++.real` executables explicitly. The GCC 4.9 native binary reports `4.9.x 20150123`; its assembler/linker tools supply the cross-toolchain. No compiler fallback to GCC 12 is used for the baseline kernel.
 
@@ -38,7 +38,15 @@ The stock input remains byte-for-byte identical to E08. Candidate-pristine, stoc
 - **Development signing:** changing only the key filename to `certs/signing_key.pem` allowed the unchanged source's certificate stage to pass. The key was generated locally outside this repository. Forced signatures, automatic signing, SHA-512 and module versioning remained enabled. This is a new trust root, not stock-module compatibility.
 - **Stock-enabled driver probes:** battery temperature, battery-type identification, PL061 onewire, HiFi virtual DAI, SC8545 and SM5450 directory builds all passed. These are object/archive checks, not working-device tests or a complete stock-derived kernel.
 
-The alternate LLD experiment uses the documented Clang prebuilt's linker with `--lto-O1`, retaining the candidate LTO/CFI config. An AArch64 bitcode link probe passed. Kernel preparation then rejected LLD through a GNU-gold-specific version check, despite Kconfig documenting both linkers. [The two-line build patch](../../patches/0001-build-allow-lld-for-lto.patch) exempts detected LLD from that gold parser while retaining the Clang check. Its kernel link also exhausted memory and was killed at `LTO vmlinux.o`; no image resulted. A fresh candidate-derived build with only debug-info generation disabled is now being tested with the original toolchain and LTO/CFI retained. A separate non-LTO/CFI diagnostic output is paused; it is not a completed build.
+The alternate LLD experiment uses the documented Clang prebuilt's linker with `--lto-O1`, retaining the candidate LTO/CFI config. An AArch64 bitcode link probe passed. Kernel preparation then rejected LLD through a GNU-gold-specific version check, despite Kconfig documenting both linkers. [The two-line build patch](../../patches/0001-build-allow-lld-for-lto.patch) exempts detected LLD from that gold parser while retaining the Clang check. Its kernel link also exhausted memory and was killed at `LTO vmlinux.o`; no image resulted.
+
+Disabling only `DEBUG_INFO` with the original gold toolchain reduced sampled link memory substantially but still ended in an OOM kill. LTO and CFI remained enabled in that attempt. A further build-only resource configuration disables LTO and its dependent CFI; candidate and stock-derived Halium outputs remain distinct. Both are now compiling native AArch64 objects with one job each. The Halium configuration retains forced signatures and module versioning, uses a local development key, and includes the AppArmor patches and namespace fragment. No complete image from these attempts is claimed yet.
+
+## Block-layer defect found during native compilation
+
+Clang reports infinite recursion in `block/blk.h:249`. The `elevator_exit()` wrapper calls itself after freeing scheduler requests, while `__elevator_exit()` is both declared and defined as the actual teardown helper. `block/elevator.c` also exports the wrapper name rather than the helper. Scheduler-switching paths invoke this wrapper; a successful compile would not establish a safe implementation.
+
+[The two-line repair](../../patches/0002-block-fix-elevator-exit-recursion.patch) changes the call and export to `__elevator_exit`. [Source hashes and diagnostic provenance](../raw/2026-11-12-build/09-block-teardown-defect.json) record the original bytes. It passes patch preflight against both source checkouts. The active builds remain unchanged; applying the fix and rebuilding is a separate validation step.
 
 ## Reproduction
 
