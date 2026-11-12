@@ -1,0 +1,111 @@
+{
+  "date": "2026-11-12",
+  "origin": "Generated offline catalog decoding and direct official-CDN metadata requests; no phone operation",
+  "catalog_repository": "https://github.com/ProfessorJTJ/professorjtj.github.io",
+  "catalog_commit": "a324a862c60764e84d398fe7b641e67b1873344c",
+  "catalogs": [
+    {
+      "repository_path": "firmwards.hash",
+      "url": "https://raw.githubusercontent.com/ProfessorJTJ/professorjtj.github.io/a324a862c60764e84d398fe7b641e67b1873344c/firmwards.hash",
+      "input_bytes": 2514699,
+      "input_sha256": "f639ea95cfd427588ca10a3024fccf63cc99543f622ad6ed35570a3608c660d8",
+      "decoded_sha256": "b57c4d6c5c97cac02f0c62d582830038411a13b0c56b195ba2dfed4ed4c577c9",
+      "decoded_rows": 40691
+    },
+    {
+      "repository_path": "BaseArchive/firmwards.hash",
+      "url": "https://raw.githubusercontent.com/ProfessorJTJ/professorjtj.github.io/a324a862c60764e84d398fe7b641e67b1873344c/BaseArchive/firmwards.hash",
+      "input_bytes": 1933602,
+      "input_sha256": "b4659e271e8c1e82d5e6bd8af82feff5388839f4200da9b0ccd753075107f4ce",
+      "decoded_sha256": "b0607bd05802ba1b5fa5f9e6003b531f7c84f22c367105183a25b7503292d138",
+      "decoded_rows": 32375
+    },
+    {
+      "repository_path": "Downgrade/firmwards.hash",
+      "url": "https://raw.githubusercontent.com/ProfessorJTJ/professorjtj.github.io/a324a862c60764e84d398fe7b641e67b1873344c/Downgrade/firmwards.hash",
+      "input_bytes": 288792,
+      "input_sha256": "6d96425dd5909fed55efaf13f0ff2f169bf9eaeb41ea1a692a3e590ca0917088",
+      "decoded_sha256": "b179186d5f32ec9b25724b9d3c67b1eb8bcb08baf565d1071a594a53a04bc6e8",
+      "decoded_rows": 4089
+    },
+    {
+      "repository_path": "v2/firmwards.hash",
+      "url": "https://raw.githubusercontent.com/ProfessorJTJ/professorjtj.github.io/a324a862c60764e84d398fe7b641e67b1873344c/v2/firmwards.hash",
+      "input_bytes": 2041866,
+      "input_sha256": "c11e0615534a8d9960fa4c09f4743edfb9a205a0dce6ebc0450437a61bf13bc4",
+      "decoded_sha256": "de396b4e3687fe37f405cbafd20b5cc65072bd58b02fce8e2267302ba97758aa",
+      "decoded_rows": 19774
+    }
+  ],
+  "decoding": {
+    "implementation": "scripts/inspect-firmfinder-catalog.py",
+    "method": "Three little-endian URL-safe sextets per LZW code; dictionary starts at 256 and resets at 262143; reverse the +24 character shift; validate complete JSON",
+    "website_scripts_executed": false,
+    "root_catalog_selected_rows": [
+      [
+        442187,
+        "MAR-L21A - C431",
+        "hw-eea",
+        "MAR-LGRP2-OVS 10.0.0.275",
+        "http://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/70/v3/0ff024a8d3dc4ebe95c5363aadb9bb40/",
+        "2020/11/19"
+      ],
+      [
+        639061,
+        "MAR-L21A - C431",
+        "hw-eea",
+        "MAR-LGRP2-OVS 10.0.0.562",
+        "http://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/c3/v3/eGks5LtRTIWfKcFX9aMlXg/",
+        "2022/06/27"
+      ]
+    ]
+  },
+  "manifest_requests": [
+    {
+      "catalog_id": 442187,
+      "url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/70/v3/0ff024a8d3dc4ebe95c5363aadb9bb40/full/filelist.xml",
+      "http_status": 200,
+      "bytes": 1049,
+      "sha256": "b723a98b2d86e6e3837046acb34dcbd2f59c061ced50a805aab4689dc9e90767",
+      "tls_verification": "Default certificate validation; no device identity or authentication supplied",
+      "files": [
+        {
+          "source_path": "changelog_base.xml",
+          "bytes": 112858,
+          "sha256": "fc9cf0fa3140f2f5f1a50790294f961b3fef022e561b3c9a3cc69d3b5dac7f80"
+        },
+        {
+          "source_path": "update_full_base.zip",
+          "bytes": 3791534847,
+          "sha256": "60e8983f148e29027af1bc921d6ed0de5f65752ee423d93d008cf9153831f1a4"
+        }
+      ]
+    },
+    {
+      "catalog_id": 639061,
+      "url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/c3/v3/eGks5LtRTIWfKcFX9aMlXg/full/filelist.xml",
+      "http_status": 200,
+      "bytes": 1523,
+      "sha256": "7c4b6863de34d5982a4effce37d7c6e599a8ac98d58a8727647b406f89b6d2f5",
+      "tls_verification": "Default certificate validation; no device identity or authentication supplied",
+      "files": [
+        {
+          "source_path": "update_full_base.zip",
+          "bytes": 3199657640,
+          "sha256": "0f99443a557b20558230f3d4b1a5aa08fd82662447fba81859b96f65245a6607"
+        },
+        {
+          "source_path": "changelog_base.xml",
+          "bytes": 122566,
+          "sha256": "65b4427b38e3d0d73ce1cd20a309f438393ba225dfc1b17d4ac405d9241f8db5"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Catalog model/customization labels are third-party claims. Live official manifests validate available package metadata, not device compatibility.",
+    "Catalog dates are preserved as source labels; they are not acquisition times, security-patch dates or firmware release dates.",
+    "The .275 Android-base label matches a reported ADB display ID but does not establish byte identity with the current EMUI 12 installation.",
+    "No flash, downgrade or persistent-unlock capability is demonstrated."
+  ]
+}

@@ -27,7 +27,7 @@ The bootloader is locked. The documented source/toolchain pair produces offline 
 | --- | --- | --- |
 | Choose source/toolchain | Sources contain required board/drivers and can reproduce a compatible kernel | Closer candidate and documented toolchain identified; not validated |
 | Compile research kernels | Complete AArch64 image/modules, exact config and artifact verification | Candidate and stock-derived Halium native images passed; LTO/CFI disabled |
-| Build adapted boot image | Actual Marie board data and verified device-specific image layout | Blocked on stock DT/image metadata; no boot package |
+| Build adapted boot image | Correct active board/overlay and verified device-specific image layout | Official .275 reference DT/images recovered; active overlay and current-image equality unresolved; no boot package |
 | Boot/debug access | Kernel boot and working USB debug shell on actual phone | Not done |
 | Ubuntu Touch/Halium starts | Mounts, services, container and root filesystem function | Not done |
 | GUI/touch | Accelerated Lomiri display and working touchscreen | Not done |
@@ -40,5 +40,8 @@ A Wi-Fi-only goal avoids initial telephony/VoLTE work but does not eliminate gra
 The [owner follow-up E10](../raw/2026-11-12/07-stock-layout-and-access.txt) supplies actual named image-partition targets and a stock touch-firmware hash, which differs from the recovery reference. DT traversal and connectivity status reads are denied; the `hisi` property does not identify the chip. The four underlying kernel/ramdisk/dts/dto block nodes are `root:root` mode `0600`, blocking ordinary ADB extraction. Preserve the readable stock touch firmware privately and look for matching original update materials already obtained through HiSuite or another legitimate Huawei distribution. Inspect original headers before creating a device-specific packaging recipe; no partition constants from another handset are accepted.
 
 The [firmware acquisition assessment](firmware-acquisition.md) records the log
-search limit and a bounded experimental HiSuite observer. No package capture
-has succeeded yet; do not start an update solely to generate a download URL.
+search limit and an experimental HiSuite observer that is not selected. Direct
+catalog decoding instead located live Huawei manifests; the .275 base archive
+has been downloaded and hash-verified offline. Identify the correct C431 overlay
+and retained-vendor requirements next. Its embedded older configuration differs
+from current stock; keep it separate. Do not start an update solely to obtain files.

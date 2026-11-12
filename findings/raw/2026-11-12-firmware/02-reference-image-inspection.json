@@ -1,0 +1,390 @@
+{
+  "date": "2026-11-12",
+  "classification": "External reference package observations; not images read from the phone",
+  "package": {
+    "package_url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/70/v3/0ff024a8d3dc4ebe95c5363aadb9bb40/full/update_full_base.zip",
+    "bytes": 3791534847,
+    "sha256": "60e8983f148e29027af1bc921d6ed0de5f65752ee423d93d008cf9153831f1a4",
+    "matches_manifest": true,
+    "classification": "Official CDN reference archive only; stock identity and flash compatibility unproven"
+  },
+  "zip_member_count": 20,
+  "zip_selected_metadata": [
+    {
+      "name": "SOFTWARE_VER.mbn",
+      "bytes": 22,
+      "sha256": "5752d2964c115596a9629aba4286e23cc67e9f34f791e8cad289c73e378174ae",
+      "selected_text": "MAR-LGRP2-OVS 10.0.0.1"
+    },
+    {
+      "name": "VERSION.mbn",
+      "bytes": 25,
+      "sha256": "cb4bf216ff8f5d73e56eeff4bec4bc4598c2ec32bcb09681e6ed80ffde0e67b5",
+      "selected_text": "MAR-LGRP2-OVS 10.0.0.275"
+    },
+    {
+      "name": "SOFTWARE_VER_LIST.mbn",
+      "bytes": 352,
+      "sha256": "94b60f0057003aec1736fff5f9569195ed185061d5a2f344d056289398679d65"
+    },
+    {
+      "name": "ptable.img",
+      "bytes": 200704,
+      "sha256": "229ee3d6c9f0b31acef06f68a0a49aa6baa62837f094cb41a23617cb60620b4e"
+    },
+    {
+      "name": "PTABLE.APP",
+      "bytes": 202788,
+      "sha256": "b88ae85e2c27fbd9c66bda153709486a29cead9f06c4ffe18e24550e1c9ec1bf"
+    }
+  ],
+  "update_app": {
+    "size_bytes": 4621458336,
+    "sha256": "b7a78fa69e62d9ef444f1e1fc9397502c85b0d7c6dfc028dff7e7f4a1ea30737",
+    "zip_crc32_verified": true,
+    "record_count": 46,
+    "preamble_bytes": 92,
+    "record_names": [
+      "SHA256RSA",
+      "CRC",
+      "BASE_VERLIST",
+      "BASE_VER",
+      "PACKAGE_TYPE",
+      "HISIUFS_GPT",
+      "XLOADER",
+      "FASTBOOT",
+      "HHEE",
+      "DTS",
+      "TRUSTFIRMWARE",
+      "FW_LPM3",
+      "DTO",
+      "KERNEL",
+      "TEEOS",
+      "ISP_FIRMWARE",
+      "VECTOR",
+      "SENSORHUB",
+      "FW_HIFI",
+      "VBMETA",
+      "MODEMNVM_UPDATE",
+      "MODEMNVM_CUST",
+      "RECOVERY_RAMDISK",
+      "RECOVERY_VENDOR",
+      "RECOVERY_VBMETA",
+      "PREAS",
+      "PREAVS",
+      "ERECOVERY_KERNEL",
+      "ERECOVERY_RAMDIS",
+      "ERECOVERY_VENDOR",
+      "ERECOVERY_VBMETA",
+      "ENG_VENDOR",
+      "ENG_SYSTEM",
+      "CACHE",
+      "RAMDISK",
+      "SUPER",
+      "VBMETA_SYSTEM",
+      "VBMETA_VENDOR",
+      "VBMETA_ODM",
+      "VBMETA_HW_PRODUC",
+      "VBMETA_CUST",
+      "MODEM_FW",
+      "HISEE_IMG",
+      "HISEE_FS",
+      "PATCH",
+      "KPATCH"
+    ],
+    "record_checksums_verified": false,
+    "huawei_signatures_verified": false,
+    "extracted_images": [
+      {
+        "name": "BASE_VER",
+        "size_bytes": 22,
+        "extracted_sha256": "5752d2964c115596a9629aba4286e23cc67e9f34f791e8cad289c73e378174ae"
+      },
+      {
+        "name": "DTS",
+        "size_bytes": 102400,
+        "extracted_sha256": "aec3fc90644af5f9f161b5d536b5fcba4bf720174e464019015070549e34a0e1"
+      },
+      {
+        "name": "DTO",
+        "size_bytes": 14210880,
+        "extracted_sha256": "cd5a35caf77c1e45287497cb5494c0e2b4e4c23537682d1c7e4e9323afb2a3f2"
+      },
+      {
+        "name": "KERNEL",
+        "size_bytes": 25165824,
+        "extracted_sha256": "a800bb29875a3db47da7b416914aa6002257beadd5db2a46d9f24a4dbda36e73"
+      },
+      {
+        "name": "RECOVERY_RAMDISK",
+        "size_bytes": 33554432,
+        "extracted_sha256": "12c7dbb8d213e3a72f05244c9322d56b8b5e9fc93546d74471724e991d4af6b0"
+      },
+      {
+        "name": "RAMDISK",
+        "size_bytes": 2097152,
+        "extracted_sha256": "88902bc82a2f9657c294e4e718f7e92a3912102c0e4a5e9e2653ceb13addea20"
+      }
+    ]
+  },
+  "reference_gpt": {
+    "sector_bytes": 512,
+    "gpt_header_crc_valid": true,
+    "gpt_entries_crc_valid": true,
+    "selected_entries": [
+      {
+        "entry_number": 21,
+        "name": "ramdisk",
+        "first_lba": 503808,
+        "last_lba": 507903,
+        "size_bytes": 2097152
+      },
+      {
+        "entry_number": 45,
+        "name": "erecovery_kernel",
+        "first_lba": 937984,
+        "last_lba": 987135,
+        "size_bytes": 25165824
+      },
+      {
+        "entry_number": 46,
+        "name": "erecovery_ramdisk",
+        "first_lba": 987136,
+        "last_lba": 1052671,
+        "size_bytes": 33554432
+      },
+      {
+        "entry_number": 48,
+        "name": "kernel",
+        "first_lba": 1085440,
+        "last_lba": 1134591,
+        "size_bytes": 25165824
+      },
+      {
+        "entry_number": 50,
+        "name": "recovery_ramdisk",
+        "first_lba": 1159168,
+        "last_lba": 1224703,
+        "size_bytes": 33554432
+      },
+      {
+        "entry_number": 52,
+        "name": "dts",
+        "first_lba": 1257472,
+        "last_lba": 1273855,
+        "size_bytes": 8388608
+      },
+      {
+        "entry_number": 53,
+        "name": "dto",
+        "first_lba": 1273856,
+        "last_lba": 1323007,
+        "size_bytes": 25165824
+      }
+    ]
+  },
+  "legacy_image_inspection": {
+    "DTO.img": {
+      "returncode": 0,
+      "inspection": {
+        "size_bytes": 14210880,
+        "sha256": "cd5a35caf77c1e45287497cb5494c0e2b4e4c23537682d1c7e4e9323afb2a3f2",
+        "format": "unrecognized"
+      }
+    },
+    "DTS.img": {
+      "returncode": 0,
+      "inspection": {
+        "size_bytes": 102400,
+        "sha256": "aec3fc90644af5f9f161b5d536b5fcba4bf720174e464019015070549e34a0e1",
+        "format": "unrecognized"
+      }
+    },
+    "KERNEL.img": {
+      "returncode": 0,
+      "inspection": {
+        "size_bytes": 25165824,
+        "sha256": "a800bb29875a3db47da7b416914aa6002257beadd5db2a46d9f24a4dbda36e73",
+        "format": "unrecognized"
+      }
+    },
+    "RAMDISK.img": {
+      "returncode": 0,
+      "inspection": {
+        "size_bytes": 2097152,
+        "sha256": "88902bc82a2f9657c294e4e718f7e92a3912102c0e4a5e9e2653ceb13addea20",
+        "format": "android-boot",
+        "header_version": 0,
+        "page_size": 2048,
+        "os_version_encoded": 335544648,
+        "load_addresses": {
+          "kernel": 268468224,
+          "ramdisk": 285212672,
+          "second": 284164096,
+          "tags": 268435712
+        },
+        "regions": [
+          {
+            "name": "ramdisk",
+            "offset": 2048,
+            "size": 794802,
+            "sha256": "285435b3989d50c5944a6eca14160d6c0f9cf635a8c81dc20e1911c77306a3a7"
+          }
+        ]
+      }
+    },
+    "RECOVERY_RAMDISK.img": {
+      "returncode": 0,
+      "inspection": {
+        "size_bytes": 33554432,
+        "sha256": "12c7dbb8d213e3a72f05244c9322d56b8b5e9fc93546d74471724e991d4af6b0",
+        "format": "android-boot",
+        "header_version": 0,
+        "page_size": 2048,
+        "os_version_encoded": 335544648,
+        "load_addresses": {
+          "kernel": 268468224,
+          "ramdisk": 285212672,
+          "second": 284164096,
+          "tags": 268435712
+        },
+        "regions": [
+          {
+            "name": "ramdisk",
+            "offset": 2048,
+            "size": 27811123,
+            "sha256": "ede32e2973f2137f25111e0beef6c5b80adf9db8ed4568c84768723bb5db9cfa"
+          }
+        ]
+      }
+    }
+  },
+  "explicit_offset_4096_inspection": {
+    "KERNEL": {
+      "uninterpreted_prefix_bytes": 4096,
+      "returncode": 0,
+      "inspection": {
+        "size_bytes": 25161728,
+        "sha256": "92478b3981e520d3bec1a488216a4e642a2ed98d716a48630a3a1b590bde9e45",
+        "format": "android-boot",
+        "header_version": 1,
+        "page_size": 2048,
+        "os_version_encoded": 335544648,
+        "load_addresses": {
+          "kernel": 524288,
+          "ramdisk": 3120562176,
+          "second": 15728640,
+          "tags": 3128950784
+        },
+        "regions": [
+          {
+            "name": "kernel",
+            "offset": 2048,
+            "size": 18655580,
+            "sha256": "32d13f242d9304af59c0cf165d6685a7f6993ce31249a654533d2cdba70b71cd"
+          }
+        ]
+      }
+    },
+    "DTS": {
+      "uninterpreted_prefix_bytes": 4096,
+      "returncode": 0,
+      "inspection": {
+        "size_bytes": 98304,
+        "sha256": "43fb04c78105b6ba2feec8df7f3d14dd85b1c5b36544ffa72fa7353e0256571c",
+        "format": "unrecognized"
+      }
+    },
+    "DTO": {
+      "uninterpreted_prefix_bytes": 4096,
+      "returncode": 1,
+      "error": "{\"error\": \"Invalid or unsupported Android DT table\"}\n"
+    }
+  },
+  "kernel_payload": {
+    "archive_kernel_payload_offset": 6144,
+    "gzip_bytes_consumed": 18655580,
+    "expanded_bytes": 51879948,
+    "expanded_sha256": "980ca39cc7a52fc6742105a1cbc440a8a1b2fb97f66aab28e356d33a27ce24ee",
+    "linux_version_tokens": [
+      "4.14.116"
+    ],
+    "embedded_config": {
+      "bytes": 165350,
+      "sha256": "49ea2e02650dcc5a5525f6bade77a7e00c4dfb3518f82362ba13a174970119be",
+      "equals_retained_stock_bytes": false
+    }
+  },
+  "device_tree_inspection": {
+    "hsdt": {
+      "format": "hsdt",
+      "table_offset": 4096,
+      "version": 1,
+      "entry_count": 1,
+      "entries": [
+        {
+          "index": 0,
+          "board_id_bytes": "02060001",
+          "unknown_field": 0,
+          "length_field": 86016,
+          "verification_length_field": 6144,
+          "verification_offset_field": 88064,
+          "payload_offset": 10240,
+          "compression": 2,
+          "compressed_sha256": "48201b23b9682f853c680620ede882bf55d1541e002f67bc9e6db2efea794800",
+          "compressed_bytes_consumed": 84927,
+          "trailing_bytes": 1089,
+          "expanded_bytes": 483365,
+          "expanded_sha256": "2925f5c1d1b57fe4d3f7251f7f951a09da5a0f4cea713871db412b57efd41881",
+          "fdt": {
+            "total_size": 483365,
+            "version": 17
+          }
+        }
+      ],
+      "size_bytes": 102400,
+      "sha256": "aec3fc90644af5f9f161b5d536b5fcba4bf720174e464019015070549e34a0e1",
+      "signatures_verified": false
+    },
+    "base_fdt_dtc_exit": 0,
+    "dto_version": 1,
+    "dto_entries": 366,
+    "dto_gzip_crc_and_fdt_header_bounds_passed": 366,
+    "example_overlay": {
+      "index": 3,
+      "id": 7844,
+      "expanded_sha256": "d55f5f5886aa9263bd3d004ff71bf2a3df7c0261b0cebb48fdf69a4fe571cf40",
+      "dtc_exit": 0,
+      "selected_properties": {
+        "root_board_id": "0x1ea4",
+        "fragment_125_hi110x_subchip_type": "hi1102",
+        "fragment_127_ini_file_name": "/vendor/etc/cfg_marie_al00_hisi.ini",
+        "fragment_132_touch_compatible": "synaptics_tcm"
+      },
+      "scope": "Static example in reference archive; fragment selection and active handset overlay unknown"
+    }
+  },
+  "reproduction_tools": [
+    "scripts/inspect-update-app.py",
+    "scripts/inspect-image.py",
+    "scripts/inspect-dt-containers.py",
+    "scripts/compare-configs.py"
+  ],
+  "format_references": [
+    "https://github.com/marcominetti/split_updata.pl/blob/7f3182406cb0deec612fd6795af5b578de1c7c6b/data_structure",
+    "https://github.com/WerWolv/ImHex-Patterns/blob/8db011b6e563686c9476a3261141ddba3831852f/patterns/hsdt.hexpat",
+    "https://android.googlesource.com/platform/system/libufdt/+/f8f692c41cf84097412c22ea4820b3a11f81facc/utils/src/dt_table.h"
+  ],
+  "limits": [
+    "No updater executable or script from the package was executed. No phone operation was performed.",
+    "The 4096-byte prefixes remain uninterpreted; offsets were explicitly supplied for offline payload inspection.",
+    "No Huawei signature, bootloader acceptance or stock-module compatibility has been validated.",
+    "The archive kernel configuration is distinct from retained runtime stock configuration.",
+    "Model/customization labels and matching GPT entry numbers do not prove current handset image equality."
+  ],
+  "tool_versions": {
+    "python": "3.12.14",
+    "zlib_runtime": "1.3.2",
+    "dtc": "Version: DTC 1.4.4-g756ffc4f"
+  }
+}

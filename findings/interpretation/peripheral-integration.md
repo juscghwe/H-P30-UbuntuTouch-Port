@@ -44,7 +44,7 @@ E10 now supplies an actual named-partition map. Both `/dev/block/by-name` and `/
 | `erecovery_kernel` | `/dev/block/mmcblk0p45` |
 | `erecovery_ramdisk` | `/dev/block/mmcblk0p46` |
 
-These are owner-observed symlink targets, not proposed flashing commands. The four primary underlying nodes (`p21`, `p48`, `p52`, `p53`) have mode `0600`, owner/group `root:root`, so an ordinary non-root ADB shell cannot read their contents. Symlink mode `0777` does not grant access through these restrictions. Image contents, formats, sizes, offsets and a complete partition inventory remain unknown. In particular, `dts`/`dto` names alone do not prove standard DTB/DTBO encoding. Filesystem timestamps are not used to date firmware or infer an acquisition time.
+These are owner-observed symlink targets, not proposed flashing commands. The four primary underlying nodes (`p21`, `p48`, `p52`, `p53`) have mode `0600`, owner/group `root:root`, so an ordinary non-root ADB shell cannot read their contents. Symlink mode `0777` does not grant access through these restrictions. The symlinks do not establish image formats, sizes or contents; in particular, `dts`/`dto` names alone do not prove standard DTB/DTBO encoding. Filesystem timestamps are not used to date firmware or infer an acquisition time.
 
 Legitimate next inputs are a readable runtime FDT/DT subtree, or original kernel/DTB/DTBO/ramdisk images from a matching official Huawei update package already obtained for this handset. A live FDT may contain bootloader edits and does not replace the original DTB/DTBO inventory. Preserve original files and hashes privately, inspect selected board properties, and determine the split kernel/ramdisk and DT packaging from actual headers and partition metadata. Do not publish raw DT data without reviewing serial/MAC properties. No firmware or block-device image has been acquired from this phone during source validation.
 
@@ -57,6 +57,14 @@ python3 scripts/inspect-image.py ORIGINAL_IMAGE > reviewed-header.json
 The implementation follows the AOSP [boot-header](https://source.android.com/docs/core/architecture/bootloader/boot-image-header) and [DT-table](https://source.android.com/docs/core/architecture/dto/partitions) specifications. Ten generated-fixture checks cover legacy headers, DT bounds, malformed/truncated inputs, unchanged input hashes and omission of embedded names/command lines. [Results](../raw/2026-11-12-build/08-image-inspector-validation.json) are host-tool validation, not inspection of an actual Huawei stock image.
 
 Reproduce the generated-fixture checks with `python3 scripts/check-image-inspector.py` on a host with `dtc`; it creates no files in the checkout.
+
+The subsequent [official .275 reference archive inspection](firmware-acquisition.md)
+recovers real HSDT base-tree and Android DT-table v1 overlay inputs, plus split
+kernel/ramdisk header observations. Its GPT agrees with all seven selected E10
+entry numbers. One decompiled overlay contains Marie/Synaptics TCM settings and
+an explicit Hi1102 property, but that example uses an AL00 INI path and has not
+been selected for this C431 handset. This advances board-data investigation
+without establishing runtime hardware or current stock-image byte equality.
 
 ## Small read-only collection set
 

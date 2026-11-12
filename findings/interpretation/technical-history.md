@@ -27,3 +27,16 @@
 - The complete pinned Enjoy 10 tree was reconstructed and hash-verified, then built with its documented Clang r353983c and Android GCC 4.9 tools. Candidate and stock-derived Kconfig parsing pass; Huawei's `-source` syntax needs no repair.
 - Native candidate and Halium-probe images/modules compile with LTO/CFI disabled after full-LTO memory failures. Embedded configs and image integrity pass; four staged Halium modules pass development-certificate signature verification. No binary is offered as flash-ready.
 - Small block teardown, dummy sidecar, display/clock and calibration/timekeeper lifetime repairs pass incremental builds. Twenty-eight section mismatches, duplicate Wi-Fi exports, unversioned assembly exports and missing stock/Marie source data remain documented. See [build evidence and limits](baseline-build.md).
+
+## Official reference firmware: 2026-11-12
+
+- Independent static decoding of FirmFinder data located live Huawei manifests
+  for MAR-L21A/C431 .275 and .562. The .275 base archive passes the published
+  manifest SHA-256; its UPDATE.APP passes ZIP CRC and 46 record-bound checks.
+- Reference kernel, ramdisk and DT image headers are now inspected. All seven
+  selected reference GPT entry numbers agree with E10. One base FDT and 366
+  compressed overlay entries pass gzip/FDT-header validation; the base and one
+  example overlay also decompile with DTC.
+- The reference 4.14.116 kernel embeds an older, different config. No original
+  stock bytes, preferred source/toolchain or runtime hardware conclusion changed.
+  See [acquisition evidence and limits](firmware-acquisition.md).

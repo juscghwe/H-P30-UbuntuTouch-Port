@@ -32,6 +32,8 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 - [Kernel config comparisons](raw/2026-11-12/04-kernel-source-comparison.json) — generated static comparisons with source pins and input hashes.
 - [Selected upstream source observations](raw/2026-11-12/05-source-inspection.json).
 - [Additional same-model downgrade report](raw/2026-11-12/06-downgrade-report.json) — selected public comments, including the correction of a cross-model success claim.
+- [Firmware catalog and live Huawei manifest observations](raw/2026-11-12-firmware/01-catalog-and-manifests.json) — decoded external metadata, not device compatibility or downgrade approval.
+- [Verified reference archive and image observations](raw/2026-11-12-firmware/02-reference-image-inspection.json) and [reference/config comparison](raw/2026-11-12-firmware/03-reference-config-comparison.json) — offline official-package inspection, distinct from current phone measurements.
 
 ## Interpretation and reproducibility
 
