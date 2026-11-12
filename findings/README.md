@@ -21,6 +21,7 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 | E09 | [Peripheral follow-up](raw/2026-11-12/03-peripheral-followup.txt) | Owner-pasted touch identifier, firmware filename and empty Wi-Fi property lookup |
 | E10 | [Stock image names, access checks and firmware hash](raw/2026-11-12/07-stock-layout-and-access.txt) | Separate owner-pasted ADB replies; partition symlinks, stock touch hash and permission failures |
 | E11 | [Board property and vendor INI access](raw/2026-11-12/09-board-id-and-ini-access.txt) | Owner-pasted board ID 7800, empty boot-board property and denied INI metadata reads |
+| E12 | [Connectivity selector follow-up](raw/2026-11-12/10-connectivity-selector-report.txt) | Owner reports both selected boot-property values empty; no full terminal capture |
 | — | [Capture provenance](raw/2026-11-11/provenance.json) | Acquisition, normalization and sanitation metadata |
 | — | [SHA-256 inventory](raw/2026-11-11/SHA256SUMS) | Integrity hashes of the committed evidence and provenance |
 
@@ -36,6 +37,7 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 - [Firmware catalog and live Huawei manifest observations](raw/2026-11-12-firmware/01-catalog-and-manifests.json) — decoded external metadata, not device compatibility or downgrade approval.
 - [Verified reference archive and image observations](raw/2026-11-12-firmware/02-reference-image-inspection.json) and [reference/config comparison](raw/2026-11-12-firmware/03-reference-config-comparison.json) — offline official-package inspection, distinct from current phone measurements.
 - [Board-7800 reference overlay application](raw/2026-11-12-firmware/04-board-7800-overlay.json) — unique matching table ID and resolved offline properties; current handset DT bytes remain unavailable.
+- [Reference vendor recovery](raw/2026-11-12-firmware/05-super-vendor-extraction.json), [file/init observations](raw/2026-11-12-firmware/06-vendor-files-and-init.json) and [driver binding/firmware-format audit](raw/2026-11-12-firmware/07-driver-binding-audit.json) — offline sparse/LP/EROFS inspection and source comparison; no vendor code executed.
 
 ## Interpretation and reproducibility
 
@@ -45,6 +47,7 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 - [Executed Kconfig validation and baseline build](interpretation/baseline-build.md)
 - [Peripheral source trace, board data and read-only checks](interpretation/peripheral-integration.md)
 - [Official firmware acquisition and experimental HiSuite URL observer](interpretation/firmware-acquisition.md)
+- [Board-7800 vendor, touchscreen and Wi-Fi integration inputs](interpretation/vendor-integration.md)
 - [Provisional Halium approach and configuration probe](interpretation/halium-approach.md)
 - [Technical checkpoints and corrections](interpretation/technical-history.md)
 - [Collection commands and limitations](interpretation/collection-methods.md)

@@ -1,0 +1,214 @@
+{
+  "date": "2026-11-12",
+  "origin": "Offline inspection of vendor logical partition in the official .275 reference archive; no vendor program or init script executed",
+  "vendor_image": {
+    "partition": "vendor",
+    "size_bytes": 501219328,
+    "sha256": "b2648997286f4974ea27bab946a0c8b061daf405f2c7b2eb1243b6e014a5ca29"
+  },
+  "erofs_inspection": {
+    "fsck_erofs_version": "1.5",
+    "packaged_version": "erofs-utils 1.5-1",
+    "lz4_runtime_package": "liblz4-1 1.9.4-1",
+    "input_image_read_only": true,
+    "extraction_and_encoding_check_exit": 0,
+    "ownership_preservation": false,
+    "firmware_programs_executed": false
+  },
+  "selected_files": [
+    {
+      "path": "/vendor/etc/cfg_marie_lx1a_hisi.ini",
+      "bytes": 10785,
+      "sha256": "c3c2a41a32766aa4fa014d92f278f7afe38c5c3fd3ec4182b82b2d5d3e2fa846"
+    },
+    {
+      "path": "/vendor/firmware/ts/marie_synaptics_tcm_MARI69110.img",
+      "bytes": 116817,
+      "sha256": "e6ad1811b63fdc422985a74b0e8cf8e8421a43cfe1fff4c91b2c586d7e351d1f"
+    },
+    {
+      "path": "/vendor/firmware/bfgx_and_wifi_cfg",
+      "bytes": 1156,
+      "sha256": "9759e431dced80f44dd56191ad77f230c29c712655a4f47ef2f8bb3e72ba7195"
+    },
+    {
+      "path": "/vendor/firmware/wifi_cfg",
+      "bytes": 287,
+      "sha256": "846e95d1c5efa8b1e1377023c7819df596f19342bbc71ae7fd0eaec982cba3e0"
+    },
+    {
+      "path": "/vendor/firmware/bfgx_cfg",
+      "bytes": 852,
+      "sha256": "5204e19f319ae56f4bc93abc95e22d1b6c0620fd792e765eee52ae1b57684807"
+    },
+    {
+      "path": "/vendor/firmware/CPU_RAM_SCHED.bin",
+      "bytes": 363360,
+      "sha256": "cecca2fe2c5849c1665284bffc29c95752b619c16eff48ef78a6cc502f21d4d8"
+    },
+    {
+      "path": "/vendor/firmware/CPU_RAM_WBS.bin",
+      "bytes": 40436,
+      "sha256": "672b9fbc51ca607ffbac7587e1087db1e591c44b41af198bf1992aea9a90e1f8"
+    },
+    {
+      "path": "/vendor/firmware/cr4_asic.bin",
+      "bytes": 396660,
+      "sha256": "daeaf878de30336245f2877ede25e10ed445e97d799c833b9650ba513b357b2e"
+    },
+    {
+      "path": "/vendor/bin/start_connectivity_hisi",
+      "bytes": 9680,
+      "sha256": "62806a90763dc01fc0fa339c76718abf4748b93e50beedc09ee82f6fc6d8d8f9"
+    },
+    {
+      "path": "/vendor/bin/octty",
+      "bytes": 11664,
+      "sha256": "fa96fec1befe1980d00fa33070f306a9971859060fd93bbcbf8508d5ddb0fdcb"
+    },
+    {
+      "path": "/vendor/bin/oam_hisi",
+      "bytes": 41352,
+      "sha256": "d2bcbea1cf7548678eaed7c0bdade1673dc3497312321439de2aaa278d7cc514"
+    },
+    {
+      "path": "/vendor/bin/hw/vendor.huawei.hardware.wifi@1.1-service",
+      "bytes": 427688,
+      "sha256": "64e60f2d630c99b3a33fbbb9da7f981b29f10839edf7c3f242f21ca5ae777c5b"
+    },
+    {
+      "path": "/vendor/lib64/hw/vendor.huawei.hardware.wifi@1.1-impl.so",
+      "bytes": 29360,
+      "sha256": "4cb3c22390028da6830f2684aafceae8e4635462aac0e1967254234de441f221"
+    },
+    {
+      "path": "/vendor/etc/init/init.connectivity.rc",
+      "bytes": 1295,
+      "sha256": "05d9af6a6e567f8f25b6b3de8c4fcc6af3479f059911e080bd68a3dbcd85fd36"
+    },
+    {
+      "path": "/vendor/etc/init/connectivity/init.connectivity.hisi.rc",
+      "bytes": 266,
+      "sha256": "dcb9d3b4972ba6a493a7b17fb57eeb0a51c1fafae7d02613d67569549ce53237"
+    },
+    {
+      "path": "/vendor/etc/init/connectivity/init.connectivity.hi1102.rc",
+      "bytes": 3798,
+      "sha256": "22e71c312b933b1f5624016cb9e936404f8c4974a0ac7759c445a6df6d6512f0"
+    },
+    {
+      "path": "/vendor/etc/init/vendor.huawei.hardware.wifi@1.1-service.rc",
+      "bytes": 193,
+      "sha256": "39e793c15aba555a8901192f677f39018cf256c4d55bcc2c4fd85dc0bda6ffd8"
+    },
+    {
+      "path": "/vendor/lib/modules/hisi_dummy_ko.ko",
+      "bytes": 13848,
+      "sha256": "3cf984cb96b1eaff6de02484962ed2ec3cce4eab556e182128d2cfea46dc719a"
+    }
+  ],
+  "touch_firmware_comparison": {
+    "owner_evidence": "E10",
+    "same_size_and_sha256_as_owner_stock": true,
+    "does_not_prove_entire_vendor_or_kernel_equality": true
+  },
+  "vendor_build_properties": {
+    "sdk": "29",
+    "android_release": "10",
+    "fingerprint_matches_owner_E02": true
+  },
+  "vendor_kernel_modules": [
+    "hisi_dummy_ko.ko"
+  ],
+  "static_init_trace": {
+    "first_import_selector": "ro.boot.odm.conn.chiptype",
+    "hisi_subchip_import_selector": "ro.boot.odm.conn.schiptype",
+    "reference_hi1102_service": "hisi_bfg",
+    "reference_service_program": "/vendor/bin/start_connectivity_hisi",
+    "reference_service_argument": "dir_p_mode",
+    "ini_policy": "Reads the DT INI path, searches CUST_POLICY_DIRS in reverse order, then tries the DT path directly; creates /data/vendor/cust_conn/ini_cfg",
+    "driver_loading_policy": "If /sys/hisys/boot exists, writes init to plat then wifi; otherwise attempts /vendor/lib/modules/plat.ko and wifi.ko",
+    "vendor_plat_and_wifi_ko_present": false,
+    "completion_property": "vendor.setup_hi110x_modules=success",
+    "completion_limit": "The script tests /sys/hi110x_ps/install existence before setting the completion property; this is not a Wi-Fi functional test"
+  },
+  "firmware_referenced_paths": [
+    "/vendor/firmware/CPU_RAM_SCHED.bin",
+    "/vendor/firmware/CPU_RAM_WBS.bin",
+    "/vendor/firmware/cr4_asic.bin"
+  ],
+  "current_phone_selector_followup": {
+    "chiptype": "Owner reports empty value",
+    "schiptype": "Owner reports empty value",
+    "limit": "Empty shell reads do not establish absence or current init-branch selection",
+    "evidence": "E12"
+  },
+  "limits": [
+    "Only the reference archive was extracted. No phone filesystem, calibration, NVRAM or userdata was imported.",
+    "Matching firmware/fingerprint bytes do not establish current full-vendor equality or kernel/module ABI compatibility.",
+    "Reference INI contents, firmware binaries, full init scripts and filesystem images remain outside the public repository."
+  ],
+  "selected_vintf_declarations": [
+    {
+      "name": "android.hardware.wifi",
+      "transport": "hwbinder",
+      "versions": [
+        "1.3"
+      ],
+      "fqnames": [
+        "@1.3::IWifi/default"
+      ]
+    },
+    {
+      "name": "android.hardware.wifi.hostapd",
+      "transport": "hwbinder",
+      "versions": [
+        "1.1"
+      ],
+      "fqnames": [
+        "@1.1::IHostapd/default"
+      ]
+    },
+    {
+      "name": "android.hardware.wifi.supplicant",
+      "transport": "hwbinder",
+      "versions": [
+        "1.2"
+      ],
+      "fqnames": [
+        "@1.2::ISupplicant/default"
+      ]
+    },
+    {
+      "name": "vendor.huawei.hardware.tp",
+      "transport": "hwbinder",
+      "versions": [
+        "1.0"
+      ],
+      "fqnames": [
+        "@1.0::ITouchscreen/default"
+      ]
+    },
+    {
+      "name": "vendor.huawei.hardware.wifi",
+      "transport": "hwbinder",
+      "versions": [
+        "1.1"
+      ],
+      "fqnames": [
+        "@1.1::IHwWifiExt/default"
+      ]
+    },
+    {
+      "name": "vendor.huawei.hardware.wifi.supplicant",
+      "transport": "hwbinder",
+      "versions": [
+        "3.0"
+      ],
+      "fqnames": [
+        "@3.0::ISupplicant/default"
+      ]
+    }
+  ],
+  "vendor_image_unchanged_after_extraction": true
+}

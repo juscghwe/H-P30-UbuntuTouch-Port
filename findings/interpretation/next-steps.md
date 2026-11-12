@@ -43,7 +43,10 @@ The [firmware acquisition assessment](firmware-acquisition.md) records the log
 search limit and an experimental HiSuite observer that is not selected. Direct
 catalog decoding instead located live Huawei manifests; the .275 base archive
 has been downloaded and hash-verified offline. Board ID 7800 now matches reference
-overlay 186; audit its resolved driver bindings and retained-vendor requirements
-next. Do not repeat denied INI/DT reads or escalate access for this lookup.
-The reference's embedded older configuration differs
-from current stock; keep it separate. Do not start an update solely to obtain files.
+overlay 186. The [offline driver/vendor audit](vendor-integration.md) maps its
+bindings to candidate source readers and recovers touch firmware identical to
+E10. Next implement the host/container visibility and initialization-order
+contract as part of device adaptation; no vendor helper or firmware has been
+executed. Do not repeat denied INI/DT reads or escalate access for this lookup.
+Keep the older reference configuration separate from current stock and do not
+start an update solely to obtain files.

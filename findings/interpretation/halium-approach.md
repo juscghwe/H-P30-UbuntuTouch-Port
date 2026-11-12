@@ -6,6 +6,11 @@ Current device evidence is Android 10 / SDK 29 / VNDK 29 beneath EMUI 12. Provis
 
 Use the [standalone kernel + Halium GSI workflow](https://docs.ubports.com/en/latest/porting/build_and_boot/standalone_kernel_build.html) provisionally. It allows kernel validation without first downloading a full Android source tree. The device repository will need measured kernel/ramdisk/DT layout and partition names before any usable `deviceinfo` or image can be produced. The Nova 3I recipe's 4.9 kernel and hardcoded data partition remain excluded.
 
+The [recovered reference vendor](vendor-integration.md) independently reports
+SDK 29/Android 10 and matches E02's vendor fingerprint. It supplies board-matched
+touch/Wi-Fi inputs and service ordering; it does not establish complete equality
+with the newer phone firmware or working Ubuntu Touch networking.
+
 ## Configuration and AppArmor probe
 
 [halium10-probe.config](../../configs/halium10-probe.config) enables namespace/IPC/device-filesystem facilities from the UBports minimum, plus the reviewed cgroup/network and AppArmor settings. It is an experimental fragment, not a complete compatible kernel configuration. Merge it into a separate stock-derived output; check every requested value after `olddefconfig` rather than assuming the merge survived dependencies.
@@ -27,4 +32,9 @@ Preserve stock display/touch firmware and connectivity calibration/init dependen
 
 The stock-derived resource probe changes 18 shared explicit values, omits 78 stock entries and adds 31 entries. [The complete generated comparison](../raw/2026-11-12-build/12-stock-halium-config-differences.json) includes source-normalization losses and dependent entries, rather than equating omissions with disabled options. It switches the default security module from SELinux to AppArmor and adds namespace, cgroup and networking requirements. Its separately labelled resource fragment disables LTO/CFI; this configuration is an offline compilation probe, not an accepted device security or compatibility baseline. See the [executed merge recipe](baseline-build.md#reproduction).
 
-Next implementation order: obtain a complete baseline image, validate the derived configuration and AppArmor code, recover actual board/image metadata, then build a device-specific boot recipe. Persistent unlocking remains necessary before any phone test. No Ubuntu Touch boot or working peripheral is demonstrated.
+Offline native baseline builds, derived configuration checks and reference
+board/vendor recovery are complete. Next preserve early firmware visibility
+and connectivity loader ordering in the board-matched device adaptation, while
+resolving remaining source/power and image-prefix/signature uncertainties.
+Persistent unlocking remains necessary before any phone test. No Ubuntu Touch
+boot or working peripheral is demonstrated.

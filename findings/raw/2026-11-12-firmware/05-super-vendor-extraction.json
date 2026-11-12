@@ -1,0 +1,140 @@
+{
+  "input_offset": 979801402,
+  "input_length": 3577762232,
+  "input_region_sha256": "825567fe4365da0cf22bf6750991e488fbceed470fae142c96fb01a7c5d94123",
+  "sparse": {
+    "version": [
+      1,
+      0
+    ],
+    "block_size": 4096,
+    "blocks": 1304576,
+    "chunk_count": 617,
+    "chunk_types": {
+      "0xcac2": 300,
+      "0xcac1": 314,
+      "0xcac3": 3
+    },
+    "expanded_bytes": 5343543296,
+    "image_crc32_field": 0,
+    "image_crc32_verified": false
+  },
+  "logical_metadata": {
+    "metadata_max_size": 65536,
+    "slot_count": 1,
+    "logical_block_size": 4096,
+    "geometry_sha256_valid": true,
+    "geometry_copies_equal": true,
+    "slots": [
+      {
+        "slot": 0,
+        "header_version": [
+          10,
+          0
+        ],
+        "header_sha256_valid": true,
+        "tables_sha256_valid": true,
+        "primary_backup_bytes_equal": true,
+        "block_devices": [
+          {
+            "name": "super",
+            "first_logical_sector": 4096,
+            "size_bytes": 5343543296
+          }
+        ],
+        "partitions": [
+          {
+            "name": "system",
+            "attributes": 0,
+            "size_bytes": 2365587456,
+            "extents": [
+              {
+                "sectors": 4620288,
+                "type": 0,
+                "target_sector": 4096,
+                "source": 0
+              }
+            ]
+          },
+          {
+            "name": "hw_product",
+            "attributes": 0,
+            "size_bytes": 2168455168,
+            "extents": [
+              {
+                "sectors": 4235264,
+                "type": 0,
+                "target_sector": 4624384,
+                "source": 0
+              }
+            ]
+          },
+          {
+            "name": "cust",
+            "attributes": 0,
+            "size_bytes": 142606336,
+            "extents": [
+              {
+                "sectors": 278528,
+                "type": 0,
+                "target_sector": 8859648,
+                "source": 0
+              }
+            ]
+          },
+          {
+            "name": "vendor",
+            "attributes": 0,
+            "size_bytes": 501219328,
+            "extents": [
+              {
+                "sectors": 978944,
+                "type": 0,
+                "target_sector": 9138176,
+                "source": 0
+              }
+            ]
+          },
+          {
+            "name": "odm",
+            "attributes": 0,
+            "size_bytes": 163577856,
+            "extents": [
+              {
+                "sectors": 319488,
+                "type": 0,
+                "target_sector": 10117120,
+                "source": 0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "firmware_signatures_verified": false,
+  "extracted_partition": {
+    "name": "vendor",
+    "slot": 0,
+    "size_bytes": 501219328,
+    "sha256": "b2648997286f4974ea27bab946a0c8b061daf405f2c7b2eb1243b6e014a5ca29"
+  },
+  "date": "2026-11-12",
+  "origin": "Generated offline sparse/LP metadata inspection and vendor extraction from the pinned .275 UPDATE.APP",
+  "source_archive_sha256": "60e8983f148e29027af1bc921d6ed0de5f65752ee423d93d008cf9153831f1a4",
+  "input_source": "UPDATE.APP SUPER record, not a phone block device",
+  "sparse_hole_semantics": "DONT_CARE modeled as zero; no inference of live storage contents",
+  "aosp_format_source": {
+    "repository": "https://android.googlesource.com/platform/system/core",
+    "commit": "5aa0e4241029c80617a8e98b07f7f48ab6b3a3d7",
+    "paths": [
+      "libsparse/sparse_format.h",
+      "fs_mgr/liblp/include/liblp/metadata_format.h"
+    ],
+    "file_sha256": {
+      "sparse_format.h": "b151b9d80ba7beb32e2e20ad1f94a0cbb1ab958860160fa814a75110b5794a62",
+      "metadata_format.h": "d98aa7b1a845d5c398a5afe733c26a57139388911731877f740dc4762b6bf665"
+    }
+  },
+  "sparse_crc_status": "No image CRC supplied (field zero), no CRC chunks; LP geometry/header/table SHA-256 values are checked"
+}

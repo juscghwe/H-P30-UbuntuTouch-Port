@@ -1,0 +1,13 @@
+Origin: owner-reported result of a read-only Windows PowerShell/ADB query,
+2026-11-12. This is a report, not a byte-for-byte capture of terminal stdout.
+No complete output or exit status was supplied. Firmware identity was not
+re-queried in this follow-up.
+
+Requested command:
+.\adb.exe shell 'echo CONNECTIVITY; getprop ro.boot.odm.conn.chiptype; echo SUBCHIP; getprop ro.boot.odm.conn.schiptype'
+
+Owner-reported result:
+Both property values returned only a newline (empty values).
+
+Editorial limitation: the report does not distinguish unset properties from access-restricted reads
+and does not establish which connectivity init branch the current firmware uses.

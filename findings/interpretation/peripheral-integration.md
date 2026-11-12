@@ -12,6 +12,13 @@ The pinned Iceows Marie recovery tree includes the same filename. Its blob is 11
 
 The [subsequent stock-phone hash (E10)](../raw/2026-11-12/07-stock-layout-and-access.txt) is `e6ad1811b63fdc422985a74b0e8cf8e8421a43cfe1fff4c91b2c586d7e351d1f`. It differs from the recovery artifact despite the identical filename and measured size of 116,817 bytes. The stock file has mode `0644`; the displayed 2018-08-07 timestamp is not used to infer its firmware release. Preserve the matching stock firmware; the reference blob is not a byte-identical substitute. The hash difference alone does not explain the firmware revision, compatibility or controller silicon.
 
+The later [official vendor extraction](vendor-integration.md#touch-inputs)
+recovers a blob that **does** match E10's size and SHA-256 exactly. Four recognized
+TCM image areas pass independent bounds/CRC checks against the candidate source
+format; a fifth differently tagged entry is skipped as in that source. This
+replaces the need to substitute the differing recovery blob, while leaving
+runtime loading and exact silicon/panel identification untested.
+
 ## Wi-Fi linkage and initialization
 
 In this source, `CONNECTIVITY_HI1102=y` descends into `hisi/`; its platform and Wi-Fi subdirectories use `obj-y`. Their Makefiles choose built-in versus module linkage through the separate vendor variable `CONFIG_HI110X_KERNEL_MODULES_BUILD_SUPPORT`, defaulting to `no`. The candidate build generated both `platform/built-in.o` and `wifi/built-in.o` archives containing the corresponding objects, although its defconfig says `HI1102_PLATFORM=m` and `HI1102_WIFI=m`.
@@ -69,6 +76,11 @@ Hi1102 and a SPI touch-kit/Synaptics TCM configuration. See the
 [resolved evidence](../raw/2026-11-12-firmware/04-board-7800-overlay.json).
 This supplies a board-matched integration reference without establishing current
 stock-image equality, exact Wi-Fi silicon or Ubuntu Touch peripheral operation.
+
+The reference vendor is now recovered through sparse/LP/EROFS inspection.
+Its LX1A INI, Hi1102 firmware paths and built-in/module init branches correspond
+to the candidate source. See the [vendor integration inputs](vendor-integration.md)
+for the visibility/order requirements and the limits of this static match.
 
 ## Small read-only collection set
 

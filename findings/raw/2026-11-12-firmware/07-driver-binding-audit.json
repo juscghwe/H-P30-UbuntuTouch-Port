@@ -1,0 +1,185 @@
+{
+  "date": "2026-11-12",
+  "origin": "Static source/property/path audit; independent offline firmware-container CRC checks; no kernel or firmware executed on the phone",
+  "source_repository": "https://github.com/yuioto/android_kernel_huawei_art-al00x",
+  "source_commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+  "files_verified_unchanged_at_pin": [
+    {
+      "path": "drivers/connectivity/hisi/platform/board/board.h",
+      "git_blob": "14e535310056d94ee7d44a9fb81dbfc7fe1a0d88",
+      "sha256": "048ad17e34e0e58426ba6ec341adc80e5fe058618b6067026ade9e4430aab13f"
+    },
+    {
+      "path": "drivers/connectivity/hisi/platform/board/board.c",
+      "git_blob": "c82fe709a547de103477ed794dbd924d19d8757c",
+      "sha256": "e3f24994674f100b738aab42033aee2b814a07eb7ac8ab4bab099fc9275e8fa8"
+    },
+    {
+      "path": "drivers/connectivity/hisi/common/customize/hisi_ini.c",
+      "git_blob": "b88730ece92711a286119704f367ad1f18488c76",
+      "sha256": "57b68d391cd47e18d428b1320ed4efaadcfd211b0b4155aded8f91fde0d7d515"
+    },
+    {
+      "path": "drivers/connectivity/hisi/platform/pm/plat_firmware.c",
+      "git_blob": "b3ba378e268126a7047d3924c096ecde98f44968",
+      "sha256": "7a7c4ce407580b16a286e2a4ece75d279bed1427b0a5a03004fa8e100e5665af"
+    },
+    {
+      "path": "drivers/connectivity/hisi/platform/Makefile",
+      "git_blob": "07594dad3f97d367990f07e8eb363d6afc0300bc",
+      "sha256": "8e1cc893170ba19c49eeee7b96efb79b784dd9d27d514f2ab5ab8a261379e08b"
+    },
+    {
+      "path": "drivers/connectivity/hisi/wifi/Makefile",
+      "git_blob": "e8f691124aca0988720190ec9017135a6dbff56c",
+      "sha256": "b60700c0b459061fe5fa93eb4463febfcdefc66f574eb94ab7610860a3287131"
+    },
+    {
+      "path": "drivers/devkit/tpkit/huawei_ts_kit.h",
+      "git_blob": "199709d35f5304ad05601b3e631f15088e69d678",
+      "sha256": "f3f5de98fcd7a973f3a98a2fbe00d981148e78cfab2dcdb6573501625e4a5a1d"
+    },
+    {
+      "path": "drivers/devkit/tpkit/huawei_ts_kit_core.c",
+      "git_blob": "e8a0e68e0234c65eaa5c6d265018494202c60b92",
+      "sha256": "4aba2df6e9cb9fd44b30e14d8d56e5a66fb4a989c942fd2033a8969f79830817"
+    },
+    {
+      "path": "drivers/devkit/tpkit/panel/Makefile",
+      "git_blob": "b1db7241d7b2afade7e4ac24f53c0814fab9888a",
+      "sha256": "0a42fef63cffec7e5f1d2d013149cfcbfa0eb28967aacf6b5ac0c2fbbd5394b9"
+    },
+    {
+      "path": "drivers/devkit/tpkit/panel/synaptics_tcm/synaptics_tcm_core.h",
+      "git_blob": "9a0efdd65fb940bd4db67a3cbcf995caa464320f",
+      "sha256": "4b0399a5ff4d012fd89e14d13dbddea6ccaaf3b3bada26c339108dbd0971d459"
+    },
+    {
+      "path": "drivers/devkit/tpkit/panel/synaptics_tcm/synaptics_tcm_core.c",
+      "git_blob": "d06d0ebe722c84bc3b8b3d8b18ae789916f90bcf",
+      "sha256": "2e333f7957beca69d1df476d92af298228f535531c0627d72bd8c8a3b060fe77"
+    },
+    {
+      "path": "drivers/devkit/tpkit/panel/synaptics_tcm/synaptics_tcm_zeroflash.c",
+      "git_blob": "7be83291925e1050d98f81658b280052fb67075c",
+      "sha256": "6aaba7108f826210607c63efb7ca11e30fcd8f15c95aa33f1ab2a4abdbf74f06"
+    },
+    {
+      "path": "drivers/base/firmware_class.c",
+      "git_blob": "25b52e9b145dbfb01e16354662874c2ad1f6315c",
+      "sha256": "7c6cf46086f25c45b127f336fd8a4a6b9d359897195c43fe5ffe9c3d076074e4"
+    }
+  ],
+  "bindings": [
+    {
+      "component": "Hi1102 board",
+      "resolved_reference_node": "/hi110x",
+      "compatible": "hisilicon,hi1102",
+      "selector_property": "hi110x,subchip_type",
+      "selector_value": "hi1102",
+      "source_reader": "get_device_board_version -> find_device_board_version -> get_board_custmize"
+    },
+    {
+      "component": "Wi-Fi customization",
+      "resolved_reference_node": "/hisi_cust_cfg",
+      "compatible": "hi1102,customize",
+      "property": "ini_file_name",
+      "value": "/vendor/etc/cfg_marie_lx1a_hisi.ini",
+      "source_reader": "ini_cfg_init -> get_ini_file_name_from_dts",
+      "policy_override": "/data/vendor/cust_conn/ini_cfg may override the DT/default INI"
+    },
+    {
+      "component": "Touch kit",
+      "resolved_reference_node": "/ts_kit",
+      "compatible": "huawei,ts_kit",
+      "bus_type": "spi",
+      "bus_id": 1,
+      "source_reader": "get_ts_board_info -> parse_spi_config; spi_busnum_to_master"
+    },
+    {
+      "component": "Synaptics TCM",
+      "resolved_reference_node": "/ts_kit/synaptics_tcm@0",
+      "compatible": "synaptics_tcm",
+      "source_reader": "syna_tcm_module_init finds compatible child; syna_tcm_get_fw_prefix assembles product/chip prefix; zeroflash_get_fw_image requests ts/<prefix><project>.img"
+    }
+  ],
+  "touch_blob_format": {
+    "container_sha256": "e6ad1811b63fdc422985a74b0e8cf8e8421a43cfe1fff4c91b2c586d7e351d1f",
+    "container_bytes": 116817,
+    "magic": "0x4818472b",
+    "area_count": 5,
+    "areas": [
+      {
+        "index": 0,
+        "id": "BOOT_CONFIG",
+        "offset": 28,
+        "size_bytes": 128,
+        "crc32": "8d0ecb90",
+        "crc32_valid": true,
+        "content_sha256": "7380ffa6acd4efbe08e605768a97d7be2303d0138f8d9fd2ca1110e2fd432062"
+      },
+      {
+        "index": 1,
+        "id": "F35_APP_CODE",
+        "offset": 192,
+        "size_bytes": 85648,
+        "crc32": "f1cbae40",
+        "crc32_valid": true,
+        "content_sha256": "1b418166dce0847e4afe7b363d22fd2ba63acae79728da38ad98eacf5dc43a8b"
+      },
+      {
+        "index": 2,
+        "id": "APP_CONFIG",
+        "offset": 85876,
+        "size_bytes": 3350,
+        "crc32": "d5c291cb",
+        "crc32_valid": true,
+        "content_sha256": "48894c08434095e58aa22d73487e7d138ad838908cf98ab1b2fc2efb253b7579"
+      },
+      {
+        "index": 3,
+        "id": "DISPLAY",
+        "offset": 89262,
+        "size_bytes": 8192,
+        "crc32": "1b149dc4",
+        "crc32_valid": true,
+        "content_sha256": "0abec05b7223ed4563e7814b1aecc494a6357e91e744b6c44ec41cb1ef88a819"
+      },
+      {
+        "index": 4,
+        "offset": 97490,
+        "descriptor_magic": "0xc1fb41d8",
+        "classification": "Skipped by candidate parser because area magic differs; payload not interpreted"
+      }
+    ],
+    "kernel_function_executed": false,
+    "scope": "Independent offline bounds/CRC checks follow source structure and skip rule; no controller execution, firmware signing validation or peripheral compatibility test"
+  },
+  "loader_paths": {
+    "touch": [
+      "/lib/firmware/ts/marie_synaptics_tcm_MARI69110.img",
+      "/system/vendor/firmware/ts/marie_synaptics_tcm_MARI69110.img"
+    ],
+    "wifi_configuration": [
+      "/vendor/firmware/bfgx_and_wifi_cfg",
+      "/vendor/firmware/wifi_cfg",
+      "/vendor/firmware/bfgx_cfg"
+    ],
+    "namespace_limit": "Path visibility depends on loader execution context; container-only mounts are not automatically sufficient"
+  },
+  "stock_config_context": {
+    "CONFIG_HUAWEI_TS_KIT": "y",
+    "CONFIG_SYNAPTICS_TCM_TS_KIT": "y",
+    "CONFIG_SPI_PL022": "y",
+    "CONFIG_CONNECTIVITY_HI1102": "y",
+    "CONFIG_CONNECTIVITY_HI1102A": "y",
+    "CONFIG_HI1102_PLATFORM": "m",
+    "CONFIG_HI1102_WIFI": "m",
+    "source_linkage_limit": "The separate Makefile variable CONFIG_HI110X_KERNEL_MODULES_BUILD_SUPPORT defaults to no; m options alone do not determine linkage"
+  },
+  "limits": [
+    "Matching names, paths and firmware-container CRCs do not prove driver ABI, hardware operation or phone boot.",
+    "The reference vendor and board data are older than the retained current stock kernel/config.",
+    "Source gaps, full-LTO/CFI failures, charging/thermal validation and persistent-unlock blockers remain unchanged."
+  ]
+}
