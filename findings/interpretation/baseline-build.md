@@ -59,15 +59,17 @@ Clang reports infinite recursion in `block/blk.h:249`. The `elevator_exit()` wra
 | Build-only configuration | Repaired `Image.gz` bytes | Modules | Scope |
 | --- | ---: | ---: | --- |
 | Candidate defconfig + non-LTO/CFI fragment | 14,767,667 | 3 | Debug information retained; block teardown and sidecar repairs |
-| Stock-derived Halium + local signing + non-LTO/CFI + no debug information | 15,133,725 | 4 | AppArmor, block teardown, sidecar and display/clock lifetime repairs |
+| Stock-derived Halium + local signing + non-LTO/CFI + no debug information | 15,134,215 | 4 | AppArmor and patches 0002–0005, including calibration/timekeeper lifetime repairs |
 
 The non-HKRR sidecar rule wrote its dummy input into a different path from its declared target, producing `cat: hkrr.img: No such file or directory` despite make exiting 0. [The one-line target repair](../../patches/0003-build-fix-dummy-hkrr-target.patch) makes the rule write `$@`; the diagnostic disappears. The real kernel image was independently verified rather than inferred from make's exit status.
 
 Verbose modpost inspection exposed two relevant lifetime defects. `lcdkit_probe()` explicitly returns `-EPROBE_DEFER` and remains installed in a registered platform driver, but its code was marked `__init`. The persistent PLL probe also calls `hs_clk_base()`, marked `__init`. [The two-line lifetime repair](../../patches/0004-fix-display-and-clock-init-lifetimes.patch) retains those functions and preserves the LCD source's CRLF bytes. The complete Halium rebuild passes; section mismatches decrease from 32 to 30. This is static lifetime correction plus compilation, without display or clock runtime validation.
 
+[The calibration/timekeeper follow-up](../raw/2026-11-12-build/18-calibration-and-timekeeper-validation.json) retains two more callbacks installed in registered platform drivers and checks the PMIC calibration allocation before dereferencing it. [Patch 0005](../../patches/0005-fix-calibration-and-timekeeper-probe-lifetimes.patch) passes a complete Halium rebuild with the same config hash. Section mismatches fall from 30 to 28. Image/config and all four staged signature checks pass again; the exact public certificate bytes also occur once in the uncompressed kernel image. No allocation fault injection, RTC, calibration, charging or suspend test was performed.
+
 Remaining warnings are substantive follow-up work:
 
-- [Thirty section mismatches](../raw/2026-11-12-build/15-remaining-section-mismatches.log) include early reserved-memory callbacks and additional registered drivers. Classify their call lifetimes before changing annotations.
+- [The earlier 30-mismatch log](../raw/2026-11-12-build/15-remaining-section-mismatches.log) is retained. [The final 28-reference classification](../raw/2026-11-12-build/19-remaining-warning-classification.json) separates 21 early reserved-memory/helper references, one helper with a known `__init` direct caller, and six retained secure-processor/modem probe references. This is static call-site evidence, not a proof of every possible call lifetime. No remaining warning is suppressed.
 - `g_ast_tx_complete_stat` is exported by both compiled legacy Hi1102 and Hi1102A objects. Do not choose a Wi-Fi variant from this collision or from configuration alone.
 - Six exports lack generated CRCs. [Source inspection](../raw/2026-11-12-build/16-source-warning-analysis.json) associates them with weak CRC declarations in shipped assembly whose corresponding C files are absent. The assembly and CRCs are unchanged. Its structure-layout assumptions remain unvalidated for a changed configuration.
 
@@ -86,7 +88,7 @@ python3 scripts/verify-findings.py
 
 For the LLD experiment, apply the linked build patch to a separate source checkout and set `LTO_LINKER=lld` for the recipe. [development-signing.config](../../configs/development-signing.config) records the standalone signing probe; keys stay in the external build output. [candidate-nolto.config](../../configs/candidate-nolto.config) is the separately labelled resource diagnostic, which changes kernel hardening.
 
-For the repaired stock-derived Halium resource probe, first apply the AppArmor patches to a separate source checkout with `scripts/apply-apparmor.sh`, followed by patches 0002, 0003 and 0004. Patch 0004 preserves CRLF context; use `git -c core.whitespace=cr-at-eol apply --check --whitespace=error-all PATCH` for its preflight. Use an empty output directory:
+For the repaired stock-derived Halium resource probe, first apply the AppArmor patches to a separate source checkout with `scripts/apply-apparmor.sh`, followed by patches 0002–0005. Patch 0004 preserves CRLF context; use `git -c core.whitespace=cr-at-eol apply --check --whitespace=error-all PATCH` for its preflight. Use an empty output directory:
 
 ```bash
 bash scripts/kernel-baseline.sh SOURCE OUTPUT CLANG_DIR GCC_DIR stock-config findings/raw/2026-11-11/08-stock-kernel.config

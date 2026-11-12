@@ -1,0 +1,559 @@
+{
+  "date": "2026-11-12",
+  "origin": "Generated verbose-modpost relocation inventory and static call-site classification; not runtime proof",
+  "source_commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+  "effective_source_tree": "91a8bacdf19ab06a4cdf709c34432243d195b1cd",
+  "diagnostic_sha256": "f17aa3dac9680db5f6518eaf68b4464002d36abc165a7357177ccad19f691ace",
+  "method": "Native modpost -m -a on the completed repaired vmlinux.o, without changing DEBUG_SECTION_MISMATCH; static source declarations/callers inspected separately",
+  "total_relocations": 28,
+  "classification_counts": {
+    "known_direct_caller_is___init_rdr_hisiap_dump_init": 1,
+    "early_reserved_memory_setup_or_helper": 21,
+    "retained_platform_driver_probe_requires_review": 6
+  },
+  "relocations": [
+    {
+      "from_kind": "function",
+      "from": "mm_ion_reserve_area()",
+      "to_kind": "function",
+      "to": ".init.text:of_get_flat_dt_prop()",
+      "relocations": 2,
+      "static_classification": "early_reserved_memory_setup_or_helper"
+    },
+    {
+      "from_kind": "function",
+      "from": "mm_sec_cma_reserve()",
+      "to_kind": "function",
+      "to": ".init.text:of_get_flat_dt_prop()",
+      "relocations": 3,
+      "static_classification": "early_reserved_memory_setup_or_helper"
+    },
+    {
+      "from_kind": "function",
+      "from": "mm_sec_cma_reserve()",
+      "to_kind": "function",
+      "to": ".init.text:cma_init_reserved_mem()",
+      "relocations": 1,
+      "static_classification": "early_reserved_memory_setup_or_helper"
+    },
+    {
+      "from_kind": "function",
+      "from": "mm_sec_cma_set_up()",
+      "to_kind": "function",
+      "to": ".init.text:of_get_flat_dt_prop()",
+      "relocations": 4,
+      "static_classification": "early_reserved_memory_setup_or_helper"
+    },
+    {
+      "from_kind": "function",
+      "from": "mm_sec_cma_set_up()",
+      "to_kind": "function",
+      "to": ".init.text:cma_init_reserved_mem()",
+      "relocations": 1,
+      "static_classification": "early_reserved_memory_setup_or_helper"
+    },
+    {
+      "from_kind": "function",
+      "from": "mm_camera_pool_set_up()",
+      "to_kind": "function",
+      "to": ".init.text:of_get_flat_dt_prop()",
+      "relocations": 2,
+      "static_classification": "early_reserved_memory_setup_or_helper"
+    },
+    {
+      "from_kind": "function",
+      "from": "mm_camera_pool_set_up()",
+      "to_kind": "function",
+      "to": ".init.text:cma_init_reserved_mem()",
+      "relocations": 1,
+      "static_classification": "early_reserved_memory_setup_or_helper"
+    },
+    {
+      "from_kind": "function",
+      "from": "get_device_platform()",
+      "to_kind": "function",
+      "to": ".init.text:of_flat_dt_get_machine_name()",
+      "relocations": 1,
+      "static_classification": "known_direct_caller_is___init_rdr_hisiap_dump_init"
+    },
+    {
+      "from_kind": "function",
+      "from": "cma_set_flag()",
+      "to_kind": "function",
+      "to": ".init.text:of_get_flat_dt_prop()",
+      "relocations": 1,
+      "static_classification": "early_reserved_memory_setup_or_helper"
+    },
+    {
+      "from_kind": "function",
+      "from": "modem_mperf_reserve_area()",
+      "to_kind": "function",
+      "to": ".init.text:of_get_flat_dt_prop()",
+      "relocations": 1,
+      "static_classification": "early_reserved_memory_setup_or_helper"
+    },
+    {
+      "from_kind": "function",
+      "from": "socp_reserve_area()",
+      "to_kind": "function",
+      "to": ".init.text:of_get_flat_dt_prop()",
+      "relocations": 1,
+      "static_classification": "early_reserved_memory_setup_or_helper"
+    },
+    {
+      "from_kind": "function",
+      "from": "modem_cdma_bbpds_reserve_area()",
+      "to_kind": "function",
+      "to": ".init.text:of_get_flat_dt_prop()",
+      "relocations": 2,
+      "static_classification": "early_reserved_memory_setup_or_helper"
+    },
+    {
+      "from_kind": "function",
+      "from": "ddr_inspect_reserve_area()",
+      "to_kind": "function",
+      "to": ".init.text:of_get_flat_dt_prop()",
+      "relocations": 2,
+      "static_classification": "early_reserved_memory_setup_or_helper"
+    },
+    {
+      "from_kind": "variable",
+      "from": "g_hisee_driver",
+      "to_kind": "function",
+      "to": ".init.text:hisee_probe()",
+      "relocations": 1,
+      "static_classification": "retained_platform_driver_probe_requires_review"
+    },
+    {
+      "from_kind": "variable",
+      "from": "socp_mem_driver",
+      "to_kind": "function",
+      "to": ".init.text:socp_memalloc_probe()",
+      "relocations": 1,
+      "static_classification": "retained_platform_driver_probe_requires_review"
+    },
+    {
+      "from_kind": "variable",
+      "from": "his_modem_drv",
+      "to_kind": "function",
+      "to": ".init.text:his_modem_probe()",
+      "relocations": 1,
+      "static_classification": "retained_platform_driver_probe_requires_review"
+    },
+    {
+      "from_kind": "variable",
+      "from": "his_boot_drv",
+      "to_kind": "function",
+      "to": ".init.text:his_boot_probe()",
+      "relocations": 1,
+      "static_classification": "retained_platform_driver_probe_requires_review"
+    },
+    {
+      "from_kind": "variable",
+      "from": "balong_power_drv",
+      "to_kind": "function",
+      "to": ".init.text:bsp_power_probe()",
+      "relocations": 1,
+      "static_classification": "retained_platform_driver_probe_requires_review"
+    },
+    {
+      "from_kind": "variable",
+      "from": "balong_modem_pm_info_drv",
+      "to_kind": "function",
+      "to": ".init.text:pm_info_probe()",
+      "relocations": 1,
+      "static_classification": "retained_platform_driver_probe_requires_review"
+    }
+  ],
+  "source_evidence": [
+    {
+      "path": "include/linux/of_reserved_mem.h",
+      "sha256": "faefe68b41895cbec276f43138b3d8d728069a768bb4c8feb6def6767345de47",
+      "selected_lines": [
+        {
+          "line": 27,
+          "text": "typedef int (*reservedmem_of_init_fn)(struct reserved_mem *rmem);"
+        },
+        {
+          "line": 29,
+          "text": "#define RESERVEDMEM_OF_DECLARE(name, compat, init)\t\t\t\\"
+        },
+        {
+          "line": 30,
+          "text": "_OF_DECLARE(reservedmem, name, compat, init, reservedmem_of_init_fn)"
+        }
+      ]
+    },
+    {
+      "path": "drivers/of/of_reserved_mem.c",
+      "sha256": "b5cb3173d76905c3ab008b332727ef99baf20b25eecc01ff69bc0699179f6eb1",
+      "selected_lines": [
+        {
+          "line": 226,
+          "text": "static int __init __reserved_mem_init_node(struct reserved_mem *rmem)"
+        },
+        {
+          "line": 238,
+          "text": "if (initfn(rmem) == 0) {"
+        },
+        {
+          "line": 324,
+          "text": "void __init fdt_init_reserved_mem(void)"
+        }
+      ]
+    },
+    {
+      "path": "drivers/base/dma-contiguous.c",
+      "sha256": "966fb29cd7052b7e9e62bcbcc89ab73ef3e659bfe05be6acc74e0635f392f634",
+      "selected_lines": [
+        {
+          "line": 249,
+          "text": "static int __init rmem_cma_setup(struct reserved_mem *rmem)"
+        },
+        {
+          "line": 279,
+          "text": "cma_set_flag(cma, node);"
+        }
+      ]
+    },
+    {
+      "path": "drivers/hisi/hisi_cma/hisi_cma_page_debug.c",
+      "sha256": "588bf17557d592ded2b412f48fd30cf84f9bb17a93ef36408c5524fd8dc98558",
+      "selected_lines": [
+        {
+          "line": 67,
+          "text": "void cma_set_flag(struct cma *cma, unsigned long node)"
+        },
+        {
+          "line": 70,
+          "text": "of_get_flat_dt_prop(node, \"cma-traced\", NULL))"
+        }
+      ]
+    },
+    {
+      "path": "drivers/staging/android/ion/mm/of_mm_ion.c",
+      "sha256": "ee7c9d80ca690c59f0124419674b608a221745a8c24279cdd8a16f8f9f74e583",
+      "selected_lines": [
+        {
+          "line": 134,
+          "text": "static int  mm_ion_reserve_area(struct reserved_mem *rmem)"
+        },
+        {
+          "line": 161,
+          "text": "RESERVEDMEM_OF_DECLARE(mm_ion, \"mm_ion\", mm_ion_reserve_area);"
+        }
+      ]
+    },
+    {
+      "path": "drivers/staging/android/ion/mm/sec_alloc.c",
+      "sha256": "01dbd9c12d509193a291877d0a854b20ed36c00766d9ec17f6ebc8b509c7f83f",
+      "selected_lines": [
+        {
+          "line": 65,
+          "text": "int mm_sec_cma_reserve(struct reserved_mem *rmem)"
+        },
+        {
+          "line": 133,
+          "text": "RESERVEDMEM_OF_DECLARE(mm_dynamic_cma,"
+        },
+        {
+          "line": 135,
+          "text": "mm_sec_cma_reserve);"
+        },
+        {
+          "line": 136,
+          "text": "RESERVEDMEM_OF_DECLARE(hisi_smemheap_cma,"
+        },
+        {
+          "line": 138,
+          "text": "mm_sec_cma_reserve);"
+        }
+      ]
+    },
+    {
+      "path": "drivers/staging/android/ion/ion_seccm_heap.c",
+      "sha256": "060ce3d8e74545e117a79b5df1fe62558d6c80fef930583a0a85248244e47c3b",
+      "selected_lines": [
+        {
+          "line": 78,
+          "text": "static int  mm_sec_cma_set_up(struct reserved_mem *rmem)"
+        },
+        {
+          "line": 101,
+          "text": "cma_set_flag(cma, node);"
+        },
+        {
+          "line": 109,
+          "text": "RESERVEDMEM_OF_DECLARE(mm_sec_cma, \"mm-cma-pool\", mm_sec_cma_set_up);"
+        }
+      ]
+    },
+    {
+      "path": "drivers/staging/android/ion/ion_seccg_heap.c",
+      "sha256": "7f77ff3db08c73bd0702c9852f521f57ac23a0556841c78fdfb9ceb95c3c6f12",
+      "selected_lines": [
+        {
+          "line": 58,
+          "text": "int mm_sec_cma_set_up(struct reserved_mem *rmem)"
+        },
+        {
+          "line": 116,
+          "text": "cma_set_flag(cma, node);"
+        },
+        {
+          "line": 136,
+          "text": "RESERVEDMEM_OF_DECLARE(mm_dynamic_cma,"
+        },
+        {
+          "line": 138,
+          "text": "mm_sec_cma_set_up);"
+        },
+        {
+          "line": 139,
+          "text": "RESERVEDMEM_OF_DECLARE(mm_iris_static_cma,"
+        },
+        {
+          "line": 141,
+          "text": "mm_sec_cma_set_up);"
+        },
+        {
+          "line": 142,
+          "text": "RESERVEDMEM_OF_DECLARE(mm_algo_static_cma,"
+        },
+        {
+          "line": 144,
+          "text": "mm_sec_cma_set_up);"
+        }
+      ]
+    },
+    {
+      "path": "drivers/staging/android/ion/ion_dma_pool_heap.c",
+      "sha256": "39260765917358e18b170c0ec2ebb40827036a115ee0f408bd7eb54878006130",
+      "selected_lines": [
+        {
+          "line": 92,
+          "text": "static int  mm_camera_pool_set_up(struct reserved_mem *rmem)"
+        },
+        {
+          "line": 114,
+          "text": "cma_set_flag(cma, node);"
+        },
+        {
+          "line": 121,
+          "text": "RESERVEDMEM_OF_DECLARE(mm_camera_pool, \"mm-camera-pool\", mm_camera_pool_set_up);"
+        }
+      ]
+    },
+    {
+      "path": "drivers/hisi/modem/drv/mperf/s_mperf.c",
+      "sha256": "ce8a3762ef7851391ad0d22d9bf91bbb16f4d38ff892df8dee219bf77af65708",
+      "selected_lines": [
+        {
+          "line": 77,
+          "text": "static int modem_mperf_reserve_area(struct reserved_mem *rmem)"
+        },
+        {
+          "line": 106,
+          "text": "RESERVEDMEM_OF_DECLARE(hisi_mperf,\"hisi_mperf\",modem_mperf_reserve_area);/*lint !e528*/"
+        }
+      ]
+    },
+    {
+      "path": "drivers/hisi/modem/drv/buildin/buildin.c",
+      "sha256": "5123c17de074fd7ce3f34a887ad9c1428533fbf412c386eed330394492d11928",
+      "selected_lines": [
+        {
+          "line": 282,
+          "text": "static int socp_reserve_area(struct reserved_mem *rmem)"
+        },
+        {
+          "line": 323,
+          "text": "RESERVEDMEM_OF_DECLARE(hisilicon, \"hisi_mdmlog\", (reservedmem_of_init_fn)socp_reserve_area);"
+        }
+      ]
+    },
+    {
+      "path": "drivers/socp/socp.c",
+      "sha256": "bfffce74bf8053dffe9833ea82b167c2a3520eba82c2d2af126b6fa26e4a60e5",
+      "selected_lines": [
+        {
+          "line": 202,
+          "text": "static int socp_reserve_area(struct reserved_mem *rmem)"
+        },
+        {
+          "line": 229,
+          "text": "RESERVEDMEM_OF_DECLARE(modem_socp, \"hisi_mdmlog\", (reservedmem_of_init_fn)socp_reserve_area);"
+        }
+      ]
+    },
+    {
+      "path": "drivers/hisi/modem/oam/lt/acore/diag/diag_msgbbp.c",
+      "sha256": "06e243475acc2baba43152b600a1ca95c43f84ca4a66cf7a053cd8cbfda82713",
+      "selected_lines": [
+        {
+          "line": 513,
+          "text": "static int modem_cdma_bbpds_reserve_area(struct reserved_mem *rmem)"
+        },
+        {
+          "line": 554,
+          "text": "RESERVEDMEM_OF_DECLARE(modem_cdma_bbpds_region, \"modem_xmode_region\", modem_cdma_bbpds_reserve_area);"
+        }
+      ]
+    },
+    {
+      "path": "drivers/huawei_platform/rmeminspect/ddr_inspect_drv.c",
+      "sha256": "91754307c08aa379630abb413511bc1e7ca5d4898c77e02d7e770a718d35d06b",
+      "selected_lines": [
+        {
+          "line": 96,
+          "text": "static int ddr_inspect_reserve_area(struct reserved_mem *rmem)"
+        },
+        {
+          "line": 123,
+          "text": "RESERVEDMEM_OF_DECLARE(ddr_inspect_region, \"ddr_inspect\", ddr_inspect_reserve_area);"
+        }
+      ]
+    },
+    {
+      "path": "drivers/hisi/mntn/blackbox/platform_ap/rdr_hisi_ap_adapter.c",
+      "sha256": "36b2d2fc9427198d6bf67a20df34a2b0e92ceeb8b48ff67867b8ce7cd92cb285",
+      "selected_lines": [
+        {
+          "line": 952,
+          "text": "int __init rdr_hisiap_dump_init(const struct rdr_register_module_result *retinfo)"
+        },
+        {
+          "line": 978,
+          "text": "get_device_platform(g_rdr_ap_root->device_id, PRODUCT_DEVICE_LEN);"
+        }
+      ]
+    },
+    {
+      "path": "drivers/hisi/mntn/blackbox/platform_ap/rdr_hisi_ap_exception_logsave.c",
+      "sha256": "7ae051b21911c9709918e8f622cd6ae8d336b902bf6c8e3a678fdd03e131f340",
+      "selected_lines": [
+        {
+          "line": 264,
+          "text": "void get_device_platform(unsigned char *device_platform, size_t count)"
+        },
+        {
+          "line": 270,
+          "text": "tmp_platform = of_flat_dt_get_machine_name();"
+        }
+      ]
+    },
+    {
+      "path": "drivers/hisi/hisee/hisee.c",
+      "sha256": "7541ae05544078309c84a28ce5c9a40a770c1141b9b3294d54847c6cf73babe8",
+      "selected_lines": [
+        {
+          "line": 2024,
+          "text": "static int __init hisee_probe(struct platform_device *pdev)"
+        },
+        {
+          "line": 2080,
+          "text": ".probe = hisee_probe,"
+        },
+        {
+          "line": 2094,
+          "text": "ret = platform_driver_register(&g_hisee_driver);"
+        }
+      ]
+    },
+    {
+      "path": "drivers/hisi/modem/drv/socp/socp_ind_delay.c",
+      "sha256": "ba2cbd6428e897b539ba6f9e185e99a1774bf21d14847b0ca84e76a0c232bbc3",
+      "selected_lines": [
+        {
+          "line": 249,
+          "text": "static int __init socp_memalloc_probe(struct platform_device *pdev)"
+        },
+        {
+          "line": 307,
+          "text": ".probe = socp_memalloc_probe,"
+        },
+        {
+          "line": 889,
+          "text": "ret = platform_driver_register(&socp_mem_driver); /*lint !e64*/"
+        }
+      ]
+    },
+    {
+      "path": "drivers/hisi/modem/drv/loadm/loadm_phone.c",
+      "sha256": "b71e0a9120323462a4545273b59b3d6b38262e7fdef85b64598549ba7f839f69",
+      "selected_lines": [
+        {
+          "line": 229,
+          "text": "static int __init his_modem_probe(struct platform_device *pdev)"
+        },
+        {
+          "line": 266,
+          "text": ".probe      = his_modem_probe,"
+        },
+        {
+          "line": 288,
+          "text": "ret = platform_driver_register(&his_modem_drv);"
+        }
+      ]
+    },
+    {
+      "path": "drivers/hisi/modem/drv/onoff/power_on.c",
+      "sha256": "3c16f7b41be242ae5b1f50092bb3c649bff3c15fdc2661d50dd024e44ec0e82b",
+      "selected_lines": [
+        {
+          "line": 177,
+          "text": "static int __init his_boot_probe(struct platform_device *pdev)"
+        },
+        {
+          "line": 199,
+          "text": ".probe      = his_boot_probe,"
+        },
+        {
+          "line": 219,
+          "text": "ret = platform_driver_register(&his_boot_drv);/*lint !e64*/"
+        }
+      ]
+    },
+    {
+      "path": "drivers/hisi/modem/drv/onoff/bsp_modem_boot.c",
+      "sha256": "8ef7074df2bc254299e430f1b91138f11ad9afebde8c28cbda6f5cd62734057d",
+      "selected_lines": [
+        {
+          "line": 256,
+          "text": "static int __init bsp_power_probe(struct platform_device *pdev)"
+        },
+        {
+          "line": 286,
+          "text": ".probe      = bsp_power_probe,"
+        },
+        {
+          "line": 305,
+          "text": "ret = platform_driver_register(&balong_power_drv);  /*lint !e64*/"
+        }
+      ]
+    },
+    {
+      "path": "drivers/hisi/modem/drv/pm_om/pm_om_debug.c",
+      "sha256": "583c6f8564c78074de842dcd23f21ca0fcb8c2fdccaad9413cc65f6de000f25f",
+      "selected_lines": [
+        {
+          "line": 680,
+          "text": "static int __init pm_info_probe(struct platform_device *pdev)"
+        },
+        {
+          "line": 707,
+          "text": ".probe      = pm_info_probe,"
+        },
+        {
+          "line": 726,
+          "text": "ret = platform_driver_register(&balong_modem_pm_info_drv);"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Reserved-memory setup callbacks are invoked by __init reserved-memory scanning; cma_set_flag is also called from the __init generic CMA setup. This explains the inspected early call paths, not a whole-program lifetime proof.",
+    "get_device_platform has one discovered direct C caller in __init rdr_hisiap_dump_init; its annotation remains unchanged.",
+    "Six retained platform_driver structures point at __init probes and register with platform_driver_register. They need lifetime/dependency review, particularly secure-processor and modem paths. No warning is suppressed and these callbacks are unchanged."
+  ]
+}

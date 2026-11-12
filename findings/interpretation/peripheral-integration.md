@@ -59,7 +59,7 @@ Run from the Windows Platform-Tools directory with Android booted. These command
 3. List relevant image partitions and hash the already identified touch firmware:
 
 ```powershell
-.\adb.exe shell 'ls -ld /dev/block/by-name /dev/block/bootdevice/by-name; ls -l /dev/block/bootdevice/by-name/*dts* /dev/block/bootdevice/by-name/*dtbo* /dev/block/bootdevice/by-name/*kernel* /dev/block/bootdevice/by-name/*ramdisk*; sha256sum /vendor/firmware/ts/marie_synaptics_tcm_MARI69110.img'
+.\adb.exe shell 'for d in /dev/block/by-name /dev/block/bootdevice/by-name; do ls -ld "$d"; ls -l "$d"/*dts* "$d"/*dtbo* "$d"/*kernel* "$d"/*ramdisk*; done; sha256sum /vendor/firmware/ts/marie_synaptics_tcm_MARI69110.img'
 ```
 
 If a path is denied or absent, that result is sufficient; no privilege escalation is implied. If firmware has changed, first repeat the selected identity queries in [collection methods](collection-methods.md). These proposed commands have not been executed on the phone.

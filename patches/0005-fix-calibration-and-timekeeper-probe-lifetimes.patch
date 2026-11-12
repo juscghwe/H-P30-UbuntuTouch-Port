@@ -1,0 +1,29 @@
+--- a/drivers/mfd/pmic_dcxo/pmic_dcxo_cali.c
++++ b/drivers/mfd/pmic_dcxo/pmic_dcxo_cali.c
+@@ -129,12 +129,14 @@
+ 		pr_err("%s: register callback succ\n", __func__);
+ }
+ 
+-static int __init pmic_dcxo_cali_probe(struct platform_device *pdev)
++static int pmic_dcxo_cali_probe(struct platform_device *pdev)
+ {
+ 	struct pmic_dcxo_cali_dev *di = NULL;
+ 
+ 	di = (struct pmic_dcxo_cali_dev *)devm_kzalloc(&pdev->dev,
+ 		sizeof(struct pmic_dcxo_cali_dev), GFP_KERNEL);
++	if (!di)
++		return -ENOMEM;
+ 
+ 	di->dev = &pdev->dev;
+ 
+--- a/drivers/hisi/timekeeper/hisi_timekeeper.c
++++ b/drivers/hisi/timekeeper/hisi_timekeeper.c
+@@ -58,7 +58,7 @@
+ 	return;
+ }
+ 
+-static int __init hisi_timekeeper_probe(struct platform_device *pdev)
++static int hisi_timekeeper_probe(struct platform_device *pdev)
+ {
+ 	struct rtc_device *rtc = NULL;
+ 	struct device_node *np = pdev->dev.of_node;

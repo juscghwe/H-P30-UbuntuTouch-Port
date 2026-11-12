@@ -1,0 +1,150 @@
+{
+  "date": "2026-11-12",
+  "origin": "Executed incremental Halium native build, artifact/signature inspection and static source lifetime review; no phone tests",
+  "patch": "../../../patches/0005-fix-calibration-and-timekeeper-probe-lifetimes.patch",
+  "source_commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+  "effective_source_tree": "91a8bacdf19ab06a4cdf709c34432243d195b1cd",
+  "files": [
+    {
+      "path": "drivers/mfd/pmic_dcxo/pmic_dcxo_cali.c",
+      "before_sha256": "23b048a60783fe3c6016ab32e552962b1c7e9a0bb7114d9600cdd4f86d60a678",
+      "after_sha256": "6c6d8af2486e86b0ab82ec6f5979ef753a0cfc66304c94d6872648e28b1765e3"
+    },
+    {
+      "path": "drivers/hisi/timekeeper/hisi_timekeeper.c",
+      "before_sha256": "2a9ed0a971b03f4b192b02617c764059cf494077d4c0b6ab778b71cb78e64366",
+      "after_sha256": "00ff223cf7d68b4baa19fbf41aae573d20afb2b792fbaf710af9fe9c47867691"
+    }
+  ],
+  "make_exit": 0,
+  "observations": [
+    "Both probe callbacks remain installed in platform_driver structures after platform_driver_register, so their code must outlive init-memory release.",
+    "PMIC calibration probe dereferenced the devm_kzalloc result without checking allocation failure; the patch returns -ENOMEM before the dereference. No allocation fault injection was performed."
+  ],
+  "source_patches": [
+    "AppArmor commits recorded in 07-build-and-port-probes.json",
+    "0002-block-fix-elevator-exit-recursion.patch",
+    "0003-build-fix-dummy-hkrr-target.patch",
+    "0004-fix-display-and-clock-init-lifetimes.patch",
+    "0005-fix-calibration-and-timekeeper-probe-lifetimes.patch"
+  ],
+  "section_mismatches_before": 30,
+  "section_mismatches_after": 28,
+  "config_sha256": "b7707e0d2dcf5a7a82264f39d6ec18880000ed559a5b605ccaeb62a4f7878155",
+  "LTO": false,
+  "CFI": false,
+  "public_certificate_exact_bytes_occurrences_in_Image": 1,
+  "artifacts": {
+    "origin": "Executed offline artifact inspection; no phone boot or hardware validation",
+    "source_commit": "c1e2747d8e839bedaa71a6436d24a51285d98509",
+    "kernel_release": "4.14.116+",
+    "build_number": 4,
+    "config_sha256": "b7707e0d2dcf5a7a82264f39d6ec18880000ed559a5b605ccaeb62a4f7878155",
+    "embedded_config_exact_match": true,
+    "gzip_crc_and_payload_verified": true,
+    "vmlinux_machine": "AArch64",
+    "arm64_header": {
+      "text_offset": 524288,
+      "image_size": 55525376,
+      "flags": 10
+    },
+    "artifacts": [
+      {
+        "path": "arch/arm64/boot/Image.gz",
+        "bytes": 15134215,
+        "sha256": "472796f6e34fd3a01c99c80a7f77cf27e50ff45d207f7f7d07ebddc037fbad28"
+      },
+      {
+        "path": "arch/arm64/boot/Image",
+        "bytes": 42801164,
+        "sha256": "8000fb9d13fb429265ec73d0569cc4c1193ee85479eb2aecda9b3f8ebfff524a"
+      },
+      {
+        "path": "vmlinux",
+        "bytes": 52189112,
+        "sha256": "70afb6b5be155c7fcb33b1fd267d1aafd33285f5b8a4371f6b89a287f208932a"
+      }
+    ],
+    "modules": [
+      {
+        "path": "crypto/crypto_engine.ko",
+        "bytes": 16264,
+        "sha256": "1d45ad4538f0d9814965cb37364127745cdb6a615dc3ad073172de47e1bf9d96",
+        "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64",
+        "signature_trailer_present": false
+      },
+      {
+        "path": "drivers/crypto/virtio/virtio_crypto.ko",
+        "bytes": 34728,
+        "sha256": "71007c7e2b417880b274e2f88ed54c75d6e60d909d773934dcc1aa6d4426fcde",
+        "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64",
+        "signature_trailer_present": false
+      },
+      {
+        "path": "drivers/hisi/hisi_dummy_ko/hisi_dummy_ko.ko",
+        "bytes": 4064,
+        "sha256": "b86bb140c09566f16b06d98c13fd67ce4a3ac037a8f04510d6297cb1b82b9eed",
+        "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64",
+        "signature_trailer_present": false
+      },
+      {
+        "path": "net/bridge/br_netfilter.ko",
+        "bytes": 35808,
+        "sha256": "535f77e2cc3c5f3d9708aa006b2b842aba8cc274555f0febd5827f5be5349fed",
+        "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64",
+        "signature_trailer_present": false
+      }
+    ]
+  },
+  "staged_signatures": {
+    "origin": "Offline inspection of staged build modules; no loading or stock-module compatibility test",
+    "modules": [
+      {
+        "module_sha256": "daff507eee1508347b73074580d7c1a4a8bf1e3205539012e84bac3f141b95eb",
+        "certificate_file_sha256": "b80b7e3d417b0c513f648295893688cd739ba740920907413d6c143e2ae74a35",
+        "unsigned_payload_bytes": 16264,
+        "signature_bytes": 681,
+        "signature_verified_against_supplied_certificate": true,
+        "scope": "Offline CMS signature and explicit certificate trust; no module loading, kernel-policy or ABI test",
+        "path": "lib/modules/4.14.116+/kernel/crypto/crypto_engine.ko",
+        "sig_hashalgo": "sha512",
+        "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64"
+      },
+      {
+        "module_sha256": "7b0c232232cb08fce86ad2db6d6ae56b45b98e747e561460b3758d0b514aef33",
+        "certificate_file_sha256": "b80b7e3d417b0c513f648295893688cd739ba740920907413d6c143e2ae74a35",
+        "unsigned_payload_bytes": 34728,
+        "signature_bytes": 681,
+        "signature_verified_against_supplied_certificate": true,
+        "scope": "Offline CMS signature and explicit certificate trust; no module loading, kernel-policy or ABI test",
+        "path": "lib/modules/4.14.116+/kernel/drivers/crypto/virtio/virtio_crypto.ko",
+        "sig_hashalgo": "sha512",
+        "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64"
+      },
+      {
+        "module_sha256": "98114b83fe6957ef9858fb1576873cc00dd788234cfb0c34dc92da43396c0efa",
+        "certificate_file_sha256": "b80b7e3d417b0c513f648295893688cd739ba740920907413d6c143e2ae74a35",
+        "unsigned_payload_bytes": 4064,
+        "signature_bytes": 681,
+        "signature_verified_against_supplied_certificate": true,
+        "scope": "Offline CMS signature and explicit certificate trust; no module loading, kernel-policy or ABI test",
+        "path": "lib/modules/4.14.116+/kernel/drivers/hisi/hisi_dummy_ko/hisi_dummy_ko.ko",
+        "sig_hashalgo": "sha512",
+        "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64"
+      },
+      {
+        "module_sha256": "4b38bf738ba896cf86455b81bc7e7692f620fa6cbd47518b96764dc0d30a597c",
+        "certificate_file_sha256": "b80b7e3d417b0c513f648295893688cd739ba740920907413d6c143e2ae74a35",
+        "unsigned_payload_bytes": 35808,
+        "signature_bytes": 681,
+        "signature_verified_against_supplied_certificate": true,
+        "scope": "Offline CMS signature and explicit certificate trust; no module loading, kernel-policy or ABI test",
+        "path": "lib/modules/4.14.116+/kernel/net/bridge/br_netfilter.ko",
+        "sig_hashalgo": "sha512",
+        "vermagic": "4.14.116+ SMP preempt mod_unload modversions aarch64"
+      }
+    ],
+    "all_signatures_verified": true,
+    "all_sha512": true
+  }
+}
