@@ -1,0 +1,144 @@
+{
+  "date": "2026-11-12",
+  "origin": "Generated offline overlay matching/application against official .275 reference images; owner runtime board property is separate evidence E11",
+  "owner_board_property": {
+    "property": "ro.board.boardid",
+    "reported_value": "7800",
+    "evidence": "findings/raw/2026-11-12/09-board-id-and-ini-access.txt"
+  },
+  "reference_archive_sha256": "60e8983f148e29027af1bc921d6ed0de5f65752ee423d93d008cf9153831f1a4",
+  "base_fdt_sha256": "2925f5c1d1b57fe4d3f7251f7f951a09da5a0f4cea713871db412b57efd41881",
+  "matching_id_count": 1,
+  "matching_entry": {
+    "index": 186,
+    "id": 7800,
+    "revision": 0,
+    "flags": 2,
+    "length_field": 38424,
+    "payload_offset": 7245188,
+    "compression": 2,
+    "compressed_sha256": "8f2c92d847096a8be080bd33f213186238f768190d480f188e75503821c34024",
+    "compressed_bytes_consumed": 38424,
+    "trailing_bytes": 0,
+    "expanded_bytes": 343036,
+    "expanded_sha256": "981a6767dc974628cf0c155f676159b79bd2d6b8824ed6cbaf2f0036898fd811",
+    "fdt": {
+      "total_size": 343036,
+      "version": 17
+    }
+  },
+  "offline_application": {
+    "command": [
+      "fdtoverlay",
+      "-i",
+      "base.dtb",
+      "-o",
+      "merged-7800.dtb",
+      "board-7800.dtbo"
+    ],
+    "combined_application_and_dtc_exit": 0,
+    "input_overlay_sha256": "981a6767dc974628cf0c155f676159b79bd2d6b8824ed6cbaf2f0036898fd811",
+    "merged_size_bytes": 635472,
+    "merged_sha256": "52932d1053bb30404d4910de72ecc8aa07f38e84c77cddffc0a5850ea0e663a5",
+    "dtc_version": "Version: DTC 1.6.1",
+    "selected_properties": [
+      {
+        "node": "/rootparam",
+        "property": "hisi,boardid",
+        "value": [
+          7,
+          8,
+          0,
+          0
+        ]
+      },
+      {
+        "node": "/rootparam",
+        "property": "hisi,dtbo_idx",
+        "value": [
+          186
+        ]
+      },
+      {
+        "node": "/rootparam",
+        "property": "hisi,product_name",
+        "value": "MAR-LX1A"
+      },
+      {
+        "node": "/rootparam",
+        "property": "hisi,boardname",
+        "value": "MAR_LX1A_VD"
+      },
+      {
+        "node": "/hi110x",
+        "property": "hi110x,subchip_type",
+        "value": "hi1102"
+      },
+      {
+        "node": "/hi110x",
+        "property": "status",
+        "value": "ok"
+      },
+      {
+        "node": "/hisi_cust_cfg",
+        "property": "ini_file_name",
+        "value": "/vendor/etc/cfg_marie_lx1a_hisi.ini"
+      },
+      {
+        "node": "/hisi_bfgx",
+        "property": "hi1102,uart_port",
+        "value": "/dev/ttyAMA4"
+      },
+      {
+        "node": "/ts_kit",
+        "property": "product",
+        "value": "marie"
+      },
+      {
+        "node": "/ts_kit",
+        "property": "bus_type",
+        "value": "spi"
+      },
+      {
+        "node": "/ts_kit",
+        "property": "bus_id",
+        "value": [
+          1
+        ]
+      },
+      {
+        "node": "/ts_kit",
+        "property": "spi-max-frequency",
+        "value": [
+          10000000
+        ]
+      },
+      {
+        "node": "/ts_kit/synaptics_tcm@0",
+        "property": "compatible",
+        "value": "synaptics_tcm"
+      },
+      {
+        "node": "/ts_kit/synaptics_tcm@0",
+        "property": "x_max",
+        "value": [
+          1080
+        ]
+      },
+      {
+        "node": "/ts_kit/synaptics_tcm@0",
+        "property": "y_max",
+        "value": [
+          2312
+        ]
+      }
+    ]
+  },
+  "limitations": [
+    "This identifies a unique matching overlay in the older reference package, not the current phone DTB/DTBO bytes.",
+    "The resolved Hi1102 property is reference configuration, not direct runtime chip/revision detection.",
+    "The owner INI lookup returned access errors; no INI contents or active-file selection were read from the phone.",
+    "The tree still contains multiple touch/panel alternatives. Runtime touch evidence separately indicates Synaptics TCM; exact silicon/panel remains unknown.",
+    "The merged tree is an analysis artifact, not a signed or boot-tested image."
+  ]
+}

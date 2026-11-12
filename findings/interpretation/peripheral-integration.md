@@ -61,10 +61,14 @@ Reproduce the generated-fixture checks with `python3 scripts/check-image-inspect
 The subsequent [official .275 reference archive inspection](firmware-acquisition.md)
 recovers real HSDT base-tree and Android DT-table v1 overlay inputs, plus split
 kernel/ramdisk header observations. Its GPT agrees with all seven selected E10
-entry numbers. One decompiled overlay contains Marie/Synaptics TCM settings and
-an explicit Hi1102 property, but that example uses an AL00 INI path and has not
-been selected for this C431 handset. This advances board-data investigation
-without establishing runtime hardware or current stock-image byte equality.
+entry numbers. The initial arbitrary overlay example contains AL00 and other
+Marie INI paths, so its individual fragments cannot select the handset board.
+E11 subsequently reports board ID 7800, matching exactly reference overlay 186.
+Offline application to the base tree resolves MAR-LX1A/MAR_LX1A_VD, the LX1A INI,
+Hi1102 and a SPI touch-kit/Synaptics TCM configuration. See the
+[resolved evidence](../raw/2026-11-12-firmware/04-board-7800-overlay.json).
+This supplies a board-matched integration reference without establishing current
+stock-image equality, exact Wi-Fi silicon or Ubuntu Touch peripheral operation.
 
 ## Small read-only collection set
 

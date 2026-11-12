@@ -27,7 +27,7 @@ The bootloader is locked. The documented source/toolchain pair produces offline 
 | --- | --- | --- |
 | Choose source/toolchain | Sources contain required board/drivers and can reproduce a compatible kernel | Closer candidate and documented toolchain identified; not validated |
 | Compile research kernels | Complete AArch64 image/modules, exact config and artifact verification | Candidate and stock-derived Halium native images passed; LTO/CFI disabled |
-| Build adapted boot image | Correct active board/overlay and verified device-specific image layout | Official .275 reference DT/images recovered; active overlay and current-image equality unresolved; no boot package |
+| Build adapted boot image | Correct active board/overlay and verified device-specific image layout | Board 7800 matches reference overlay 186; offline application passes; current-image equality unresolved; no boot package |
 | Boot/debug access | Kernel boot and working USB debug shell on actual phone | Not done |
 | Ubuntu Touch/Halium starts | Mounts, services, container and root filesystem function | Not done |
 | GUI/touch | Accelerated Lomiri display and working touchscreen | Not done |
@@ -42,6 +42,8 @@ The [owner follow-up E10](../raw/2026-11-12/07-stock-layout-and-access.txt) supp
 The [firmware acquisition assessment](firmware-acquisition.md) records the log
 search limit and an experimental HiSuite observer that is not selected. Direct
 catalog decoding instead located live Huawei manifests; the .275 base archive
-has been downloaded and hash-verified offline. Identify the correct C431 overlay
-and retained-vendor requirements next. Its embedded older configuration differs
+has been downloaded and hash-verified offline. Board ID 7800 now matches reference
+overlay 186; audit its resolved driver bindings and retained-vendor requirements
+next. Do not repeat denied INI/DT reads or escalate access for this lookup.
+The reference's embedded older configuration differs
 from current stock; keep it separate. Do not start an update solely to obtain files.

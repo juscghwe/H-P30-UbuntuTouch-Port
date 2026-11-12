@@ -40,4 +40,10 @@ E07 also lists fingerprint, power/volume keys and a headset-jack input. Their ex
 
 Confirmed: stock Android runtime identity, renderer, kernel configuration, USB access, bootloader lock, input wrapper, touchscreen project ID/firmware filename and a rollback offer.
 
-Unverified: exact Wi-Fi chip, exact touch controller/panel, matching complete build sources, final vendor base after unlocking, successful custom boot, graphics compatibility, Wi-Fi operation under Ubuntu Touch and suspend/reconnect behavior. A closer 4.14.116 source candidate has been pinned, but not compiled.
+E11 reports `ro.board.boardid=7800`. This uniquely matches an overlay in the
+official .275 reference archive; offline application resolves MAR-LX1A and
+Hi1102/LX1A INI settings. It narrows board integration, while the newer runtime
+firmware's DT bytes and active Wi-Fi die remain unverified. See
+[board-matched reference evidence](firmware-acquisition.md#board-7800-follow-up).
+
+Unverified: exact Wi-Fi chip, exact touch controller/panel, matching complete build sources, final vendor base after unlocking, successful custom boot, graphics compatibility, Wi-Fi operation under Ubuntu Touch and suspend/reconnect behavior. The closer 4.14.116 candidate has passed [offline research builds](baseline-build.md); no device boot has been tested.

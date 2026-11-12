@@ -1,0 +1,35 @@
+Origin: owner-pasted read-only Windows PowerShell/ADB replies, 2026-11-12.
+Normalization: conversation transport line separators converted to LF. Host ADB
+daemon-startup diagnostics are omitted from this device-only evidence. The owner
+explicitly marked the BOOT_BOARD_ID value empty; it is represented by a blank
+line below. Firmware identity was not re-queried in this capture.
+
+--- Selected board properties ---
+Command:
+.\adb.exe shell 'echo BOARD_ID; getprop ro.board.boardid; echo BOOT_BOARD_ID; getprop ro.boot.boardid'
+Output:
+BOARD_ID
+7800
+BOOT_BOARD_ID
+
+--- Selected vendor INI filename lookup ---
+Command:
+.\adb.exe shell 'ls -1 /vendor/etc/cfg_marie*hisi.ini'
+Output:
+ls: /vendor/etc/cfg_marie_al00_hisi.ini: Permission denied
+ls: /vendor/etc/cfg_marie_lx1_hisi.ini: Permission denied
+ls: /vendor/etc/cfg_marie_lx1a_hisi.ini: Permission denied
+ls: /vendor/etc/cfg_marie_lx2_hisi.ini: Permission denied
+ls: /vendor/etc/cfg_marie_lx2j_hisi.ini: Permission denied
+ls: /vendor/etc/cfg_marie_lx3_hisi.ini: Permission denied
+ls: /vendor/etc/cfg_marie_plus_al00_hisi.ini: Permission denied
+ls: /vendor/etc/cfg_marie_plus_lx1_hisi.ini: Permission denied
+ls: /vendor/etc/cfg_marie_plus_lx1a_hisi.ini: Permission denied
+ls: /vendor/etc/cfg_marie_plus_lx1am_hisi.ini: Permission denied
+ls: /vendor/etc/cfg_marie_plus_lx2_hisi.ini: Permission denied
+ls: /vendor/etc/cfg_marie_plus_lx2j_hisi.ini: Permission denied
+ls: /vendor/etc/cfg_marie_plus_lx2m_hisi.ini: Permission denied
+ls: /vendor/etc/cfg_marie_plus_lx3_hisi.ini: Permission denied
+ls: /vendor/etc/cfg_marie_plus_lx3m_hisi.ini: Permission denied
+ls: /vendor/etc/cfg_marie_plus_tl00_hisi.ini: Permission denied
+ls: /vendor/etc/cfg_marie_tl00_hisi.ini: Permission denied

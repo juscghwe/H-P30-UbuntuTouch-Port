@@ -117,6 +117,44 @@ and the [complete literal config comparison](../raw/2026-11-12-firmware/03-refer
 contain exact hashes, offsets and limitations. These are offline source inputs,
 not a device-validated kernel, boot package, unlock route or flash instructions.
 
+## Board 7800 follow-up
+
+[E11](../raw/2026-11-12/09-board-id-and-ini-access.txt) reports
+`ro.board.boardid=7800`; `ro.boot.boardid` is empty. The INI glob expands to
+17 Marie filenames, but every `ls` metadata lookup is denied. No INI contents
+or active-file selection were read from the phone.
+
+The reference DTO contains exactly one ID 7800: index 186, revision 0. Applying
+it to the validated base FDT with `fdtoverlay` 1.6.1 succeeds, and DTC decompiles
+the merged output. The resolved tree identifies `MAR-LX1A`, `MAR_LX1A_VD`, board
+cells `<7 8 0 0>` and `hisi,dtbo_idx=186`. It resolves:
+
+- `/hi110x`: `hi110x,subchip_type="hi1102"`, status `ok`.
+- `/hisi_cust_cfg`: `/vendor/etc/cfg_marie_lx1a_hisi.ini`.
+- `/hisi_bfgx`: `/dev/ttyAMA4`.
+- `/ts_kit`: Marie, SPI bus 1, maximum 10 MHz; its Synaptics TCM child has
+  1080 × 2312 coordinate limits. Other touch/panel alternatives also remain.
+
+This is a strong **board-matched reference**, not proof that the current EMUI 12
+installation has identical DT data or an independently identified Wi-Fi die.
+It supersedes using the arbitrary index-3 example as a handset integration lead.
+Do not hardcode index 186 for another firmware release.
+[Application evidence](../raw/2026-11-12-firmware/04-board-7800-overlay.json)
+records input/output hashes and selected properties; binary DT data stays private.
+
+Equivalent extraction/application in a private working directory containing the
+already verified reference `DTS.img` and `DTO.img`:
+
+```sh
+python3 -c 'from pathlib import Path; import zlib; Path("base.dtb").write_bytes(zlib.decompress(Path("DTS.img").read_bytes()[10240:96256],31))'
+python3 -c 'from pathlib import Path; import zlib; Path("board-7800.dtbo").write_bytes(zlib.decompress(Path("DTO.img").read_bytes()[7245188:7283612],31))'
+fdtoverlay -i base.dtb -o merged-7800.dtb board-7800.dtbo
+fdtget -t s merged-7800.dtb /rootparam hisi,product_name
+```
+
+The byte ranges are specific to the recorded archive hashes. No device block
+file is an input or output. Both extracted inputs match the recorded DT hashes.
+
 Any resulting CDN link still requires manifest/package inspection, model and
 customization matching, hashes and licensing review. A downloadable package is
 neither an unlock route nor permission to flash. Keep proprietary archives
