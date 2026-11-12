@@ -19,6 +19,7 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 | E07 | [Input device names](raw/2026-11-11/07-input-device-names.txt) | Latest pasted attachment; unrelated UI/window sections omitted |
 | E08 | [Stock kernel configuration](raw/2026-11-11/08-stock-kernel.config) | Decompressed owner-uploaded `/proc/config.gz` |
 | E09 | [Peripheral follow-up](raw/2026-11-12/03-peripheral-followup.txt) | Owner-pasted touch identifier, firmware filename and empty Wi-Fi property lookup |
+| E10 | [Stock image names, access checks and firmware hash](raw/2026-11-12/07-stock-layout-and-access.txt) | Separate owner-pasted ADB replies; partition symlinks, stock touch hash and permission failures |
 | — | [Capture provenance](raw/2026-11-11/provenance.json) | Acquisition, normalization and sanitation metadata |
 | — | [SHA-256 inventory](raw/2026-11-11/SHA256SUMS) | Integrity hashes of the committed evidence and provenance |
 

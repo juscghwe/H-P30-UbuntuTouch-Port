@@ -10,6 +10,8 @@ The firmware prefix is assembled from the product and chip names. The zeroflash 
 
 The pinned Iceows Marie recovery tree includes the same filename. Its blob is 116,817 bytes with SHA-256 `6a6290b715a49c88bde3bd17160d225bc18f649ad12f60f3b0cb3ac2b745d01c`. This is an **external artifact hash**, not a stock-phone measurement or permission to redistribute firmware. A phone-side hash can establish equality without uploading the binary. The recovery's touch HAL/service recipe is a reference, not proof those services are necessary for basic Linux input from this driver.
 
+The [subsequent stock-phone hash (E10)](../raw/2026-11-12/07-stock-layout-and-access.txt) is `e6ad1811b63fdc422985a74b0e8cf8e8421a43cfe1fff4c91b2c586d7e351d1f`. It differs from the recovery artifact despite the identical filename. Preserve the matching stock firmware; the reference blob is not a byte-identical substitute. The hash difference alone does not explain the firmware revision, compatibility or controller silicon.
+
 ## Wi-Fi linkage and initialization
 
 In this source, `CONNECTIVITY_HI1102=y` descends into `hisi/`; its platform and Wi-Fi subdirectories use `obj-y`. Their Makefiles choose built-in versus module linkage through the separate vendor variable `CONFIG_HI110X_KERNEL_MODULES_BUILD_SUPPORT`, defaulting to `no`. The candidate build generated both `platform/built-in.o` and `wifi/built-in.o` archives containing the corresponding objects, although its defconfig says `HI1102_PLATFORM=m` and `HI1102_WIFI=m`.
@@ -22,11 +24,27 @@ Board selection reads `hi110x,subchip_type` from a `hisilicon,hi1102` compatible
 
 The earlier `find /proc/device-tree ... 2>/dev/null` result is inconclusive. Besides permissions, `/proc/device-tree` may be a symlink that `find` did not traverse. Inspect the actual path and preserve errors before interpreting an empty result.
 
+E10 confirms `ADB_OK` and `sys.boot_completed=1`, followed by permission denial on both connectivity status files. The owner also reports denied device-tree traversal. This establishes an access restriction in a responding Android session, not an initialization-state result. `ro.connectivity.chiptype=hisi` selects a vendor family without identifying the active Hi110x variant; `ro.hardware.wlan` produced no value. The selected shallow init-file search returned no matching text, with no captured exit status; it does not establish absence of initialization elsewhere.
+
 ## Board data and image packaging
 
 A search of the complete preferred tree found no Marie/HWMAR/MARI69110 board description. Matches for the word Marie were unrelated Linux author credits. The included HiSilicon DTS files describe reference boards. This is stronger coverage than the initial single-directory inspection, but it does not establish where Huawei distributed this handset's board data.
 
 The Marie recovery reference uses a dummy kernel and separately configured recovery packaging. Its `BoardConfig.mk` offsets, sizes, anti-rollback settings and partition constants are not measured values for this phone and must not be copied into a port. The candidate also ships an opaque prebuilt `tools/mkbootimg`; it has not been executed or accepted as a device packaging specification.
+
+E10 now supplies an actual named-partition map. Both `/dev/block/by-name` and `/dev/block/bootdevice/by-name` agree for these selected entries:
+
+| Name | Observed target |
+| --- | --- |
+| `kernel` | `/dev/block/mmcblk0p48` |
+| `ramdisk` | `/dev/block/mmcblk0p21` |
+| `dts` | `/dev/block/mmcblk0p52` |
+| `dto` | `/dev/block/mmcblk0p53` |
+| `recovery_ramdisk` | `/dev/block/mmcblk0p50` |
+| `erecovery_kernel` | `/dev/block/mmcblk0p45` |
+| `erecovery_ramdisk` | `/dev/block/mmcblk0p46` |
+
+These are owner-observed symlink targets, not proposed flashing commands. Separate names are confirmed; contents, image formats, sizes, offsets, read permissions on the underlying block nodes and a complete partition inventory remain unknown. In particular, `dts`/`dto` names alone do not prove standard DTB/DTBO encoding. Filesystem timestamps are not used to date firmware or infer an acquisition time.
 
 Legitimate next inputs are a readable runtime FDT/DT subtree, or original kernel/DTB/DTBO/ramdisk images from a matching official Huawei update package already obtained for this handset. A live FDT may contain bootloader edits and does not replace the original DTB/DTBO inventory. Preserve original files and hashes privately, inspect selected board properties, and determine the split kernel/ramdisk and DT packaging from actual headers and partition metadata. Do not publish raw DT data without reviewing serial/MAC properties. No firmware or block-device image has been acquired from this phone during source validation.
 
@@ -59,7 +77,7 @@ Run from the Windows Platform-Tools directory with Android booted. These command
 3. List relevant image partitions and hash the already identified touch firmware:
 
 ```powershell
-.\adb.exe shell 'for d in /dev/block/by-name /dev/block/bootdevice/by-name; do ls -ld "$d"; ls -l "$d"/*dts* "$d"/*dtbo* "$d"/*kernel* "$d"/*ramdisk*; done; sha256sum /vendor/firmware/ts/marie_synaptics_tcm_MARI69110.img'
+.\adb.exe shell 'for d in /dev/block/by-name /dev/block/bootdevice/by-name; do ls -ld "$d"; ls -l "$d"/*dt* "$d"/*kernel* "$d"/*ramdisk*; done; sha256sum /vendor/firmware/ts/marie_synaptics_tcm_MARI69110.img'
 ```
 
-If a path is denied or absent, that result is sufficient; no privilege escalation is implied. If firmware has changed, first repeat the selected identity queries in [collection methods](collection-methods.md). These proposed commands have not been executed on the phone.
+If a path is denied or absent, that result is sufficient; no privilege escalation is implied. E10 records executed follow-ups and their exact commands separately from these templates. If firmware has changed, first repeat the selected identity queries in [collection methods](collection-methods.md).

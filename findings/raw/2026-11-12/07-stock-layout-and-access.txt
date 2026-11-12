@@ -1,0 +1,54 @@
+Origin: owner-pasted, separate read-only Windows PowerShell/ADB replies, 2026-11-12.
+Normalization: conversation transport line separators converted to LF. No phone
+identifier or personal path appears in these selected replies. Captures are
+separate; no combined acquisition is implied. Filesystem timestamps below are
+retained literally and do not establish the capture time or correctness of the
+phone clock. Firmware identity was not re-queried in these follow-ups.
+
+--- Device-tree access: qualitative report only ---
+The owner reports many Permission denied messages from the proposed search
+under /sys/firmware/devicetree/base/. Complete output was not supplied. Initial
+transport circumstances were uncertain; the later check below confirms a
+responding, fully booted Android session, not successful device-tree access.
+
+--- ADB/boot status and connectivity sysfs access ---
+Command:
+.\adb.exe shell 'echo ADB_OK; getprop sys.boot_completed; cat /sys/hisys/boot/plat /sys/hisys/boot/wifi'
+Output:
+ADB_OK
+1
+cat: /sys/hisys/boot/plat: Permission denied
+cat: /sys/hisys/boot/wifi: Permission denied
+
+--- Selected connectivity properties and init-rule search ---
+Command:
+.\adb.exe shell 'echo CHIPTYPE; getprop ro.connectivity.chiptype; echo WLAN_HARDWARE; getprop ro.hardware.wlan; grep -n hisys /vendor/etc/init/*.rc /odm/etc/init/*.rc /system/etc/init/*.rc'
+Output:
+CHIPTYPE
+hisi
+WLAN_HARDWARE
+
+No further text was supplied after WLAN_HARDWARE. This sentence is an editorial
+boundary marker, not shell output. The grep exit status was not captured.
+
+--- Named image partitions and touch firmware hash ---
+Command:
+.\adb.exe shell 'for d in /dev/block/by-name /dev/block/bootdevice/by-name; do ls -ld "$d"; ls -l "$d"/*dt* "$d"/*kernel* "$d"/*ramdisk*; done; sha256sum /vendor/firmware/ts/marie_synaptics_tcm_MARI69110.img'
+Output:
+drwxr-xr-x 2 root root 1640 2026-11-12 17:48 /dev/block/by-name
+lrwxrwxrwx 1 root root 21 2026-11-12 17:48 /dev/block/by-name/dto -> /dev/block/mmcblk0p53
+lrwxrwxrwx 1 root root 21 2026-11-12 17:48 /dev/block/by-name/dts -> /dev/block/mmcblk0p52
+lrwxrwxrwx 1 root root 21 2026-11-12 17:48 /dev/block/by-name/erecovery_kernel -> /dev/block/mmcblk0p45
+lrwxrwxrwx 1 root root 21 2026-11-12 17:48 /dev/block/by-name/erecovery_ramdisk -> /dev/block/mmcblk0p46
+lrwxrwxrwx 1 root root 21 2026-11-12 17:48 /dev/block/by-name/kernel -> /dev/block/mmcblk0p48
+lrwxrwxrwx 1 root root 21 2026-11-12 17:48 /dev/block/by-name/ramdisk -> /dev/block/mmcblk0p21
+lrwxrwxrwx 1 root root 21 2026-11-12 17:48 /dev/block/by-name/recovery_ramdisk -> /dev/block/mmcblk0p50
+drwxr-xr-x 2 root root 1560 2026-11-12 17:48 /dev/block/bootdevice/by-name
+lrwxrwxrwx 1 root root 21 2026-11-12 17:48 /dev/block/bootdevice/by-name/dto -> /dev/block/mmcblk0p53
+lrwxrwxrwx 1 root root 21 2026-11-12 17:48 /dev/block/bootdevice/by-name/dts -> /dev/block/mmcblk0p52
+lrwxrwxrwx 1 root root 21 2026-11-12 17:48 /dev/block/bootdevice/by-name/erecovery_kernel -> /dev/block/mmcblk0p45
+lrwxrwxrwx 1 root root 21 2026-11-12 17:48 /dev/block/bootdevice/by-name/erecovery_ramdisk -> /dev/block/mmcblk0p46
+lrwxrwxrwx 1 root root 21 2026-11-12 17:48 /dev/block/bootdevice/by-name/kernel -> /dev/block/mmcblk0p48
+lrwxrwxrwx 1 root root 21 2026-11-12 17:48 /dev/block/bootdevice/by-name/ramdisk -> /dev/block/mmcblk0p21
+lrwxrwxrwx 1 root root 21 2026-11-12 17:48 /dev/block/bootdevice/by-name/recovery_ramdisk -> /dev/block/mmcblk0p50
+e6ad1811b63fdc422985a74b0e8cf8e8421a43cfe1fff4c91b2c586d7e351d1f  /vendor/firmware/ts/marie_synaptics_tcm_MARI69110.img
