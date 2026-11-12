@@ -1,5 +1,9 @@
 # Experimental HiSuite package URL observer
 
+**Not selected for further acquisition work.** No successful package capture is
+confirmed. Retained as an experimental implementation for source review; prefer
+an original firmware archive from a verified distribution source.
+
 Purpose: obtain an official firmware package URL for **offline inspection** when
 HiSuite's existing logs contain no URL. Requires Windows 10/11 with `curl.exe`,
 Windows PowerShell, and an already installed HiSuite 14.0.0.380_OVE. Python is
@@ -29,7 +33,7 @@ memory for the observation window. There are no memory dumps or raw traffic logs
 Compressed responses through other decompression paths, UTF-16 and unsupported
 URL forms may be missed. Empty output establishes no firmware availability claim.
 
-## Run
+## Experimental procedure (not the selected approach)
 
 1. Save `capture.js` and `run.cmd` in a new folder outside any public checkout.
 2. From an administrator PowerShell window, run `run.cmd`. It downloads hash-pinned official portable 7-Zip and Frida

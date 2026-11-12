@@ -31,6 +31,10 @@ conflicts with preserving TLS verification. WinHTTP tracing is not selected
 because the inspected HTTP component imports OpenSSL directly; this does not
 establish that every component avoids WinHTTP.
 
+The selected next approach is acquisition of an original archive from verified
+distribution metadata, without process instrumentation. A Python interface to
+Frida would retain its process-attachment mechanism.
+
 Any resulting CDN link still requires manifest/package inspection, model and
 customization matching, hashes and licensing review. A downloadable package is
 neither an unlock route nor permission to flash. Keep proprietary archives
