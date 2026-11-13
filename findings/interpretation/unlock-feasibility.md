@@ -4,7 +4,7 @@ Research date: **2026-11-12**, Europe/Berlin. Evidence catalog: [R01–R15](../r
 
 ## Decision
 
-**No verified, complete software-only persistent-unlock procedure has been established for this phone on 12.0.0.262(C431E3R2P2).** This is a limit of the evidence found, not proof that no such method exists. Do not prescribe a firmware change merely because an older generic unlock guide exists.
+**No verified, complete software-only persistent-unlock procedure has been established for this phone, now owner-reported on EMUI 10.0.0 / 10.0.0.562(C431E15R2P7).** The earlier Settings build was 12.0.0.262(C431E3R2P2). This is a limit of the evidence found, not proof that no such method exists. Do not prescribe a further firmware change merely because an older generic unlock guide exists.
 
 The owner has ruled out opening the phone for now. Physical test-point routes remain background evidence only. No tool was run against the phone, and no executable or firmware was downloaded during this research.
 
@@ -16,14 +16,21 @@ Ubuntu Touch does not intrinsically require EMUI 9.1. The relevant requirement b
 
 [E13](../raw/2026-11-13/01-firmware-and-hisuite-offer.txt) again reports
 `MAR-L21A 10.0.0.275(C431E8R2P7)`, Android 10, VNDK 29 and kernel 4.14.116.
-These values also appeared under the earlier EMUI 12 state; they do not identify
-the current EMUI label or establish that the selected rollback completed.
+These values also appeared under the earlier EMUI 12 state. In a later, separate
+Settings report the owner confirms **EMUI 10.0.0 / build
+10.0.0.562(C431E15R2P7)**, Kirin 710, 4 GB RAM and kernel 4.14.116. This establishes
+the rollback result as owner-reported; preserve the differing ADB base identifier
+as a separate observation. No persistent unlock has been demonstrated.
 
 The owner reports no Android-9 rollback option. The supplied HiSuite screen
 offers `12.0.0.232(C431E3R2P2)` with an Update button. Its release note describes
 rollback from that offered system to EMUI 10, not a further Android-9 path.
 The screen establishes what this view offers, not that every official rollback
-path is impossible. The software-only unlock chain remains unresolved; neither
+path is impossible. A [targeted .562 follow-up](../raw/2026-11-13/03-unlock-followup.json)
+finds that Huawei's generic guide presupposes the missing version-switch option,
+while HCU still requires Android 9. A separate firsthand .562 P30 Lite report
+describes downgrade failures, without a verified success in the retrieved replies.
+The software-only unlock chain remains unresolved; neither
 an ordinary DC-Unlocker purchase nor a forced package substitution is supported
 by this result. No further rollback is needed solely to recapture firmware.
 

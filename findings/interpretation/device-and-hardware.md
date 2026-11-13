@@ -4,9 +4,17 @@
 
 E01 identifies a spare P30 Lite MAR-LX1A with Kirin 710, 4 GB RAM, 128 GB storage and a 1080 × 2312 display. These capacity values are owner-reported, not independently measured.
 
-E02 confirms HWMAR, kirin710, ARM64 userspace support, Android 10 / SDK 29, VNDK 29, Treble enabled, and a running Linux 4.14.116 kernel. **EMUI 12 is running on an Android 10 base.** EMUI's major version is not the Android API version.
+E02 confirms HWMAR, kirin710, ARM64 userspace support, Android 10 / SDK 29, VNDK 29, Treble enabled, and a running Linux 4.14.116 kernel. **The earlier EMUI 12 state used an Android 10 base.** EMUI's major version is not the Android API version.
 
 Settings and ADB show different build identifiers: Settings reports 12.0.0.262(C431E3R2P2), while `ro.build.display.id` reports MAR-L21A 10.0.0.275(C431E8R2P7). Both observations are retained. Their precise relationship has not been independently established; this discrepancy is not evidence of a completed downgrade, a counterfeit device, or root. The generic `test-keys` vendor fingerprint also does not establish root.
+
+In the later [E13 follow-up](../raw/2026-11-13/01-firmware-and-hisuite-offer.txt),
+the owner confirms Settings **EMUI 10.0.0 / build 10.0.0.562(C431E15R2P7)** after
+the official rollback. ADB still reports `.275`, Android 10, VNDK 29 and kernel
+4.14.116. Keep both current identifiers and the earlier EMUI-12 evidence; the
+unchanged kernel release does not establish equal config or kernel bytes.
+The retained E08 configuration predates this rollback and must not be relabeled
+as a fresh .562 configuration.
 
 ## Graphics: runtime evidence
 

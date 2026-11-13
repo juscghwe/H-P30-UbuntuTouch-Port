@@ -1,0 +1,27 @@
+{
+  "inspection_date": "2026-11-13",
+  "scope": "Targeted source follow-up after owner confirmation of Settings EMUI 10.0.0 / 10.0.0.562(C431E15R2P7). Six exact-model/build and official-rollback search queries; not an exhaustive proof of impossibility.",
+  "sources": [
+    {
+      "url": "https://consumer.huawei.com/at/support/content/de-de00772016/",
+      "kind": "Manufacturer instructions",
+      "access": "Page text retrieved successfully",
+      "observation": "Generic EMUI-10-to-9 instructions use HiSuite's switch-to-another-version control and require HiSuite 9.1.0.303_OVE or newer. They do not identify .562/C431 eligibility or supply a method when this option is absent.",
+      "limit": "Not a verified exact-device rollback chain; the guide does not justify forcing packages or assuming an older client will expose a usable offer."
+    },
+    {
+      "url": "https://hcu-client.com/huawei-bootloader-unlock-via-testpoint/",
+      "kind": "Tool-vendor instructions",
+      "access": "Page text retrieved successfully",
+      "observation": "Vendor still explicitly requires Android 9 for the documented persistent bootloader unlock and hardware or software testpoint entry. Android 10 does not meet that documented prerequisite."
+    },
+    {
+      "url": "https://www.gutefrage.net/frage/hisuit-proxy-huawei-p30lite-software-downgrade-geht-nicht",
+      "kind": "Firsthand owner failure claim with unverified replies",
+      "access": "Page text retrieved successfully; visible replies dated February/March 2024",
+      "observation": "P30 Lite owner explicitly reports starting at 10.0.0.562 and failures when attempting Android 9 and an earlier Android-10 build through HiSuite-Proxy. Replies suggest package/client changes; the visible owner reply does not establish success.",
+      "limit": "This is a reported failure, not proof of a hardware rollback barrier or a working recipe. No package-substitution, low-level-format or software instructions from replies were executed. Personal handles, screenshots and unrelated forum content are omitted."
+    }
+  ],
+  "result": "No verified end-to-end .562/C431 software-only persistent unlock or accepted Android-9 chain established by this follow-up. No vendor contacted, purchase made, tool run or phone operation performed by the research environment."
+}

@@ -26,7 +26,16 @@ Neue Version verfügbar
 system version will erase your personal data. Please back up your data in advance.
 Aktualisieren
 
-Limits: this excerpt does not show Settings > About phone, a completed rollback,
-an Android-9 offer, or a bootloader state query. ADB values match the earlier E02
-base identity, which was previously observed beneath EMUI 12. No current EMUI
-label or completed installation is inferred from these values alone.
+Later owner-reported Settings > About phone fields, received separately:
+Build: 10.0.0.562(C431E15R2P7)
+EMUI: 10.0.0
+Processor: Kirin 710
+RAM: 4 GB
+Kernel: 4.14.116
+These selected fields are normalized from the owner's typed report, not an exact
+Settings screenshot transcription. Other reported software fields are omitted.
+
+Limits: the separate Settings report confirms an EMUI-10/.562 state according to
+the owner. ADB still reports the earlier E02 .275 base identity; retain both
+values rather than substituting one for the other. No Android-9 offer,
+persistent-unlock result or bootloader-state query was supplied.

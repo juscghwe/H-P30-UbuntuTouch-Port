@@ -34,5 +34,5 @@
   },
   "source_location_category": "Documents/HiSuite/ROM",
   "later_owner_path_check": "Grouped PowerShell output starts with False for the base source path; remaining results were truncated. This shows the original base path is unavailable, not that the file was necessarily deleted.",
-  "installation_result": "Not established by the captured archives or index"
+  "installation_result": "Captures/index alone do not establish installation; the later separate owner Settings report in E13 confirms EMUI 10.0.0 / build 10.0.0.562(C431E15R2P7)."
 }

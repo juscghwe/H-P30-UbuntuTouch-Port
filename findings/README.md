@@ -22,7 +22,7 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 | E10 | [Stock image names, access checks and firmware hash](raw/2026-11-12/07-stock-layout-and-access.txt) | Separate owner-pasted ADB replies; partition symlinks, stock touch hash and permission failures |
 | E11 | [Board property and vendor INI access](raw/2026-11-12/09-board-id-and-ini-access.txt) | Owner-pasted board ID 7800, empty boot-board property and denied INI metadata reads |
 | E12 | [Connectivity selector follow-up](raw/2026-11-12/10-connectivity-selector-report.txt) | Owner reports both selected boot-property values empty; no full terminal capture |
-| E13 | [Firmware identity and HiSuite offer](raw/2026-11-13/01-firmware-and-hisuite-offer.txt) | Owner-pasted Android-10/VNDK-29/base-.275 values and manually transcribed EMUI-12 update offer; current EMUI label unresolved |
+| E13 | [Firmware identity and HiSuite offer](raw/2026-11-13/01-firmware-and-hisuite-offer.txt) | ADB retains Android-10/VNDK-29/base-.275 values; owner later confirms Settings EMUI 10.0.0 / .562; no Android-9 offer |
 | — | [CUST capture validation](raw/2026-11-13/02-capture-validation.json) | Generated offline ZIP/metadata checks and selected index fields; PRELOAD transfer blocked by size limit |
 | — | [Capture provenance](raw/2026-11-11/provenance.json) | Acquisition, normalization and sanitation metadata |
 | — | [SHA-256 inventory](raw/2026-11-11/SHA256SUMS) | Integrity hashes of the committed evidence and provenance |
@@ -61,4 +61,4 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 
 Raw data contains supplied observations, not a transcript of all chat text. Missing evidence and failed commands are retained as such. A driver being compiled or a library being installed is not evidence that a particular chip is active. The original diagnostic attachments remain outside the repository; only reviewed extracts are committed.
 
-The available snapshot describes the stock Android 10/EMUI 12 environment reported by the owner. Repeat firmware identification and capture the kernel configuration again after any downgrade; do not silently combine outputs from different firmware bases.
+E01–E12 describe the earlier stock Android 10/EMUI 12 state. E13 confirms the later owner-reported EMUI 10.0.0 / .562 Settings state while ADB still reports the .275 base identifier. The retained E08 kernel configuration predates this rollback; obtain a fresh configuration before attributing it to the new state. Do not silently combine outputs from different firmware bases.

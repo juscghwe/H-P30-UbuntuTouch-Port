@@ -6,10 +6,10 @@ The bootloader is locked. The documented source/toolchain pair produces offline 
 
 ## Unlock feasibility
 
-**2026-11-12 update:** the owner requests software-only research. No verified end-to-end procedure for the current .262 build has been found. Read [the unlock feasibility assessment](unlock-feasibility.md) before any downgrade or tool purchase. HCU's own manual confirms an Android-9 prerequisite for its documented unlock; this does not prove that our offered .562 rollback reaches that state.
+**2026-11-13 update:** the owner confirms Settings EMUI 10.0.0 / build 10.0.0.562(C431E15R2P7), following the official rollback. No Android-9 option or software-only persistent unlock has been demonstrated. Read [the unlock feasibility assessment](unlock-feasibility.md) before a further downgrade or tool purchase. HCU's documented unlock requires Android 9; reaching EMUI 10 does not satisfy that prerequisite.
 
 1. Retain the current sanitized firmware/configuration evidence before changing versions.
-2. Determine a model- and customization-compatible downgrade/unlock sequence. E04 proves only that HiSuite offers EMUI 10.0.0.562(C431E15R2P7). In [E13](../raw/2026-11-13/01-firmware-and-hisuite-offer.txt), the owner reports no Android-9 option and supplies an EMUI-12 update screen. Repeat ADB values match the older Android base; obtain the current Settings EMUI/build label before treating rollback as completed. No Android-9 route is established.
+2. Determine a model- and customization-compatible downgrade/unlock sequence from the confirmed .562 Settings build. In [E13](../raw/2026-11-13/01-firmware-and-hisuite-offer.txt), the owner reports no Android-9 option and supplies an EMUI-12 update offer. ADB continues to report the older .275 Android base; retain both identities. No further rollback is currently justified by a verified software-only unlock chain.
 3. The PotatoNV project's alternatives documentation lists Kirin-Tool for Kirin 710 and states EMUI 9.1-or-earlier support. PotatoNV itself excludes Kirin 710. The original Kirin-Tool website returned HTTP 403; exact MAR-LX1A firmware compatibility was not verified.
 4. Boot-ROM/test-point research exists for a related Kirin 710 phone. It is not a validated P30 Lite procedure. Do not treat matching SoC alone as authorization to flash another device's bootloader or partition images.
 5. If a rollback is performed, record its result and repeat selected firmware/kernel identification. Preserve matching stock recovery/restore materials before custom flashing.
