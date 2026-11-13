@@ -1,0 +1,238 @@
+{
+  "origin": "Owner-uploaded p30-emui10-stock-config.gz after owner-confirmed rollback; exact decompressed payload, unmodified. No direct phone access by analysis environment.",
+  "acquisition_command": ".\\adb.exe pull /proc/config.gz .\\p30-emui10-stock-config.gz",
+  "settings_state": "EMUI 10.0.0 / 10.0.0.562(C431E15R2P7)",
+  "adb_state": "MAR-L21A 10.0.0.275(C431E8R2P7), Android 10, VNDK 29, kernel 4.14.116",
+  "gzip": {
+    "bytes": 36364,
+    "sha256": "ff6169b5e7c56825160e587649f2de37d23e909f9c755d3dba3e12ac12fd4082"
+  },
+  "decompressed": {
+    "file": "04-emui10-stock-kernel.config",
+    "bytes": 165429,
+    "lines": 6142,
+    "sha256": "39e8fe7311c7af288e344fa1b98315597e57ca5fee3f1c250dc16b265a379bf3"
+  },
+  "method": "Literal explicit values; absent symbols are not disabled values. Definition search does not evaluate dependencies or prove active hardware.",
+  "comparison_to_pre_rollback_E08": {
+    "stock_sha256": "16623939098e19212e0f66b9117a45f3e8bf1f05d4ccb00138a1a372d11ccc5b",
+    "candidate_sha256": "39e8fe7311c7af288e344fa1b98315597e57ca5fee3f1c250dc16b265a379bf3",
+    "stock_symbols": 5312,
+    "candidate_symbols": 4902,
+    "common_symbols": 4632,
+    "equal_common_symbols": 4598,
+    "different_shared_values": 34,
+    "pre_rollback_only": 680,
+    "post_rollback_only": 270,
+    "differences": [
+      {
+        "symbol": "CONFIG_BCMGPS4774",
+        "stock": "n",
+        "candidate": "y"
+      },
+      {
+        "symbol": "CONFIG_BQ25970",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_CARD_TRAY_GPIO_DETECT",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_GPIO_PCA953X",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_HIFI_VIR_DAI",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_HIMAX_TS_KIT_64",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_HISI_FREQ_STATS_COUNTING_IDLE",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_HISI_PMIC_DCXO",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_HISI_TCPC",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_HISI_USB_TYPEC",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_HUAWEI_BATTERY_INFORMATION",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_HUAWEI_BATTERY_TEMP",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_HUAWEI_BATTERY_TYPE_IDENTIFY",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_HUAWEI_CAMERA_USE_IMX286HYBIRD",
+        "stock": "n",
+        "candidate": "y"
+      },
+      {
+        "symbol": "CONFIG_HUAWEI_CAMERA_USE_OV20880",
+        "stock": "n",
+        "candidate": "y"
+      },
+      {
+        "symbol": "CONFIG_HUAWEI_CAMERA_USE_OV8865",
+        "stock": "n",
+        "candidate": "y"
+      },
+      {
+        "symbol": "CONFIG_HUAWEI_EIMA_ACCESS_CONTROL",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_HUAWEI_THP_FOCALTECH",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_HUAWEI_TP_KIT_COLOR_INFO",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_HW_BOOSTER",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_HW_SYSTEM_WR_PROTECT",
+        "stock": "n",
+        "candidate": "y"
+      },
+      {
+        "symbol": "CONFIG_ILITEK_TDDI_TS_KIT",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_MEMCG_PROTECT_LRU",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_MEM_INSPECT",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_PINCTRL_SEC",
+        "stock": "n",
+        "candidate": "y"
+      },
+      {
+        "symbol": "CONFIG_POGO_PIN",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_SCHARGER_V600",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_STREAM_PARSER",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_SWITCHCAP",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_SWITCH_FSA9685",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_TLS",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_USB_ANALOG_HS_MODULE",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_USB_AUDIO_POWER_V600",
+        "stock": "y",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_WAKEUP",
+        "stock": "y",
+        "candidate": "n"
+      }
+    ]
+  },
+  "comparison_to_official_275_reference": {
+    "method": "Literal explicit values; absent symbols are not disabled values. Definition search does not evaluate dependencies or prove active hardware.",
+    "stock_sha256": "49ea2e02650dcc5a5525f6bade77a7e00c4dfb3518f82362ba13a174970119be",
+    "candidate_sha256": "39e8fe7311c7af288e344fa1b98315597e57ca5fee3f1c250dc16b265a379bf3",
+    "stock_symbols": 4899,
+    "candidate_symbols": 4902,
+    "common_symbols": 4899,
+    "equal_common_symbols": 4898,
+    "differences": [
+      {
+        "symbol": "CONFIG_HISEE_SUPPORT_INSE_ENCRYPT",
+        "stock": "n",
+        "candidate": "y"
+      }
+    ],
+    "stock_only": [],
+    "candidate_only": [
+      {
+        "symbol": "CONFIG_GENERAL_SEE_PINCODE",
+        "candidate": "y"
+      },
+      {
+        "symbol": "CONFIG_HUAWEI_MINCORE_CLASSIC",
+        "candidate": "n"
+      },
+      {
+        "symbol": "CONFIG_UNIX_SCM",
+        "candidate": "y"
+      }
+    ]
+  },
+  "limits": [
+    "Kernel config equality or similarity does not prove equal kernel binaries, DT/vendor bytes or bootloader versions.",
+    "The existing stock-derived research build uses E08 and predates this capture; no rebuild or phone boot performed from this new config.",
+    "Forced module signatures and symbol versioning remain enabled; Huawei module compatibility remains unverified.",
+    "Disabled battery-specific configuration symbols are compiled-support observations, not evidence that stock charging is broken or should be disabled in a port."
+  ],
+  "sanitization_review": "All quoted config values reviewed; generic kernel paths and signing-key filename retained. No private signing key or device identifiers included."
+}

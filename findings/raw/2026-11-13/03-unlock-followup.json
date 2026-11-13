@@ -21,6 +21,18 @@
       "access": "Page text retrieved successfully; visible replies dated February/March 2024",
       "observation": "P30 Lite owner explicitly reports starting at 10.0.0.562 and failures when attempting Android 9 and an earlier Android-10 build through HiSuite-Proxy. Replies suggest package/client changes; the visible owner reply does not establish success.",
       "limit": "This is a reported failure, not proof of a hardware rollback barrier or a working recipe. No package-substitution, low-level-format or software instructions from replies were executed. Personal handles, screenshots and unrelated forum content are omitted."
+    },
+    {
+      "url": "https://www.dc-unlocker.com/dcphoenix-enable-software-tp",
+      "kind": "Tool-vendor software-testpoint instructions",
+      "access": "Page text retrieved successfully on 2026-11-13",
+      "observation": "Vendor advertises software-testpoint access up to Android 10 / EMUI 10, explicitly not guaranteed and sometimes requiring Android 9 first. This describes entry to service mode, not persistent bootloader unlock. No phone operation attempted."
+    },
+    {
+      "url": "https://hcu-client.com/category/news-updates/",
+      "kind": "Tool-vendor historical release notes",
+      "access": "Page text retrieved successfully on 2026-11-13",
+      "observation": "The broad Android-10-without-downgrade wording appears in the June 2020 entry for identity-repair services and a CPU list without Kirin 710. A later entry adds Kirin 710 service features. Neither overrides the dedicated bootloader-unlock guide requiring Android 9 or demonstrates a persistent .562 unlock."
     }
   ],
   "result": "No verified end-to-end .562/C431 software-only persistent unlock or accepted Android-9 chain established by this follow-up. No vendor contacted, purchase made, tool run or phone operation performed by the research environment."

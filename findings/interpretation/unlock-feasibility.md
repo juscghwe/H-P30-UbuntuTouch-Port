@@ -34,6 +34,14 @@ The software-only unlock chain remains unresolved; neither
 an ordinary DC-Unlocker purchase nor a forced package substitution is supported
 by this result. No further rollback is needed solely to recapture firmware.
 
+The vendor's software-testpoint guide permits some Android-10/EMUI-10 entry
+paths, explicitly without a guarantee. That statement does not override HCU's
+separate Android-9 requirement for a normally unlocked bootloader. Historical
+release notes advertising Android-10 services describe other service features;
+they do not establish persistent unlock on this .562 build. Attempting HCU on
+Android 10 would therefore be outside the documented unlock prerequisite, not
+a supported route inferred from successful service-mode detection.
+
 ## Evidence assessment
 
 | Route / source | What is supported by the evidence | Remaining gap |

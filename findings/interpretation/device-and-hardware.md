@@ -14,7 +14,9 @@ the official rollback. ADB still reports `.275`, Android 10, VNDK 29 and kernel
 4.14.116. Keep both current identifiers and the earlier EMUI-12 evidence; the
 unchanged kernel release does not establish equal config or kernel bytes.
 The retained E08 configuration predates this rollback and must not be relabeled
-as a fresh .562 configuration.
+as a fresh .562 configuration. [E14](../raw/2026-11-13/04-emui10-stock-kernel.config)
+now supplies the distinct post-rollback configuration; see the
+[configuration comparison](kernel-configuration.md).
 
 ## Graphics: runtime evidence
 

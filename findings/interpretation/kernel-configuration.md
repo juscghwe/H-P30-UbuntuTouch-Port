@@ -2,6 +2,30 @@
 
 Evidence: [E08](../raw/2026-11-11/08-stock-kernel.config), decompressed from the owner's `/proc/config.gz`. Header: Linux/arm64 4.14.116. This is a configuration audit, not a successful build or a complete Halium compatibility check.
 
+## Post-rollback configuration: E14
+
+The owner supplied a fresh `/proc/config.gz` after Settings confirmed EMUI
+10.0.0 / `.562(C431E15R2P7)`. Its [exact payload](../raw/2026-11-13/04-emui10-stock-kernel.config)
+is 165,429 bytes, SHA-256
+`39e8fe7311c7af288e344fa1b98315597e57ca5fee3f1c250dc16b265a379bf3`.
+Keep it separate from E08 and the existing research builds. [Generated comparisons
+and provenance](../raw/2026-11-13/05-emui10-config-provenance-and-comparison.json)
+record the inputs and method.
+
+Compared with pre-rollback E08, 4,598 common settings match, 34 differ, 680
+explicit settings appear only in E08 and 270 only in E14. Missing entries are
+not automatically disabled settings. Battery identification/temperature settings
+change from `y` to `n`; this is compiled configuration, not evidence of broken
+stock charging or permission to remove power-management behavior.
+
+The official `.275` reference kernel is much closer: 4,898 shared settings match,
+only `HISEE_SUPPORT_INSE_ENCRYPT` differs (`n` to `y`), and E14 adds explicit
+`GENERAL_SEE_PINCODE=y`, `HUAWEI_MINCORE_CLASSIC=n` and `UNIX_SCM=y` entries. This
+supports the reference's relevance to the retained Android base, not kernel,
+bootloader or vendor-image byte equality. Forced module signing, module versioning,
+disabled namespaces and disabled AppArmor remain in E14. Rebase the stock-derived
+Halium configuration deliberately before claiming a build for this firmware.
+
 ## Concrete starting points
 
 | Area | Selected stock settings | Implication |

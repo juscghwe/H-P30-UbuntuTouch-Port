@@ -14,6 +14,11 @@ The bootloader is locked. The documented source/toolchain pair produces offline 
 4. Boot-ROM/test-point research exists for a related Kirin 710 phone. It is not a validated P30 Lite procedure. Do not treat matching SoC alone as authorization to flash another device's bootloader or partition images.
 5. If a rollback is performed, record its result and repeat selected firmware/kernel identification. Preserve matching stock recovery/restore materials before custom flashing.
 
+E14 now captures the running configuration after the confirmed EMUI-10 rollback.
+It is distinct from E08 and closely matches the official .275 reference kernel.
+Next adapt the stock-derived build inputs to E14 in a separate output directory;
+do not relabel existing E08-based artifacts as builds of the current firmware.
+
 ## Source and peripheral identification
 
 - Preserve the pinned [4.14.116 baseline build](baseline-build.md), configuration fragments and demonstrated repairs. Native compilation passes; full-LTO/CFI resource behavior, source gaps, generated assembly and remaining warnings need resolution before selecting a device build base.
