@@ -34,6 +34,16 @@ The software-only unlock chain remains unresolved; neither
 an ordinary DC-Unlocker purchase nor a forced package substitution is supported
 by this result. No further rollback is needed solely to recapture firmware.
 
+The owner additionally reports that changing PC HiSuite from major version 14
+to 10 did not allow an Android-9 downgrade; no exact version-10 build or detailed
+error was supplied. [Live package checks](../raw/2026-11-13/08-android9-package-availability.json)
+confirm available Huawei endpoints for catalog-listed `.399` base, `.6(C431)`
+CUST and `.3(C431R2)` PRELOAD. Thus lack of downloadable package endpoints is
+not the unresolved question for that set. Acceptance from this phone's `.562`
+state remains unverified. A missing offer, an installation rejection and hardware
+anti-rollback are not interchangeable explanations; none is selected as the
+proven cause from the supplied client report alone.
+
 The vendor's software-testpoint guide permits some Android-10/EMUI-10 entry
 paths, explicitly without a guarantee. That statement does not override HCU's
 separate Android-9 requirement for a normally unlocked bootloader. Historical

@@ -39,3 +39,7 @@ Limits: the separate Settings report confirms an EMUI-10/.562 state according to
 the owner. ADB still reports the earlier E02 .275 base identity; retain both
 values rather than substituting one for the other. No Android-9 offer,
 persistent-unlock result or bootloader-state query was supplied.
+
+Later owner report about the PC client:
+"even a rollback of hisuite from 14 to 10 didnt allow for the 9 downgrade"
+The exact HiSuite-10 build, error and offer screen were not supplied.

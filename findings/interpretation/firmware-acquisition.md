@@ -103,6 +103,32 @@ Save input catalogs and firmware outside this checkout. Example inspection:
 python3 scripts/inspect-firmfinder-catalog.py /path/outside/checkout/catalog.hash --model MAR-L21A --customization C431 --version 10.0.0.275 --version 10.0.0.562
 ```
 
+## Android-9 C431 package availability
+
+The pinned Downgrade catalog lists these MAR-L21A/C431/hw-eea components. On
+2026-11-13 their Huawei HTTPS manifests returned 200 and bounded archive GETs
+returned 206 with matching declared full sizes:
+
+| Catalog ID | Catalog version | Archive bytes |
+| --- | --- | --- |
+| 442707 | `MAR-LGRP2-OVS 9.1.0.399` | 3,619,592,630 |
+| 322136 | `MAR-L21A-CUST 9.0.1.6(C431)` | 14,162 |
+| 321529 | `MAR-L21A-PRELOAD 9.0.1.3(C431R2)` | 216,750,197 |
+
+[Exact URLs, manifests, hashes and probe results](../raw/2026-11-13/08-android9-package-availability.json)
+are retained as availability evidence. The full CUST ZIP matches its manifest
+SHA-256 and passes ZIP CRCs; `VERSION.mbn` confirms `.6(C431)`. Base and PRELOAD
+were probed, not fully downloaded or hash-verified. The base manifest has MD5
+only. No Huawei signature or rollback authorization was verified.
+
+The owner reports that changing PC HiSuite from major version 14 to 10 did not
+allow the Android-9 downgrade. This does not establish the exact rejection
+mechanism. File availability and a catalog's Downgrade label do not establish
+that stock HiSuite will offer the set or that this `.562` phone will accept it.
+The same-model issue report includes a failed attempt at `.399`; another success
+report uses physical testpoint and a separate flashing workflow. Neither supplies
+the missing verified software-only chain for this device.
+
 ## Verified .275 reference archive
 
 The 3,791,534,847-byte archive downloaded from Huawei over verified HTTPS and

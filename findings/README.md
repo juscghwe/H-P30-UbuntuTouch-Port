@@ -26,6 +26,7 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 | E14 | [Post-rollback kernel configuration](raw/2026-11-13/04-emui10-stock-kernel.config) | Exact decompressed owner upload after Settings EMUI 10/.562 confirmation; [hashes and generated comparisons](raw/2026-11-13/05-emui10-config-provenance-and-comparison.json) |
 | E15 | [Post-rollback fastboot state](raw/2026-11-13/06-fastboot-state.txt) | Bootloader reports locked; historical repeated-U unlock request rejected as invalid command; FRP state not shown |
 | — | [CUST capture validation](raw/2026-11-13/02-capture-validation.json) | Generated offline ZIP/metadata checks and selected index fields; PRELOAD transfer blocked by size limit |
+| — | [Android-9 C431 package availability](raw/2026-11-13/08-android9-package-availability.json) | Decoded catalog rows, live Huawei manifests/range probes and full CUST hash/CRC/version checks; not downgrade authorization |
 | — | [Capture provenance](raw/2026-11-11/provenance.json) | Acquisition, normalization and sanitation metadata |
 | — | [SHA-256 inventory](raw/2026-11-11/SHA256SUMS) | Integrity hashes of the committed evidence and provenance |
 

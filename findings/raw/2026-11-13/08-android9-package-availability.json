@@ -1,0 +1,162 @@
+{
+  "inspection_date": "2026-11-13",
+  "catalog": {
+    "repository": "https://github.com/ProfessorJTJ/professorjtj.github.io",
+    "commit": "a324a862c60764e84d398fe7b641e67b1873344c",
+    "file": "Downgrade/firmwards.hash",
+    "input_sha256": "6d96425dd5909fed55efaf13f0ff2f169bf9eaeb41ea1a692a3e590ca0917088",
+    "decoded_sha256": "b179186d5f32ec9b25724b9d3c67b1eb8bcb08baf565d1071a594a53a04bc6e8",
+    "selected_rows": [
+      [
+        321529,
+        "MAR-L21A - C431",
+        "hw-eea",
+        "MAR-L21A-PRELOAD 9.0.1.3(C431R2)",
+        "http://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/e2/v3/c75e0be019cd4ec4947274d94fb71228/",
+        "2019/11/21"
+      ],
+      [
+        322136,
+        "MAR-L21A - C431",
+        "hw-eea",
+        "MAR-L21A-CUST 9.0.1.6(C431)",
+        "http://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/98/v3/3f0535d6e14c4f7db86f9e4e3b8d452e/",
+        "2021/11/18"
+      ],
+      [
+        442707,
+        "MAR-L21A - C431",
+        "hw-eea",
+        "MAR-LGRP2-OVS 9.1.0.399",
+        "http://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/22/v3/798b60810e3a455baaa1a5effc305b28/",
+        "2021/12/10"
+      ]
+    ],
+    "classification": "Third-party catalog labels; not compatibility or rollback authorization"
+  },
+  "checks": [
+    {
+      "catalog_id": 321529,
+      "model_region": "MAR-L21A - C431",
+      "vendor": "hw-eea",
+      "version": "MAR-L21A-PRELOAD 9.0.1.3(C431R2)",
+      "catalog_date": "2019/11/21",
+      "manifest_url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/e2/v3/c75e0be019cd4ec4947274d94fb71228/full/filelist.xml",
+      "manifest_http_status": 200,
+      "manifest_sha256": "91f783826eb9426ad4358676146b47ae9b5b9737c513b732fc16212d8e1132aa",
+      "manifest_files": [
+        {
+          "spath": "update_full_preload_MAR-L21A_hw_eea_R2.zip",
+          "dpath": "update_full_preload_MAR-L21A_hw_eea_R2.zip",
+          "operation": "c",
+          "md5": "F8E2E772EFC657B9474F7ED3815F1C23",
+          "sha256": "89880D6D4F84C02A410C1E9E3EBABE09F7D91F46CEB430AAD05C7ECA784B4AA4",
+          "size": "216750197"
+        },
+        {
+          "spath": "changelog_preload_hw_eea_R2.xml",
+          "dpath": "changelog_preload_hw_eea_R2.xml",
+          "operation": "c",
+          "md5": "3E814E435369A3F788AF87994F1F95F9",
+          "sha256": "C5EF73ED9B4B40A907D5CDC4CE9FC7A74AF06C6495A2AE9D093E5AC5A2895F4F",
+          "size": "309"
+        }
+      ],
+      "archive_range_check": {
+        "url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/e2/v3/c75e0be019cd4ec4947274d94fb71228/full/update_full_preload_MAR-L21A_hw_eea_R2.zip",
+        "request": "GET Range bytes=0-0",
+        "http_status": 206,
+        "content_length": "1",
+        "content_range": "bytes 0-0/216750197",
+        "sample_bytes": 1
+      }
+    },
+    {
+      "catalog_id": 322136,
+      "model_region": "MAR-L21A - C431",
+      "vendor": "hw-eea",
+      "version": "MAR-L21A-CUST 9.0.1.6(C431)",
+      "catalog_date": "2021/11/18",
+      "manifest_url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/98/v3/3f0535d6e14c4f7db86f9e4e3b8d452e/full/filelist.xml",
+      "manifest_http_status": 200,
+      "manifest_sha256": "b0ed492b3a5f165a2b317885f00e3187b7037b120b4a4a452a3478b1cafabbf2",
+      "manifest_files": [
+        {
+          "spath": "changelog_cust_hw_eea.xml",
+          "dpath": "changelog_cust_hw_eea.xml",
+          "operation": "c",
+          "md5": "2D474A1CAF8A114F625314A8A31DD563",
+          "sha256": "D740D7E7C760BE24C87EBD49A2BA6D300896B2AD01BFEC6934CB222068346A31",
+          "size": "135534"
+        },
+        {
+          "spath": "update_full_cust_MAR-L21A_hw_eea.zip",
+          "dpath": "update_full_cust_MAR-L21A_hw_eea.zip",
+          "operation": "c",
+          "md5": "D842561D37403AF99C9E3E35C6FC323F",
+          "sha256": "B7950341A931B6B182E3F4551F17461E2E85B1EF4AABD880C3707D2981FB43F2",
+          "size": "14162"
+        }
+      ],
+      "archive_range_check": {
+        "url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/98/v3/3f0535d6e14c4f7db86f9e4e3b8d452e/full/update_full_cust_MAR-L21A_hw_eea.zip",
+        "request": "GET Range bytes=0-0",
+        "http_status": 206,
+        "content_length": "1",
+        "content_range": "bytes 0-0/14162",
+        "sample_bytes": 1
+      },
+      "cust_payload_check": {
+        "bytes": 14162,
+        "sha256": "b7950341a931b6b182e3f4551f17461e2e85b1ef4aabd880c3707d2981fb43f2",
+        "matches_manifest": true,
+        "zip_crc": "all entries pass",
+        "VERSION.mbn": "MAR-L21A-CUST 9.0.1.6(C431)\n",
+        "SOFTWARE_VER.mbn": "MAR_Global-CUST 9.0.1(C999)",
+        "huawei_signature_verified": false
+      }
+    },
+    {
+      "catalog_id": 442707,
+      "model_region": "MAR-L21A - C431",
+      "vendor": "hw-eea",
+      "version": "MAR-LGRP2-OVS 9.1.0.399",
+      "catalog_date": "2021/12/10",
+      "manifest_url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/22/v3/798b60810e3a455baaa1a5effc305b28/full/filelist.xml",
+      "manifest_http_status": 200,
+      "manifest_sha256": "d06408e46ebfb7e92a5025aebf45d8dfa85a880f633015a8f6c2a10f8bf514ed",
+      "manifest_files": [
+        {
+          "spath": "update_full_base.zip",
+          "dpath": "update_full_base.zip",
+          "operation": "c",
+          "md5": "C375585520CD27D0B7607DF282B08DCC",
+          "size": "3619592630"
+        },
+        {
+          "spath": "changelog_base.xml",
+          "dpath": "changelog_base.xml",
+          "operation": "c",
+          "md5": "47C3E7281D9DB53D91D4ECED01404A10",
+          "size": "160237"
+        }
+      ],
+      "archive_range_check": {
+        "url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/22/v3/798b60810e3a455baaa1a5effc305b28/full/update_full_base.zip",
+        "request": "GET Range bytes=0-0",
+        "http_status": 206,
+        "content_length": "1",
+        "content_range": "bytes 0-0/3619592630",
+        "sample_bytes": 1
+      }
+    }
+  ],
+  "method": "Huawei HTTPS with TLS verification. Manifest XML fetched. HEAD attempts failed with HTTPError and were not sufficient to assess availability; bounded GET Range bytes=0-0 returned 206 with full sizes. Only the 14,162-byte CUST ZIP was fully fetched and hash/CRC/version checked. No firmware program executed.",
+  "limits": [
+    "Base and PRELOAD payload hashes, ZIP CRCs and internal contents not verified.",
+    "Base manifest supplies MD5 but no SHA-256; no full base hash was computed.",
+    "No Huawei package signature verification, server/device rollback authorization or phone installation test performed.",
+    "Live endpoints and matching C431 catalog labels do not establish an accepted .562-to-9.1 software-only downgrade."
+  ],
+  "owner_hisuite_report": "Owner reports that changing the PC HiSuite major version from 14 to 10 did not allow the Android-9 downgrade; exact version-10 build, error and offer screen were not supplied."
+}
