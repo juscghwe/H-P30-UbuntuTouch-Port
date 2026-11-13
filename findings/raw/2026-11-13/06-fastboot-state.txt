@@ -1,0 +1,25 @@
+Origin: owner-pasted Windows Platform-Tools output, received 2026-11-13 after
+the owner-confirmed EMUI 10.0.0 / .562 rollback. Personal prompt/path omitted;
+transport escaping and line endings normalized. No analyst USB access.
+
+Owner-executed commands and supplied output:
+
+.\adb.exe reboot bootloader
+
+.\fastboot.exe oem get-bootinfo
+(bootloader)  locked
+OKAY [  0.002s]
+Finished. Total time: 0.004s
+
+.\fastboot.exe oem unlock UUUUUUUUUUUUUUUU
+FAILED (remote: 'invalid command')
+fastboot: error: Command failed
+
+Owner screen report:
+Only PHONE locked is displayed; no FRP state is shown.
+
+Limits: the repeated-U argument is a historical public test string, not a
+recovered device-specific code. The error does not distinguish an unavailable
+unlock operation from argument rejection. No successful unlock, data wipe or
+FRP state is inferred. OEM unlocking was earlier reported present and off;
+its state after the suggested change was not explicitly confirmed in this reply.

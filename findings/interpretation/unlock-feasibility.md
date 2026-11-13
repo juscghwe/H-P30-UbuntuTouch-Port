@@ -44,6 +44,28 @@ a supported route inferred from successful service-mode detection.
 
 ## Evidence assessment
 
+### Additional source reviews and owner fastboot query
+
+[E15](../raw/2026-11-13/06-fastboot-state.txt) confirms that normal fastboot still
+reports `locked` after the EMUI-10 rollback. A repeated-U unlock request returns
+`invalid command`, not a successful unlock. Its nonnumeric argument and the lack
+of a known-valid code prevent attributing that result specifically to a removed
+command or a rejected argument. FRP remains unknown. A visible OEM-unlocking
+permission switch is not evidence of a bootloader unlock or additional ADB access.
+
+[Read-only candidate audits](../raw/2026-11-13/07-software-unlock-link-audit.json)
+establish the following narrower findings:
+
+| Candidate | Inspected mechanism and limitation |
+| --- | --- |
+| ClashLuke/Huawei-Bootloader-Unlocker, pinned `5ec950f` | Executes a fastboot unlock command for sequential integers. No extraction, code-generation shortcut or verification bypass appears in its C source. |
+| Computer Bild / PhoneRescue root article | Generic rooting claims, without a demonstrated MAR-LX1A/.562 exploit or persistent-unlock procedure. Root access could be a research input but is a separate result from custom-boot authorization. |
+| Historical repeated-U guide | March 2014 firsthand Ascend-model tests; later clarification excludes newer devices. It does not supply a P30 Lite universal code. |
+
+A basic string scan of the official reference FASTBOOT record was inconclusive;
+it does not establish current command support or explain the rejection. No
+candidate executable or repeated guessing loop was run by the research environment.
+
 | Route / source | What is supported by the evidence | Remaining gap |
 | --- | --- | --- |
 | HCU + DC Phoenix software test point (R01–R03) | HCU documents Android 9 and either software/hardware TP. MAR-LX1A is listed. DC Phoenix offers an ADB-based software-TP path, but documents limited firmware support and no guarantee. | No supported no-opening entry/downgrade/exit chain demonstrated for .262; paid service required; Android version and EMUI label must both be considered. |

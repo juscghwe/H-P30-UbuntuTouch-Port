@@ -3,3 +3,5 @@
 7066f1451aef8a5e3fa76d350595c34c6ed7936094d7f9d8ab9d350cbc308568  03-unlock-followup.json
 39e8fe7311c7af288e344fa1b98315597e57ca5fee3f1c250dc16b265a379bf3  04-emui10-stock-kernel.config
 fcd4542605dcf2307738ff15584902a611c46db5d2f4b77466e813ea067b1ac9  05-emui10-config-provenance-and-comparison.json
+c21408a0963941a50180c5433e1154337d28f59cccac39ca92489191c8e68520  06-fastboot-state.txt
+764825ad2fddeb0d5a9907c7b96a5a3849f433cdef1b410bd64ef0ab92ee61d1  07-software-unlock-link-audit.json

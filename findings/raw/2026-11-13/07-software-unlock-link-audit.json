@@ -1,0 +1,43 @@
+{
+  "inspection_date": "2026-11-13",
+  "method": "Read-only source/document inspection; no candidate software compiled or executed and no phone command issued by the research environment.",
+  "candidates": [
+    {
+      "url": "https://github.com/ClashLuke/Huawei-Bootloader-Unlocker",
+      "commit": "5ec950f68d926325906180a35f986c4e5618673d",
+      "reviewed_files": ["README.md", "huawei_bootloader_unlocker.c"],
+      "c_source_git_blob": "a0b7a089159373db979ce446451b4fbb8e3f33cd",
+      "mechanism": "Sequential integer guessing. Starts at 1000000000000000 by default and executes fastboot oem unlock with successive integers using sprintf, increment and system in line 27.",
+      "findings": [
+        "No original-code extraction, model-specific generation algorithm or verification bypass appears in the inspected 33-line C source.",
+        "Success is inferred from the external command exit status; the final printf lacks a conversion specifier and does not print the supplied code value.",
+        "The README supplies broad Huawei/Honor claims, not a demonstrated MAR-LX1A/.562 result. This does not reduce the brute-force search space or establish command support."
+      ]
+    },
+    {
+      "url": "https://www.computerbild.de/artikel/cb-Tipps-Handy-Huawei-rooten-so-fuehren-Sie-den-Prozess-richtig-durch-31515517.html",
+      "page_date": "2022-07-28",
+      "claim": "Generic PhoneRescue rooting through its Deep Scan workflow, with other rooting products suggested after failure.",
+      "vendor_sources": [
+        "https://www.imobie.com/guide/phonerescue-for-android/root-android-device.htm",
+        "https://www.imobie.com/faq/phonerescue-for-android-faqs.htm"
+      ],
+      "assessment": "Vendor acknowledges rooting can fail on supported Android devices. Inspected pages provide no verified .562/MAR-LX1A exploit or persistent bootloader-unlock procedure. A demonstrated root exploit could be relevant, but generic Android compatibility does not establish one."
+    },
+    {
+      "url": "https://www.huaweiblog.de/news/general-bootloader-unlock-fuer-alle-huawei-phones/",
+      "page_date": "2014-03-01",
+      "mechanism_claim": "Historical repeated-U argument to fastboot oem unlock.",
+      "scope": "The page describes tests on Ascend P2, Ascend P6 and Ascend Mate. Its heading limits the claim through 2014; a later author reply excludes newer devices.",
+      "assessment": "No P30 Lite applicability established. E15 records rejection of this argument on the owner's current phone, without identifying the internal rejection mechanism."
+    }
+  ],
+  "additional_official_reference_check": {
+    "input": "FASTBOOT record in the separately verified official .275 reference UPDATE.APP; not a dump of the current phone",
+    "bytes": 3872320,
+    "sha256": "35a82b5c94fecc1bff77d1d5082f486da656e978dbbc4fdd1bd3c436c9638a6e",
+    "method": "Bounded payload extraction using the existing APP inventory and search of printable ASCII sequences",
+    "result": "No recognizable unlock/get-bootinfo/invalid-command command text found. This simple string search cannot determine whether a command handler exists, or explain the owner's rejection.",
+    "limits": "No execution, decryption, signature validation or control-flow analysis performed. Current bootloader byte equality is unknown. Proprietary image retained outside the repository."
+  }
+}
