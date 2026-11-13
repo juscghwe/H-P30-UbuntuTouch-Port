@@ -35,6 +35,32 @@ The selected next approach is acquisition of an original archive from verified
 distribution metadata, without process instrumentation. A Python interface to
 Frida would retain its process-attachment mechanism.
 
+## Owner-side package selection
+
+Selected HiSuite log fields supplied on 2026-11-13 identify these extracted
+package versions:
+
+| Component | Reported version |
+| --- | --- |
+| Base | `MAR-LGRP2-OVS 10.0.0.562` |
+| CUST | `MAR-L21A-CUST 10.0.0.15(C431)` |
+| PRELOAD | `MAR-L21A-PRELOAD 10.0.0.7(C431R2)` |
+
+The excerpt reports three `sha256 match.` messages before those version fields,
+but supplies neither digests nor a mapping of each check to a filename. This is
+client-reported checking and extraction, not independent archive verification
+or evidence that installation completed. The separate `HotaVer` field is
+`102.0.0.265(C431E3R2P2)`; it is not substituted for the selected rollback base.
+Device/request information and unrelated log fields are omitted here.
+
+The [filesystem watcher](../../scripts/hisuite-download-watch.md) discovered base,
+CUST and PRELOAD ZIPs. Its initial base copy failed with `MethodException` at
+3,051.6 MiB: a reproduced mixed-integer `Math.Min` overload converted the file
+length to Int32. Explicit Int64 operands fix the failure; a sparse input with
+the manifest's 3,199,657,640-byte length passes a real 4 MiB read regression.
+Owner-side complete archive hashes remain pending. Repeated snapshot passes
+and rounded MiB counters do not establish complete or valid packages.
+
 ## Live catalog and manifest results
 
 Direct data inspection of FirmFinder at

@@ -40,5 +40,8 @@ or guarantee discovery of a particular HiSuite download.
 
 Validated with PowerShell 7.7.0 on Linux: growing and truncated files, rewritten
 preallocated content, more than eight candidates, UPDATE.APP magic at offset 92,
-and exclusion of backups and an unrelated ZIP. Windows PowerShell 5.1 is the
+exclusion of backups and an unrelated ZIP, and a real 4 MiB read from a sparse
+3,199,657,640-byte input. Both arguments to the read-size minimum are explicitly
+64-bit: mixed integer types previously selected a 32-bit overload and raised
+`MethodException` before reading the base ZIP. Windows PowerShell 5.1 is the
 syntax target; a Windows runtime test remains pending.

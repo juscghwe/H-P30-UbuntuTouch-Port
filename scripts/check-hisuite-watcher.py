@@ -23,6 +23,22 @@ with tempfile.TemporaryDirectory(prefix='firmware-watch-test-') as temporary:
                USERPROFILE=str(root / 'profile'), TEMP=str(root / 'temp'))
     temp = Path(env['TEMP'])
     temp.mkdir()
+    # Sparse input reproduces the actual >Int32.MaxValue length without copying
+    # gigabytes. Load the authored script, then exercise one real 4 MiB read.
+    large = root / 'large.zip'
+    with large.open('wb') as stream:
+        stream.truncate(3_199_657_640)
+    harness = root / 'large-read.ps1'
+    harness.write_text('''param($Watcher, $Root)
+. $Watcher -Destination (Join-Path $Root 'empty-output') -WatchPath (Join-Path $Root 'absent') -StopAfterSeconds 1
+$record = [pscustomobject]@{ Source = (Join-Path $Root 'large.zip'); Target = (Join-Path $Root 'large.capture'); Cursor = [long]0; SourceLength = [long]3199657640; LastPass = [DateTime]::MinValue; Passes = 0; LastError = $null; Truncated = $false }
+Copy-Step $record
+if ($record.LastError -or $record.Cursor -ne 4MB) { throw ('Large-file read failed: ' + $record.LastError) }
+if ((Get-Item -LiteralPath $record.Target).Length -ne 4MB) { throw 'Incorrect snapshot size' }
+''')
+    result = subprocess.run([args.pwsh, '-NoLogo', '-NoProfile', '-File', str(harness),
+                             str(script), str(root)], env=env, capture_output=True, text=True)
+    assert result.returncode == 0, result.stdout + result.stderr
     expected = []
     for index in range(12):
         file = source / f'update_{index}.zip'
@@ -69,4 +85,4 @@ with tempfile.TemporaryDirectory(prefix='firmware-watch-test-') as temporary:
             if process.poll() is None:
                 process.kill()
                 process.wait()
-print('PASS: discovery, >8 candidates, growth, truncation, preallocation rewrite, backup exclusion')
+print('PASS: >2 GiB input, discovery, >8 candidates, growth, truncation, preallocation rewrite, backup exclusion')

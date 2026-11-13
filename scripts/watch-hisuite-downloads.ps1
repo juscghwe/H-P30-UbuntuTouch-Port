@@ -94,7 +94,7 @@ function Copy-Step($record) {
             $record.Cursor = 0
         }
         $null = $sourceStream.Seek($record.Cursor, 'Begin')
-        $count = $sourceStream.Read($buffer, 0, [int][Math]::Min($buffer.Length, $length - $record.Cursor))
+        $count = $sourceStream.Read($buffer, 0, [int][Math]::Min([long]$buffer.Length, [long]($length - $record.Cursor)))
         if ($count -le 0) { return }
         $targetStream = [IO.File]::Open($record.Target, 'OpenOrCreate', 'Write', [IO.FileShare]::Read)
         if ($record.Truncated) { $targetStream.SetLength(0); $record.Truncated = $false }
