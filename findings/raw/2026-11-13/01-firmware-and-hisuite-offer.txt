@@ -1,0 +1,32 @@
+Origin: owner-pasted ADB output and owner-provided HiSuite screenshot,
+received 2026-11-13. Device and PC clock accuracy was not independently checked.
+ADB output below is transcribed as supplied. Screenshot excerpt below is a
+separate manual transcription; unrelated controls and release notes are omitted.
+
+Requested read-only command:
+.\adb.exe shell 'echo BUILD; getprop ro.build.display.id; echo ANDROID; getprop ro.build.version.release; echo VNDK; getprop ro.vndk.version; echo KERNEL; uname -r'
+
+Owner-pasted output:
+BUILD
+MAR-L21A 10.0.0.275(C431E8R2P7)
+ANDROID
+10
+VNDK
+29
+KERNEL
+4.14.116
+
+Owner statement about HiSuite:
+"Hi suite doesnt allow the rollback to 9"
+
+Selected screenshot text:
+Neue Version verfügbar
+12.0.0.232(C431E3R2P2)
+5. This system version can be rolled back to the official version of EMUI 10 in HiSuite. Rolling back the
+system version will erase your personal data. Please back up your data in advance.
+Aktualisieren
+
+Limits: this excerpt does not show Settings > About phone, a completed rollback,
+an Android-9 offer, or a bootloader state query. ADB values match the earlier E02
+base identity, which was previously observed beneath EMUI 12. No current EMUI
+label or completed installation is inferred from these values alone.

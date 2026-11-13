@@ -12,6 +12,21 @@ The owner has ruled out opening the phone for now. Physical test-point routes re
 
 Ubuntu Touch does not intrinsically require EMUI 9.1. The relevant requirement belongs to specific persistent-unlock procedures. In the HCU workflow, the vendor explicitly requires Android 9; support-mode access on newer firmware can coexist with a normally locked bootloader. An ordinary cold boot into the custom system is the eventual acceptance criterion, not a transient service-tool status.
 
+## Owner follow-up: 2026-11-13
+
+[E13](../raw/2026-11-13/01-firmware-and-hisuite-offer.txt) again reports
+`MAR-L21A 10.0.0.275(C431E8R2P7)`, Android 10, VNDK 29 and kernel 4.14.116.
+These values also appeared under the earlier EMUI 12 state; they do not identify
+the current EMUI label or establish that the selected rollback completed.
+
+The owner reports no Android-9 rollback option. The supplied HiSuite screen
+offers `12.0.0.232(C431E3R2P2)` with an Update button. Its release note describes
+rollback from that offered system to EMUI 10, not a further Android-9 path.
+The screen establishes what this view offers, not that every official rollback
+path is impossible. The software-only unlock chain remains unresolved; neither
+an ordinary DC-Unlocker purchase nor a forced package substitution is supported
+by this result. No further rollback is needed solely to recapture firmware.
+
 ## Evidence assessment
 
 | Route / source | What is supported by the evidence | Remaining gap |

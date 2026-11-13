@@ -2,7 +2,7 @@
 
 ## Scope and status
 
-Device evidence dates: **2026-11-11–12**; source/unlock research update: **2026-11-12**, Europe/Berlin. Device evidence was supplied by the owner as command output and selected transcriptions. Exact acquisition times and the phone's clock have not been independently verified. Numeric file timestamps are not used to infer firmware state.
+Device evidence dates: **2026-11-11–13**; source research: **2026-11-12**; firmware/unlock assessment update: **2026-11-13**, Europe/Berlin. Device evidence was supplied by the owner as command output and selected transcriptions. Exact acquisition times and the phone's clock have not been independently verified. Numeric file timestamps are not used to infer firmware state.
 
 Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is deferred; charging, thermal behavior, sleep/wake and reconnect reliability are required milestones.
 
@@ -22,6 +22,8 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 | E10 | [Stock image names, access checks and firmware hash](raw/2026-11-12/07-stock-layout-and-access.txt) | Separate owner-pasted ADB replies; partition symlinks, stock touch hash and permission failures |
 | E11 | [Board property and vendor INI access](raw/2026-11-12/09-board-id-and-ini-access.txt) | Owner-pasted board ID 7800, empty boot-board property and denied INI metadata reads |
 | E12 | [Connectivity selector follow-up](raw/2026-11-12/10-connectivity-selector-report.txt) | Owner reports both selected boot-property values empty; no full terminal capture |
+| E13 | [Firmware identity and HiSuite offer](raw/2026-11-13/01-firmware-and-hisuite-offer.txt) | Owner-pasted Android-10/VNDK-29/base-.275 values and manually transcribed EMUI-12 update offer; current EMUI label unresolved |
+| — | [CUST capture validation](raw/2026-11-13/02-capture-validation.json) | Generated offline ZIP/metadata checks and selected index fields; PRELOAD transfer blocked by size limit |
 | — | [Capture provenance](raw/2026-11-11/provenance.json) | Acquisition, normalization and sanitation metadata |
 | — | [SHA-256 inventory](raw/2026-11-11/SHA256SUMS) | Integrity hashes of the committed evidence and provenance |
 

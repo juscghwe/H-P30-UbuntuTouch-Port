@@ -1,0 +1,38 @@
+{
+  "origin": "Offline inspection of owner-uploaded CUST capture and capture-index.json; selected metadata only. Original paths and the index remain private. Firmware binaries are not published.",
+  "inspection_date": "2026-11-13",
+  "cust": {
+    "filename": "update_full_cust_MAR-L21A_hw_eea.zip",
+    "bytes": 29233,
+    "sha256": "73eae790014dce9d94a216543d5aed9180710b883054603560736690e3aab7d1",
+    "zip_validation": "Python zipfile.testzip returned None; all entry CRC checks passed",
+    "VERSION.mbn": "MAR-L21A-CUST 10.0.0.15(C431)\n",
+    "SOFTWARE_VER.mbn": "MAR_Global-CUST 10.0.1(C999)",
+    "UPDATE.APP": {
+      "bytes": 563760,
+      "sha256": "e7771b40483349c0d0d2ec7583087ec53ae6fa7bf64b98c57b35bdbba67dc1bb"
+    },
+    "huawei_signature_verified": false,
+    "programs_executed": false
+  },
+  "base_index": {
+    "filename": "update_full_base.zip",
+    "source_length": 3199822203,
+    "cursor": 0,
+    "passes": 0,
+    "last_error": "MethodInvocationException",
+    "catalog_562_reference_length": 3199657640,
+    "limitation": "Different reported lengths: byte equality with the catalog archive is not established. No base capture was supplied."
+  },
+  "preload_index": {
+    "filename": "update_full_preload_MAR-L21A_hw_eea_R2.zip",
+    "source_length": 211715734,
+    "cursor": 79691776,
+    "passes": 3,
+    "last_error": "MethodInvocationException",
+    "validation": "Upload could not be transferred to the inspection executor due to its 32 MiB limit; archive bytes, CRC and hash remain unverified. A partial final cursor after earlier passes does not establish corruption or completeness."
+  },
+  "source_location_category": "Documents/HiSuite/ROM",
+  "later_owner_path_check": "Grouped PowerShell output starts with False for the base source path; remaining results were truncated. This shows the original base path is unavailable, not that the file was necessarily deleted.",
+  "installation_result": "Not established by the captured archives or index"
+}

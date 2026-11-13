@@ -61,6 +61,17 @@ the manifest's 3,199,657,640-byte length passes a real 4 MiB read regression.
 Owner-side complete archive hashes remain pending. Repeated snapshot passes
 and rounded MiB counters do not establish complete or valid packages.
 
+Subsequent [offline capture validation](../raw/2026-11-13/02-capture-validation.json)
+confirms that the 29,233-byte CUST ZIP passes every ZIP CRC and contains the
+reported CUST `.15(C431)` version. Huawei signature verification is not performed.
+The PRELOAD upload exceeds the inspection executor's transfer limit and remains
+unverified. The base index reports 3,199,822,203 bytes, different from the catalog
+reference below, and zero copied bytes. Treat those base archives separately;
+matching version names do not establish byte equality. The original base path
+was unavailable in a later owner-side check. Captures do not establish a completed
+phone installation; [E13](../raw/2026-11-13/01-firmware-and-hisuite-offer.txt) retains
+the later device identity and offer screen separately.
+
 ## Live catalog and manifest results
 
 Direct data inspection of FirmFinder at
