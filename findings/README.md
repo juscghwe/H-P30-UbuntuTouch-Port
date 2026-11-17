@@ -2,7 +2,7 @@
 
 ## Scope and status
 
-Device evidence dates: **2026-11-11–13**; source research: **2026-11-12**; firmware/unlock assessment update: **2026-11-13**, Europe/Berlin. Device evidence was supplied by the owner as command output and selected transcriptions. Exact acquisition times and the phone's clock have not been independently verified. Numeric file timestamps are not used to infer firmware state.
+Device evidence dates: **2026-11-11–17**; source research: **2026-11-12–17**; firmware/unlock assessment update: **2026-11-17**, Europe/Berlin. Device evidence was supplied by the owner as command output and selected transcriptions. Exact acquisition times and the phone's clock have not been independently verified. Numeric file timestamps are not used to infer firmware state.
 
 Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is deferred; charging, thermal behavior, sleep/wake and reconnect reliability are required milestones.
 
@@ -28,6 +28,8 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 | — | [CUST capture validation](raw/2026-11-13/02-capture-validation.json) | Generated offline ZIP/metadata checks and selected index fields; PRELOAD transfer blocked by size limit |
 | — | [Android-9 C431 package availability](raw/2026-11-13/08-android9-package-availability.json) | Decoded catalog rows, live Huawei manifests/range probes and full CUST hash/CRC/version checks; not downgrade authorization |
 | — | [Android Utility static readiness](raw/2026-11-17/01-android-utility-static-readiness.json) | Publisher-linked archive hash/CRC, main executable manifest and selected static UI strings; no execution or phone test |
+| E16 | [Owner USB Upgrade mode test](raw/2026-11-17/02-owner-usb-upgrade-mode-test.json) | DBAdapter detection, mode-switch report, 5% screen, blocked ADB query and automatic return to Android; no firmware transfer |
+| — | [Complete firmware-package checks](raw/2026-11-17/03-firmware-package-verification.json) | Six Huawei archive sizes/digests/ZIP CRCs and bounded APP inventories; no signature or device-acceptance test |
 | — | [Capture provenance](raw/2026-11-11/provenance.json) | Acquisition, normalization and sanitation metadata |
 | — | [SHA-256 inventory](raw/2026-11-11/SHA256SUMS) | Integrity hashes of the committed evidence and provenance |
 
@@ -53,7 +55,7 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 - [Executed Kconfig validation and baseline build](interpretation/baseline-build.md)
 - [Peripheral source trace, board data and read-only checks](interpretation/peripheral-integration.md)
 - [Official firmware acquisition and experimental HiSuite URL observer](interpretation/firmware-acquisition.md)
-- [Android Utility USB Upgrade readiness](interpretation/android-utility-usb-upgrade.md) — static preparation and the distinction between DLOAD and Fastboot operations; not a validated downgrade recipe.
+- [Android Utility USB Upgrade readiness](interpretation/android-utility-usb-upgrade.md) — owner-observed mode entry, verified full reference archives and remaining partition/version constraints; not a validated downgrade recipe.
 - [Board-7800 vendor, touchscreen and Wi-Fi integration inputs](interpretation/vendor-integration.md)
 - [Provisional Halium approach and configuration probe](interpretation/halium-approach.md)
 - [Technical checkpoints and corrections](interpretation/technical-history.md)

@@ -1,0 +1,1493 @@
+{
+  "inspection_date": "2026-11-17",
+  "method": "Full Huawei HTTPS downloads with TLS verification; complete manifest size/digest checks; all ZIP members CRC-tested. PTABLE.APP and UPDATE.APP extracted as data and inventoried with scripts/inspect-update-app.py; record names, offsets and bounds checked. No firmware executable or updater script run.",
+  "catalog_provenance": {
+    "repository": "https://github.com/ProfessorJTJ/professorjtj.github.io",
+    "commit": "a324a862c60764e84d398fe7b641e67b1873344c",
+    "classification": "Third-party catalog identifiers and model/customization labels; not device authorization."
+  },
+  "packages": [
+    {
+      "catalog_id": 321529,
+      "version_label": "MAR-L21A-PRELOAD 9.0.1.3(C431R2)",
+      "url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/e2/v3/c75e0be019cd4ec4947274d94fb71228/full/update_full_preload_MAR-L21A_hw_eea_R2.zip",
+      "size": 216750197,
+      "sha256": "89880d6d4f84c02a410c1e9e3ebabe09f7d91f46ceb430aad05c7eca784b4aa4",
+      "md5": "f8e2e772efc657b9474f7ed3815f1c23",
+      "manifest_sha256": "89880D6D4F84C02A410C1E9E3EBABE09F7D91F46CEB430AAD05C7ECA784B4AA4",
+      "manifest_md5": "F8E2E772EFC657B9474F7ED3815F1C23",
+      "zip_crc": "pass",
+      "reference_group": "android9-c431-reference",
+      "sha256_provenance": "Matches Huawei manifest SHA-256",
+      "zip_members": 20,
+      "version_metadata": {
+        "SOFTWARE_VER.mbn": {
+          "sha256": "1df50b78ce6143dba2eefe864ebc8203647a6ae8f7132491890aca51561dd1fe",
+          "text": "MAR_GLOBAL_PRELOAD 9.0.1(C999)"
+        },
+        "VERSION.mbn": {
+          "sha256": "91fea2c53b79b741b1b7f323b99b6a0011c4ab6bddadad05f8d4c84b6026c8b4",
+          "text": "MAR-L21A-PRELOAD 9.0.1.3(C431R2)\n"
+        },
+        "SOFTWARE_VER_LIST.mbn": {
+          "sha256": "a53f015b1147dfddf438aaba5e5884a41184914cb40223946aac4c4c8d363462"
+        }
+      },
+      "app_inspection": [
+        {
+          "preamble_bytes": 92,
+          "entries": [
+            {
+              "name": "SHA256RSA",
+              "header_offset": 92,
+              "header_size": 100,
+              "payload_offset": 192,
+              "size_bytes": 256
+            },
+            {
+              "name": "CRC",
+              "header_offset": 448,
+              "header_size": 100,
+              "payload_offset": 548,
+              "size_bytes": 8
+            },
+            {
+              "name": "PRELOAD_VERLIST",
+              "header_offset": 556,
+              "header_size": 100,
+              "payload_offset": 656,
+              "size_bytes": 1045,
+              "payload_sha256": "a53f015b1147dfddf438aaba5e5884a41184914cb40223946aac4c4c8d363462",
+              "nonempty_lines": 34
+            },
+            {
+              "name": "PRELOAD_VER",
+              "header_offset": 1704,
+              "header_size": 100,
+              "payload_offset": 1804,
+              "size_bytes": 30,
+              "metadata_text": "MAR_GLOBAL_PRELOAD 9.0.1(C999)",
+              "payload_sha256": "1df50b78ce6143dba2eefe864ebc8203647a6ae8f7132491890aca51561dd1fe"
+            },
+            {
+              "name": "PACKAGE_TYPE",
+              "header_offset": 1836,
+              "header_size": 100,
+              "payload_offset": 1936,
+              "size_bytes": 82,
+              "metadata_text": "ONLINE_UPDATE\nPKG:PRELOADPKG\nTYPE:PTABLE.APP\nVER:MAR-L21A-PRELOAD 9.0.1.3(C431R2)\n",
+              "payload_sha256": "52b57f434104bd3c254845b654a702475e08103abd425574c2b5dd91a882074f"
+            },
+            {
+              "name": "PTABLE_PRELOAD",
+              "header_offset": 2020,
+              "header_size": 100,
+              "payload_offset": 2120,
+              "size_bytes": 19
+            }
+          ],
+          "member": "PTABLE.APP",
+          "size_bytes": 2140,
+          "sha256": "8d6052d941e753b4003eecf2aa2c406b23869d7e54430f1f1657379488896cb2",
+          "zip_extraction_crc": "pass",
+          "record_checksums_verified": false,
+          "huawei_signatures_verified": false
+        },
+        {
+          "preamble_bytes": 92,
+          "entries": [
+            {
+              "name": "SHA256RSA",
+              "header_offset": 92,
+              "header_size": 100,
+              "payload_offset": 192,
+              "size_bytes": 256
+            },
+            {
+              "name": "CRC",
+              "header_offset": 448,
+              "header_size": 106,
+              "payload_offset": 554,
+              "size_bytes": 15516
+            },
+            {
+              "name": "PRELOAD_VERLIST",
+              "header_offset": 16072,
+              "header_size": 100,
+              "payload_offset": 16172,
+              "size_bytes": 1045,
+              "payload_sha256": "a53f015b1147dfddf438aaba5e5884a41184914cb40223946aac4c4c8d363462",
+              "nonempty_lines": 34
+            },
+            {
+              "name": "PRELOAD_VER",
+              "header_offset": 17220,
+              "header_size": 100,
+              "payload_offset": 17320,
+              "size_bytes": 30,
+              "metadata_text": "MAR_GLOBAL_PRELOAD 9.0.1(C999)",
+              "payload_sha256": "1df50b78ce6143dba2eefe864ebc8203647a6ae8f7132491890aca51561dd1fe"
+            },
+            {
+              "name": "PACKAGE_TYPE",
+              "header_offset": 17352,
+              "header_size": 100,
+              "payload_offset": 17452,
+              "size_bytes": 82,
+              "metadata_text": "ONLINE_UPDATE\nPKG:PRELOADPKG\nTYPE:UPDATE.APP\nVER:MAR-L21A-PRELOAD 9.0.1.3(C431R2)\n",
+              "payload_sha256": "0551d85fb7d6ebc83dd41b3a4f6ab011ccd7b150dbfeac347c49088e106ec539"
+            },
+            {
+              "name": "PTABLE_PRELOAD",
+              "header_offset": 17536,
+              "header_size": 100,
+              "payload_offset": 17636,
+              "size_bytes": 19
+            },
+            {
+              "name": "PRELOAD",
+              "header_offset": 17656,
+              "header_size": 124156,
+              "payload_offset": 141812,
+              "size_bytes": 254068376
+            }
+          ],
+          "member": "UPDATE.APP",
+          "size_bytes": 254210188,
+          "sha256": "3a32a0b9ecbc1eac7c0457c0ae39e312aab8c6c5287111076ea985b2f8876e0a",
+          "zip_extraction_crc": "pass",
+          "record_checksums_verified": false,
+          "huawei_signatures_verified": false
+        }
+      ],
+      "filelist_url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/e2/v3/c75e0be019cd4ec4947274d94fb71228/full/filelist.xml",
+      "filelist_xml_sha256": "91f783826eb9426ad4358676146b47ae9b5b9737c513b732fc16212d8e1132aa"
+    },
+    {
+      "catalog_id": 322136,
+      "version_label": "MAR-L21A-CUST 9.0.1.6(C431)",
+      "url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/98/v3/3f0535d6e14c4f7db86f9e4e3b8d452e/full/update_full_cust_MAR-L21A_hw_eea.zip",
+      "size": 14162,
+      "sha256": "b7950341a931b6b182e3f4551f17461e2e85b1ef4aabd880c3707d2981fb43f2",
+      "md5": "d842561d37403af99c9e3e35c6fc323f",
+      "manifest_sha256": "B7950341A931B6B182E3F4551F17461E2E85B1EF4AABD880C3707D2981FB43F2",
+      "manifest_md5": "D842561D37403AF99C9E3E35C6FC323F",
+      "zip_crc": "pass",
+      "reference_group": "android9-c431-reference",
+      "sha256_provenance": "Matches Huawei manifest SHA-256",
+      "zip_members": 20,
+      "version_metadata": {
+        "SOFTWARE_VER.mbn": {
+          "sha256": "35f01ebf8c724eb4bb5afb82c1321055b85102e3522bfe4aefbbddc17f479f74",
+          "text": "MAR_Global-CUST 9.0.1(C999)"
+        },
+        "VERSION.mbn": {
+          "sha256": "e542d2db4b2b1fee043b0eea5b102a88dac7a4fb3338516ad4d22bbd4ac579a9",
+          "text": "MAR-L21A-CUST 9.0.1.6(C431)\n"
+        },
+        "SOFTWARE_VER_LIST.mbn": {
+          "sha256": "11c341bb5a2e4a99dc6cb45d1d3f02165d96e5353dc697a7a61d6d51597c9d99"
+        }
+      },
+      "app_inspection": [
+        {
+          "preamble_bytes": 92,
+          "entries": [
+            {
+              "name": "SHA256RSA",
+              "header_offset": 92,
+              "header_size": 100,
+              "payload_offset": 192,
+              "size_bytes": 256
+            },
+            {
+              "name": "CRC",
+              "header_offset": 448,
+              "header_size": 100,
+              "payload_offset": 548,
+              "size_bytes": 8
+            },
+            {
+              "name": "CUST_VERLIST",
+              "header_offset": 556,
+              "header_size": 100,
+              "payload_offset": 656,
+              "size_bytes": 104,
+              "payload_sha256": "11c341bb5a2e4a99dc6cb45d1d3f02165d96e5353dc697a7a61d6d51597c9d99",
+              "nonempty_lines": 5
+            },
+            {
+              "name": "CUST_VER",
+              "header_offset": 760,
+              "header_size": 100,
+              "payload_offset": 860,
+              "size_bytes": 27,
+              "metadata_text": "MAR_Global-CUST 9.0.1(C999)",
+              "payload_sha256": "35f01ebf8c724eb4bb5afb82c1321055b85102e3522bfe4aefbbddc17f479f74"
+            },
+            {
+              "name": "PACKAGE_TYPE",
+              "header_offset": 888,
+              "header_size": 100,
+              "payload_offset": 988,
+              "size_bytes": 74,
+              "metadata_text": "ONLINE_UPDATE\nPKG:BASEPKG\nTYPE:PTABLE.APP\nVER:MAR-L21A-CUST 9.0.1.6(C431)\n",
+              "payload_sha256": "4f3b9dddd97fca85cd624af8fab8591c24264145bda52c6a2b26243e3b9247e6"
+            },
+            {
+              "name": "PTABLE_CUST",
+              "header_offset": 1064,
+              "header_size": 100,
+              "payload_offset": 1164,
+              "size_bytes": 17
+            }
+          ],
+          "member": "PTABLE.APP",
+          "size_bytes": 1184,
+          "sha256": "da8ea037d86d9db774215baeade7aa75df74ce21ccf759aec80ec1c7909a8d7b",
+          "zip_extraction_crc": "pass",
+          "record_checksums_verified": false,
+          "huawei_signatures_verified": false
+        },
+        {
+          "preamble_bytes": 92,
+          "entries": [
+            {
+              "name": "SHA256RSA",
+              "header_offset": 92,
+              "header_size": 100,
+              "payload_offset": 192,
+              "size_bytes": 256
+            },
+            {
+              "name": "CRC",
+              "header_offset": 448,
+              "header_size": 100,
+              "payload_offset": 548,
+              "size_bytes": 42
+            },
+            {
+              "name": "CUST_VERLIST",
+              "header_offset": 592,
+              "header_size": 100,
+              "payload_offset": 692,
+              "size_bytes": 104,
+              "payload_sha256": "11c341bb5a2e4a99dc6cb45d1d3f02165d96e5353dc697a7a61d6d51597c9d99",
+              "nonempty_lines": 5
+            },
+            {
+              "name": "CUST_VER",
+              "header_offset": 796,
+              "header_size": 100,
+              "payload_offset": 896,
+              "size_bytes": 27,
+              "metadata_text": "MAR_Global-CUST 9.0.1(C999)",
+              "payload_sha256": "35f01ebf8c724eb4bb5afb82c1321055b85102e3522bfe4aefbbddc17f479f74"
+            },
+            {
+              "name": "PACKAGE_TYPE",
+              "header_offset": 924,
+              "header_size": 100,
+              "payload_offset": 1024,
+              "size_bytes": 74,
+              "metadata_text": "ONLINE_UPDATE\nPKG:BASEPKG\nTYPE:UPDATE.APP\nVER:MAR-L21A-CUST 9.0.1.6(C431)\n",
+              "payload_sha256": "d3ee88aaeed3232d0b65ffc2352db3b11ae8e2b4ffe5bc4bd8e2345a3749cdec"
+            },
+            {
+              "name": "PTABLE_CUST",
+              "header_offset": 1100,
+              "header_size": 100,
+              "payload_offset": 1200,
+              "size_bytes": 17
+            },
+            {
+              "name": "VERSION",
+              "header_offset": 1220,
+              "header_size": 370,
+              "payload_offset": 1590,
+              "size_bytes": 553088
+            }
+          ],
+          "member": "UPDATE.APP",
+          "size_bytes": 554680,
+          "sha256": "0fb19c0355bb03d21350c498ee6b63e4830056dd3dd63bfc00f2a6f5722886a1",
+          "zip_extraction_crc": "pass",
+          "record_checksums_verified": false,
+          "huawei_signatures_verified": false
+        }
+      ],
+      "filelist_url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/98/v3/3f0535d6e14c4f7db86f9e4e3b8d452e/full/filelist.xml",
+      "filelist_xml_sha256": "b0ed492b3a5f165a2b317885f00e3187b7037b120b4a4a452a3478b1cafabbf2"
+    },
+    {
+      "catalog_id": 442707,
+      "version_label": "MAR-LGRP2-OVS 9.1.0.399",
+      "url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/22/v3/798b60810e3a455baaa1a5effc305b28/full/update_full_base.zip",
+      "size": 3619592630,
+      "sha256": "953e135bc80217ef4b27eebbf8dce0241c8253a6aeee3cfe6064b3ae2b0cfdf9",
+      "md5": "c375585520cd27d0b7607df282b08dcc",
+      "manifest_sha256": null,
+      "manifest_md5": "C375585520CD27D0B7607DF282B08DCC",
+      "zip_crc": "pass",
+      "reference_group": "android9-c431-reference",
+      "sha256_provenance": "Locally computed after complete download; Huawei manifest supplies MD5 only, which matched.",
+      "zip_members": 23,
+      "version_metadata": {
+        "SOFTWARE_VER.mbn": {
+          "sha256": "a1fdaf9f8d87c9c4865543de6d5a14f6338ecae4b7aae7ca86dbfda19b232352",
+          "text": "Marie-LGRP2-OVS 9.1.0.279"
+        },
+        "VERSION.mbn": {
+          "sha256": "e72bcffdab6f76050573ca565a802b85528f5906065d21180b8fa4e1293ae80a",
+          "text": "MAR-LGRP2-OVS 9.1.0.399\n"
+        },
+        "SOFTWARE_VER_LIST.mbn": {
+          "sha256": "73998ab72a439ef4c9384782d43e708a37af44a87fea845fddd1140ccbf3c5d2",
+          "text": "Marie-LGRP2-OVS 9.0.1.1\nPCT-LGRP1-CHN 9.0.0\nPCTAL00B000\nMAR-BD 1.0.0\nMarie-LGRP2-OVS 9.1.0.202\nMarie-LGRP2-OVS 9.1.0.205\nMarie-LGRP2-OVS 9.1.0.210\nMarie-LGRP2-OVS 9.1.0.231\nMarie-LGRP2-OVS 9.1.0.241\nMarie-LGRP2-OVS 9.1.0.256\nMarie-LGRP2-OVS 9.1.0.258\nMarie-LGRP2-OVS 9.1.0.270\nMarie-LGRP2-OVS 9.1.0.277\nMarie-LGRP2-OVS 9.1.0.279\n\n"
+        }
+      },
+      "app_inspection": [
+        {
+          "preamble_bytes": 92,
+          "entries": [
+            {
+              "name": "SHA256RSA",
+              "header_offset": 92,
+              "header_size": 100,
+              "payload_offset": 192,
+              "size_bytes": 804
+            },
+            {
+              "name": "CRC",
+              "header_offset": 996,
+              "header_size": 100,
+              "payload_offset": 1096,
+              "size_bytes": 20
+            },
+            {
+              "name": "BASE_VERLIST",
+              "header_offset": 1116,
+              "header_size": 100,
+              "payload_offset": 1216,
+              "size_bytes": 330,
+              "metadata_text": "Marie-LGRP2-OVS 9.0.1.1\nPCT-LGRP1-CHN 9.0.0\nPCTAL00B000\nMAR-BD 1.0.0\nMarie-LGRP2-OVS 9.1.0.202\nMarie-LGRP2-OVS 9.1.0.205\nMarie-LGRP2-OVS 9.1.0.210\nMarie-LGRP2-OVS 9.1.0.231\nMarie-LGRP2-OVS 9.1.0.241\nMarie-LGRP2-OVS 9.1.0.256\nMarie-LGRP2-OVS 9.1.0.258\nMarie-LGRP2-OVS 9.1.0.270\nMarie-LGRP2-OVS 9.1.0.277\nMarie-LGRP2-OVS 9.1.0.279\n\n",
+              "payload_sha256": "73998ab72a439ef4c9384782d43e708a37af44a87fea845fddd1140ccbf3c5d2"
+            },
+            {
+              "name": "BASE_VER",
+              "header_offset": 1548,
+              "header_size": 100,
+              "payload_offset": 1648,
+              "size_bytes": 25,
+              "metadata_text": "Marie-LGRP2-OVS 9.1.0.279",
+              "payload_sha256": "a1fdaf9f8d87c9c4865543de6d5a14f6338ecae4b7aae7ca86dbfda19b232352"
+            },
+            {
+              "name": "PACKAGE_TYPE",
+              "header_offset": 1676,
+              "header_size": 100,
+              "payload_offset": 1776,
+              "size_bytes": 70,
+              "metadata_text": "ONLINE_UPDATE\nPKG:BASEPKG\nTYPE:PTABLE.APP\nVER:MAR-LGRP2-OVS 9.1.0.399\n",
+              "payload_sha256": "a3ebfaa4ca944dd974706730a6b66d7eded5116c713bbb3527a70b5277067944"
+            },
+            {
+              "name": "HISIUFS_GPT",
+              "header_offset": 1848,
+              "header_size": 196,
+              "payload_offset": 2044,
+              "size_bytes": 200704
+            }
+          ],
+          "member": "PTABLE.APP",
+          "size_bytes": 202748,
+          "sha256": "a869f9ce09497023c47d211067e3194b3204b7a5567cc156d6056c4dc84d677c",
+          "zip_extraction_crc": "pass",
+          "record_checksums_verified": false,
+          "huawei_signatures_verified": false
+        },
+        {
+          "preamble_bytes": 92,
+          "entries": [
+            {
+              "name": "SHA256RSA",
+              "header_offset": 92,
+              "header_size": 100,
+              "payload_offset": 192,
+              "size_bytes": 804
+            },
+            {
+              "name": "CRC",
+              "header_offset": 996,
+              "header_size": 236,
+              "payload_offset": 1232,
+              "size_bytes": 279410
+            },
+            {
+              "name": "BASE_VERLIST",
+              "header_offset": 280644,
+              "header_size": 100,
+              "payload_offset": 280744,
+              "size_bytes": 330,
+              "metadata_text": "Marie-LGRP2-OVS 9.0.1.1\nPCT-LGRP1-CHN 9.0.0\nPCTAL00B000\nMAR-BD 1.0.0\nMarie-LGRP2-OVS 9.1.0.202\nMarie-LGRP2-OVS 9.1.0.205\nMarie-LGRP2-OVS 9.1.0.210\nMarie-LGRP2-OVS 9.1.0.231\nMarie-LGRP2-OVS 9.1.0.241\nMarie-LGRP2-OVS 9.1.0.256\nMarie-LGRP2-OVS 9.1.0.258\nMarie-LGRP2-OVS 9.1.0.270\nMarie-LGRP2-OVS 9.1.0.277\nMarie-LGRP2-OVS 9.1.0.279\n\n",
+              "payload_sha256": "73998ab72a439ef4c9384782d43e708a37af44a87fea845fddd1140ccbf3c5d2"
+            },
+            {
+              "name": "BASE_VER",
+              "header_offset": 281076,
+              "header_size": 100,
+              "payload_offset": 281176,
+              "size_bytes": 25,
+              "metadata_text": "Marie-LGRP2-OVS 9.1.0.279",
+              "payload_sha256": "a1fdaf9f8d87c9c4865543de6d5a14f6338ecae4b7aae7ca86dbfda19b232352"
+            },
+            {
+              "name": "PACKAGE_TYPE",
+              "header_offset": 281204,
+              "header_size": 100,
+              "payload_offset": 281304,
+              "size_bytes": 70,
+              "metadata_text": "ONLINE_UPDATE\nPKG:BASEPKG\nTYPE:UPDATE.APP\nVER:MAR-LGRP2-OVS 9.1.0.399\n",
+              "payload_sha256": "26ae27da8502cdf488f302c216727c8d6bd15b7afdf5b30ae0c5a50551ad7fe2"
+            },
+            {
+              "name": "HISIUFS_GPT",
+              "header_offset": 281376,
+              "header_size": 196,
+              "payload_offset": 281572,
+              "size_bytes": 200704
+            },
+            {
+              "name": "XLOADER",
+              "header_offset": 482276,
+              "header_size": 188,
+              "payload_offset": 482464,
+              "size_bytes": 184320
+            },
+            {
+              "name": "FASTBOOT",
+              "header_offset": 666784,
+              "header_size": 2046,
+              "payload_offset": 668830,
+              "size_bytes": 3987456
+            },
+            {
+              "name": "HHEE",
+              "header_offset": 4656288,
+              "header_size": 134,
+              "payload_offset": 4656422,
+              "size_bytes": 69696
+            },
+            {
+              "name": "DTS",
+              "header_offset": 4726120,
+              "header_size": 144,
+              "payload_offset": 4726264,
+              "size_bytes": 92160
+            },
+            {
+              "name": "TRUSTFIRMWARE",
+              "header_offset": 4818424,
+              "header_size": 186,
+              "payload_offset": 4818610,
+              "size_bytes": 179712
+            },
+            {
+              "name": "FW_LPM3",
+              "header_offset": 4998324,
+              "header_size": 202,
+              "payload_offset": 4998526,
+              "size_bytes": 209024
+            },
+            {
+              "name": "DTO",
+              "header_offset": 5207552,
+              "header_size": 8230,
+              "payload_offset": 5215782,
+              "size_bytes": 16653696
+            },
+            {
+              "name": "KERNEL",
+              "header_offset": 21869480,
+              "header_size": 12386,
+              "payload_offset": 21881866,
+              "size_bytes": 25165824
+            },
+            {
+              "name": "TEEOS",
+              "header_offset": 47047692,
+              "header_size": 1742,
+              "payload_offset": 47049434,
+              "size_bytes": 3363008
+            },
+            {
+              "name": "ISP_FIRMWARE",
+              "header_offset": 50412444,
+              "header_size": 5382,
+              "payload_offset": 50417826,
+              "size_bytes": 10821632
+            },
+            {
+              "name": "VECTOR",
+              "header_offset": 61239460,
+              "header_size": 694,
+              "payload_offset": 61240154,
+              "size_bytes": 1218880
+            },
+            {
+              "name": "SENSORHUB",
+              "header_offset": 62459036,
+              "header_size": 1128,
+              "payload_offset": 62460164,
+              "size_bytes": 2107200
+            },
+            {
+              "name": "FW_HIFI",
+              "header_offset": 64567364,
+              "header_size": 2716,
+              "payload_offset": 64570080,
+              "size_bytes": 5358848
+            },
+            {
+              "name": "VBMETA",
+              "header_offset": 69928928,
+              "header_size": 106,
+              "payload_offset": 69929034,
+              "size_bytes": 16384
+            },
+            {
+              "name": "MODEMNVM_UPDATE",
+              "header_offset": 69945420,
+              "header_size": 2778,
+              "payload_offset": 69948198,
+              "size_bytes": 5486893
+            },
+            {
+              "name": "MODEMNVM_CUST",
+              "header_offset": 75435092,
+              "header_size": 1174,
+              "payload_offset": 75436266,
+              "size_bytes": 2203563
+            },
+            {
+              "name": "RECOVERY_RAMDISK",
+              "header_offset": 77639832,
+              "header_size": 16482,
+              "payload_offset": 77656314,
+              "size_bytes": 33554432
+            },
+            {
+              "name": "RECOVERY_VENDOR",
+              "header_offset": 111210748,
+              "header_size": 8290,
+              "payload_offset": 111219038,
+              "size_bytes": 16777216
+            },
+            {
+              "name": "RECOVERY_VBMETA",
+              "header_offset": 127996256,
+              "header_size": 102,
+              "payload_offset": 127996358,
+              "size_bytes": 7104
+            },
+            {
+              "name": "PREAS",
+              "header_offset": 128003464,
+              "header_size": 398964,
+              "payload_offset": 128402428,
+              "size_bytes": 816875604
+            },
+            {
+              "name": "PREAVS",
+              "header_offset": 945278032,
+              "header_size": 2332,
+              "payload_offset": 945280364,
+              "size_bytes": 4571264
+            },
+            {
+              "name": "ERECOVERY_KERNEL",
+              "header_offset": 949851628,
+              "header_size": 12386,
+              "payload_offset": 949864014,
+              "size_bytes": 25165824
+            },
+            {
+              "name": "ERECOVERY_RAMDIS",
+              "header_offset": 975029840,
+              "header_size": 16482,
+              "payload_offset": 975046322,
+              "size_bytes": 33554432
+            },
+            {
+              "name": "ERECOVERY_VENDOR",
+              "header_offset": 1008600756,
+              "header_size": 8290,
+              "payload_offset": 1008609046,
+              "size_bytes": 16777216
+            },
+            {
+              "name": "ERECOVERY_VBMETA",
+              "header_offset": 1025386264,
+              "header_size": 102,
+              "payload_offset": 1025386366,
+              "size_bytes": 7104
+            },
+            {
+              "name": "ENG_VENDOR",
+              "header_offset": 1025393472,
+              "header_size": 6242,
+              "payload_offset": 1025399714,
+              "size_bytes": 12582912
+            },
+            {
+              "name": "ENG_SYSTEM",
+              "header_offset": 1037982628,
+              "header_size": 6242,
+              "payload_offset": 1037988870,
+              "size_bytes": 12582912
+            },
+            {
+              "name": "CACHE",
+              "header_offset": 1050571784,
+              "header_size": 136,
+              "payload_offset": 1050571920,
+              "size_bytes": 73852
+            },
+            {
+              "name": "SYSTEM",
+              "header_offset": 1050645772,
+              "header_size": 915854,
+              "payload_offset": 1051561626,
+              "size_bytes": 1875466812
+            },
+            {
+              "name": "CUST",
+              "header_offset": 2927028440,
+              "header_size": 27512,
+              "payload_offset": 2927055952,
+              "size_bytes": 56139904
+            },
+            {
+              "name": "MODEM_FW",
+              "header_offset": 2983195856,
+              "header_size": 28770,
+              "payload_offset": 2983224626,
+              "size_bytes": 58720256
+            },
+            {
+              "name": "HISEE_IMG",
+              "header_offset": 3041944884,
+              "header_size": 356,
+              "payload_offset": 3041945240,
+              "size_bytes": 528384
+            },
+            {
+              "name": "HISEE_FS",
+              "header_offset": 3042473624,
+              "header_size": 128,
+              "payload_offset": 3042473752,
+              "size_bytes": 57492
+            },
+            {
+              "name": "VENDOR",
+              "header_offset": 3042531244,
+              "header_size": 211100,
+              "payload_offset": 3042742344,
+              "size_bytes": 432130816
+            },
+            {
+              "name": "ODM",
+              "header_offset": 3474873160,
+              "header_size": 43990,
+              "payload_offset": 3474917150,
+              "size_bytes": 89886836
+            },
+            {
+              "name": "PRODUCT",
+              "header_offset": 3564803988,
+              "header_size": 492808,
+              "payload_offset": 3565296796,
+              "size_bytes": 1009066416
+            },
+            {
+              "name": "PATCH",
+              "header_offset": 4574363212,
+              "header_size": 2694,
+              "payload_offset": 4574365906,
+              "size_bytes": 5312732
+            }
+          ],
+          "member": "UPDATE.APP",
+          "size_bytes": 4579678640,
+          "sha256": "0efdc8624534229877697209b503c297c2693eb99bfa3850fe8191298b62a9c8",
+          "zip_extraction_crc": "pass",
+          "record_checksums_verified": false,
+          "huawei_signatures_verified": false
+        }
+      ],
+      "filelist_url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/22/v3/798b60810e3a455baaa1a5effc305b28/full/filelist.xml",
+      "filelist_xml_sha256": "d06408e46ebfb7e92a5025aebf45d8dfa85a880f633015a8f6c2a10f8bf514ed"
+    },
+    {
+      "catalog_id": 360162,
+      "version_label": "MAR-L21A-PRELOAD 10.0.0.7(C431R2)",
+      "url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/5d/v3/64a9f9e27191489b9298797ff8a1fe20/full/update_full_preload_MAR-L21A_hw_eea_R2.zip",
+      "size": 211715623,
+      "sha256": "00487039fa4575aeb5e83809f8636cbd2c30224ecd4e1530823a69691ad88973",
+      "md5": "3cecf7085b7597f43f7cc6bbbb89f80c",
+      "manifest_sha256": "00487039FA4575AEB5E83809F8636CBD2C30224ECD4E1530823A69691AD88973",
+      "manifest_md5": "3CECF7085B7597F43F7CC6BBBB89F80C",
+      "zip_crc": "pass",
+      "reference_group": "android10-562-c431-reference",
+      "sha256_provenance": "Matches Huawei manifest SHA-256",
+      "zip_members": 20,
+      "version_metadata": {
+        "SOFTWARE_VER.mbn": {
+          "sha256": "6c434d7f6ce3bf4bb15c6124a9a856f35a20eeee3e810cf97481db301af6e71a",
+          "text": "MAR_GLOBAL_PRELOAD 10.0.0(C999)"
+        },
+        "SOFTWARE_VER_LIST.mbn": {
+          "sha256": "16d7acce9043c8545ccc8278f335fc02de38807c5bd296acafcb79549a6383fa"
+        },
+        "VERSION.mbn": {
+          "sha256": "d203c6f94192410b94e90e96f59ab6b891f8000d27373580a061457e2760e95d",
+          "text": "MAR-L21A-PRELOAD 10.0.0.7(C431R2)\n"
+        }
+      },
+      "app_inspection": [
+        {
+          "preamble_bytes": 92,
+          "entries": [
+            {
+              "name": "SHA256RSA",
+              "header_offset": 92,
+              "header_size": 100,
+              "payload_offset": 192,
+              "size_bytes": 740
+            },
+            {
+              "name": "CRC",
+              "header_offset": 932,
+              "header_size": 100,
+              "payload_offset": 1032,
+              "size_bytes": 8
+            },
+            {
+              "name": "PRELOAD_VERLIST",
+              "header_offset": 1040,
+              "header_size": 100,
+              "payload_offset": 1140,
+              "size_bytes": 1299,
+              "payload_sha256": "16d7acce9043c8545ccc8278f335fc02de38807c5bd296acafcb79549a6383fa",
+              "nonempty_lines": 42
+            },
+            {
+              "name": "PRELOAD_VER",
+              "header_offset": 2440,
+              "header_size": 100,
+              "payload_offset": 2540,
+              "size_bytes": 31,
+              "metadata_text": "MAR_GLOBAL_PRELOAD 10.0.0(C999)",
+              "payload_sha256": "6c434d7f6ce3bf4bb15c6124a9a856f35a20eeee3e810cf97481db301af6e71a"
+            },
+            {
+              "name": "PACKAGE_TYPE",
+              "header_offset": 2572,
+              "header_size": 100,
+              "payload_offset": 2672,
+              "size_bytes": 108,
+              "metadata_text": "ONLINE_UPDATE\nPKG:PRELOADPKG\nTYPE:PTABLE.APP\nVER:MAR-L21A-PRELOAD 10.0.0.7(C431R2)\nTIME:2020-01-02 20:42:21\n",
+              "payload_sha256": "02293de4f748dd9576e124b0e2a7fc78735a30828fff39bc988486c95e9d70a9"
+            },
+            {
+              "name": "PTABLE_PRELOAD",
+              "header_offset": 2780,
+              "header_size": 100,
+              "payload_offset": 2880,
+              "size_bytes": 19
+            }
+          ],
+          "member": "PTABLE.APP",
+          "size_bytes": 2900,
+          "sha256": "7dea628788adb13e5b417d85cfe397b157b42f7a0ce2533a2c6663480ba80f62",
+          "zip_extraction_crc": "pass",
+          "record_checksums_verified": false,
+          "huawei_signatures_verified": false
+        },
+        {
+          "preamble_bytes": 92,
+          "entries": [
+            {
+              "name": "SHA256RSA",
+              "header_offset": 92,
+              "header_size": 100,
+              "payload_offset": 192,
+              "size_bytes": 740
+            },
+            {
+              "name": "CRC",
+              "header_offset": 932,
+              "header_size": 106,
+              "payload_offset": 1038,
+              "size_bytes": 15150
+            },
+            {
+              "name": "PRELOAD_VERLIST",
+              "header_offset": 16188,
+              "header_size": 100,
+              "payload_offset": 16288,
+              "size_bytes": 1299,
+              "payload_sha256": "16d7acce9043c8545ccc8278f335fc02de38807c5bd296acafcb79549a6383fa",
+              "nonempty_lines": 42
+            },
+            {
+              "name": "PRELOAD_VER",
+              "header_offset": 17588,
+              "header_size": 100,
+              "payload_offset": 17688,
+              "size_bytes": 31,
+              "metadata_text": "MAR_GLOBAL_PRELOAD 10.0.0(C999)",
+              "payload_sha256": "6c434d7f6ce3bf4bb15c6124a9a856f35a20eeee3e810cf97481db301af6e71a"
+            },
+            {
+              "name": "PACKAGE_TYPE",
+              "header_offset": 17720,
+              "header_size": 100,
+              "payload_offset": 17820,
+              "size_bytes": 108,
+              "metadata_text": "ONLINE_UPDATE\nPKG:PRELOADPKG\nTYPE:UPDATE.APP\nVER:MAR-L21A-PRELOAD 10.0.0.7(C431R2)\nTIME:2020-01-02 20:42:21\n",
+              "payload_sha256": "2cf2b801a0859cb789c93d4f0f5ed2d89bf99e1377a1773dd6de47a1e1e3992a"
+            },
+            {
+              "name": "PTABLE_PRELOAD",
+              "header_offset": 17928,
+              "header_size": 100,
+              "payload_offset": 18028,
+              "size_bytes": 19
+            },
+            {
+              "name": "PRELOAD",
+              "header_offset": 18048,
+              "header_size": 121222,
+              "payload_offset": 139270,
+              "size_bytes": 248059600
+            }
+          ],
+          "member": "UPDATE.APP",
+          "size_bytes": 248198872,
+          "sha256": "4ca93556e48fe2e1fb9cc3a71ca21167823677d6db90feb12a15ca1f6bf57bef",
+          "zip_extraction_crc": "pass",
+          "record_checksums_verified": false,
+          "huawei_signatures_verified": false
+        }
+      ],
+      "filelist_url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hotaMigrate_900_9/5d/v3/64a9f9e27191489b9298797ff8a1fe20/full/filelist.xml",
+      "filelist_xml_sha256": "bda74cbe0333faa5af97c6a56957ec84b97183410edb7d67adcf5cd0d6c37412"
+    },
+    {
+      "catalog_id": 613906,
+      "version_label": "MAR-L21A-CUST 10.0.0.15(C431)",
+      "url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/f0/v3/8GKMloxNSPqME2dI1OQzsg/full/update_full_cust_MAR-L21A_hw_eea.zip",
+      "size": 29236,
+      "sha256": "e181937beaf114e042d800bcbb46ef07bd2e1d3e76398e94ea68d4a234c8f2b6",
+      "md5": "2d011f5422f287bd54a822ea2ea63d60",
+      "manifest_sha256": "E181937BEAF114E042D800BCBB46EF07BD2E1D3E76398E94EA68D4A234C8F2B6",
+      "manifest_md5": "2D011F5422F287BD54A822EA2EA63D60",
+      "zip_crc": "pass",
+      "reference_group": "android10-562-c431-reference",
+      "sha256_provenance": "Matches Huawei manifest SHA-256",
+      "zip_members": 20,
+      "version_metadata": {
+        "SOFTWARE_VER.mbn": {
+          "sha256": "9c9efedc9108304f3ffd862141c434adadeb7c4854e4be5d158c40e15152488a",
+          "text": "MAR_Global-CUST 10.0.1(C999)"
+        },
+        "SOFTWARE_VER_LIST.mbn": {
+          "sha256": "98cf0e4c414963c1f26cdbc1b5f0cf400b5ed4b00c47b61c73e2289fb783a48a"
+        },
+        "VERSION.mbn": {
+          "sha256": "c1b0ce731c562abf860ee9cad4609312f6e5f9fb10d8aa947f13bfb4deeea675",
+          "text": "MAR-L21A-CUST 10.0.0.15(C431)\n"
+        }
+      },
+      "app_inspection": [
+        {
+          "preamble_bytes": 92,
+          "entries": [
+            {
+              "name": "SHA256RSA",
+              "header_offset": 92,
+              "header_size": 100,
+              "payload_offset": 192,
+              "size_bytes": 900
+            },
+            {
+              "name": "CRC",
+              "header_offset": 1092,
+              "header_size": 100,
+              "payload_offset": 1192,
+              "size_bytes": 8
+            },
+            {
+              "name": "CUST_VERLIST",
+              "header_offset": 1200,
+              "header_size": 100,
+              "payload_offset": 1300,
+              "size_bytes": 316,
+              "payload_sha256": "98cf0e4c414963c1f26cdbc1b5f0cf400b5ed4b00c47b61c73e2289fb783a48a",
+              "nonempty_lines": 13
+            },
+            {
+              "name": "CUST_VER",
+              "header_offset": 1616,
+              "header_size": 100,
+              "payload_offset": 1716,
+              "size_bytes": 28,
+              "metadata_text": "MAR_Global-CUST 10.0.1(C999)",
+              "payload_sha256": "9c9efedc9108304f3ffd862141c434adadeb7c4854e4be5d158c40e15152488a"
+            },
+            {
+              "name": "PACKAGE_TYPE",
+              "header_offset": 1744,
+              "header_size": 100,
+              "payload_offset": 1844,
+              "size_bytes": 101,
+              "metadata_text": "ONLINE_UPDATE\nPKG:CUSTPKG\nTYPE:PTABLE.APP\nVER:MAR-L21A-CUST 10.0.0.15(C431)\nTIME:2021-12-14 14:23:45\n",
+              "payload_sha256": "c8c826c1d37fa725400ec127226a3e24c0c4bcb2a871c0c482dc0c659fcb028b"
+            },
+            {
+              "name": "PTABLE_CUST",
+              "header_offset": 1948,
+              "header_size": 100,
+              "payload_offset": 2048,
+              "size_bytes": 17
+            }
+          ],
+          "member": "PTABLE.APP",
+          "size_bytes": 2068,
+          "sha256": "07d7fbe9d5bd09434ab497c5f25ba2f15b485f82ba2147d43e5f516f8049e247",
+          "zip_extraction_crc": "pass",
+          "record_checksums_verified": false,
+          "huawei_signatures_verified": false
+        },
+        {
+          "preamble_bytes": 92,
+          "entries": [
+            {
+              "name": "SHA256RSA",
+              "header_offset": 92,
+              "header_size": 100,
+              "payload_offset": 192,
+              "size_bytes": 900
+            },
+            {
+              "name": "CRC",
+              "header_offset": 1092,
+              "header_size": 100,
+              "payload_offset": 1192,
+              "size_bytes": 44
+            },
+            {
+              "name": "CUST_VERLIST",
+              "header_offset": 1236,
+              "header_size": 100,
+              "payload_offset": 1336,
+              "size_bytes": 316,
+              "payload_sha256": "98cf0e4c414963c1f26cdbc1b5f0cf400b5ed4b00c47b61c73e2289fb783a48a",
+              "nonempty_lines": 13
+            },
+            {
+              "name": "CUST_VER",
+              "header_offset": 1652,
+              "header_size": 100,
+              "payload_offset": 1752,
+              "size_bytes": 28,
+              "metadata_text": "MAR_Global-CUST 10.0.1(C999)",
+              "payload_sha256": "9c9efedc9108304f3ffd862141c434adadeb7c4854e4be5d158c40e15152488a"
+            },
+            {
+              "name": "PACKAGE_TYPE",
+              "header_offset": 1780,
+              "header_size": 100,
+              "payload_offset": 1880,
+              "size_bytes": 101,
+              "metadata_text": "ONLINE_UPDATE\nPKG:CUSTPKG\nTYPE:UPDATE.APP\nVER:MAR-L21A-CUST 10.0.0.15(C431)\nTIME:2021-12-14 14:23:44\n",
+              "payload_sha256": "f46ecb96da3913f78e6aa0346637f55f06e893f31cd939e7293d29f245a0868a"
+            },
+            {
+              "name": "PTABLE_CUST",
+              "header_offset": 1984,
+              "header_size": 100,
+              "payload_offset": 2084,
+              "size_bytes": 17
+            },
+            {
+              "name": "VERSION",
+              "header_offset": 2104,
+              "header_size": 374,
+              "payload_offset": 2478,
+              "size_bytes": 561280
+            }
+          ],
+          "member": "UPDATE.APP",
+          "size_bytes": 563760,
+          "sha256": "96ed4e9621dfbe9a45ccedb0dd11086b878e795c625eb8f30ef20ff97554864e",
+          "zip_extraction_crc": "pass",
+          "record_checksums_verified": false,
+          "huawei_signatures_verified": false
+        }
+      ],
+      "filelist_url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/f0/v3/8GKMloxNSPqME2dI1OQzsg/full/filelist.xml",
+      "filelist_xml_sha256": "eb2fc3d7941200112f068d05905709800a1d4911f80f289f19492e8071fc6451"
+    },
+    {
+      "catalog_id": 639061,
+      "version_label": "MAR-LGRP2-OVS 10.0.0.562",
+      "url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/c3/v3/eGks5LtRTIWfKcFX9aMlXg/full/update_full_base.zip",
+      "size": 3199657640,
+      "sha256": "0f99443a557b20558230f3d4b1a5aa08fd82662447fba81859b96f65245a6607",
+      "md5": "20742b1330f94a180cf5bac3af507c27",
+      "manifest_sha256": "0F99443A557B20558230F3D4B1A5AA08FD82662447FBA81859B96F65245A6607",
+      "manifest_md5": "20742B1330F94A180CF5BAC3AF507C27",
+      "zip_crc": "pass",
+      "reference_group": "android10-562-c431-reference",
+      "sha256_provenance": "Matches Huawei manifest SHA-256",
+      "zip_members": 20,
+      "version_metadata": {
+        "SOFTWARE_VER.mbn": {
+          "sha256": "5752d2964c115596a9629aba4286e23cc67e9f34f791e8cad289c73e378174ae",
+          "text": "MAR-LGRP2-OVS 10.0.0.1"
+        },
+        "SOFTWARE_VER_LIST.mbn": {
+          "sha256": "94b60f0057003aec1736fff5f9569195ed185061d5a2f344d056289398679d65",
+          "text": "MAR-LGRP2-OVS 10.0.0.1\nMarie-LGRP2-OVS 9.0.1.1\nPCT-LGRP1-CHN 9.0.0\nPCTAL00B000\nMAR-BD 1.0.0\nMarie-LGRP2-OVS 9.1.0.202\nMarie-LGRP2-OVS 9.1.0.205\nMarie-LGRP2-OVS 9.1.0.210\nMarie-LGRP2-OVS 9.1.0.231\nMarie-LGRP2-OVS 9.1.0.241\nMarie-LGRP2-OVS 9.1.0.256\nMarie-LGRP2-OVS 9.1.0.258\nMarie-LGRP2-OVS 9.1.0.270\nMarie-LGRP2-OVS 9.1.0.277\nMarie-LGRP2-OVS 9.1.0.279\n"
+        },
+        "VERSION.mbn": {
+          "sha256": "a30ccbf16d7cd21f41f0205e3a267ea127839cf28c01d54c65759b9a2cd8eb07",
+          "text": "MAR-LGRP2-OVS 10.0.0.562\n"
+        }
+      },
+      "app_inspection": [
+        {
+          "preamble_bytes": 92,
+          "entries": [
+            {
+              "name": "SHA256RSA",
+              "header_offset": 92,
+              "header_size": 100,
+              "payload_offset": 192,
+              "size_bytes": 900
+            },
+            {
+              "name": "CRC",
+              "header_offset": 1092,
+              "header_size": 100,
+              "payload_offset": 1192,
+              "size_bytes": 20
+            },
+            {
+              "name": "BASE_VERLIST",
+              "header_offset": 1212,
+              "header_size": 100,
+              "payload_offset": 1312,
+              "size_bytes": 352,
+              "metadata_text": "MAR-LGRP2-OVS 10.0.0.1\nMarie-LGRP2-OVS 9.0.1.1\nPCT-LGRP1-CHN 9.0.0\nPCTAL00B000\nMAR-BD 1.0.0\nMarie-LGRP2-OVS 9.1.0.202\nMarie-LGRP2-OVS 9.1.0.205\nMarie-LGRP2-OVS 9.1.0.210\nMarie-LGRP2-OVS 9.1.0.231\nMarie-LGRP2-OVS 9.1.0.241\nMarie-LGRP2-OVS 9.1.0.256\nMarie-LGRP2-OVS 9.1.0.258\nMarie-LGRP2-OVS 9.1.0.270\nMarie-LGRP2-OVS 9.1.0.277\nMarie-LGRP2-OVS 9.1.0.279\n",
+              "payload_sha256": "94b60f0057003aec1736fff5f9569195ed185061d5a2f344d056289398679d65"
+            },
+            {
+              "name": "BASE_VER",
+              "header_offset": 1664,
+              "header_size": 100,
+              "payload_offset": 1764,
+              "size_bytes": 22,
+              "metadata_text": "MAR-LGRP2-OVS 10.0.0.1",
+              "payload_sha256": "5752d2964c115596a9629aba4286e23cc67e9f34f791e8cad289c73e378174ae"
+            },
+            {
+              "name": "PACKAGE_TYPE",
+              "header_offset": 1788,
+              "header_size": 100,
+              "payload_offset": 1888,
+              "size_bytes": 96,
+              "metadata_text": "ONLINE_UPDATE\nPKG:BASEPKG\nTYPE:PTABLE.APP\nVER:MAR-LGRP2-OVS 10.0.0.562\nTIME:2022-04-15 17:38:26\n",
+              "payload_sha256": "3cfc0c625b6c984fb119583782207145948b4c376735ccc91e7c0792eb34644d"
+            },
+            {
+              "name": "HISIUFS_GPT",
+              "header_offset": 1984,
+              "header_size": 196,
+              "payload_offset": 2180,
+              "size_bytes": 200704
+            }
+          ],
+          "member": "PTABLE.APP",
+          "size_bytes": 202884,
+          "sha256": "f81c80a9a5b3b0bc058e370dd76e403ac1830efe64d4ee0b5a4ac3850a8e53d4",
+          "zip_extraction_crc": "pass",
+          "record_checksums_verified": false,
+          "huawei_signatures_verified": false
+        },
+        {
+          "preamble_bytes": 92,
+          "entries": [
+            {
+              "name": "SHA256RSA",
+              "header_offset": 92,
+              "header_size": 100,
+              "payload_offset": 192,
+              "size_bytes": 900
+            },
+            {
+              "name": "CRC",
+              "header_offset": 1092,
+              "header_size": 216,
+              "payload_offset": 1308,
+              "size_bytes": 237690
+            },
+            {
+              "name": "BASE_VERLIST",
+              "header_offset": 239000,
+              "header_size": 100,
+              "payload_offset": 239100,
+              "size_bytes": 352,
+              "metadata_text": "MAR-LGRP2-OVS 10.0.0.1\nMarie-LGRP2-OVS 9.0.1.1\nPCT-LGRP1-CHN 9.0.0\nPCTAL00B000\nMAR-BD 1.0.0\nMarie-LGRP2-OVS 9.1.0.202\nMarie-LGRP2-OVS 9.1.0.205\nMarie-LGRP2-OVS 9.1.0.210\nMarie-LGRP2-OVS 9.1.0.231\nMarie-LGRP2-OVS 9.1.0.241\nMarie-LGRP2-OVS 9.1.0.256\nMarie-LGRP2-OVS 9.1.0.258\nMarie-LGRP2-OVS 9.1.0.270\nMarie-LGRP2-OVS 9.1.0.277\nMarie-LGRP2-OVS 9.1.0.279\n",
+              "payload_sha256": "94b60f0057003aec1736fff5f9569195ed185061d5a2f344d056289398679d65"
+            },
+            {
+              "name": "BASE_VER",
+              "header_offset": 239452,
+              "header_size": 100,
+              "payload_offset": 239552,
+              "size_bytes": 22,
+              "metadata_text": "MAR-LGRP2-OVS 10.0.0.1",
+              "payload_sha256": "5752d2964c115596a9629aba4286e23cc67e9f34f791e8cad289c73e378174ae"
+            },
+            {
+              "name": "PACKAGE_TYPE",
+              "header_offset": 239576,
+              "header_size": 100,
+              "payload_offset": 239676,
+              "size_bytes": 96,
+              "metadata_text": "ONLINE_UPDATE\nPKG:BASEPKG\nTYPE:UPDATE.APP\nVER:MAR-LGRP2-OVS 10.0.0.562\nTIME:2022-04-15 17:38:26\n",
+              "payload_sha256": "bb2b986216e2a02674951c41a56db81d0ad2c8d7aed5d2971600e7edfd2ea60d"
+            },
+            {
+              "name": "HISIUFS_GPT",
+              "header_offset": 239772,
+              "header_size": 196,
+              "payload_offset": 239968,
+              "size_bytes": 200704
+            },
+            {
+              "name": "XLOADER",
+              "header_offset": 440672,
+              "header_size": 188,
+              "payload_offset": 440860,
+              "size_bytes": 184320
+            },
+            {
+              "name": "FASTBOOT",
+              "header_offset": 625180,
+              "header_size": 1990,
+              "payload_offset": 627170,
+              "size_bytes": 3874752
+            },
+            {
+              "name": "HHEE",
+              "header_offset": 4501924,
+              "header_size": 134,
+              "payload_offset": 4502058,
+              "size_bytes": 69696
+            },
+            {
+              "name": "DTS",
+              "header_offset": 4571756,
+              "header_size": 148,
+              "payload_offset": 4571904,
+              "size_bytes": 102400
+            },
+            {
+              "name": "TRUSTFIRMWARE",
+              "header_offset": 4674304,
+              "header_size": 180,
+              "payload_offset": 4674484,
+              "size_bytes": 167872
+            },
+            {
+              "name": "FW_LPM3",
+              "header_offset": 4842356,
+              "header_size": 202,
+              "payload_offset": 4842558,
+              "size_bytes": 209024
+            },
+            {
+              "name": "DTO",
+              "header_offset": 5051584,
+              "header_size": 7058,
+              "payload_offset": 5058642,
+              "size_bytes": 14253952
+            },
+            {
+              "name": "KERNEL",
+              "header_offset": 19312596,
+              "header_size": 12386,
+              "payload_offset": 19324982,
+              "size_bytes": 25165824
+            },
+            {
+              "name": "TEEOS",
+              "header_offset": 44490808,
+              "header_size": 2040,
+              "payload_offset": 44492848,
+              "size_bytes": 3975360
+            },
+            {
+              "name": "ISP_FIRMWARE",
+              "header_offset": 48468208,
+              "header_size": 5400,
+              "payload_offset": 48473608,
+              "size_bytes": 10856768
+            },
+            {
+              "name": "VECTOR",
+              "header_offset": 59330376,
+              "header_size": 112,
+              "payload_offset": 59330488,
+              "size_bytes": 28672
+            },
+            {
+              "name": "SENSORHUB",
+              "header_offset": 59359160,
+              "header_size": 1240,
+              "payload_offset": 59360400,
+              "size_bytes": 2337408
+            },
+            {
+              "name": "FW_HIFI",
+              "header_offset": 61697808,
+              "header_size": 2784,
+              "payload_offset": 61700592,
+              "size_bytes": 5499520
+            },
+            {
+              "name": "VBMETA",
+              "header_offset": 67200112,
+              "header_size": 106,
+              "payload_offset": 67200218,
+              "size_bytes": 16384
+            },
+            {
+              "name": "MODEMNVM_UPDATE",
+              "header_offset": 67216604,
+              "header_size": 2780,
+              "payload_offset": 67219384,
+              "size_bytes": 5489133
+            },
+            {
+              "name": "MODEMNVM_CUST",
+              "header_offset": 72708520,
+              "header_size": 1178,
+              "payload_offset": 72709698,
+              "size_bytes": 2211215
+            },
+            {
+              "name": "RECOVERY_RAMDISK",
+              "header_offset": 74920916,
+              "header_size": 16482,
+              "payload_offset": 74937398,
+              "size_bytes": 33554432
+            },
+            {
+              "name": "RECOVERY_VENDOR",
+              "header_offset": 108491832,
+              "header_size": 8290,
+              "payload_offset": 108500122,
+              "size_bytes": 16777216
+            },
+            {
+              "name": "RECOVERY_VBMETA",
+              "header_offset": 125277340,
+              "header_size": 102,
+              "payload_offset": 125277442,
+              "size_bytes": 7104
+            },
+            {
+              "name": "ERECOVERY_KERNEL",
+              "header_offset": 125284548,
+              "header_size": 12386,
+              "payload_offset": 125296934,
+              "size_bytes": 25165824
+            },
+            {
+              "name": "ERECOVERY_RAMDIS",
+              "header_offset": 150462760,
+              "header_size": 16482,
+              "payload_offset": 150479242,
+              "size_bytes": 33554432
+            },
+            {
+              "name": "ERECOVERY_VENDOR",
+              "header_offset": 184033676,
+              "header_size": 8290,
+              "payload_offset": 184041966,
+              "size_bytes": 16777216
+            },
+            {
+              "name": "ERECOVERY_VBMETA",
+              "header_offset": 200819184,
+              "header_size": 102,
+              "payload_offset": 200819286,
+              "size_bytes": 7104
+            },
+            {
+              "name": "ENG_VENDOR",
+              "header_offset": 200826392,
+              "header_size": 6242,
+              "payload_offset": 200832634,
+              "size_bytes": 12582912
+            },
+            {
+              "name": "ENG_SYSTEM",
+              "header_offset": 213415548,
+              "header_size": 6242,
+              "payload_offset": 213421790,
+              "size_bytes": 12582912
+            },
+            {
+              "name": "CACHE",
+              "header_offset": 226004704,
+              "header_size": 136,
+              "payload_offset": 226004840,
+              "size_bytes": 73804
+            },
+            {
+              "name": "RAMDISK",
+              "header_offset": 226078644,
+              "header_size": 1122,
+              "payload_offset": 226079766,
+              "size_bytes": 2097152
+            },
+            {
+              "name": "SUPER",
+              "header_offset": 228176920,
+              "header_size": 1758842,
+              "payload_offset": 229935762,
+              "size_bytes": 3601904448
+            },
+            {
+              "name": "VBMETA_SYSTEM",
+              "header_offset": 3831840212,
+              "header_size": 100,
+              "payload_offset": 3831840312,
+              "size_bytes": 1536
+            },
+            {
+              "name": "VBMETA_VENDOR",
+              "header_offset": 3831841848,
+              "header_size": 100,
+              "payload_offset": 3831841948,
+              "size_bytes": 1536
+            },
+            {
+              "name": "VBMETA_ODM",
+              "header_offset": 3831843484,
+              "header_size": 100,
+              "payload_offset": 3831843584,
+              "size_bytes": 1408
+            },
+            {
+              "name": "VBMETA_HW_PRODUC",
+              "header_offset": 3831844992,
+              "header_size": 100,
+              "payload_offset": 3831845092,
+              "size_bytes": 1344
+            },
+            {
+              "name": "VBMETA_CUST",
+              "header_offset": 3831846436,
+              "header_size": 100,
+              "payload_offset": 3831846536,
+              "size_bytes": 1344
+            },
+            {
+              "name": "MODEM_FW",
+              "header_offset": 3831847880,
+              "header_size": 28770,
+              "payload_offset": 3831876650,
+              "size_bytes": 58720256
+            },
+            {
+              "name": "HISEE_IMG",
+              "header_offset": 3890596908,
+              "header_size": 360,
+              "payload_offset": 3890597268,
+              "size_bytes": 535040
+            },
+            {
+              "name": "HISEE_FS",
+              "header_offset": 3891132308,
+              "header_size": 136,
+              "payload_offset": 3891132444,
+              "size_bytes": 73828
+            },
+            {
+              "name": "PATCH",
+              "header_offset": 3891206272,
+              "header_size": 392,
+              "payload_offset": 3891206664,
+              "size_bytes": 598164
+            },
+            {
+              "name": "KPATCH",
+              "header_offset": 3891804828,
+              "header_size": 2018,
+              "payload_offset": 3891806846,
+              "size_bytes": 3932160
+            }
+          ],
+          "member": "UPDATE.APP",
+          "size_bytes": 3895739008,
+          "sha256": "5435b42ba284828af814b1a43304c7921b9691cf61513ce83065323a22d93536",
+          "zip_extraction_crc": "pass",
+          "record_checksums_verified": false,
+          "huawei_signatures_verified": false
+        }
+      ],
+      "filelist_url": "https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/c3/v3/eGks5LtRTIWfKcFX9aMlXg/full/filelist.xml",
+      "filelist_xml_sha256": "7c4b6863de34d5982a4effce37d7c6e599a8ac98d58a8727647b406f89b6d2f5"
+    }
+  ],
+  "owner_capture_comparison": {
+    "catalog_cust_id": 613906,
+    "owner_cust_zip_sha256": "73eae790014dce9d94a216543d5aed9180710b883054603560736690e3aab7d1",
+    "catalog_cust_zip_sha256": "e181937beaf114e042d800bcbb46ef07bd2e1d3e76398e94ea68d4a234c8f2b6",
+    "owner_update_app_sha256": "e7771b40483349c0d0d2ec7583087ec53ae6fa7bf64b98c57b35bdbba67dc1bb",
+    "catalog_update_app_sha256": "96ed4e9621dfbe9a45ccedb0dd11086b878e795c625eb8f30ef20ff97554864e",
+    "equal_record_payloads": [
+      "CUST_VERLIST",
+      "CUST_VER",
+      "PTABLE_CUST",
+      "VERSION"
+    ],
+    "different_record_payloads": [
+      "SHA256RSA",
+      "CRC",
+      "PACKAGE_TYPE"
+    ],
+    "package_type_difference": "Owner capture timestamp 2022-03-23 15:36:42; catalog package timestamp 2021-12-14 14:23:44. Neither signatures nor timestamp semantics independently verified.",
+    "limitation": "Same version label and equal selected payloads do not make the archives identical or prove a working restoration path."
+  },
+  "limits": [
+    "Huawei signatures and per-record checksums not verified; ZIP CRC and archive digests are separate checks.",
+    "No phone installation, rollback acceptance or restoration tested.",
+    "Android-9 base VERSION.mbn says 9.1.0.399 while its BASE_VER is Marie-LGRP2-OVS 9.1.0.279; preserve both labels.",
+    "Android-9 BASE_VERLIST does not name MAR-LGRP2-OVS 10.0.0.1. The complete validation logic and meaning of this omission remain unverified.",
+    "Android-9 base has separate SYSTEM/VENDOR/ODM/PRODUCT records; Android-10 base instead includes SUPER and additional vbmeta records. Partition-layout migration must be checked before choosing any write procedure.",
+    "Firmware binaries, original screenshots, private paths and complete PC diagnostics stay outside the project repository."
+  ],
+  "app_inspector": {
+    "path": "scripts/inspect-update-app.py",
+    "repository_commit": "44fc5e1c204a175fec87a3536ad314ac151ef25c",
+    "command": "python3 scripts/inspect-update-app.py UPDATE.APP (repeat for PTABLE.APP); inputs kept outside the checkout."
+  }
+}

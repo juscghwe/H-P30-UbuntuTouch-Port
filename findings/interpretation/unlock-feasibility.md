@@ -6,7 +6,7 @@ Research date: **2026-11-12**, Europe/Berlin. Evidence catalog: [R01–R15](../r
 
 **No verified, complete software-only persistent-unlock procedure has been established for this phone, now owner-reported on EMUI 10.0.0 / 10.0.0.562(C431E15R2P7).** The earlier Settings build was 12.0.0.262(C431E3R2P2). This is a limit of the evidence found, not proof that no such method exists. Do not prescribe a further firmware change merely because an older generic unlock guide exists.
 
-The owner has ruled out opening the phone for now. Physical test-point routes remain background evidence only. No tool was run against the phone, and no executable or firmware was downloaded during this research.
+Physical test-point routes remain background evidence; no phone disassembly has been demonstrated. The later [owner-operated USB Upgrade test](android-utility-usb-upgrade.md) records mode entry and automatic return to Android, with no firmware package sent and no persistent unlock. Firmware archives were downloaded and inspected offline.
 
 ## Why downgrade is discussed
 

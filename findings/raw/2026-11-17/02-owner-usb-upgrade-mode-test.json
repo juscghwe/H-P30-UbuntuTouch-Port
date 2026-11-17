@@ -1,0 +1,80 @@
+{
+  "observation_date": "2026-11-17",
+  "classification": "Selected owner-supplied Windows output, application screenshots and phone-screen reports; not direct access by the research environment.",
+  "application_version": "Android Utility PRO (AUP) [Offline] v200.01.0001:01:01:2026",
+  "service_controls": [
+    "Huawei Normal To Upgrade",
+    "Huawei Fastboot To Upgrade",
+    "HiSilicon (USB1.0): Load Factory Fastboot"
+  ],
+  "factory_loader_dropdown_observed": "KIRIN620; not the target Kirin 710, and not used",
+  "firmware_input_state": "No firmware files loaded for the mode-entry test; no firmware-update or factory-loader operation requested.",
+  "initial_detection": {
+    "tool_result": "Waiting for huawei-dbadapter usb device... device not found",
+    "windows_interfaces": [
+      {
+        "status": "OK",
+        "class": "AndroidUsbDeviceClass",
+        "name": "Android Composite ADB Interface"
+      },
+      {
+        "status": "OK",
+        "class": "WPD",
+        "name": "HUAWEI P30 lite"
+      }
+    ]
+  },
+  "service_usb_setup": {
+    "documented_path": "Stock dialler *#*#2846579#*#* \u2192 Background Settings \u2192 USB Port Settings \u2192 Manufacture Mode",
+    "source": "https://www.dc-unlocker.com/read-unlock-codes-for-huawei-phones",
+    "classification": "Preparation guidance; the subsequent owner output confirms service interfaces appeared, rather than a complete menu transcript."
+  },
+  "subsequent_windows_interfaces": [
+    {
+      "status": "OK",
+      "class": "Ports",
+      "name": "Android Adapter PCUI (COM8)"
+    },
+    {
+      "status": "OK",
+      "class": "Ports",
+      "name": "DBAdapter Reserved Interface (COM10)"
+    },
+    {
+      "status": "OK",
+      "class": "AndroidUsbDeviceClass",
+      "name": "Android Composite ADB Interface"
+    },
+    {
+      "status": "OK",
+      "class": "Ports",
+      "name": "HUAWEI Mobile Connect - Fake Acm Interface (COM9)"
+    }
+  ],
+  "normal_to_upgrade_result": {
+    "selected_operation": "Huawei Normal To Upgrade",
+    "selected_tool_lines": [
+      "Waiting for huawei-dbadapter usb device... ok",
+      "DriverDesc : DBAdapter Reserved Interface",
+      "Rebooting to Usb uprade mode... success!"
+    ],
+    "phone_owner_report": "Installing update at 5%; remained at 5% across follow-ups; exact elapsed time not independently measured.",
+    "windows_followup": "Same four relevant interfaces remained listed; unrelated Bluetooth ports omitted."
+  },
+  "adb_probe": {
+    "command": ".\\adb.exe shell 'echo BOOTMODE; getprop ro.bootmode; echo RECOVERY_SERVICE; getprop init.svc.recovery; echo BOOT_COMPLETE; getprop sys.boot_completed'",
+    "result": "adb.exe: device unauthorized.",
+    "classification": "Authorization blocked the shell query. No bootmode, recovery-service or boot-complete value obtained."
+  },
+  "exit": {
+    "owner_report": "The device rebooted by itself and normal Android returned.",
+    "forced_restart_demonstrated": false,
+    "firmware_identity_after_exit": "Not recaptured."
+  },
+  "sanitization": "Only technical control names, selected result lines and relevant device-interface names retained. Original screenshots/logs contain unrelated PC identifiers and paths and are not published.",
+  "limits": [
+    "Tool success and the phone update screen support a mode-entry observation; no full firmware transfer or downgrade acceptance was tested.",
+    "A fixed 5% screen does not establish active partition writes or the precise reason for waiting/rebooting.",
+    "No root, persistent unlock or custom boot demonstrated."
+  ]
+}
