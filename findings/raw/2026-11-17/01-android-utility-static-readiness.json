@@ -1,0 +1,51 @@
+{
+  "inspection_date": "2026-11-17",
+  "method": "Downloaded the archive linked in the MFDL publisher page and inspected archive members and the main PE resources as data. No Android Utility executable or driver was run; no phone access or operation performed.",
+  "publisher_page": "https://www.mfdl.io/",
+  "publisher_page_sha256": "ecb4948ecbf40e7414bc3ee3e4735bba44918a9449cb487df53650054264df59",
+  "publisher_listing": {
+    "directory": "/gsm-tools/",
+    "filename": "AndroidUtility.v200.R2.7z",
+    "declared_bytes": 331164262
+  },
+  "archive": {
+    "landing_page": "https://www.mediafire.com/file/dp73po1rf9x4rgz/AndroidUtility.v200.7z/file",
+    "downloaded_name": "AndroidUtility.v200.7z",
+    "actual_format": "ZIP with encrypted members, despite .7z extension",
+    "bytes": 331167214,
+    "sha256": "bbad153b50b56bf98b1ca97a5262de38bac3e0b8620cd22f3610d1df4742b8eb",
+    "members": 1016,
+    "total_uncompressed_bytes": 1165576146,
+    "crc_check": "unzip password-assisted archive test completed successfully for all members",
+    "limitation": "Downloaded size differs from publisher directory listing. The hash identifies the inspected download; no publisher-signed digest was located, so this is not independent software authenticity or safety verification."
+  },
+  "main_executable": {
+    "name": "AndroidUtility.exe",
+    "bytes": 353236480,
+    "sha256": "fa59be07e4f2cb266fc5dd8e4a132bf95452cbc477949d53ea916191a546bc6f",
+    "pe_machine": "0x14c (32-bit x86 Windows)",
+    "embedded_authenticode_certificate_table_bytes": 0,
+    "main_pe_resource_manifest_requested_execution_level": "requireAdministrator",
+    "main_pe_resource_assembly_version": "2.0.0.0",
+    "ui_version_string": "Android Utility PRO (AUP) [Offline] - v200.01.0001:01:01:2026",
+    "version_classification": "Static UI string; not an observed running application version. No main PE VERSIONINFO was found in the resource inspection.",
+    "executed": false
+  },
+  "selected_static_strings": [
+    "Firmware Update (Fastboot)",
+    "Load Factory Fastboot",
+    "Work Mode (UPGRADE MODE{DLOAD}",
+    "DoHwUSBUpdateDload",
+    "DoHwUSBUpdateExtract",
+    "switch to upgrade mode require update base file!",
+    "Please unlock bootloader or load factory fastboot first!"
+  ],
+  "limits": [
+    "Strings do not establish the current button layout, validation order or precise code path used by Upgrade/DLOAD.",
+    "No device detection, transition to update mode, downgrade, unlock, modified image or phone write has been tested.",
+    "Fastboot-related precondition strings must not be assigned to the separate USB Upgrade path without tracing or observing the relevant operation.",
+    "Firmware acceptance from .562 and a complete software-only restoration path remain unresolved.",
+    "Only selected technical metadata is published; original archive, main executable and complete bundle inventory stay outside the project checkout."
+  ],
+  "publisher_capability_source": "https://www.mfdl.io/changelog"
+}

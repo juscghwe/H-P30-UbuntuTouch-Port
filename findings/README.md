@@ -27,6 +27,7 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 | E15 | [Post-rollback fastboot state](raw/2026-11-13/06-fastboot-state.txt) | Bootloader reports locked; historical repeated-U unlock request rejected as invalid command; FRP state not shown |
 | — | [CUST capture validation](raw/2026-11-13/02-capture-validation.json) | Generated offline ZIP/metadata checks and selected index fields; PRELOAD transfer blocked by size limit |
 | — | [Android-9 C431 package availability](raw/2026-11-13/08-android9-package-availability.json) | Decoded catalog rows, live Huawei manifests/range probes and full CUST hash/CRC/version checks; not downgrade authorization |
+| — | [Android Utility static readiness](raw/2026-11-17/01-android-utility-static-readiness.json) | Publisher-linked archive hash/CRC, main executable manifest and selected static UI strings; no execution or phone test |
 | — | [Capture provenance](raw/2026-11-11/provenance.json) | Acquisition, normalization and sanitation metadata |
 | — | [SHA-256 inventory](raw/2026-11-11/SHA256SUMS) | Integrity hashes of the committed evidence and provenance |
 
@@ -52,6 +53,7 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 - [Executed Kconfig validation and baseline build](interpretation/baseline-build.md)
 - [Peripheral source trace, board data and read-only checks](interpretation/peripheral-integration.md)
 - [Official firmware acquisition and experimental HiSuite URL observer](interpretation/firmware-acquisition.md)
+- [Android Utility USB Upgrade readiness](interpretation/android-utility-usb-upgrade.md) — static preparation and the distinction between DLOAD and Fastboot operations; not a validated downgrade recipe.
 - [Board-7800 vendor, touchscreen and Wi-Fi integration inputs](interpretation/vendor-integration.md)
 - [Provisional Halium approach and configuration probe](interpretation/halium-approach.md)
 - [Technical checkpoints and corrections](interpretation/technical-history.md)

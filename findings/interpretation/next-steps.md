@@ -6,6 +6,11 @@ The bootloader is locked. The documented source/toolchain pair produces offline 
 
 ## Unlock feasibility
 
+**2026-11-17 USB Upgrade investigation:** [Android Utility static preparation](android-utility-usb-upgrade.md)
+identifies the publisher-linked archive and separate Upgrade/DLOAD controls.
+The first missing observation is the running interface with the phone disconnected;
+no Android Utility phone operation or accepted downgrade has been demonstrated.
+
 **2026-11-13 update:** the owner confirms Settings EMUI 10.0.0 / build 10.0.0.562(C431E15R2P7), following the official rollback. No Android-9 option or software-only persistent unlock has been demonstrated. Read [the unlock feasibility assessment](unlock-feasibility.md) before a further downgrade or tool purchase. HCU's documented unlock requires Android 9; reaching EMUI 10 does not satisfy that prerequisite.
 
 1. Retain the current sanitized firmware/configuration evidence before changing versions.
