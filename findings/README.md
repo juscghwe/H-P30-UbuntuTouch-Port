@@ -33,6 +33,9 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 | — | [Android-9/10 GPT comparison](raw/2026-11-17/04-partition-layout-comparison.json) | Explicit primary eMMC template selection, CRCs and partition ranges; placeholder capacity fields retained |
 | — | [Recovery USB validation paths](raw/2026-11-17/05-recovery-usb-validation.json) | Offline DLOAD updater extraction, selected wait/hash-check control flow and PC-helper checks; no firmware program executed |
 | E17 | [Retained component versions](raw/2026-11-17/06-component-versions.txt) | Owner read-only component properties after the automatic return to Android |
+| E18 | [Failed Android-9 DLOAD attempt](raw/2026-11-17/07-owner-dload-failure.json) | Selected owner log/screen observations; BASE_VER failure, contradictory success banner, CUST continuation and user termination |
+| E19 | [Post-attempt boot and component state](raw/2026-11-17/08-post-attempt-state.txt) | Owner reports boot completion and unchanged component labels; native recovery-log metadata access denied |
+| — | [AUP failure propagation](raw/2026-11-17/09-aup-failure-handling.json) | Selected static x86 branches explaining the success-looking banner after failure; not the native error cause |
 | — | [Capture provenance](raw/2026-11-11/provenance.json) | Acquisition, normalization and sanitation metadata |
 | — | [SHA-256 inventory](raw/2026-11-11/SHA256SUMS) | Integrity hashes of the committed evidence and provenance |
 

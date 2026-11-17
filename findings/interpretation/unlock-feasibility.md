@@ -6,7 +6,15 @@ Research date: **2026-11-12**, Europe/Berlin. Evidence catalog: [R01–R15](../r
 
 **No verified, complete software-only persistent-unlock procedure has been established for this phone, now owner-reported on EMUI 10.0.0 / 10.0.0.562(C431E15R2P7).** The earlier Settings build was 12.0.0.262(C431E3R2P2). This is a limit of the evidence found, not proof that no such method exists. Do not prescribe a further firmware change merely because an older generic unlock guide exists.
 
-Physical test-point routes remain background evidence; no phone disassembly has been demonstrated. The later [owner-operated USB Upgrade test](android-utility-usb-upgrade.md) records mode entry and automatic return to Android, with no firmware package sent and no persistent unlock. Firmware archives were downloaded and inspected offline.
+Physical test-point routes remain background evidence; no phone disassembly has been demonstrated. The [owner-operated USB Upgrade tests](android-utility-usb-upgrade.md) include mode entry and a failed Android-9 metadata transfer, followed by normal Android boot. Firmware archives were downloaded and inspected offline; no successful downgrade or persistent unlock was demonstrated.
+
+## Owner DLOAD attempt: 2026-11-17
+
+The [prepared Android-9 USB Upgrade attempt](android-utility-usb-upgrade.md)
+failed during BASE-PTABLE metadata. The owner stopped AUP after it continued past
+a failed record, then Android booted and reported unchanged EMUI-10 component
+labels. No Android-9 boot, software testpoint recovery or persistent unlock was
+demonstrated. The generic failure is not a decoded hardware anti-rollback result.
 
 ## Why downgrade is discussed
 

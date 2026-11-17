@@ -1,0 +1,44 @@
+{
+  "inspection_date": "2026-11-17",
+  "classification": "Selected static PE32 x86 control-flow analysis, corroborated by E18 output; executable not run by the research environment.",
+  "executable": {
+    "name": "AndroidUtility.exe",
+    "bytes": 353236480,
+    "sha256": "fa59be07e4f2cb266fc5dd8e4a132bf95452cbc477949d53ea916191a546bc6f",
+    "image_base": "0x400000"
+  },
+  "method": "Read the publisher-linked binary as data with objdump -d -M intel. Follow selected branches and string addresses in the method identified by DoHwUSBUpdateDload exception/log context. Addresses below are virtual addresses, not phone memory addresses.",
+  "selected_control_flow": [
+    {
+      "address": "0x12dda94",
+      "observation": "Calls transfer helper 0x12c78b0; its boolean return is saved and tested."
+    },
+    {
+      "address": "0x12ddac3",
+      "observation": "False-return branch targets 0x12e0090."
+    },
+    {
+      "range_start": "0x12e0090",
+      "range_end_exclusive": "0x12e0123",
+      "observation": "Formats fail! using string pointer 0x1ade0db and performs local cleanup."
+    },
+    {
+      "address": "0x12e011e",
+      "observation": "Jumps to 0x12ddb7f rather than aborting the whole DLOAD job."
+    },
+    {
+      "address": "0x12ddb96",
+      "observation": "Loads string pointer 0x1ade0e4: Download ptable base partitions ok!, on that failure path."
+    },
+    {
+      "address": "0x12ddc53",
+      "observation": "Subsequent CUST stage loads string pointer 0x1ade7f4: Start write ptable cust."
+    }
+  ],
+  "conclusion": "The inspected BASE-PTABLE failure path can emit the success-looking banner and advance to the next package after a failed record transfer. This matches E18 and prevents treating that banner as success or the workflow as fail-fast.",
+  "limits": [
+    "Selected branches reviewed, not a complete audit of all modes or every error path.",
+    "The native device refusal/transport cause is not established by this client behavior.",
+    "No executable patch, OEMINFO change, validation bypass or retry performed as part of this inspection."
+  ]
+}

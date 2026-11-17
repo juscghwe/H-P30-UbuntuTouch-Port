@@ -6,16 +6,19 @@ The bootloader is locked. The documented source/toolchain pair produces offline 
 
 ## Unlock feasibility
 
-**2026-11-17 USB Upgrade investigation:** [mode-entry and package inspection](android-utility-usb-upgrade.md)
-records owner-observed DBAdapter detection, the Normal-to-Upgrade command, a 5%
-phone screen and automatic return to Android. Six complete firmware archives pass
-digest/ZIP-CRC checks and APP record bounds parse. No firmware-write or downgrade
-acceptance test has been performed. The primary eMMC templates now pass CRC
-checks and show equal boot-image ranges
-but changed names/indices and filesystem layout. Static DLOAD analysis identifies
-a 300-second no-action reboot path and a stored-hash version-list check. Prepare
-the pinned files on the PC with the download/extraction helper; device acceptance
-and restoration remain untested.
+**2026-11-17 USB Upgrade result:** [the Android-9 DLOAD attempt](android-utility-usb-upgrade.md)
+failed on the 25-byte BASE_VER record in the small BASE-PTABLE package. AUP then
+printed a success-looking banner and proceeded to CUST; selected static branches
+confirm faulty failure propagation. The owner stopped it and Android returned.
+Boot completion is 1 and component labels remain `.562` / `.15(C431)` /
+`.7(C431R2)`, without proof of partition/OEMINFO byte equality. Native recovery-log
+access is denied. Do not repeat the same write or alter OEMINFO as a guessed fix;
+identify the metadata/protocol refusal and reliable failure handling first.
+
+Six full firmware archives and APP extractions are verified. Primary eMMC GPT
+CRCs pass, boot-image ranges agree but indices and filesystem layouts change.
+The reference USB updater has a 300-second no-action reboot path and stored-hash
+version checks; neither establishes an accepted software-only downgrade.
 
 **2026-11-13 update:** the owner confirms Settings EMUI 10.0.0 / build 10.0.0.562(C431E15R2P7), following the official rollback. No Android-9 option or software-only persistent unlock has been demonstrated. Read [the unlock feasibility assessment](unlock-feasibility.md) before a further downgrade or tool purchase. HCU's documented unlock requires Android 9; reaching EMUI 10 does not satisfy that prerequisite.
 

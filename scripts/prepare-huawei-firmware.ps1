@@ -103,6 +103,7 @@ function Start-ReferencePreparation {
         $seen[$key] = $true
         $directory = Join-Path $DestinationRoot $package.reference_group
         $target = Join-Path $directory $leaf
+        Write-Host ('Preparing ' + $package.reference_group + ' / ' + $component + ': ' + $package.version_label)
         Get-ReferenceArchive $package.url $target ([long]$package.size) $package.sha256
         if ($Extract) { Expand-ReferenceApps $target (Join-Path $directory $component) @($package.app_inspection) }
     }

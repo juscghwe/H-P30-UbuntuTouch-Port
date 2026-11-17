@@ -1,0 +1,58 @@
+{
+  "evidence_id": "E18",
+  "observation_date": "2026-11-17",
+  "classification": "Selected owner-supplied application screenshot, terminal text and phone-screen reports; not direct device access.",
+  "host_preparation": {
+    "owner_report": "All six archives Verified, all PTABLE.APP/UPDATE.APP extractions Extracted and verified, then PC preparation complete. No phone operation was performed.",
+    "helper_revision": "05fc9e77f4e23d6de298c0667e2d96461d7b68e4",
+    "platform": "Windows; exact PowerShell version not collected"
+  },
+  "inputs": {
+    "intended_set": "Android-9 C431 reference",
+    "catalog_ids": [
+      442707,
+      322136,
+      321529
+    ],
+    "selected_files": [
+      "base/PTABLE.APP",
+      "base/UPDATE.APP",
+      "cust/PTABLE.APP",
+      "cust/UPDATE.APP",
+      "preload/PTABLE.APP",
+      "preload/UPDATE.APP"
+    ],
+    "board_software": "Empty in owner screenshot",
+    "file_table_observation": "Visible U_PRELOAD records match the independently inventoried PRELOAD offsets. BASE/PATCH beyond-4-GiB GUI offset was not observed because table navigation failed; no inference of file-parser truncation."
+  },
+  "offline_job_probe": {
+    "phone_connected": false,
+    "owner_report": "FW Update (DLOAD) waited for Huawei USB device, then owner stopped it.",
+    "limitation": "Device-wait entry does not prove full firmware validation."
+  },
+  "attempt": {
+    "operation": "FW Update (DLOAD), after owner-operated Normal To Upgrade entry",
+    "selected_log_lines": [
+      "Waiting for huawei usb device... ok",
+      "===== Initializing download protocol =====",
+      "===== Start write ptable base =====",
+      "Sending HWID{[value omitted]}... DownloadByID [SHA256RSA](804B)... Ok",
+      "DownloadByID [CRC](20B)... Ok",
+      "DownloadByID [BASE_VERLIST](330B)... Ok",
+      "DownloadByID [BASE_VER](25B)... fail!",
+      "Download ptable base partitions ok!",
+      "===== Start write ptable cust =====",
+      "Sending HWID{[value omitted]}..."
+    ],
+    "phone_owner_report": "Software install failed; help link and Restart control displayed.",
+    "stop_result": "terminated by user request,(is_terminated,mthread\\m_callback.cpp,908)",
+    "exit_owner_report": "Normal Android seems to have returned."
+  },
+  "sanitization": "Selected screenshot lines transcribed with wrapping/spacing normalized. Opaque HWID values and personal PC/log paths omitted. No full screenshot or raw log published.",
+  "limits": [
+    "Successful downgrade not demonstrated; failure occurs in the small BASE PTABLE package, before the large base UPDATE.APP stage is shown.",
+    "The visible log does not show PACKAGE_TYPE or HISIUFS_GPT transfer completion, and no partition byte equality or absence of state changes was established.",
+    "BASE_VER failure does not identify the native error code, prove a hardware anti-rollback counter, or establish an OEMINFO fault.",
+    "The following partitions-ok banner contradicts the preceding record failure; it is not an acceptance criterion."
+  ]
+}

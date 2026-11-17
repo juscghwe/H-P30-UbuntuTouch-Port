@@ -1,0 +1,28 @@
+E19 — Owner post-attempt boot and component-property check
+Date: 2026-11-17; exact acquisition time not independently measured.
+Origin: owner-supplied selected read-only ADB output after normal Android returned.
+
+Command (one physical PowerShell line):
+.\adb.exe shell 'echo BOOT_COMPLETE; getprop sys.boot_completed; echo BASE; getprop ro.comp.hl.product_base_version; echo CUST; getprop ro.comp.hl.product_cust_version; echo PRELOAD; getprop ro.comp.hl.product_preload_version'
+
+Output:
+BOOT_COMPLETE
+1
+BASE
+MAR-LGRP2-OVS 10.0.0.562
+CUST
+MAR-L21A-CUST 10.0.0.15(C431)
+PRELOAD
+MAR-L21A-PRELOAD 10.0.0.7(C431R2)
+
+Targeted recovery-log permission query:
+.\adb.exe shell 'ls -l /splash2/recovery/recovery_log /log/recovery/recovery_log'
+
+Output:
+ls: /splash2/recovery/recovery_log: Permission denied
+ls: /log/recovery/recovery_log: Permission denied
+
+Interpretation boundary: Android reports boot completion and the same component
+labels as E17. These properties do not establish unchanged partition bytes or
+OEMINFO state. Native recovery-log contents were not obtained; no further access
+attempt or privilege escalation performed for those logs.

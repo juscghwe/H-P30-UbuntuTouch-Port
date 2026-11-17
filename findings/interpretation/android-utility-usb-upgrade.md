@@ -1,6 +1,6 @@
 # Android Utility USB Upgrade readiness
 
-Status: **owner-observed mode entry and automatic return to Android; no firmware-write test**. This is not a validated
+Status: **Android-9 DLOAD attempt failed during BASE-PTABLE metadata; Android 10 boots afterward**. This is not a validated
 `.562` to Android-9 downgrade recipe.
 
 The [MFDL changelog](https://www.mfdl.io/changelog) lists Huawei USB firmware
@@ -53,6 +53,45 @@ The separate `Load Factory Fastboot` control is grouped under HiSilicon USB1.0.
 Its observed default was KIRIN620, not this phone's Kirin 710; it was not used.
 Do not carry its dropdown selection or factory-loader assumptions into the
 Normal-to-Upgrade operation.
+
+## Failed Android-9 DLOAD attempt
+
+[E18](../raw/2026-11-17/07-owner-dload-failure.json) records successful Windows
+preparation of all six reference archives/APP extractions, followed by a DLOAD
+attempt using the Android-9 files. The phone displayed Software install failed.
+AUP reported these early BASE-PTABLE records:
+
+| Record | Size | AUP result |
+| --- | --- | --- |
+| SHA256RSA | 804 bytes | Ok |
+| CRC | 20 bytes | Ok |
+| BASE_VERLIST | 330 bytes | Ok |
+| BASE_VER | 25 bytes | fail |
+
+Those sizes match the independently inventoried Android-9 PTABLE.APP. The failure
+occurred before the large base UPDATE.APP stage was shown; the unobserved GUI
+offset beyond 4 GiB does not explain this particular failure. The log does not
+show a completed GPT transfer, but it cannot prove that every stored value stayed
+unchanged.
+
+AUP then printed `Download ptable base partitions ok!` and started CUST despite
+the failure. [Selected binary control flow](../raw/2026-11-17/09-aup-failure-handling.json)
+confirms this behavior: the failed-transfer branch at `0x12ddac3` reaches the
+failure message, then jumps at `0x12e011e` into the success-looking banner and
+subsequent package stage. This is a client error-handling problem; it does not
+identify the native refusal or make the failed transfer successful.
+
+The owner stopped AUP and reported normal Android returning. [E19](../raw/2026-11-17/08-post-attempt-state.txt)
+then reports `sys.boot_completed=1` with the same `.562` / `.15(C431)` /
+`.7(C431R2)` component labels as E17. Partition/OEMINFO equality was not measured.
+Selected native recovery-log metadata reads were denied, so no native error code
+was obtained. Version policy, package handling and transport failure remain
+possible explanations; hardware anti-rollback is not established as the cause.
+
+Do not repeat this workflow unchanged, omit metadata as a guessed fix, or follow
+a generic suggestion to alter OEMINFO. Further phone writes need evidence that
+addresses the failed metadata exchange and the client's failure propagation.
+The software-only downgrade/unlock chain remains unverified.
 
 ## Full firmware-package inspection
 
@@ -142,10 +181,10 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\prepare-huawei
 The execution-policy option applies to this process, not a permanent policy
 change. The helper was checked with Linux PowerShell 7.7.0, including a ZIP64
 member exceeding 4 GiB, hash rejection and partial-file preservation. Windows
-PowerShell 5.1 and a Windows network download remain to be tested. Firmware
+PowerShell version on the owner PC was not collected; E18 confirms that Windows
+downloads and all APP extractions completed. Firmware
 signatures and phone rollback acceptance are separate from these integrity checks.
 
-The next device milestone is a documented firmware acceptance result with the
-exact prepared files and a credible restoration procedure. Mode entry and file
-integrity do not establish that result; no firmware-write procedure is selected
-by this document. Keep the phone in normal Android during PC preparation.
+The Android-9 attempt above failed before a successful downgrade. Keep the phone
+in normal Android while analyzing the metadata/protocol refusal. Prepared files
+are research inputs, not a validated flash or restoration procedure.
