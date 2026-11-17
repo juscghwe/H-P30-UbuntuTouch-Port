@@ -30,6 +30,9 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 | — | [Android Utility static readiness](raw/2026-11-17/01-android-utility-static-readiness.json) | Publisher-linked archive hash/CRC, main executable manifest and selected static UI strings; no execution or phone test |
 | E16 | [Owner USB Upgrade mode test](raw/2026-11-17/02-owner-usb-upgrade-mode-test.json) | DBAdapter detection, mode-switch report, 5% screen, blocked ADB query and automatic return to Android; no firmware transfer |
 | — | [Complete firmware-package checks](raw/2026-11-17/03-firmware-package-verification.json) | Six Huawei archive sizes/digests/ZIP CRCs and bounded APP inventories; no signature or device-acceptance test |
+| — | [Android-9/10 GPT comparison](raw/2026-11-17/04-partition-layout-comparison.json) | Explicit primary eMMC template selection, CRCs and partition ranges; placeholder capacity fields retained |
+| — | [Recovery USB validation paths](raw/2026-11-17/05-recovery-usb-validation.json) | Offline DLOAD updater extraction, selected wait/hash-check control flow and PC-helper checks; no firmware program executed |
+| E17 | [Retained component versions](raw/2026-11-17/06-component-versions.txt) | Owner read-only component properties after the automatic return to Android |
 | — | [Capture provenance](raw/2026-11-11/provenance.json) | Acquisition, normalization and sanitation metadata |
 | — | [SHA-256 inventory](raw/2026-11-11/SHA256SUMS) | Integrity hashes of the committed evidence and provenance |
 

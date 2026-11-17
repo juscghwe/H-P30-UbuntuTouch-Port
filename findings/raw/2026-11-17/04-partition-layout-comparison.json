@@ -1,0 +1,1606 @@
+{
+  "inspection_date": "2026-11-17",
+  "classification": "Generated offline comparison of official package templates, not live device partition dumps.",
+  "method": "HISIUFS_GPT records extracted from each PTABLE.APP using the bounded UPDATE.APP inspector. scripts/inspect-gpt.py validates the explicitly selected header at byte 512 and array at byte 1024, with 512-byte logical units. Header/array CRCs, label uniqueness and nonoverlapping ranges pass. No image written to a device.",
+  "selection_evidence": "The Android-10 primary template matches all seven owner-reported eMMC by-name indices from E10. Other GPT signatures in the container were not selected as phone geometry.",
+  "input_packages": [
+    {
+      "catalog_id": 442707,
+      "gpt": {
+        "size_bytes": 200704,
+        "sha256": "6e426d8a148b519b06772bc3a1b733fcb172796aa86d94e2a72ae713a5c20987",
+        "header_offset": 512,
+        "entries_offset": 1024,
+        "sector_bytes_supplied": 512,
+        "header_crc_valid": true,
+        "entries_crc_valid": true,
+        "current_lba": 1,
+        "backup_lba": 0,
+        "first_usable_lba": 34,
+        "last_usable_lba": 0,
+        "entries_lba": 2,
+        "entry_slots": 128,
+        "entry_size": 128,
+        "entries": [
+          {
+            "entry_number": 1,
+            "name": "frp",
+            "first_lba": 1024,
+            "last_lba": 2047,
+            "offset_bytes": 524288,
+            "size_bytes": 524288,
+            "attributes": 0
+          },
+          {
+            "entry_number": 2,
+            "name": "persist",
+            "first_lba": 2048,
+            "last_lba": 6143,
+            "offset_bytes": 1048576,
+            "size_bytes": 2097152,
+            "attributes": 0
+          },
+          {
+            "entry_number": 3,
+            "name": "reserved1",
+            "first_lba": 6144,
+            "last_lba": 16383,
+            "offset_bytes": 3145728,
+            "size_bytes": 5242880,
+            "attributes": 0
+          },
+          {
+            "entry_number": 4,
+            "name": "reserved6",
+            "first_lba": 16384,
+            "last_lba": 17407,
+            "offset_bytes": 8388608,
+            "size_bytes": 524288,
+            "attributes": 0
+          },
+          {
+            "entry_number": 5,
+            "name": "vrl",
+            "first_lba": 17408,
+            "last_lba": 18431,
+            "offset_bytes": 8912896,
+            "size_bytes": 524288,
+            "attributes": 0
+          },
+          {
+            "entry_number": 6,
+            "name": "vrl_backup",
+            "first_lba": 18432,
+            "last_lba": 19455,
+            "offset_bytes": 9437184,
+            "size_bytes": 524288,
+            "attributes": 0
+          },
+          {
+            "entry_number": 7,
+            "name": "modem_secure",
+            "first_lba": 19456,
+            "last_lba": 36863,
+            "offset_bytes": 9961472,
+            "size_bytes": 8912896,
+            "attributes": 0
+          },
+          {
+            "entry_number": 8,
+            "name": "nvme",
+            "first_lba": 36864,
+            "last_lba": 47103,
+            "offset_bytes": 18874368,
+            "size_bytes": 5242880,
+            "attributes": 0
+          },
+          {
+            "entry_number": 9,
+            "name": "certification",
+            "first_lba": 47104,
+            "last_lba": 49151,
+            "offset_bytes": 24117248,
+            "size_bytes": 1048576,
+            "attributes": 0
+          },
+          {
+            "entry_number": 10,
+            "name": "oeminfo",
+            "first_lba": 49152,
+            "last_lba": 180223,
+            "offset_bytes": 25165824,
+            "size_bytes": 67108864,
+            "attributes": 0
+          },
+          {
+            "entry_number": 11,
+            "name": "secure_storage",
+            "first_lba": 180224,
+            "last_lba": 245759,
+            "offset_bytes": 92274688,
+            "size_bytes": 33554432,
+            "attributes": 0
+          },
+          {
+            "entry_number": 12,
+            "name": "modem_om",
+            "first_lba": 245760,
+            "last_lba": 311295,
+            "offset_bytes": 125829120,
+            "size_bytes": 33554432,
+            "attributes": 0
+          },
+          {
+            "entry_number": 13,
+            "name": "modemnvm_factory",
+            "first_lba": 311296,
+            "last_lba": 344063,
+            "offset_bytes": 159383552,
+            "size_bytes": 16777216,
+            "attributes": 0
+          },
+          {
+            "entry_number": 14,
+            "name": "modemnvm_backup",
+            "first_lba": 344064,
+            "last_lba": 376831,
+            "offset_bytes": 176160768,
+            "size_bytes": 16777216,
+            "attributes": 0
+          },
+          {
+            "entry_number": 15,
+            "name": "modemnvm_img",
+            "first_lba": 376832,
+            "last_lba": 446463,
+            "offset_bytes": 192937984,
+            "size_bytes": 35651584,
+            "attributes": 0
+          },
+          {
+            "entry_number": 16,
+            "name": "reserved7",
+            "first_lba": 446464,
+            "last_lba": 450559,
+            "offset_bytes": 228589568,
+            "size_bytes": 2097152,
+            "attributes": 0
+          },
+          {
+            "entry_number": 17,
+            "name": "hisee_encos",
+            "first_lba": 450560,
+            "last_lba": 458751,
+            "offset_bytes": 230686720,
+            "size_bytes": 4194304,
+            "attributes": 0
+          },
+          {
+            "entry_number": 18,
+            "name": "veritykey",
+            "first_lba": 458752,
+            "last_lba": 460799,
+            "offset_bytes": 234881024,
+            "size_bytes": 1048576,
+            "attributes": 0
+          },
+          {
+            "entry_number": 19,
+            "name": "ddr_para",
+            "first_lba": 460800,
+            "last_lba": 462847,
+            "offset_bytes": 235929600,
+            "size_bytes": 1048576,
+            "attributes": 0
+          },
+          {
+            "entry_number": 20,
+            "name": "modem_driver_a",
+            "first_lba": 462848,
+            "last_lba": 503807,
+            "offset_bytes": 236978176,
+            "size_bytes": 20971520,
+            "attributes": 0
+          },
+          {
+            "entry_number": 21,
+            "name": "reserved2",
+            "first_lba": 503808,
+            "last_lba": 518143,
+            "offset_bytes": 257949696,
+            "size_bytes": 7340032,
+            "attributes": 0
+          },
+          {
+            "entry_number": 22,
+            "name": "splash2",
+            "first_lba": 518144,
+            "last_lba": 681983,
+            "offset_bytes": 265289728,
+            "size_bytes": 83886080,
+            "attributes": 0
+          },
+          {
+            "entry_number": 23,
+            "name": "bootfail_info",
+            "first_lba": 681984,
+            "last_lba": 686079,
+            "offset_bytes": 349175808,
+            "size_bytes": 2097152,
+            "attributes": 0
+          },
+          {
+            "entry_number": 24,
+            "name": "misc",
+            "first_lba": 686080,
+            "last_lba": 690175,
+            "offset_bytes": 351272960,
+            "size_bytes": 2097152,
+            "attributes": 0
+          },
+          {
+            "entry_number": 25,
+            "name": "dfx",
+            "first_lba": 690176,
+            "last_lba": 722943,
+            "offset_bytes": 353370112,
+            "size_bytes": 16777216,
+            "attributes": 0
+          },
+          {
+            "entry_number": 26,
+            "name": "rrecord",
+            "first_lba": 722944,
+            "last_lba": 755711,
+            "offset_bytes": 370147328,
+            "size_bytes": 16777216,
+            "attributes": 0
+          },
+          {
+            "entry_number": 27,
+            "name": "fw_lpm3_a",
+            "first_lba": 755712,
+            "last_lba": 756223,
+            "offset_bytes": 386924544,
+            "size_bytes": 262144,
+            "attributes": 0
+          },
+          {
+            "entry_number": 28,
+            "name": "reserved3_a",
+            "first_lba": 756224,
+            "last_lba": 763903,
+            "offset_bytes": 387186688,
+            "size_bytes": 3932160,
+            "attributes": 0
+          },
+          {
+            "entry_number": 29,
+            "name": "hdcp_a",
+            "first_lba": 763904,
+            "last_lba": 765951,
+            "offset_bytes": 391118848,
+            "size_bytes": 1048576,
+            "attributes": 0
+          },
+          {
+            "entry_number": 30,
+            "name": "hisee_img_a",
+            "first_lba": 765952,
+            "last_lba": 774143,
+            "offset_bytes": 392167424,
+            "size_bytes": 4194304,
+            "attributes": 0
+          },
+          {
+            "entry_number": 31,
+            "name": "hhee_a",
+            "first_lba": 774144,
+            "last_lba": 782335,
+            "offset_bytes": 396361728,
+            "size_bytes": 4194304,
+            "attributes": 0
+          },
+          {
+            "entry_number": 32,
+            "name": "hisee_fs_a",
+            "first_lba": 782336,
+            "last_lba": 798719,
+            "offset_bytes": 400556032,
+            "size_bytes": 8388608,
+            "attributes": 0
+          },
+          {
+            "entry_number": 33,
+            "name": "fastboot_a",
+            "first_lba": 798720,
+            "last_lba": 823295,
+            "offset_bytes": 408944640,
+            "size_bytes": 12582912,
+            "attributes": 0
+          },
+          {
+            "entry_number": 34,
+            "name": "vector_a",
+            "first_lba": 823296,
+            "last_lba": 831487,
+            "offset_bytes": 421527552,
+            "size_bytes": 4194304,
+            "attributes": 0
+          },
+          {
+            "entry_number": 35,
+            "name": "isp_boot_a",
+            "first_lba": 831488,
+            "last_lba": 835583,
+            "offset_bytes": 425721856,
+            "size_bytes": 2097152,
+            "attributes": 0
+          },
+          {
+            "entry_number": 36,
+            "name": "isp_firmware_a",
+            "first_lba": 835584,
+            "last_lba": 864255,
+            "offset_bytes": 427819008,
+            "size_bytes": 14680064,
+            "attributes": 0
+          },
+          {
+            "entry_number": 37,
+            "name": "fw_hifi_a",
+            "first_lba": 864256,
+            "last_lba": 888831,
+            "offset_bytes": 442499072,
+            "size_bytes": 12582912,
+            "attributes": 0
+          },
+          {
+            "entry_number": 38,
+            "name": "teeos_a",
+            "first_lba": 888832,
+            "last_lba": 905215,
+            "offset_bytes": 455081984,
+            "size_bytes": 8388608,
+            "attributes": 0
+          },
+          {
+            "entry_number": 39,
+            "name": "sensorhub_a",
+            "first_lba": 905216,
+            "last_lba": 937983,
+            "offset_bytes": 463470592,
+            "size_bytes": 16777216,
+            "attributes": 0
+          },
+          {
+            "entry_number": 40,
+            "name": "erecovery_kernel_a",
+            "first_lba": 937984,
+            "last_lba": 987135,
+            "offset_bytes": 480247808,
+            "size_bytes": 25165824,
+            "attributes": 0
+          },
+          {
+            "entry_number": 41,
+            "name": "erecovery_ramdisk_a",
+            "first_lba": 987136,
+            "last_lba": 1052671,
+            "offset_bytes": 505413632,
+            "size_bytes": 33554432,
+            "attributes": 0
+          },
+          {
+            "entry_number": 42,
+            "name": "erecovery_vendor_a",
+            "first_lba": 1052672,
+            "last_lba": 1085439,
+            "offset_bytes": 538968064,
+            "size_bytes": 16777216,
+            "attributes": 0
+          },
+          {
+            "entry_number": 43,
+            "name": "kernel_a",
+            "first_lba": 1085440,
+            "last_lba": 1134591,
+            "offset_bytes": 555745280,
+            "size_bytes": 25165824,
+            "attributes": 0
+          },
+          {
+            "entry_number": 44,
+            "name": "eng_system_a",
+            "first_lba": 1134592,
+            "last_lba": 1159167,
+            "offset_bytes": 580911104,
+            "size_bytes": 12582912,
+            "attributes": 0
+          },
+          {
+            "entry_number": 45,
+            "name": "recovery_ramdisk_a",
+            "first_lba": 1159168,
+            "last_lba": 1224703,
+            "offset_bytes": 593494016,
+            "size_bytes": 33554432,
+            "attributes": 0
+          },
+          {
+            "entry_number": 46,
+            "name": "recovery_vendor_a",
+            "first_lba": 1224704,
+            "last_lba": 1257471,
+            "offset_bytes": 627048448,
+            "size_bytes": 16777216,
+            "attributes": 0
+          },
+          {
+            "entry_number": 47,
+            "name": "dts_a",
+            "first_lba": 1257472,
+            "last_lba": 1273855,
+            "offset_bytes": 643825664,
+            "size_bytes": 8388608,
+            "attributes": 0
+          },
+          {
+            "entry_number": 48,
+            "name": "dto_a",
+            "first_lba": 1273856,
+            "last_lba": 1323007,
+            "offset_bytes": 652214272,
+            "size_bytes": 25165824,
+            "attributes": 0
+          },
+          {
+            "entry_number": 49,
+            "name": "trustfirmware_a",
+            "first_lba": 1323008,
+            "last_lba": 1327103,
+            "offset_bytes": 677380096,
+            "size_bytes": 2097152,
+            "attributes": 0
+          },
+          {
+            "entry_number": 50,
+            "name": "modem_fw_a",
+            "first_lba": 1327104,
+            "last_lba": 1441791,
+            "offset_bytes": 679477248,
+            "size_bytes": 58720256,
+            "attributes": 0
+          },
+          {
+            "entry_number": 51,
+            "name": "eng_vendor_a",
+            "first_lba": 1441792,
+            "last_lba": 1466367,
+            "offset_bytes": 738197504,
+            "size_bytes": 12582912,
+            "attributes": 0
+          },
+          {
+            "entry_number": 52,
+            "name": "modem_patch_nv_a",
+            "first_lba": 1466368,
+            "last_lba": 1474559,
+            "offset_bytes": 750780416,
+            "size_bytes": 4194304,
+            "attributes": 0
+          },
+          {
+            "entry_number": 53,
+            "name": "reserved4_a",
+            "first_lba": 1474560,
+            "last_lba": 1490943,
+            "offset_bytes": 754974720,
+            "size_bytes": 8388608,
+            "attributes": 0
+          },
+          {
+            "entry_number": 54,
+            "name": "recovery_vbmeta_a",
+            "first_lba": 1490944,
+            "last_lba": 1495039,
+            "offset_bytes": 763363328,
+            "size_bytes": 2097152,
+            "attributes": 0
+          },
+          {
+            "entry_number": 55,
+            "name": "erecovery_vbmeta_a",
+            "first_lba": 1495040,
+            "last_lba": 1499135,
+            "offset_bytes": 765460480,
+            "size_bytes": 2097152,
+            "attributes": 0
+          },
+          {
+            "entry_number": 56,
+            "name": "vbmeta_a",
+            "first_lba": 1499136,
+            "last_lba": 1507327,
+            "offset_bytes": 767557632,
+            "size_bytes": 4194304,
+            "attributes": 0
+          },
+          {
+            "entry_number": 57,
+            "name": "modemnvm_update_a",
+            "first_lba": 1507328,
+            "last_lba": 1540095,
+            "offset_bytes": 771751936,
+            "size_bytes": 16777216,
+            "attributes": 0
+          },
+          {
+            "entry_number": 58,
+            "name": "modemnvm_cust_a",
+            "first_lba": 1540096,
+            "last_lba": 1572863,
+            "offset_bytes": 788529152,
+            "size_bytes": 16777216,
+            "attributes": 0
+          },
+          {
+            "entry_number": 59,
+            "name": "patch_a",
+            "first_lba": 1572864,
+            "last_lba": 1638399,
+            "offset_bytes": 805306368,
+            "size_bytes": 33554432,
+            "attributes": 0
+          },
+          {
+            "entry_number": 60,
+            "name": "cache",
+            "first_lba": 1638400,
+            "last_lba": 1851391,
+            "offset_bytes": 838860800,
+            "size_bytes": 109051904,
+            "attributes": 0
+          },
+          {
+            "entry_number": 61,
+            "name": "preas",
+            "first_lba": 1851392,
+            "last_lba": 3850239,
+            "offset_bytes": 947912704,
+            "size_bytes": 1023410176,
+            "attributes": 0
+          },
+          {
+            "entry_number": 62,
+            "name": "preavs",
+            "first_lba": 3850240,
+            "last_lba": 3915775,
+            "offset_bytes": 1971322880,
+            "size_bytes": 33554432,
+            "attributes": 0
+          },
+          {
+            "entry_number": 63,
+            "name": "vendor_a",
+            "first_lba": 3915776,
+            "last_lba": 4898815,
+            "offset_bytes": 2004877312,
+            "size_bytes": 503316480,
+            "attributes": 0
+          },
+          {
+            "entry_number": 64,
+            "name": "odm_a",
+            "first_lba": 4898816,
+            "last_lba": 5095423,
+            "offset_bytes": 2508193792,
+            "size_bytes": 100663296,
+            "attributes": 0
+          },
+          {
+            "entry_number": 65,
+            "name": "cust_a",
+            "first_lba": 5095424,
+            "last_lba": 5275647,
+            "offset_bytes": 2608857088,
+            "size_bytes": 92274688,
+            "attributes": 0
+          },
+          {
+            "entry_number": 66,
+            "name": "system_a",
+            "first_lba": 5275648,
+            "last_lba": 10010623,
+            "offset_bytes": 2701131776,
+            "size_bytes": 2424307712,
+            "attributes": 0
+          },
+          {
+            "entry_number": 67,
+            "name": "product_a",
+            "first_lba": 10010624,
+            "last_lba": 14417919,
+            "offset_bytes": 5125439488,
+            "size_bytes": 2256535552,
+            "attributes": 0
+          },
+          {
+            "entry_number": 68,
+            "name": "version_a",
+            "first_lba": 14417920,
+            "last_lba": 15597567,
+            "offset_bytes": 7381975040,
+            "size_bytes": 603979776,
+            "attributes": 0
+          },
+          {
+            "entry_number": 69,
+            "name": "preload_a",
+            "first_lba": 15597568,
+            "last_lba": 17940479,
+            "offset_bytes": 7985954816,
+            "size_bytes": 1199570944,
+            "attributes": 0
+          },
+          {
+            "entry_number": 70,
+            "name": "userdata",
+            "first_lba": 17940480,
+            "last_lba": 26329087,
+            "offset_bytes": 9185525760,
+            "size_bytes": 4294967296,
+            "attributes": 0
+          }
+        ],
+        "placeholder_capacity_fields": true,
+        "limits": [
+          "Explicit offsets and sector size are caller-supplied, not discovered device geometry.",
+          "GUIDs omitted; backup GPT, storage capacity and Huawei signatures not verified.",
+          "CRC validity does not make a firmware template a flash-ready disk image."
+        ],
+        "catalog_id": 442707,
+        "other_gpt_magic_offsets_not_interpreted": [
+          166400,
+          183808
+        ]
+      }
+    },
+    {
+      "catalog_id": 639061,
+      "gpt": {
+        "size_bytes": 200704,
+        "sha256": "229ee3d6c9f0b31acef06f68a0a49aa6baa62837f094cb41a23617cb60620b4e",
+        "header_offset": 512,
+        "entries_offset": 1024,
+        "sector_bytes_supplied": 512,
+        "header_crc_valid": true,
+        "entries_crc_valid": true,
+        "current_lba": 1,
+        "backup_lba": 0,
+        "first_usable_lba": 34,
+        "last_usable_lba": 0,
+        "entries_lba": 2,
+        "entry_slots": 128,
+        "entry_size": 128,
+        "entries": [
+          {
+            "entry_number": 1,
+            "name": "frp",
+            "first_lba": 1024,
+            "last_lba": 2047,
+            "offset_bytes": 524288,
+            "size_bytes": 524288,
+            "attributes": 0
+          },
+          {
+            "entry_number": 2,
+            "name": "persist",
+            "first_lba": 2048,
+            "last_lba": 6143,
+            "offset_bytes": 1048576,
+            "size_bytes": 2097152,
+            "attributes": 0
+          },
+          {
+            "entry_number": 3,
+            "name": "reserved1",
+            "first_lba": 6144,
+            "last_lba": 16383,
+            "offset_bytes": 3145728,
+            "size_bytes": 5242880,
+            "attributes": 0
+          },
+          {
+            "entry_number": 4,
+            "name": "reserved6",
+            "first_lba": 16384,
+            "last_lba": 17407,
+            "offset_bytes": 8388608,
+            "size_bytes": 524288,
+            "attributes": 0
+          },
+          {
+            "entry_number": 5,
+            "name": "vrl",
+            "first_lba": 17408,
+            "last_lba": 18431,
+            "offset_bytes": 8912896,
+            "size_bytes": 524288,
+            "attributes": 0
+          },
+          {
+            "entry_number": 6,
+            "name": "vrl_backup",
+            "first_lba": 18432,
+            "last_lba": 19455,
+            "offset_bytes": 9437184,
+            "size_bytes": 524288,
+            "attributes": 0
+          },
+          {
+            "entry_number": 7,
+            "name": "modem_secure",
+            "first_lba": 19456,
+            "last_lba": 36863,
+            "offset_bytes": 9961472,
+            "size_bytes": 8912896,
+            "attributes": 0
+          },
+          {
+            "entry_number": 8,
+            "name": "nvme",
+            "first_lba": 36864,
+            "last_lba": 47103,
+            "offset_bytes": 18874368,
+            "size_bytes": 5242880,
+            "attributes": 0
+          },
+          {
+            "entry_number": 9,
+            "name": "certification",
+            "first_lba": 47104,
+            "last_lba": 49151,
+            "offset_bytes": 24117248,
+            "size_bytes": 1048576,
+            "attributes": 0
+          },
+          {
+            "entry_number": 10,
+            "name": "oeminfo",
+            "first_lba": 49152,
+            "last_lba": 180223,
+            "offset_bytes": 25165824,
+            "size_bytes": 67108864,
+            "attributes": 0
+          },
+          {
+            "entry_number": 11,
+            "name": "secure_storage",
+            "first_lba": 180224,
+            "last_lba": 245759,
+            "offset_bytes": 92274688,
+            "size_bytes": 33554432,
+            "attributes": 0
+          },
+          {
+            "entry_number": 12,
+            "name": "modem_om",
+            "first_lba": 245760,
+            "last_lba": 311295,
+            "offset_bytes": 125829120,
+            "size_bytes": 33554432,
+            "attributes": 0
+          },
+          {
+            "entry_number": 13,
+            "name": "modemnvm_factory",
+            "first_lba": 311296,
+            "last_lba": 344063,
+            "offset_bytes": 159383552,
+            "size_bytes": 16777216,
+            "attributes": 0
+          },
+          {
+            "entry_number": 14,
+            "name": "modemnvm_backup",
+            "first_lba": 344064,
+            "last_lba": 376831,
+            "offset_bytes": 176160768,
+            "size_bytes": 16777216,
+            "attributes": 0
+          },
+          {
+            "entry_number": 15,
+            "name": "modemnvm_img",
+            "first_lba": 376832,
+            "last_lba": 446463,
+            "offset_bytes": 192937984,
+            "size_bytes": 35651584,
+            "attributes": 0
+          },
+          {
+            "entry_number": 16,
+            "name": "reserved7",
+            "first_lba": 446464,
+            "last_lba": 450559,
+            "offset_bytes": 228589568,
+            "size_bytes": 2097152,
+            "attributes": 0
+          },
+          {
+            "entry_number": 17,
+            "name": "hisee_encos",
+            "first_lba": 450560,
+            "last_lba": 458751,
+            "offset_bytes": 230686720,
+            "size_bytes": 4194304,
+            "attributes": 0
+          },
+          {
+            "entry_number": 18,
+            "name": "veritykey",
+            "first_lba": 458752,
+            "last_lba": 460799,
+            "offset_bytes": 234881024,
+            "size_bytes": 1048576,
+            "attributes": 0
+          },
+          {
+            "entry_number": 19,
+            "name": "ddr_para",
+            "first_lba": 460800,
+            "last_lba": 462847,
+            "offset_bytes": 235929600,
+            "size_bytes": 1048576,
+            "attributes": 0
+          },
+          {
+            "entry_number": 20,
+            "name": "modem_driver",
+            "first_lba": 462848,
+            "last_lba": 503807,
+            "offset_bytes": 236978176,
+            "size_bytes": 20971520,
+            "attributes": 0
+          },
+          {
+            "entry_number": 21,
+            "name": "ramdisk",
+            "first_lba": 503808,
+            "last_lba": 507903,
+            "offset_bytes": 257949696,
+            "size_bytes": 2097152,
+            "attributes": 0
+          },
+          {
+            "entry_number": 22,
+            "name": "vbmeta_system",
+            "first_lba": 507904,
+            "last_lba": 509951,
+            "offset_bytes": 260046848,
+            "size_bytes": 1048576,
+            "attributes": 0
+          },
+          {
+            "entry_number": 23,
+            "name": "vbmeta_vendor",
+            "first_lba": 509952,
+            "last_lba": 511999,
+            "offset_bytes": 261095424,
+            "size_bytes": 1048576,
+            "attributes": 0
+          },
+          {
+            "entry_number": 24,
+            "name": "vbmeta_odm",
+            "first_lba": 512000,
+            "last_lba": 514047,
+            "offset_bytes": 262144000,
+            "size_bytes": 1048576,
+            "attributes": 0
+          },
+          {
+            "entry_number": 25,
+            "name": "vbmeta_cust",
+            "first_lba": 514048,
+            "last_lba": 516095,
+            "offset_bytes": 263192576,
+            "size_bytes": 1048576,
+            "attributes": 0
+          },
+          {
+            "entry_number": 26,
+            "name": "vbmeta_hw_product",
+            "first_lba": 516096,
+            "last_lba": 518143,
+            "offset_bytes": 264241152,
+            "size_bytes": 1048576,
+            "attributes": 0
+          },
+          {
+            "entry_number": 27,
+            "name": "splash2",
+            "first_lba": 518144,
+            "last_lba": 681983,
+            "offset_bytes": 265289728,
+            "size_bytes": 83886080,
+            "attributes": 0
+          },
+          {
+            "entry_number": 28,
+            "name": "bootfail_info",
+            "first_lba": 681984,
+            "last_lba": 686079,
+            "offset_bytes": 349175808,
+            "size_bytes": 2097152,
+            "attributes": 0
+          },
+          {
+            "entry_number": 29,
+            "name": "misc",
+            "first_lba": 686080,
+            "last_lba": 690175,
+            "offset_bytes": 351272960,
+            "size_bytes": 2097152,
+            "attributes": 0
+          },
+          {
+            "entry_number": 30,
+            "name": "dfx",
+            "first_lba": 690176,
+            "last_lba": 722943,
+            "offset_bytes": 353370112,
+            "size_bytes": 16777216,
+            "attributes": 0
+          },
+          {
+            "entry_number": 31,
+            "name": "rrecord",
+            "first_lba": 722944,
+            "last_lba": 755711,
+            "offset_bytes": 370147328,
+            "size_bytes": 16777216,
+            "attributes": 0
+          },
+          {
+            "entry_number": 32,
+            "name": "fw_lpm3",
+            "first_lba": 755712,
+            "last_lba": 756223,
+            "offset_bytes": 386924544,
+            "size_bytes": 262144,
+            "attributes": 0
+          },
+          {
+            "entry_number": 33,
+            "name": "kpatch",
+            "first_lba": 756224,
+            "last_lba": 763903,
+            "offset_bytes": 387186688,
+            "size_bytes": 3932160,
+            "attributes": 0
+          },
+          {
+            "entry_number": 34,
+            "name": "hdcp",
+            "first_lba": 763904,
+            "last_lba": 765951,
+            "offset_bytes": 391118848,
+            "size_bytes": 1048576,
+            "attributes": 0
+          },
+          {
+            "entry_number": 35,
+            "name": "hisee_img",
+            "first_lba": 765952,
+            "last_lba": 774143,
+            "offset_bytes": 392167424,
+            "size_bytes": 4194304,
+            "attributes": 0
+          },
+          {
+            "entry_number": 36,
+            "name": "hhee",
+            "first_lba": 774144,
+            "last_lba": 782335,
+            "offset_bytes": 396361728,
+            "size_bytes": 4194304,
+            "attributes": 0
+          },
+          {
+            "entry_number": 37,
+            "name": "hisee_fs",
+            "first_lba": 782336,
+            "last_lba": 798719,
+            "offset_bytes": 400556032,
+            "size_bytes": 8388608,
+            "attributes": 0
+          },
+          {
+            "entry_number": 38,
+            "name": "fastboot",
+            "first_lba": 798720,
+            "last_lba": 823295,
+            "offset_bytes": 408944640,
+            "size_bytes": 12582912,
+            "attributes": 0
+          },
+          {
+            "entry_number": 39,
+            "name": "vector",
+            "first_lba": 823296,
+            "last_lba": 831487,
+            "offset_bytes": 421527552,
+            "size_bytes": 4194304,
+            "attributes": 0
+          },
+          {
+            "entry_number": 40,
+            "name": "isp_boot",
+            "first_lba": 831488,
+            "last_lba": 835583,
+            "offset_bytes": 425721856,
+            "size_bytes": 2097152,
+            "attributes": 0
+          },
+          {
+            "entry_number": 41,
+            "name": "isp_firmware",
+            "first_lba": 835584,
+            "last_lba": 864255,
+            "offset_bytes": 427819008,
+            "size_bytes": 14680064,
+            "attributes": 0
+          },
+          {
+            "entry_number": 42,
+            "name": "fw_hifi",
+            "first_lba": 864256,
+            "last_lba": 888831,
+            "offset_bytes": 442499072,
+            "size_bytes": 12582912,
+            "attributes": 0
+          },
+          {
+            "entry_number": 43,
+            "name": "teeos",
+            "first_lba": 888832,
+            "last_lba": 905215,
+            "offset_bytes": 455081984,
+            "size_bytes": 8388608,
+            "attributes": 0
+          },
+          {
+            "entry_number": 44,
+            "name": "sensorhub",
+            "first_lba": 905216,
+            "last_lba": 937983,
+            "offset_bytes": 463470592,
+            "size_bytes": 16777216,
+            "attributes": 0
+          },
+          {
+            "entry_number": 45,
+            "name": "erecovery_kernel",
+            "first_lba": 937984,
+            "last_lba": 987135,
+            "offset_bytes": 480247808,
+            "size_bytes": 25165824,
+            "attributes": 0
+          },
+          {
+            "entry_number": 46,
+            "name": "erecovery_ramdisk",
+            "first_lba": 987136,
+            "last_lba": 1052671,
+            "offset_bytes": 505413632,
+            "size_bytes": 33554432,
+            "attributes": 0
+          },
+          {
+            "entry_number": 47,
+            "name": "erecovery_vendor",
+            "first_lba": 1052672,
+            "last_lba": 1085439,
+            "offset_bytes": 538968064,
+            "size_bytes": 16777216,
+            "attributes": 0
+          },
+          {
+            "entry_number": 48,
+            "name": "kernel",
+            "first_lba": 1085440,
+            "last_lba": 1134591,
+            "offset_bytes": 555745280,
+            "size_bytes": 25165824,
+            "attributes": 0
+          },
+          {
+            "entry_number": 49,
+            "name": "eng_system",
+            "first_lba": 1134592,
+            "last_lba": 1159167,
+            "offset_bytes": 580911104,
+            "size_bytes": 12582912,
+            "attributes": 0
+          },
+          {
+            "entry_number": 50,
+            "name": "recovery_ramdisk",
+            "first_lba": 1159168,
+            "last_lba": 1224703,
+            "offset_bytes": 593494016,
+            "size_bytes": 33554432,
+            "attributes": 0
+          },
+          {
+            "entry_number": 51,
+            "name": "recovery_vendor",
+            "first_lba": 1224704,
+            "last_lba": 1257471,
+            "offset_bytes": 627048448,
+            "size_bytes": 16777216,
+            "attributes": 0
+          },
+          {
+            "entry_number": 52,
+            "name": "dts",
+            "first_lba": 1257472,
+            "last_lba": 1273855,
+            "offset_bytes": 643825664,
+            "size_bytes": 8388608,
+            "attributes": 0
+          },
+          {
+            "entry_number": 53,
+            "name": "dto",
+            "first_lba": 1273856,
+            "last_lba": 1323007,
+            "offset_bytes": 652214272,
+            "size_bytes": 25165824,
+            "attributes": 0
+          },
+          {
+            "entry_number": 54,
+            "name": "trustfirmware",
+            "first_lba": 1323008,
+            "last_lba": 1327103,
+            "offset_bytes": 677380096,
+            "size_bytes": 2097152,
+            "attributes": 0
+          },
+          {
+            "entry_number": 55,
+            "name": "modem_fw",
+            "first_lba": 1327104,
+            "last_lba": 1441791,
+            "offset_bytes": 679477248,
+            "size_bytes": 58720256,
+            "attributes": 0
+          },
+          {
+            "entry_number": 56,
+            "name": "eng_vendor",
+            "first_lba": 1441792,
+            "last_lba": 1466367,
+            "offset_bytes": 738197504,
+            "size_bytes": 12582912,
+            "attributes": 0
+          },
+          {
+            "entry_number": 57,
+            "name": "modem_patch_nv",
+            "first_lba": 1466368,
+            "last_lba": 1474559,
+            "offset_bytes": 750780416,
+            "size_bytes": 4194304,
+            "attributes": 0
+          },
+          {
+            "entry_number": 58,
+            "name": "reserved4",
+            "first_lba": 1474560,
+            "last_lba": 1490943,
+            "offset_bytes": 754974720,
+            "size_bytes": 8388608,
+            "attributes": 0
+          },
+          {
+            "entry_number": 59,
+            "name": "recovery_vbmeta",
+            "first_lba": 1490944,
+            "last_lba": 1495039,
+            "offset_bytes": 763363328,
+            "size_bytes": 2097152,
+            "attributes": 0
+          },
+          {
+            "entry_number": 60,
+            "name": "erecovery_vbmeta",
+            "first_lba": 1495040,
+            "last_lba": 1499135,
+            "offset_bytes": 765460480,
+            "size_bytes": 2097152,
+            "attributes": 0
+          },
+          {
+            "entry_number": 61,
+            "name": "vbmeta",
+            "first_lba": 1499136,
+            "last_lba": 1507327,
+            "offset_bytes": 767557632,
+            "size_bytes": 4194304,
+            "attributes": 0
+          },
+          {
+            "entry_number": 62,
+            "name": "modemnvm_update",
+            "first_lba": 1507328,
+            "last_lba": 1540095,
+            "offset_bytes": 771751936,
+            "size_bytes": 16777216,
+            "attributes": 0
+          },
+          {
+            "entry_number": 63,
+            "name": "modemnvm_cust",
+            "first_lba": 1540096,
+            "last_lba": 1572863,
+            "offset_bytes": 788529152,
+            "size_bytes": 16777216,
+            "attributes": 0
+          },
+          {
+            "entry_number": 64,
+            "name": "patch",
+            "first_lba": 1572864,
+            "last_lba": 1638399,
+            "offset_bytes": 805306368,
+            "size_bytes": 33554432,
+            "attributes": 0
+          },
+          {
+            "entry_number": 65,
+            "name": "cache",
+            "first_lba": 1638400,
+            "last_lba": 1851391,
+            "offset_bytes": 838860800,
+            "size_bytes": 109051904,
+            "attributes": 0
+          },
+          {
+            "entry_number": 66,
+            "name": "preas",
+            "first_lba": 1851392,
+            "last_lba": 3915775,
+            "offset_bytes": 947912704,
+            "size_bytes": 1056964608,
+            "attributes": 0
+          },
+          {
+            "entry_number": 67,
+            "name": "preavs",
+            "first_lba": 3915776,
+            "last_lba": 3981311,
+            "offset_bytes": 2004877312,
+            "size_bytes": 33554432,
+            "attributes": 0
+          },
+          {
+            "entry_number": 68,
+            "name": "super",
+            "first_lba": 3981312,
+            "last_lba": 14417919,
+            "offset_bytes": 2038431744,
+            "size_bytes": 5343543296,
+            "attributes": 0
+          },
+          {
+            "entry_number": 69,
+            "name": "version",
+            "first_lba": 14417920,
+            "last_lba": 15597567,
+            "offset_bytes": 7381975040,
+            "size_bytes": 603979776,
+            "attributes": 0
+          },
+          {
+            "entry_number": 70,
+            "name": "preload",
+            "first_lba": 15597568,
+            "last_lba": 17940479,
+            "offset_bytes": 7985954816,
+            "size_bytes": 1199570944,
+            "attributes": 0
+          },
+          {
+            "entry_number": 71,
+            "name": "userdata",
+            "first_lba": 17940480,
+            "last_lba": 26329087,
+            "offset_bytes": 9185525760,
+            "size_bytes": 4294967296,
+            "attributes": 0
+          }
+        ],
+        "placeholder_capacity_fields": true,
+        "limits": [
+          "Explicit offsets and sector size are caller-supplied, not discovered device geometry.",
+          "GUIDs omitted; backup GPT, storage capacity and Huawei signatures not verified.",
+          "CRC validity does not make a firmware template a flash-ready disk image."
+        ],
+        "catalog_id": 639061,
+        "other_gpt_magic_offsets_not_interpreted": [
+          166400,
+          183808
+        ]
+      }
+    }
+  ],
+  "comparison": {
+    "android9_only": [
+      "cust",
+      "odm",
+      "product",
+      "reserved2",
+      "reserved3",
+      "system",
+      "vendor"
+    ],
+    "android10_only": [
+      "kpatch",
+      "ramdisk",
+      "super",
+      "vbmeta_cust",
+      "vbmeta_hw_product",
+      "vbmeta_odm",
+      "vbmeta_system",
+      "vbmeta_vendor"
+    ],
+    "changed_shared": [
+      {
+        "name": "preas",
+        "android9": {
+          "entry_number": 61,
+          "name": "preas",
+          "first_lba": 1851392,
+          "last_lba": 3850239,
+          "offset_bytes": 947912704,
+          "size_bytes": 1023410176,
+          "attributes": 0
+        },
+        "android10": {
+          "entry_number": 66,
+          "name": "preas",
+          "first_lba": 1851392,
+          "last_lba": 3915775,
+          "offset_bytes": 947912704,
+          "size_bytes": 1056964608,
+          "attributes": 0
+        }
+      },
+      {
+        "name": "preavs",
+        "android9": {
+          "entry_number": 62,
+          "name": "preavs",
+          "first_lba": 3850240,
+          "last_lba": 3915775,
+          "offset_bytes": 1971322880,
+          "size_bytes": 33554432,
+          "attributes": 0
+        },
+        "android10": {
+          "entry_number": 67,
+          "name": "preavs",
+          "first_lba": 3915776,
+          "last_lba": 3981311,
+          "offset_bytes": 2004877312,
+          "size_bytes": 33554432,
+          "attributes": 0
+        }
+      }
+    ],
+    "selected_boot_and_userdata": [
+      {
+        "name": "kernel",
+        "android9": {
+          "entry_number": 43,
+          "name": "kernel_a",
+          "first_lba": 1085440,
+          "last_lba": 1134591,
+          "offset_bytes": 555745280,
+          "size_bytes": 25165824,
+          "attributes": 0
+        },
+        "android10": {
+          "entry_number": 48,
+          "name": "kernel",
+          "first_lba": 1085440,
+          "last_lba": 1134591,
+          "offset_bytes": 555745280,
+          "size_bytes": 25165824,
+          "attributes": 0
+        }
+      },
+      {
+        "name": "recovery_ramdisk",
+        "android9": {
+          "entry_number": 45,
+          "name": "recovery_ramdisk_a",
+          "first_lba": 1159168,
+          "last_lba": 1224703,
+          "offset_bytes": 593494016,
+          "size_bytes": 33554432,
+          "attributes": 0
+        },
+        "android10": {
+          "entry_number": 50,
+          "name": "recovery_ramdisk",
+          "first_lba": 1159168,
+          "last_lba": 1224703,
+          "offset_bytes": 593494016,
+          "size_bytes": 33554432,
+          "attributes": 0
+        }
+      },
+      {
+        "name": "erecovery_kernel",
+        "android9": {
+          "entry_number": 40,
+          "name": "erecovery_kernel_a",
+          "first_lba": 937984,
+          "last_lba": 987135,
+          "offset_bytes": 480247808,
+          "size_bytes": 25165824,
+          "attributes": 0
+        },
+        "android10": {
+          "entry_number": 45,
+          "name": "erecovery_kernel",
+          "first_lba": 937984,
+          "last_lba": 987135,
+          "offset_bytes": 480247808,
+          "size_bytes": 25165824,
+          "attributes": 0
+        }
+      },
+      {
+        "name": "erecovery_ramdisk",
+        "android9": {
+          "entry_number": 41,
+          "name": "erecovery_ramdisk_a",
+          "first_lba": 987136,
+          "last_lba": 1052671,
+          "offset_bytes": 505413632,
+          "size_bytes": 33554432,
+          "attributes": 0
+        },
+        "android10": {
+          "entry_number": 46,
+          "name": "erecovery_ramdisk",
+          "first_lba": 987136,
+          "last_lba": 1052671,
+          "offset_bytes": 505413632,
+          "size_bytes": 33554432,
+          "attributes": 0
+        }
+      },
+      {
+        "name": "dts",
+        "android9": {
+          "entry_number": 47,
+          "name": "dts_a",
+          "first_lba": 1257472,
+          "last_lba": 1273855,
+          "offset_bytes": 643825664,
+          "size_bytes": 8388608,
+          "attributes": 0
+        },
+        "android10": {
+          "entry_number": 52,
+          "name": "dts",
+          "first_lba": 1257472,
+          "last_lba": 1273855,
+          "offset_bytes": 643825664,
+          "size_bytes": 8388608,
+          "attributes": 0
+        }
+      },
+      {
+        "name": "dto",
+        "android9": {
+          "entry_number": 48,
+          "name": "dto_a",
+          "first_lba": 1273856,
+          "last_lba": 1323007,
+          "offset_bytes": 652214272,
+          "size_bytes": 25165824,
+          "attributes": 0
+        },
+        "android10": {
+          "entry_number": 53,
+          "name": "dto",
+          "first_lba": 1273856,
+          "last_lba": 1323007,
+          "offset_bytes": 652214272,
+          "size_bytes": 25165824,
+          "attributes": 0
+        }
+      },
+      {
+        "name": "version",
+        "android9": {
+          "entry_number": 68,
+          "name": "version_a",
+          "first_lba": 14417920,
+          "last_lba": 15597567,
+          "offset_bytes": 7381975040,
+          "size_bytes": 603979776,
+          "attributes": 0
+        },
+        "android10": {
+          "entry_number": 69,
+          "name": "version",
+          "first_lba": 14417920,
+          "last_lba": 15597567,
+          "offset_bytes": 7381975040,
+          "size_bytes": 603979776,
+          "attributes": 0
+        }
+      },
+      {
+        "name": "preload",
+        "android9": {
+          "entry_number": 69,
+          "name": "preload_a",
+          "first_lba": 15597568,
+          "last_lba": 17940479,
+          "offset_bytes": 7985954816,
+          "size_bytes": 1199570944,
+          "attributes": 0
+        },
+        "android10": {
+          "entry_number": 70,
+          "name": "preload",
+          "first_lba": 15597568,
+          "last_lba": 17940479,
+          "offset_bytes": 7985954816,
+          "size_bytes": 1199570944,
+          "attributes": 0
+        }
+      },
+      {
+        "name": "userdata",
+        "android9": {
+          "entry_number": 70,
+          "name": "userdata",
+          "first_lba": 17940480,
+          "last_lba": 26329087,
+          "offset_bytes": 9185525760,
+          "size_bytes": 4294967296,
+          "attributes": 0
+        },
+        "android10": {
+          "entry_number": 71,
+          "name": "userdata",
+          "first_lba": 17940480,
+          "last_lba": 26329087,
+          "offset_bytes": 9185525760,
+          "size_bytes": 4294967296,
+          "attributes": 0
+        }
+      }
+    ]
+  },
+  "name_normalization": "Only for comparison, remove one terminal _a from Android-9 labels. The raw entries preserve actual names. This does not establish A/B slot support.",
+  "limits": [
+    "Backup-LBA and last-usable-LBA header fields are zero in both selected tables. These are incomplete capacity templates, not validated full-device disk images.",
+    "Both templates describe a 4 GiB userdata extent; this is not the owner-reported 128 GB storage size or a measured userdata capacity.",
+    "Reference userdata changes from entry 70 to 71 while its byte range stays equal. Actual current userdata index was not queried.",
+    "Kernel/recovery/DT byte ranges stay equal despite label/index changes; this does not make the firmware versions interchangeable.",
+    "Do not infer that omitting a separate PTABLE.APP input prevents GPT writes: the base UPDATE.APP itself also contains HISIUFS_GPT.",
+    "Huawei signatures, updater partition-migration semantics and device installation/restoration remain unverified."
+  ]
+}

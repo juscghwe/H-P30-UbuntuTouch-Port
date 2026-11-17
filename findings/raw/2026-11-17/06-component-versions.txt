@@ -1,0 +1,17 @@
+E17 — Owner-reported component versions after automatic return to Android
+Date: 2026-11-17; exact acquisition time not independently measured.
+Origin: selected read-only ADB properties, supplied by the owner.
+
+Command (one physical PowerShell line):
+.\adb.exe shell 'echo BASE; getprop ro.comp.hl.product_base_version; echo CUST; getprop ro.comp.hl.product_cust_version; echo PRELOAD; getprop ro.comp.hl.product_preload_version'
+
+Owner-supplied output:
+BASE
+MAR-LGRP2-OVS 10.0.0.562
+CUST
+MAR-L21A-CUST 10.0.0.15(C431)
+PRELOAD
+MAR-L21A-PRELOAD 10.0.0.7(C431R2)
+
+These identify the reported retained component versions. They do not expose the
+OEMINFO comparison hash or establish image equality with downloaded references.

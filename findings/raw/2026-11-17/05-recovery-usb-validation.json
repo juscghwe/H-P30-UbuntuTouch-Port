@@ -1,0 +1,185 @@
+{
+  "inspection_date": "2026-11-17",
+  "classification": "Static reference-firmware analysis; no recovery/updater executable run. Not a trace from the phone.",
+  "method": "Extract RECOVERY_RAMDISK as data; parse Android boot v0 page/ramdisk bounds; bounded gzip decompression with CRC and newc entry bounds; copy selected regular files only. Test embedded dload ZIP CRC and read its updater as ELF data. Use LLVM objdump 9.0.3svn, ELF unwind ranges and manually reviewed address/string references for selected functions.",
+  "package_recovery_inputs": {
+    "442707": {
+      "catalog_id": 442707,
+      "records": [
+        {
+          "record": "RECOVERY_RAMDISK",
+          "bytes": 33554432,
+          "sha256": "bf0569021ab89199f0b20c880fa4998b687ad26553cf98ef07e403a819345e27",
+          "android_header_offset": 0,
+          "ramdisk_offset": 2048,
+          "ramdisk_declared_bytes": 30588201,
+          "cpio_bytes": 78532864,
+          "cpio_sha256": "35a8289867550b983fd00b3c0cf763232ea43192d3d79c89c525ff235b4b0ac4",
+          "cpio_entries": 1690,
+          "selected": [
+            {
+              "name": "dload/update_huawei_dload.zip",
+              "bytes": 1220319,
+              "sha256": "4b720cb4536ce6bb45e344a4ab7e6af0597fc9684fbc72b67447e9ce37a2b809"
+            },
+            {
+              "name": "sbin/recovery",
+              "bytes": 4735576,
+              "sha256": "429dd773be7a9da3a03637670ea427a04f6fca3f2973a0c49b99edcab3189482"
+            },
+            {
+              "name": "sbin/update-binary",
+              "bytes": 3451888,
+              "sha256": "75c00b52cab466b0b5bfb9f4c3dd000c88e7721770a40deb6ec2140d9e7d6dd5"
+            }
+          ]
+        },
+        {
+          "record": "RECOVERY_VENDOR",
+          "bytes": 16777216,
+          "sha256": "3fc5f58408daf2fe2c0440bf6180b679afdbdd2499a9c44dad2d81287b177103"
+        },
+        {
+          "record": "FASTBOOT",
+          "bytes": 3987456,
+          "sha256": "6ddc5f3f2ee1af569f213e245dc1a009465aa7f8358273ce7c254992f28ec9e0"
+        }
+      ]
+    },
+    "639061": {
+      "catalog_id": 639061,
+      "records": [
+        {
+          "record": "RECOVERY_RAMDISK",
+          "bytes": 33554432,
+          "sha256": "0bfa98cb313b2e8e89eacebad04deaa5b06f36e6d0b9670a12fde1d8fc6db4f5",
+          "android_header_offset": 0,
+          "ramdisk_offset": 2048,
+          "ramdisk_declared_bytes": 27962155,
+          "cpio_bytes": 65640704,
+          "cpio_sha256": "e4b7d2b4fabf1a0984592b8dd2a8fbc0b7529e1a1fc5f31de0a691672e19a746",
+          "cpio_entries": 1957,
+          "selected": [
+            {
+              "name": "dload/update_huawei_dload.zip",
+              "bytes": 1301820,
+              "sha256": "4b421b279f07089698834fa0cc42a6aaaaf54c2087ea6b6268216608cf3a731e"
+            },
+            {
+              "name": "sbin/recovery",
+              "bytes": 3982152,
+              "sha256": "6ff4160ce3290673742dcce423097bbcdec5105749590a998b19c90e748c71b6"
+            },
+            {
+              "name": "sbin/update-binary",
+              "bytes": 3510064,
+              "sha256": "68ae2ec86267cab8a4ace3565954a4e799ffacfced355ed1d80bdae2ba371041"
+            }
+          ]
+        },
+        {
+          "record": "RECOVERY_VENDOR",
+          "bytes": 16777216,
+          "sha256": "d230949e1c4b7615e6a9cf377049bce453803aaf60b167b117cd3326c148cef1"
+        },
+        {
+          "record": "FASTBOOT",
+          "bytes": 3874752,
+          "sha256": "3e001cc270d24b3b8f5da8204db591445b4ba88a8bd9cfd750e0c24f2f4efbeb"
+        }
+      ]
+    }
+  },
+  "android10_dload_updater": {
+    "path_within_ramdisk_zip": "dload/update_huawei_dload.zip: META-INF/com/google/android/update-binary",
+    "bytes": 2659784,
+    "sha256": "bef4da7f2096ef338fc643c95e3e754d1039ec39d8da06c0ac2fd42572fc32b4",
+    "format": "ELF64 little-endian AArch64 ET_EXEC",
+    "load_address": "0x200000",
+    "zip_members": 12,
+    "zip_crc": "pass",
+    "different_from_sbin_update_binary": true,
+    "selected_functions": [
+      {
+        "name_inferred_from_logging": "base_version_list_write_func",
+        "virtual_start": "0x2eaed8",
+        "virtual_end_exclusive": "0x2eb050",
+        "observation": "Uses a 32-byte value in updater state and calls the list-validation function; a successful validation marks its completion flag."
+      },
+      {
+        "name_inferred_from_logging": "list-validation caller",
+        "virtual_start": "0x2eabfc",
+        "virtual_end_exclusive": "0x2eaed8",
+        "observation": "Calls the line/hash check; failure takes the version-list error path and returns nonzero. Additional state-dependent paths exist."
+      },
+      {
+        "name_inferred_from_logging": "check_software_version",
+        "virtual_start": "0x2efacc",
+        "virtual_end_exclusive": "0x2efca0",
+        "observation": "Iterates CR/LF-separated lines, hashes candidate strings and compares 32 bytes. An all-0xff comparison value has special handling."
+      },
+      {
+        "name_inferred_from_logging": "line hash comparison",
+        "virtual_start": "0x2efca0",
+        "virtual_end_exclusive": "0x2efd78",
+        "observation": "Calls a SHA-256 routine on a line then compares 32 output bytes. SHA-256 identification additionally checked against all eight standard IV words at virtual address 0x23b4d0."
+      },
+      {
+        "name_inferred_from_logging": "stored comparison-value read site",
+        "virtual_start": "0x2e5f2c",
+        "virtual_end_exclusive": "0x2e5fc0",
+        "observation": "Reads OEMINFO item 156, length 32, through the rmt_oeminfo_read wrapper into the state buffer later passed to base-version validation. A failed read sets a separate error/state flag."
+      },
+      {
+        "name_inferred_from_logging": "USB wait setup",
+        "virtual_start": "0x301124",
+        "virtual_end_exclusive": "0x30130c",
+        "observation": "Creates a wait thread and logs a 300-second wait for USB update start."
+      },
+      {
+        "name_inferred_from_logging": "USB wait thread",
+        "virtual_start": "0x30130c",
+        "virtual_end_exclusive": "0x301398",
+        "observation": "Checks a start flag between wait calls with argument 1, counts up to 300 and then calls WaitingTimeoutReboot."
+      },
+      {
+        "name_inferred_from_logging": "WaitingTimeoutReboot",
+        "virtual_start": "0x3014e8",
+        "virtual_end_exclusive": "0x30156c",
+        "observation": "Logs no action in 300 seconds and follows a reboot path containing sys.powerctl and reboot, literals; selected range is a bounded excerpt, not a full function audit."
+      }
+    ]
+  },
+  "android9_dload_updater": {
+    "bytes": 2576112,
+    "sha256": "40a629d5197f6594532d40016767f571db6b460035144df9c9eb236634993685",
+    "zip_members": 12,
+    "zip_crc": "pass"
+  },
+  "interpretation": [
+    "A 300-second no-action reboot path is consistent with the owner-observed 5% screen and automatic return. Exact phone recovery byte equality and elapsed time were not measured.",
+    "Version checking is supported by inspected conditional control flow, not only string presence. However the actual OEMINFO item 156 value was not read from this phone.",
+    "The confirmed Android component properties, package VERSION labels and internal BASE_VER strings are distinct inputs. Do not substitute a getprop value for the stored 32-byte comparison value.",
+    "Presence of SHA-256/list validation does not establish signature validity or hardware rollback counters, and does not prove which condition this exact downgrade would encounter.",
+    "The embedded wrapper updater-script names an unrelated Qualcomm target; it was not executed or used as a MAR-LX1A flash recipe. The separate compiled DLOAD updater is the analyzed program."
+  ],
+  "host_preparation_checks": {
+    "script": "scripts/prepare-huawei-firmware.ps1",
+    "runtime": "PowerShell 7.7.0 on Linux; Windows PowerShell 5.1 execution not yet tested",
+    "zip64_fixture_extracted_bytes": 4294968320,
+    "results": [
+      "Large APP size and SHA-256 passed",
+      "Existing valid output verified without overwrite",
+      "Incorrect hash rejected",
+      "Existing partial extraction preserved",
+      "Failed extracted output retained as .part, not promoted",
+      "Unrelated ZIP traversal member not extracted",
+      "Non-Huawei or non-HTTPS URL rejected"
+    ],
+    "scope": "Offline fixtures and real cached-archive verification; no Windows phone or network transfer test."
+  },
+  "limits": [
+    "Reference .562 archive is not byte-identical to the owner HiSuite base capture by known source size. Current phone recovery byte equality remains unverified.",
+    "No version-check modification, OEMINFO change, temporary loader, firmware write, downgrade, persistent unlock or custom boot tested."
+  ]
+}
