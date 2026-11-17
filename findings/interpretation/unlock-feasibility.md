@@ -6,7 +6,9 @@ Research date: **2026-11-12**, Europe/Berlin. Evidence catalog: [R01–R15](../r
 
 **No verified, complete software-only persistent-unlock procedure has been established for this phone, now owner-reported on EMUI 10.0.0 / 10.0.0.562(C431E15R2P7).** The earlier Settings build was 12.0.0.262(C431E3R2P2). This is a limit of the evidence found, not proof that no such method exists. Do not prescribe a further firmware change merely because an older generic unlock guide exists.
 
-Physical test-point routes remain background evidence; no phone disassembly has been demonstrated. The [owner-operated USB Upgrade tests](android-utility-usb-upgrade.md) include mode entry and a failed Android-9 metadata transfer, followed by normal Android boot. Firmware archives were downloaded and inspected offline; no successful downgrade or persistent unlock was demonstrated.
+Hardware-route research is now in scope; the [hardware testpoint assessment](hardware-testpoint.md)
+separates download-mode access, temporary loader access and persistent unlock.
+No phone disassembly has been demonstrated. The [owner-operated USB Upgrade tests](android-utility-usb-upgrade.md) include mode entry and a failed Android-9 metadata transfer, followed by normal Android boot. Firmware archives were downloaded and inspected offline; no successful downgrade or persistent unlock was demonstrated.
 
 ## Owner DLOAD attempt: 2026-11-17
 
@@ -89,7 +91,7 @@ candidate executable or repeated guessing loop was run by the research environme
 | HCU + DC Phoenix software test point (R01–R03) | HCU documents Android 9 and either software/hardware TP. MAR-LX1A is listed. DC Phoenix offers an ADB-based software-TP path, but documents limited firmware support and no guarantee. | No supported no-opening entry/downgrade/exit chain demonstrated for .262; paid service required; Android version and EMUI label must both be considered. |
 | Same-model vendor forum (R05) | C431 Android-10 owner reports a nonpersistent result; support advises downgrade and owner later reports success. | Old .197/.275 environment, no complete modern .262-to-9.1 package chain. The brief success reply does not independently establish all steps or long-term persistence. |
 | Same-model failure report (R04) | In 2025, owner reports DC Phoenix software TP and HCU claiming unlock, followed by a locked normal fastboot screen. Support points to Android version; later downgrade attempt fails. | Not a working recipe; precise firmware chain unverified. |
-| Same-model C431 report (R06) | Owner starts at EMUI 12 .251, uses physical TP, installs 9.1.0.399, and reports an Android GSI boot. | Different starting build from ours and requires opening phone; outside current owner constraint. |
+| Same-model C431 report (R06) | Owner starts at EMUI 12 .251, uses physical TP, installs 9.1.0.399, and reports an Android GSI boot. | Different starting build from ours and requires opening phone; target procedure remains unverified. |
 | Remote commercial service (R07) | Provider explicitly lists MAR-LX1A and EMUI 9.1, with a USB/remote service description. | It does not validate .262 or supply the missing no-opening downgrade procedure. No purchase/contact performed. |
 | Kirin-Tool (R08) | Original project supports the SoC and contains separate service-loader, software-TP and normal unlock operations. | No observed .262 persistent unlock. Feature names are not end-to-end compatibility evidence. |
 | Broad universal-toolkit claims (R09) | README asserts broad firmware support; inspected module dispatches OEM memory-write requests and reports command return status. | No demonstrated target-build success or reboot-persistence test. Not accepted as a verified shortcut. |

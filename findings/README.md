@@ -45,6 +45,7 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 - [Owner constraint: software-only](raw/2026-11-12/02-owner-constraint.txt).
 - [Research evidence checksums](raw/2026-11-12/SHA256SUMS).
 - [Unlock feasibility assessment](interpretation/unlock-feasibility.md) — vendor requirements, same-model reports, rejected shortcuts and remaining gaps.
+- [Hardware testpoint assessment](interpretation/hardware-testpoint.md) — physical access, temporary versus persistent unlock, and [pinned loader comparisons](raw/2026-11-17/10-hardware-testpoint-research.json); no hardware test performed.
 - [Kernel config comparisons](raw/2026-11-12/04-kernel-source-comparison.json) — generated static comparisons with source pins and input hashes.
 - [Selected upstream source observations](raw/2026-11-12/05-source-inspection.json).
 - [Additional same-model downgrade report](raw/2026-11-12/06-downgrade-report.json) — selected public comments, including the correction of a cross-model success claim.

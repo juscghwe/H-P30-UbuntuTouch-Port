@@ -6,6 +6,12 @@ The bootloader is locked. The documented source/toolchain pair produces offline 
 
 ## Unlock feasibility
 
+**Hardware-route investigation:** [the testpoint assessment](hardware-testpoint.md)
+identifies the closest C431 report and three shared loader components. Hardware
+entry does not satisfy HCU's separate Android-9 persistent-unlock prerequisite.
+First establish board matching and download-mode enumeration, then compatible
+loader/readback/exit behavior; no hardware operation or recovery has been verified.
+
 **2026-11-17 USB Upgrade result:** [the Android-9 DLOAD attempt](android-utility-usb-upgrade.md)
 failed on the 25-byte BASE_VER record in the small BASE-PTABLE package. AUP then
 printed a success-looking banner and proceeded to CUST; selected static branches

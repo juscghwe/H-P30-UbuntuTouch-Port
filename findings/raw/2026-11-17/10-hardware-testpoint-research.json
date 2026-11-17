@@ -1,0 +1,60 @@
+{
+  "inspection_date": "2026-11-17",
+  "classification": "External reports and offline archive/source comparison; no target-phone hardware test.",
+  "sources": [
+    {
+      "url": "https://hcu-client.com/huawei-bootloader-unlock-via-testpoint/",
+      "origin": "Vendor procedure",
+      "observations": ["Requires Android 9 for its unlock procedure.", "Accepts hardware or software testpoint entry.", "Requires timed account or activated dongle."]
+    },
+    {
+      "url": "https://www.dc-unlocker.com/dcphoenix-load-and-temporarily-unlock-bootloader",
+      "origin": "Vendor procedure",
+      "observation": "Explicitly describes loader-based fastboot unlock lasting until phone restart."
+    },
+    {
+      "url": "https://catwithcode.moe/Blog/2026.08.06_P30_Lite_Root/P30_Lite_Root.html",
+      "origin": "Firsthand third-party report, not independently reproduced",
+      "html_sha256": "a94c3baaf79022fa71409945ccb7c1a8dfd3a46b64a06f182d315bb3c8a4bdc0",
+      "model": "MAR-LX1A",
+      "starting_build_as_written": "12.0.0.251(C431E3RP2P2)",
+      "memory": "4 GB / 128 GB",
+      "tool_description": "Android Utility patched; linked XDA artifact not retrieved or hashed",
+      "selected_sequence": ["Hardware testpoint / factory fastboot", "Android-9 set 442707 / 322136 / 321529 through FW Update (FB)", "Further loader session and unlock request", "Later GSI boot reported"],
+      "testpoint_image_url": "https://catwithcode.moe/Blog/2026.08.06_P30_Lite_Root/DATA/01_test-point.jpg",
+      "testpoint_image_sha256": "93949b344f641f2681bd8453c7b15063f02666e0850b2e0c8a686996e48e3610",
+      "image_review": "Close-up shows tweezers bridging a board pad beside a shield to the shield. Image retained outside the public checkout; target board revision not compared."
+    },
+    {
+      "url": "https://www.idoc.eu/guides/en/huawei/huawei-p30-lite/battery-replacement/838",
+      "origin": "Model-specific repair guide",
+      "selected_observations": ["Glued glass back with fingerprint flex.", "Motherboard cover and battery-connector bracket precede battery disconnection.", "Battery-cell extraction is a later, separate step."]
+    },
+    {
+      "url": "https://github.com/map220v/kirin710_bootrom_exploit/tree/f8998dda9352496074faa4d8fa0e7e024b167894",
+      "origin": "Pinned public research source and Git tree metadata",
+      "commit": "f8998dda9352496074faa4d8fa0e7e024b167894",
+      "readme_git_blob": "1eaff8e2cce701892d0b9823696fd9b5c374381b",
+      "script_git_blob": "1834c724c519cbd47b4f3768c27e711980a80734",
+      "reported_test_device": "Honor 8X JSN-L21 / EMUI 9.1",
+      "readme_limit": "Supplied bootloader images require EMUI-9 board data for display, charging, fuel-gauge and vibrator operation.",
+      "script_observations": ["Selects serial device VID 0x12d1 / PID 0x3609.", "Uploads patched xloader.img, uce.img and fastbootdec.img into memory.", "No script execution performed."]
+    }
+  ],
+  "aup_archive": {
+    "name": "AndroidUtility.v200.7z",
+    "sha256": "bbad153b50b56bf98b1ca97a5262de38bac3e0b8620cd22f3610d1df4742b8eb",
+    "method": "Read selected ZIP members as data. Compute SHA-256 and Git blob SHA-1 over blob-header plus exact bytes; compare with the pinned public Git tree.",
+    "matching_components": [
+      {"member": "KIRIN/KIRIN710/boot3", "bytes": 147456, "sha256": "a3c74d3d95c6182e5e44b8dc0aa0f9f3e7323528992869cdeb53c27e72f1423b", "git_blob": "cde42fe0ef040685061335c26a69e45b07fc26e3", "matching_file": "xloader-orig.img"},
+      {"member": "KIRIN/KIRIN710/boot4", "bytes": 40960, "sha256": "618d2459094818b2f23944214e2fe12edd95ff384a4f14e9f86c0b63c981d6c4", "git_blob": "4ee64111f88500eb46d6f02bb29eb1e78d3e6b10", "matching_file": "uce.img"},
+      {"member": "KIRIN/KIRIN710/boot7", "bytes": 4675584, "sha256": "ee9bbf87c59d0e5f514c2d059c9b6c219e607e6ffe7f412c80bbaceb0e769f1c", "git_blob": "8327c9a002edf1dc45a2e43dd6132bf16304bdc9", "matching_file": "fastboot.img"}
+    ],
+    "nonmatching_patched_xloader_git_blob": "215eddd4845a11912b15889fb32fa1c32f2e1fe8",
+    "limits": ["Only three component matches; not a complete loader-sequence audit.", "No equivalence established between publisher v200 and the report's patched build.", "No target compatibility, successful readback, recovery or persistent unlock demonstrated."]
+  },
+  "unavailable_sources": [
+    {"url": "https://xdaforums.com/t/p30-lite-with-los-20-21-and-magisk-it-s-working.4759065/", "result": "HTTP 502"},
+    {"url": "https://xdaforums.com/t/p30-lite-with-los-20-21-and-magisk-it-s-working.4759065/post-90388880", "result": "HTTP 502"}
+  ]
+}

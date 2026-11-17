@@ -7,3 +7,4 @@ b506084d6a8ab74ffc8ddf7bc8f576820cb140b0a490b77a6cf553c0de09bec0  05-recovery-us
 e5e53bad0b0dee41ec6b5f4ef50b456eec5b5ba27f58d88c5b7c4a05839ce480  07-owner-dload-failure.json
 24599b2769c26bd6220fb43624324b18b4922a176a2ef82f6059efa63d7b20fd  08-post-attempt-state.txt
 173d5222ea899faaa2a68ecc04819114fa0ee24e37543522b61e7e35249a0c45  09-aup-failure-handling.json
+5e1eedf0a1be04e94e95b9346759bc2da5983b076b6de3079afcffa2d3b79eca  10-hardware-testpoint-research.json
