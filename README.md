@@ -4,7 +4,7 @@ Target: **Huawei P30 Lite MAR-LX1A / HWMAR, Kirin 710**. Initial goal: a usable 
 
 Start with [findings](findings/README.md). Evidence is separated into sanitized raw data and interpretation, including uncertainty and untested proposals.
 
-**Current status:** the owner confirms the official rollback to EMUI 10.0.0 / build 10.0.0.562(C431E15R2P7). The bootloader was last observed locked; no complete software-only persistent-unlock route is verified. HiSuite currently offers no owner-observed Android-9 rollback. An Android-9 USB Upgrade attempt failed during BASE-PTABLE metadata; Android subsequently reported boot completion with the same EMUI-10 component labels. No custom image has been flashed or boot-tested.
+**Current status (2026-11-20):** the owner reports normal stock EMUI 9.1 startup after a hardware-testpoint/factory-fastboot downgrade, followed by **unlocked ordinary fastboot** without a service loader. [The technical checkpoint](findings/interpretation/unlock-checkpoint.md) records the failed Android-10 persistence test, successful retained-installation check, GPT comparisons and remaining limits. No custom image or Ubuntu Touch boot has been demonstrated. Fresh kernel/configuration and vendor-version evidence is required for the retained Android-9 base.
 
 This repository currently contains documentation and configuration evidence, not an installable port. The target is the **P30 Lite**, not the Kirin 980 P30/P30 Pro.
 

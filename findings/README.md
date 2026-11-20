@@ -2,9 +2,11 @@
 
 ## Scope and status
 
-Device evidence dates: **2026-11-11–17**; source research: **2026-11-12–17**; firmware/unlock assessment update: **2026-11-17**, Europe/Berlin. Device evidence was supplied by the owner as command output and selected transcriptions. Exact acquisition times and the phone's clock have not been independently verified. Numeric file timestamps are not used to infer firmware state.
+Device evidence dates: **2026-11-11–20**; source research: **2026-11-12–17**; firmware/unlock assessment update: **2026-11-20**, Europe/Berlin. Device evidence was supplied by the owner as command output and selected transcriptions. Exact acquisition times and the phone's clock have not been independently verified. Numeric file timestamps are not used to infer firmware state.
 
 Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is deferred; charging, thermal behavior, sleep/wake and reconnect reliability are required milestones.
+
+**Latest checkpoint:** [normal EMUI 9.1 startup and persistent ordinary-fastboot unlock](interpretation/unlock-checkpoint.md). The earlier Android-10 builds and vendor evidence remain historical inputs; current runtime SDK/VNDK and kernel/configuration are pending.
 
 ## Sanitized raw evidence
 
@@ -36,6 +38,9 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 | E18 | [Failed Android-9 DLOAD attempt](raw/2026-11-17/07-owner-dload-failure.json) | Selected owner log/screen observations; BASE_VER failure, contradictory success banner, CUST continuation and user termination |
 | E19 | [Post-attempt boot and component state](raw/2026-11-17/08-post-attempt-state.txt) | Owner reports boot completion and unchanged component labels; native recovery-log metadata access denied |
 | — | [AUP failure propagation](raw/2026-11-17/09-aup-failure-handling.json) | Selected static x86 branches explaining the success-looking banner after failure; not the native error cause |
+| E20 | [Hardware entry, downgrade and unlock output](raw/2026-11-20/01-owner-unlock-evidence.txt) | Selected owner reports/tool output; ordinary fastboot unlocked after normal EMUI 9.1 startup |
+| — | [Actual primary GPT comparison](raw/2026-11-20/02-primary-gpt-comparison.json) | Sanitized generated arrays/CRCs from private pre/post-flash dumps; no GUIDs or binary images |
+| — | [Readback and flash checks](raw/2026-11-20/03-readback-and-flash-checks.json) | Owner export sizes, large-offset extraction hash check and failed resize-record payloads |
 | — | [Capture provenance](raw/2026-11-11/provenance.json) | Acquisition, normalization and sanitation metadata |
 | — | [SHA-256 inventory](raw/2026-11-11/SHA256SUMS) | Integrity hashes of the committed evidence and provenance |
 
@@ -45,7 +50,7 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 - [Owner constraint: software-only](raw/2026-11-12/02-owner-constraint.txt).
 - [Research evidence checksums](raw/2026-11-12/SHA256SUMS).
 - [Unlock feasibility assessment](interpretation/unlock-feasibility.md) — vendor requirements, same-model reports, rejected shortcuts and remaining gaps.
-- [Hardware testpoint assessment](interpretation/hardware-testpoint.md) — physical access, temporary versus persistent unlock, and [pinned loader comparisons](raw/2026-11-17/10-hardware-testpoint-research.json); no hardware test performed.
+- [Hardware testpoint assessment](interpretation/hardware-testpoint.md) — physical access, temporary versus persistent unlock, and [pinned loader comparisons](raw/2026-11-17/10-hardware-testpoint-research.json); superseded by the [owner-tested checkpoint](interpretation/unlock-checkpoint.md).
 - [Kernel config comparisons](raw/2026-11-12/04-kernel-source-comparison.json) — generated static comparisons with source pins and input hashes.
 - [Selected upstream source observations](raw/2026-11-12/05-source-inspection.json).
 - [Additional same-model downgrade report](raw/2026-11-12/06-downgrade-report.json) — selected public comments, including the correction of a cross-model success claim.
@@ -56,6 +61,7 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 
 ## Interpretation and reproducibility
 
+- [Persistent-unlock checkpoint and retained-base boundary](interpretation/unlock-checkpoint.md)
 - [Device and hardware assessment](interpretation/device-and-hardware.md)
 - [Kernel configuration assessment](interpretation/kernel-configuration.md)
 - [Kernel source candidates and remaining validation](interpretation/kernel-source-candidates.md)
@@ -76,3 +82,5 @@ Target: Ubuntu Touch with display, touchscreen and Wi-Fi. Cellular support is de
 Raw data contains supplied observations, not a transcript of all chat text. Missing evidence and failed commands are retained as such. A driver being compiled or a library being installed is not evidence that a particular chip is active. The original diagnostic attachments remain outside the repository; only reviewed extracts are committed.
 
 E01–E12 describe the earlier stock Android 10/EMUI 12 state. E13 confirms the later owner-reported EMUI 10.0.0 / .562 Settings state while ADB still reports the .275 base identifier. E14 supplies a distinct post-rollback kernel configuration. The retained E08 and research builds using it predate this rollback. Do not silently combine outputs from different firmware bases.
+
+E20 records the subsequent hardware-assisted Android-9 layout migration and owner-reported EMUI 9.1 boot. Ordinary fastboot is now unlocked on that retained installation. E08/E14 and their research builds must not be relabeled as captures/builds of the new base.

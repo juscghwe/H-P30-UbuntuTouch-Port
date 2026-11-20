@@ -2,42 +2,16 @@
 
 ## Current boundary
 
-The bootloader is locked. The documented source/toolchain pair produces offline research images, including a stock-derived Halium configuration, but there is no device-validated kernel, boot package or software-only persistent-unlock sequence. Hardware inventory remains owner-operated from stock Android.
+[The 2026-11-20 checkpoint](unlock-checkpoint.md) demonstrates ordinary fastboot unlocked after normal stock EMUI 9.1 startup, following hardware entry, HCU Repair on Android 10 and an AUP factory-fastboot Android-9 flash. No custom kernel, recovery or Ubuntu Touch boot has been demonstrated. Device binary backups remain private.
 
-## Unlock feasibility
+## Immediate implementation steps
 
-**Hardware-route investigation:** [the testpoint assessment](hardware-testpoint.md)
-identifies the closest C431 report and three shared loader components. Hardware
-entry does not satisfy HCU's separate Android-9 persistent-unlock prerequisite.
-First establish board matching and download-mode enumeration, then compatible
-loader/readback/exit behavior; no hardware operation or recovery has been verified.
+1. Capture the retained runtime Android/vendor SDK, VNDK, kernel release, component versions and a fresh `/proc/config.gz`. Settings EMUI 9.1 and the Android-9 GPT do not substitute for those measurements.
+2. Inspect the matching Android-9 stock boot/DT/vendor inputs and select the source/configuration and provisional Halium version against that base. Prior Enjoy-10 4.14.116 research builds target the earlier evidence; do not flash them as a validated Android-9 kernel.
+3. Establish measured boot packaging and an early debug path before a custom boot attempt. Retain original stock boot images, primary-table snapshots and private calibration/identity backups. Restoring them has not been demonstrated.
+4. Keep ordinary-fastboot persistence separate from authorization of every protected partition. Preserve the current retained firmware; later EMUI upgrades/relocks are not validated.
 
-**2026-11-17 USB Upgrade result:** [the Android-9 DLOAD attempt](android-utility-usb-upgrade.md)
-failed on the 25-byte BASE_VER record in the small BASE-PTABLE package. AUP then
-printed a success-looking banner and proceeded to CUST; selected static branches
-confirm faulty failure propagation. The owner stopped it and Android returned.
-Boot completion is 1 and component labels remain `.562` / `.15(C431)` /
-`.7(C431R2)`, without proof of partition/OEMINFO byte equality. Native recovery-log
-access is denied. Do not repeat the same write or alter OEMINFO as a guessed fix;
-identify the metadata/protocol refusal and reliable failure handling first.
-
-Six full firmware archives and APP extractions are verified. Primary eMMC GPT
-CRCs pass, boot-image ranges agree but indices and filesystem layouts change.
-The reference USB updater has a 300-second no-action reboot path and stored-hash
-version checks; neither establishes an accepted software-only downgrade.
-
-**2026-11-13 update:** the owner confirms Settings EMUI 10.0.0 / build 10.0.0.562(C431E15R2P7), following the official rollback. No Android-9 option or software-only persistent unlock has been demonstrated. Read [the unlock feasibility assessment](unlock-feasibility.md) before a further downgrade or tool purchase. HCU's documented unlock requires Android 9; reaching EMUI 10 does not satisfy that prerequisite.
-
-1. Retain the current sanitized firmware/configuration evidence before changing versions.
-2. Determine a model- and customization-compatible downgrade/unlock sequence from the confirmed .562 Settings build. In [E13](../raw/2026-11-13/01-firmware-and-hisuite-offer.txt), the owner reports no Android-9 option and supplies an EMUI-12 update offer. ADB continues to report the older .275 Android base; retain both identities. No further rollback is currently justified by a verified software-only unlock chain.
-3. The PotatoNV project's alternatives documentation lists Kirin-Tool for Kirin 710 and states EMUI 9.1-or-earlier support. PotatoNV itself excludes Kirin 710. The original Kirin-Tool website returned HTTP 403; exact MAR-LX1A firmware compatibility was not verified.
-4. Boot-ROM/test-point research exists for a related Kirin 710 phone. It is not a validated P30 Lite procedure. Do not treat matching SoC alone as authorization to flash another device's bootloader or partition images.
-5. If a rollback is performed, record its result and repeat selected firmware/kernel identification. Preserve matching stock recovery/restore materials before custom flashing.
-
-E14 now captures the running configuration after the confirmed EMUI-10 rollback.
-It is distinct from E08 and closely matches the official .275 reference kernel.
-Next adapt the stock-derived build inputs to E14 in a separate output directory;
-do not relabel existing E08-based artifacts as builds of the current firmware.
+The earlier [DLOAD failure](android-utility-usb-upgrade.md) remains a separate failed workflow. The later FB result does not repair that client path or establish software-only entry. See the [checkpoint](unlock-checkpoint.md) for resize errors, actual GPT differences and the successful runtime acceptance check.
 
 ## Source and peripheral identification
 
@@ -50,6 +24,7 @@ do not relabel existing E08-based artifacts as builds of the current firmware.
 
 | Milestone | Evidence needed | Current status |
 | --- | --- | --- |
+| Persistent unlock | Normal Android startup followed by ordinary fastboot without a service loader | Observed unlocked on retained EMUI 9.1; future firmware transitions untested |
 | Choose source/toolchain | Sources contain required board/drivers and can reproduce a compatible kernel | Closer candidate and documented toolchain identified; not validated |
 | Compile research kernels | Complete AArch64 image/modules, exact config and artifact verification | Candidate and stock-derived Halium native images passed; LTO/CFI disabled |
 | Build adapted boot image | Correct active board/overlay and verified device-specific image layout | Board 7800 matches reference overlay 186; offline application passes; current-image equality unresolved; no boot package |

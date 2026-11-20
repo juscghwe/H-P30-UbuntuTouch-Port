@@ -1,8 +1,7 @@
 # Hardware testpoint assessment
 
 Research date: **2026-11-17**. [Source and binary observations](../raw/2026-11-17/10-hardware-testpoint-research.json).
-Hardware-route investigation is now in scope. No disassembly, testpoint connection
-or factory-loader execution has been demonstrated on the target phone.
+**Updated 2026-11-20:** [owner-operated hardware entry, factory-loader communication, Android-9 boot and ordinary-fastboot persistence are now demonstrated](unlock-checkpoint.md). The following assessment preserves the preceding research; its preparation steps are historical, not remaining prerequisites.
 
 ## What the testpoint changes
 
@@ -66,7 +65,7 @@ charging, fuel-gauge and vibrator operation. This is a loader-specific limitatio
 not proof of a universal Android-9 requirement. No downloaded code or loader was
 executed during this audit.
 
-## Physical preparation and first checkpoint
+## Historical physical preparation and first checkpoint
 
 [iDoc's P30 Lite repair guide](https://www.idoc.eu/guides/en/huawei/huawei-p30-lite/battery-replacement/838)
 shows a glued glass back, a fingerprint flex attached to it, motherboard covers
@@ -87,7 +86,7 @@ the actual board and connector layout to the photograph before selecting a pad;
 the image alone does not establish the target board revision. No motherboard
 removal or battery-cell extraction requirement has been established here.
 
-The first future device checkpoint should be **board identification and USB
+The initial proposed device checkpoint was to establish **board identification and USB
 download-mode enumeration only**, with no flashing tool job active. Then establish
 a compatible loader and readback/exit behavior. Before any downgrade, retain the
 actual GPT and device-specific calibration/identity partitions privately if the

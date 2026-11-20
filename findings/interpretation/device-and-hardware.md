@@ -1,6 +1,10 @@
 # Device and hardware assessment
 
-## Target and firmware
+## Latest firmware and lock state
+
+[E20](../raw/2026-11-20/01-owner-unlock-evidence.txt) reports normal stock EMUI 9.1 startup and then ordinary fastboot **PHONE unlocked / FRP unlocked**, with `oem get-bootinfo` returning `unlocked`. The [actual GPT comparison](../raw/2026-11-20/02-primary-gpt-comparison.json) confirms the Android-9 layout. Exact current runtime API/VNDK, kernel/configuration and component versions are pending; the graphics and kernel evidence below predates this migration. See the [checkpoint](unlock-checkpoint.md).
+
+## Historical target and firmware
 
 E01 identifies a spare P30 Lite MAR-LX1A with Kirin 710, 4 GB RAM, 128 GB storage and a 1080 × 2312 display. These capacity values are owner-reported, not independently measured.
 

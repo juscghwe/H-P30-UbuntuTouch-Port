@@ -1,5 +1,7 @@
 # Kernel-source comparison
 
+**Retained-base update, 2026-11-20:** [EMUI 9.1 now boots with persistent ordinary-fastboot unlock](unlock-checkpoint.md). The comparisons below use the earlier Android-10-era evidence. A fresh current kernel/configuration capture is pending; these sources/builds are not yet validated for the retained Android-9 installation.
+
 Initial static inspection on 2026-11-12. Comparisons use the stock 4.14.116 configuration, not a claim that either tree is the exact Huawei release for MAR-LX1A. Subsequent [executed validation](baseline-build.md) confirms Kconfig parsing and complete native kernel/module builds.
 
 ## Candidates

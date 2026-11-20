@@ -1,0 +1,68 @@
+{
+  "classification": "Owner-reported export sizes and extraction check; generated reference comparison, not a restore test",
+  "tool": "DC-Phoenix v173 EMMC dump",
+  "critical_export_sizes_bytes": {
+    "oeminfo": 67108864,
+    "nvme": 5242880,
+    "persist": 2097152,
+    "modem_secure": 8912896,
+    "modemnvm_factory": 16777216,
+    "modemnvm_backup": 16777216,
+    "modemnvm_img": 35651584
+  },
+  "boot_export_sizes_bytes": {
+    "dto_a": 25165824,
+    "dts_a": 8388608,
+    "kernel_a": 25165824,
+    "erecovery_kernel": 25165824,
+    "erecovery_ramdisk_a": 33554432,
+    "erecovery_vbmeta": 2097152,
+    "erecovery_vendor": 16777216,
+    "fastboot": 12582912,
+    "ramdisk": 2097152,
+    "recovery_ramdisk_a": 33554432,
+    "recovery_vbmeta": 2097152,
+    "recovery_vendor": 16777216,
+    "vbmeta": 4194304,
+    "vbmeta_cust": 1048576,
+    "vbmeta_hw_product": 1048576,
+    "vbmeta_odm": 1048576,
+    "vbmeta_system": 1048576,
+    "vbmeta_vendor": 1048576
+  },
+  "actual_super_export_bytes": 5343543296,
+  "other_export_sizes_bytes": {
+    "reserved2": 7340032,
+    "vendor_a": 796917760,
+    "system_a": 5230297088,
+    "product_a": 1124073472
+  },
+  "other_export_limit": "These exports were requested under Android-9-style GUI labels before the actual table changed. Their actual read ranges were not independently recorded; they are not validated Android-10 filesystem backups.",
+  "base_app_large_offset_check": {
+    "catalog_id": 442707,
+    "record": "PATCH",
+    "payload_offset_bytes": 4574365906,
+    "payload_bytes": 5312732,
+    "reference_sha256": "378391fbb1090800b66bfa8ce36094320c658ceb3d9e7c1d74da33c9e48d6796",
+    "owner_reports_aup_extraction_hash_match": true,
+    "limit": "Demonstrates extraction beyond 4 GiB, not a complete audit of the flasher or every image write."
+  },
+  "failed_metadata_records": [
+    {
+      "name": "PTABLE_CUST",
+      "bytes": 17,
+      "exact_ascii_payload": "version=33554432\n"
+    },
+    {
+      "name": "PTABLE_PRELOAD",
+      "bytes": 19,
+      "exact_ascii_payload": "preload=1199570944\n"
+    }
+  ],
+  "limits": [
+    "Sizes agree with expected ranges but do not verify backup image contents or successful restoration.",
+    "No userdata dump was requested or supplied.",
+    "Device binary backups and personal tool logs remain outside this repository.",
+    "The observed combined HCU/AUP/downgrade sequence was not experimentally separated into independent causes of the final unlock."
+  ]
+}

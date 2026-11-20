@@ -1,7 +1,8 @@
 # Android Utility USB Upgrade readiness
 
-Status: **Android-9 DLOAD attempt failed during BASE-PTABLE metadata; Android 10 boots afterward**. This is not a validated
-`.562` to Android-9 downgrade recipe.
+**Latest result, 2026-11-20:** the separate [hardware-assisted FW Update (FB) sequence](unlock-checkpoint.md) reached normal EMUI 9.1 startup and persistent ordinary-fastboot unlock. That sequence had resize-record failures and required independent GPT checks; it is not a general restoration guarantee.
+
+Historical DLOAD status, 2026-11-17: **Android-9 DLOAD attempt failed during BASE-PTABLE metadata; Android 10 boots afterward**. The remainder of this document records that earlier path and static package inspection.
 
 The [MFDL changelog](https://www.mfdl.io/changelog) lists Huawei USB firmware
 updates through DLOAD/Upgrade mode separately from Fastboot partition operations

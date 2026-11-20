@@ -85,3 +85,25 @@ The firmware-listing command received errors only for the other three directorie
 [The comparison record](../raw/2026-11-12/04-kernel-source-comparison.json) identifies the stock config and two pinned upstream defconfigs with SHA-256 hashes and Git blob IDs. Parse explicit assignments and explicit `# CONFIG_NAME is not set` entries, mapping only the latter to `n`. Reject duplicate symbols, compare literal values by name, and keep one-sided symbols separate. Do not infer disabled values for absent entries or evaluate dependencies from this text comparison alone.
 
 Both upstream config blob hashes and all counts were independently recomputed before commit. Source files were inspected remotely and the two defconfigs saved locally outside the repository; no complete kernel archive was unpacked, no source tree was built and no port installer was executed.
+
+## Retained EMUI-9 identification after unlock
+
+Run after normal Android startup and USB-debugging authorization. These queries
+supply the current base needed before selecting a Halium version or kernel;
+prior Android-10 captures remain separate evidence. Each block is one physical
+PowerShell line and omits device-unique properties.
+
+```powershell
+.\adb.exe shell 'echo ANDROID; getprop ro.build.version.release; echo SDK; getprop ro.build.version.sdk; echo VNDK; getprop ro.vndk.version; echo VENDOR_SDK; getprop ro.vendor.build.version.sdk; echo KERNEL; uname -r; echo BASE; getprop ro.comp.hl.product_base_version; echo CUST; getprop ro.comp.hl.product_cust_version; echo PRELOAD; getprop ro.comp.hl.product_preload_version'
+```
+
+Preserve the compressed current kernel configuration with a new local filename:
+
+```powershell
+.\adb.exe pull /proc/config.gz p30-emui9-stock-config.gz
+```
+
+This pull has not yet been tested on the retained installation. If access is
+refused, record that result rather than escalating access. Validate gzip and
+record both compressed and decompressed hashes before importing a configuration.
+Do not use Windows text redirection for a binary gzip capture.

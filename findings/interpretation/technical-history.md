@@ -40,3 +40,11 @@
 - The reference 4.14.116 kernel embeds an older, different config. No original
   stock bytes, preferred source/toolchain or runtime hardware conclusion changed.
   See [acquisition evidence and limits](firmware-acquisition.md).
+
+## Hardware-assisted Android-9/unlock result: 2026-11-20
+
+- Physical entry enumerates `12d1:3609`; HCU Kirin710_P1_V2 communicates on `.562`. HCU Repair reports success, but ordinary fastboot remains locked after Android-10 startup.
+- AUP KIRIN710 reaches factory fastboot with a second physical entry and battery reconnection at DDR `[4]`. Its GPT reader is unsupported; Phoenix exports actual partition data instead. The GUI's older map disagrees with the original Android-10 GPT.
+- Android-9 FW Update (FB) has CUST/PRELOAD size-setting failures. Post-flash primary checksums pass; all named partition ranges match the pinned Android-9 base except userdata extended to actual capacity. The complete image-write log and restoration remain unverified.
+- After the data-format prompt, the owner reports normal EMUI 9.1 startup and unlocked ordinary fastboot without a loader. No second HCU Repair on Android 9 is reported. See [evidence and limits](unlock-checkpoint.md).
+- Prior compiled kernels/vendor evidence remain Android-10 research inputs. Recapture the retained vendor API/VNDK and kernel/configuration before selecting a current device build.

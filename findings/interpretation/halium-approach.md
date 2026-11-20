@@ -2,7 +2,9 @@
 
 ## Vendor base determines the target
 
-Current device evidence is Android 10 / SDK 29 / VNDK 29 beneath EMUI 12. Provisionally use **Halium 10**, preserving the matching stock vendor/ODM stack. The [current UBports version table](https://docs.ubports.com/en/latest/porting/introduction/Intro.html#android-and-halium-versions) maps Android 10 to Halium 10 / LineageOS 17.1. If an eventual unlock procedure leaves Android-9 vendor firmware, reassess for Halium 9 and recapture the kernel configuration. An EMUI label, GSI's Android version or another port's branch name does not settle vendor compatibility.
+**Current boundary, 2026-11-20:** the owner reports [normal EMUI 9.1 startup and persistent ordinary-fastboot unlock](unlock-checkpoint.md). Recapture runtime/vendor SDK, VNDK and the kernel configuration before choosing the retained port base. Halium 9 is a candidate if the actual retained vendor is Android 9; its compatibility has not yet been validated.
+
+Historical evidence is Android 10 / SDK 29 / VNDK 29 beneath EMUI 12, later retained under EMUI 10. The earlier provisional target was **Halium 10**, preserving that matching stock vendor/ODM stack. The [current UBports version table](https://docs.ubports.com/en/latest/porting/introduction/Intro.html#android-and-halium-versions) maps Android 10 to Halium 10 / LineageOS 17.1. The observed downgrade now requires reassessment for Halium 9 and a fresh kernel configuration, rather than carrying the earlier selection forward. An EMUI label, GSI's Android version or another port's branch name does not settle vendor compatibility.
 
 Use the [standalone kernel + Halium GSI workflow](https://docs.ubports.com/en/latest/porting/build_and_boot/standalone_kernel_build.html) provisionally. It allows kernel validation without first downloading a full Android source tree. The device repository will need measured kernel/ramdisk/DT layout and partition names before any usable `deviceinfo` or image can be produced. The Nova 3I recipe's 4.9 kernel and hardcoded data partition remain excluded.
 
@@ -36,5 +38,4 @@ Offline native baseline builds, derived configuration checks and reference
 board/vendor recovery are complete. Next preserve early firmware visibility
 and connectivity loader ordering in the board-matched device adaptation, while
 resolving remaining source/power and image-prefix/signature uncertainties.
-Persistent unlocking remains necessary before any phone test. No Ubuntu Touch
-boot or working peripheral is demonstrated.
+Persistent unlock has now passed the retained-installation check. Fresh retained-base measurements and compatible packaging remain necessary before any custom phone test. No Ubuntu Touch boot or working peripheral under it is demonstrated.

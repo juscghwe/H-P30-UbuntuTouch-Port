@@ -1,4 +1,10 @@
-# Unlock feasibility: software-only scope
+# Bootloader unlock evidence
+
+**Current result, 2026-11-20:** [normal EMUI 9.1 startup and ordinary-fastboot persistence are demonstrated](unlock-checkpoint.md) after the hardware-assisted sequence. No custom boot or software-only entry chain is established.
+
+The following sections preserve the earlier software-only assessment and its dated evidence; they are not the current lock/firmware status.
+
+## Historical software-only assessment
 
 Research date: **2026-11-12**, Europe/Berlin. Evidence catalog: [R01–R15](../raw/2026-11-12/01-research-sources.json). Owner constraint: [software-only research](../raw/2026-11-12/02-owner-constraint.txt).
 

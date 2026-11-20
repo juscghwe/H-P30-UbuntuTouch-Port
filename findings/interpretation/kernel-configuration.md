@@ -1,5 +1,7 @@
 # Stock kernel configuration assessment
 
+**Retained-base update, 2026-11-20:** [EMUI 9.1 now boots with persistent ordinary-fastboot unlock](unlock-checkpoint.md). The comparisons below use the earlier Android-10-era evidence. A fresh current kernel/configuration capture is pending; these sources/builds are not yet validated for the retained Android-9 installation.
+
 Evidence: [E08](../raw/2026-11-11/08-stock-kernel.config), decompressed from the owner's `/proc/config.gz`. Header: Linux/arm64 4.14.116. This is a configuration audit, not a successful build or a complete Halium compatibility check.
 
 ## Post-rollback configuration: E14
